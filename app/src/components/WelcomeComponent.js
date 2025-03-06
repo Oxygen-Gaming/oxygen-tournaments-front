@@ -77,7 +77,7 @@ const OxygenGaming = () => {
             <span className="text-cyan-400 font-bold text-[22px] mb-2">EQUIPOS</span>
             <div className="flex flex-col gap-4">
               <a href="https://oxygengaming.es/equipos/#leagueoflegends" className="no-underline text-gray-300 font-bold transition-colors hover:text-cyan-400">LEAGUE OF LEGENDS</a>
-              <a href="" className="no-underline text-gray-300 font-bold transition-colors hover:text-cyan-400">VALORANT</a>
+              <a href="https://oxygengaming.es/equipos/#valorant" className="no-underline text-gray-300 font-bold transition-colors hover:text-cyan-400">VALORANT</a>
               <a href="https://oxygengaming.es/creadores/" className="no-underline text-gray-300 font-bold transition-colors hover:text-cyan-400">CREADORES</a>
             </div>
           </div>
@@ -87,16 +87,16 @@ const OxygenGaming = () => {
               <img id="logo_footer" src="https://oxygengaming.es/wp-content/uploads/2022/06/Logo-OG200.png" alt="Oxygen Gaming Logo" className="w-[80%] max-w-[200px] mb-4" />
             </a>
             <div className="flex gap-4 mt-2">
-              <a href="https://twitter.com/GamingOxygen" target="_blank" className="flex justify-center items-center w-10 h-10 rounded-full no-underline transition-all">
+              <a href="https://twitter.com/GamingOxygen" target="_blank" rel="noreferrer" className="flex justify-center items-center w-10 h-10 rounded-full no-underline transition-all">
                 <img src="twitter.png" alt="Twitter" className="w-full h-full rounded-full" />
               </a>
-              <a href="https://instagram.com/GamingOxygen" target="_blank" className="flex justify-center items-center w-10 h-10 rounded-full no-underline transition-all">
+              <a href="https://instagram.com/GamingOxygen" target="_blank" rel="noreferrer" className="flex justify-center items-center w-10 h-10 rounded-full no-underline transition-all">
                 <img src="instagram.png" alt="Instagram" className="w-full h-full rounded-full" />
               </a>
-              <a href="https://www.tiktok.com/@oxg_esports?lang=es" target="_blank" className="flex justify-center items-center w-10 h-10 rounded-full no-underline transition-all">
+              <a href="https://www.tiktok.com/@oxg_esports?lang=es" target="_blank" rel="noreferrer" className="flex justify-center items-center w-10 h-10 rounded-full no-underline transition-all">
                 <img src="tiktok.png" alt="TikTok" className="w-full h-full rounded-full" />
               </a>
-              <a href="https://discord.gg/Udsstfpeze" target="_blank" className="flex justify-center items-center w-10 h-10 rounded-full no-underline transition-all">
+              <a href="https://discord.gg/Udsstfpeze" target="_blank" rel="noreferrer" className="flex justify-center items-center w-10 h-10 rounded-full no-underline transition-all">
                 <img src="discord.png" alt="Discord" className="w-full h-full rounded-full" />
               </a>
             </div>
