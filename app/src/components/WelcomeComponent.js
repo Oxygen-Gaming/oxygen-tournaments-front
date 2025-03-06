@@ -1,4 +1,9 @@
 import React from "react";
+import Logo from "../img/Logo_OxygenGaming2.png";
+import Twitter from "../img/twitter.png";
+import Instagram from "../img/instagram.png";
+import TikTok from "../img/tiktok.png";
+import Discord from "../img/discord.png";
 
 const OxygenGaming = () => {
   return (
@@ -6,11 +11,11 @@ const OxygenGaming = () => {
       {/* HEADER */}
       <header className="flex justify-between items-center px-4 py-4 md:px-6">
         <a href="/" className="w-[70px] h-[70px] mr-8">
-          <img src="Logo_OxygenGaming2.png" alt="OxygenGaming Logo" className="w-full h-full" />
+          <img src={Logo} alt="OxygenGaming Logo" className="w-full h-full" />
         </a>
         <nav className="flex items-center gap-2">
           <a href="/" className="text-white no-underline px-2 py-2 rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10 bg-blue-600">Inicio</a>
-          <a href="/competiciones" className="text-white no-underline px-2 py-2 rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10">Competiciones</a>
+          <a href="/competition" className="text-white no-underline px-2 py-2 rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10">Competiciones</a>
           <a href="/reglamentos" className="text-white no-underline px-2 py-2 rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10">Contenido</a>
           <a href="/inscripciones" className="text-white no-underline px-2 py-2 rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10">Misiones</a>
           <a href="/clasificaciones" className="text-white no-underline px-2 py-2 rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10">Recompensas</a>
@@ -88,16 +93,16 @@ const OxygenGaming = () => {
             </a>
             <div className="flex gap-4 mt-2">
               <a href="https://twitter.com/GamingOxygen" target="_blank" rel="noreferrer" className="flex justify-center items-center w-10 h-10 rounded-full no-underline transition-all">
-                <img src="twitter.png" alt="Twitter" className="w-full h-full rounded-full" />
+                <img src={Twitter} alt="Twitter" className="w-full h-full rounded-full" />
               </a>
               <a href="https://instagram.com/GamingOxygen" target="_blank" rel="noreferrer" className="flex justify-center items-center w-10 h-10 rounded-full no-underline transition-all">
-                <img src="instagram.png" alt="Instagram" className="w-full h-full rounded-full" />
+                <img src={Instagram} alt="Instagram" className="w-full h-full rounded-full" />
               </a>
               <a href="https://www.tiktok.com/@oxg_esports?lang=es" target="_blank" rel="noreferrer" className="flex justify-center items-center w-10 h-10 rounded-full no-underline transition-all">
-                <img src="tiktok.png" alt="TikTok" className="w-full h-full rounded-full" />
+                <img src={TikTok} alt="TikTok" className="w-full h-full rounded-full" />
               </a>
               <a href="https://discord.gg/Udsstfpeze" target="_blank" rel="noreferrer" className="flex justify-center items-center w-10 h-10 rounded-full no-underline transition-all">
-                <img src="discord.png" alt="Discord" className="w-full h-full rounded-full" />
+                <img src={Discord} alt="Discord" className="w-full h-full rounded-full" />
               </a>
             </div>
           </div>
