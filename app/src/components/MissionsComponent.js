@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 
 const missions = [
   { title: 'Síguenos en X', image: 'images-removebg-preview.png', points: 'Puntos:' },
