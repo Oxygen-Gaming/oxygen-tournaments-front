@@ -18,13 +18,13 @@ const Rewards = () => {
           <img src="Logo_OxygenGaming2.png" alt="Logo" className="w-20 h-20 rounded-full transition-transform duration-300 hover:scale-110" />
         </div>
         <div className="page-title text-center">
-          <h1 className="text-4xl font-bold text-white hover:text-[#f0f8ff] transition duration-300">Competiciones</h1>
+          <h1 className="text-4xl font-bold text-white hover:text-[#f0f8ff] transition duration-300">Recompensas</h1>
           <nav className="nav-menu flex gap-4 mt-2">
             <a href="#registration" className="hover:bg-white hover:text-blue-500 p-2 rounded transition">Inscripción</a>
             <a href="#ranking" className="hover:bg-white hover:text-blue-500 p-2 rounded transition">Clasificación</a>
             <a href="#history" className="hover:bg-white hover:text-blue-500 p-2 rounded transition">Historial</a>
-            <a href="#prizes" className="hover:bg-white hover:text-blue-500 p-2 rounded transition">Premios</a>
-            <a href="misiones.html" className="hover:bg-white hover:text-blue-500 p-2 rounded transition">Misiones</a>
+            <a href="/rewards" className="hover:bg-white hover:text-blue-500 p-2 rounded transition">Premios</a>
+            <a href="/missions" className="hover:bg-white hover:text-blue-500 p-2 rounded transition">Misiones</a>
           </nav>
         </div>
       </header>
