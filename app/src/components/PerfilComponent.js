@@ -7,6 +7,7 @@ import instagram from "../img/instagram.png"
 import discord from "../img/discord.png"
 import juego from "../img/juego.png"
 import oxygen from "../img/Logo_OxygenGaming2.png"
+import logo from "../img/Logo_Blue.png"
 const Perfil = () => {
     const [opcionSeleccionada, setOpcionSeleccionada] = useState('perfil')
     const [imagenPerfil, setImagenPerfil] = useState(perfil);
@@ -403,7 +404,7 @@ const Perfil = () => {
 
           <div id="redes_sociales" className="flex flex-col items-center text-center flex-1 min-w-[250px]">
             <a href="https://oxygengaming.es/">
-              <img id="logo_footer" src={oxygen} alt="Oxygen Gaming Logo" className="w-[80%] max-w-[200px] mb-4" />
+              <img id="logo_footer" src={logo} alt="Oxygen Gaming Logo" className="w-[80%] max-w-[200px] mb-4" />
             </a>
             <div className="flex gap-4 mt-2">
               <a href="https://twitter.com/GamingOxygen" target="_blank" rel="noreferrer" className="flex justify-center items-center w-10 h-10 rounded-full border-[cyan] border-[1px] p-[10px] no-underline transition-all">
