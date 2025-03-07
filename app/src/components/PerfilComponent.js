@@ -28,8 +28,8 @@ const Perfil = () => {
                         <div class="flex w-full gap-[30px]">
                             <img src={imagenPerfil} alt="imagen de perfil" class="w-[150px] h-[150px] p-[10px] border-[2px] rounded-full"/>
                             <div class="text-[20px]">
-                                <h1>Nombre Apellido</h1>
-                                <p>Oro total acumulado</p>
+                                <h1 class="text-[30px]">Nombre Apellido</h1>
+                                <p>Puntos totales acumulados</p>
                                 <div class="flex gap-[20px]">
                                     <i class="fa-solid fa-coins mt-[6px]"></i>
                                     <p>0</p>
@@ -43,6 +43,7 @@ const Perfil = () => {
                                 <p>0 Misiones</p>
                             </div>
                         </div>
+                        <button class="bg-[white] w-[150px] h-[40px] hover:bg-[#1AA9FF] hover:border-[white] hover:border-[1px] text-[black] rounded">Cerrar sesion</button>
                     </div>
                 );
             case 'cuenta':
@@ -183,50 +184,84 @@ const Perfil = () => {
                     <div class="flex flex-col gap-[30px]">
                         <h1 class="text-[30px]">Recompensas Canjeadas</h1>
                         <div class=" w-full rounded-[10px] flex justify-between">
-                            <div class="text-[black] text-[20px] p-[10px] w-[22%] bg-[#16bccd]">
-                                <img src={oxygen} alt="logo oxygen" />
-                                <h1>Follow por parte de Oxygen</h1>
-                                <p>Puntos: 0</p>
+                            <div class="text-[black] text-[20px] flex flex-col justify-between items-center p-[15px] w-[22%] h-[30vh] bg-gradient-to-t from-[#18538a] to-[#1e90ff] rounded-[15px]">
+                                <img src={oxygen} alt="logo oxygen" class="h-[50%] w-full"/>
+                                <div class="w-full h-full text-[white] flex flex-col justify-evenly">
+                                    <h1 class="text-[20px]">Follow por parte de Oxygen</h1>
+                                    <p class="text-[13px]">Puntos: 0</p> 
+                                </div>
                             </div>
-                            <div class="text-[black] text-[20px] p-[10px] w-[22%] bg-[white]">
-                                <img src={oxygen} alt="logo oxygen" />
-                                <h1>Ticket a sorteo</h1>
-                                <p>Puntos: 0</p>
+                            <div class="text-[black] text-[20px] flex flex-col justify-between items-center p-[15px] w-[22%] h-[30vh] bg-gradient-to-t from-[#18538a] to-[#1e90ff] rounded-[15px]">
+                                <img src={oxygen} alt="logo oxygen" class="h-[50%] w-full"/>
+                                <div class="w-full h-full text-[white] flex flex-col justify-evenly">
+                                    <h1 class="text-[20px]">Ticket a sorteo</h1>
+                                    <p class="text-[13px]">Puntos: 0</p> 
+                                </div>
+                                
                             </div>
-                            <div class="text-[black] text-[20px] p-[10px] w-[22%] bg-[white]">
-                                <img src={oxygen} alt="logo oxygen" />
-                                <h1>Camiseta del club</h1>
-                                <p>Puntos: 0</p>
+                            <div class="text-[black] text-[20px] flex flex-col justify-between items-center p-[15px] w-[22%] h-[30vh] bg-gradient-to-t from-[#18538a] to-[#1e90ff] rounded-[15px]">
+                                <img src={oxygen} alt="logo oxygen" class="h-[50%] w-full"/>
+                                <div class="w-full h-full text-[white] flex flex-col justify-evenly">
+                                    <h1 class="text-[20px]">Camiseta del club</h1>
+                                    <p class="text-[13px]">Puntos: 0</p> 
+                                </div>
+                                
                             </div>
-                            <div class="text-[black] text-[20px] p-[10px] w-[22%] bg-[white]">
-                                <img src={oxygen} alt="logo oxygen" />
-                                <h1>Silla playseat puma</h1>
-                                <p>Puntos: 0</p>
+                            <div class="text-[black] text-[20px] flex flex-col justify-between items-center p-[15px] w-[22%] h-[30vh] bg-gradient-to-t from-[#18538a] to-[#1e90ff] rounded-[15px]">
+                                <img src={oxygen} alt="logo oxygen" class="h-[50%] w-full"/>
+                                <div class="w-full h-full text-[white] flex flex-col justify-evenly">
+                                    <h1 class="text-[20px]">Silla playseat puma</h1>
+                                    <p class="text-[13px]">Puntos: 0</p> 
+                                </div>
+                                
                             </div>
                         </div>
                     </div>
                 );
             case 'logros' :
                 return (
-                    <div class="flex justify-evenly">
-                        <div class="w-full flex flex-col gap-[30px] justify-center items-center">
+                    <div class="flex justify-center">
+                        
+                        <div class="flex flex-col justify-center items-center gap-[20px] w-[50%]">
                             <h1 class="text-[30px]">Misiones completadas</h1>
-                            <div class="bg-[white] w-[90%] rounded-[10px]">
-                                <p class="text-[black] text-[30px] p-[10px]">Siguenos en X <i class="fa-solid fa-check text-[green]"></i></p>
-                                <p class="border-[1px] text-[black] text-[30px] p-[10px]">Completa el quiz semanal <i class="fa-solid fa-check text-[green]"></i></p>
-                                <p class="border-[1px] text-[black] text-[30px] p-[10px]">Meme del mes <i class="fa-solid fa-check text-[green]"></i></p>
-                                <p class="text-[black] text-[30px] p-[10px]">Clip de la cagada de la semana <i class="fa-solid fa-check text-[green]"></i></p>
+                            <div class="w-full rounded-[10px] flex justify-evenly">
+                                <div class="text-[rgb(0,0,0)] text-[20px] flex flex-col justify-between items-center p-[15px] w-[40%] h-[30vh] bg-gradient-to-t from-[#18538a] to-[#1e90ff] rounded-[15px]">
+                                    <img src={oxygen} alt="logo oxygen" class="h-[50%] w-full"/>
+                                    <div class="w-full h-full text-[white] flex flex-col justify-evenly">
+                                        <h1 class="text-[20px]">Completa el quiz semanal</h1>
+                                        <p class="text-[13px]">Puntos: 0</p> 
+                                    </div>
+                                </div>
+                                <div class="text-[black] text-[20px] flex flex-col justify-between items-center p-[15px] w-[40%] h-[30vh] bg-gradient-to-t from-[#18538a] to-[#1e90ff] rounded-[15px]">
+                                    <img src={oxygen} alt="logo oxygen" class="h-[50%] w-full"/>
+                                    <div class="w-full h-full text-[white] flex flex-col justify-evenly">
+                                        <h1 class="text-[20px]">Clip de la cagada de la semana</h1>
+                                        <p class="text-[13px]">Puntos: 0</p> 
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="w-full flex flex-col gap-[30px] justify-center items-center">
+                        
+                        <div class="flex flex-col justify-center items-center gap-[20px] w-[50%]">
                             <h1 class="text-[30px]">Recompensas solicitadas</h1>
-                            <div class="bg-[white] w-[90%] rounded-[10px]">
-                                <p class="text-[black] text-[30px] p-[10px]">Follow por parte de Oxygen<i class="fa-solid fa-check text-[green]"></i></p>
-                                <p class="border-[1px] text-[black] text-[30px] p-[10px]">Ticket a sorteo<i class="fa-solid fa-check text-[green]"></i></p>
-                                <p class="border-[1px] text-[black] text-[30px] p-[10px]">Camiseta del club<i class="fa-solid fa-check text-[green]"></i></p>
-                                <p class="text-[black] text-[30px] p-[10px]">Silla playseat puma <i class="fa-solid fa-check text-[green]"></i></p>
+                            <div class="w-full rounded-[10px] flex justify-evenly">
+                                <div class="text-[rgb(0,0,0)] text-[20px] flex flex-col justify-between items-center p-[15px] w-[40%] h-[30vh] bg-gradient-to-t from-[#18538a] to-[#1e90ff] rounded-[15px]">
+                                    <img src={oxygen} alt="logo oxygen" class="h-[50%] w-full"/>
+                                    <div class="w-full h-full text-[white] flex flex-col justify-evenly">
+                                        <h1 class="text-[20px]">10€ Google Play</h1>
+                                        <p class="text-[13px]">Puntos: 0</p> 
+                                    </div>
+                                </div>
+                                <div class="text-[black] text-[20px] flex flex-col justify-between items-center p-[15px] w-[40%] h-[30vh] bg-gradient-to-t from-[#18538a] to-[#1e90ff] rounded-[15px]">
+                                    <img src={oxygen} alt="logo oxygen" class="h-[50%] w-full"/>
+                                    <div class="w-full h-full text-[white] flex flex-col justify-evenly">
+                                        <h1 class="text-[20px]">10€ PlayStation</h1>
+                                        <p class="text-[13px]">Puntos: 0</p> 
+                                    </div>
+                                </div>
                             </div>
                         </div>
+                        
                     </div>
                 );
             case 'pedidos' :
@@ -293,13 +328,6 @@ const Perfil = () => {
                         </table>
                     </div>
                 );
-
-            case 'tickets' :
-                return (
-                    <div>
-                        <h1>Tickets</h1>
-                    </div>
-                );
             default:
                 return 'perfil';
         }
@@ -318,7 +346,6 @@ const Perfil = () => {
                     <button onClick={() => setOpcionSeleccionada('inventario')} class="hover:text-[black]" className={getButtonClass('inventario')}>Inventario</button>
                     <button onClick={() => setOpcionSeleccionada('logros')} class="hover:text-[black]" className={getButtonClass('logros')}>Logros</button>
                     <button onClick={() => setOpcionSeleccionada('pedidos')} class="hover:text-[black] flex" className={getButtonClass('pedidos')}>Pedidos</button>
-                    <button onClick={() => setOpcionSeleccionada('tickets')} class="hover:text-[black] flex" className={getButtonClass('tickets')}>Tickets</button>
                     <button onClick={() => setOpcionSeleccionada('cuentas de juego')} class="hover:text-[black]" className={getButtonClass('cuentas de juego')}>Cuentas de juego</button>
                     <button onClick={() => setOpcionSeleccionada('conexiones')} class="hover:text-[black]" className={getButtonClass('conexiones')}>Conexiones</button>
                     <button onClick={() => setOpcionSeleccionada('cuenta')} class="hover:text-[black] flex" className={getButtonClass('cuenta')}>Editar Perfil</button>
