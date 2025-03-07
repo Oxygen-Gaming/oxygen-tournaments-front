@@ -1,5 +1,10 @@
 import React from "react";
 import logo from "../img/Logo_Blue.png";
+import oxygen from "../img/Logo_OxygenGaming2.png"
+import twitter from "../img/twitter.png"
+import tiktok from "../img/tiktok.png"
+import instagram from "../img/instagram.png"
+import discord from "../img/discord.png"
 const OxygenGaming = () => {
   return (
     <div className="bg-blue-900 text-white overflow-x-hidden font-['Roboto_Condensed',sans-serif]">
@@ -50,7 +55,7 @@ const OxygenGaming = () => {
             { title: "Recompensas por misiones", text: "Completa misiones y gana recompensas exclusivas.", image: "path/to/image8.jpg" },
             { title: "Guías competitivas", text: "Accede a guías y estrategias para mejorar tu juego.", image: "path/to/image9.jpg" }
           ].map((item, index) => (
-            <div key={index} className="p-8 rounded-lg shadow-md bg-blue-700 transition-transform duration-300 hover:scale-105 hover:shadow-md" style={{ backgroundImage: `url(${item.image})`, backgroundSize: 'cover' }}>
+            <div key={index} className="p-8 rounded-lg shadow-md bg-blue-700 transition-transform duration-300 hover:scale-105 hover:shadow-md" style={{ backgroundImage: `url(${require("../img/image${index + 1}.jpg")})" }}, backgroundSize: 'cover' }}>
               <h3 className="text-xl mb-2">{item.title}</h3>
               <p className="text-gray-300">{item.text}</p>
             </div>
@@ -95,16 +100,16 @@ const OxygenGaming = () => {
               <img id="logo_footer" src={logo} alt="Oxygen Gaming Logo" className="w-[80%] max-w-[200px] mb-4" />
             </a>
             <div className="flex gap-4 mt-2">
-              <a href="https://twitter.com/GamingOxygen" target="_blank" rel="noreferrer" className="flex justify-center items-center w-10 h-10 rounded-full border-[cyan] border-[1px] p-[10px] no-underline transition-all">
+              <a href="https://twitter.com/GamingOxygen" target="_blank" rel=" noopener noreferrer" className="flex justify-center items-center w-10 h-10 rounded-full border-[cyan] border-[1px] p-[10px] no-underline transition-all">
                 <img src={twitter} alt="Twitter" className="w-full h-full rounded-full" />
               </a>
-              <a href="https://instagram.com/GamingOxygen" target="_blank" rel="noreferrer" className="flex justify-center items-center w-10 h-10 rounded-full border-[cyan] border-[1px] p-[10px] no-underline transition-all">
+              <a href="https://instagram.com/GamingOxygen" target="_blank" rel="noopener noreferrer" className="flex justify-center items-center w-10 h-10 rounded-full border-[cyan] border-[1px] p-[10px] no-underline transition-all">
                 <img src={instagram} alt="Instagram" className="w-full h-full rounded-full" />
               </a>
-              <a href="https://www.tiktok.com/@oxg_esports?lang=es" target="_blank" rel="noreferrer" className="flex justify-center items-center w-10 h-10 rounded-full border-[cyan] border-[1px] p-[10px] no-underline transition-all">
+              <a href="https://www.tiktok.com/@oxg_esports?lang=es" target="_blank" rel="noopener noreferrer" className="flex justify-center items-center w-10 h-10 rounded-full border-[cyan] border-[1px] p-[10px] no-underline transition-all">
                 <img src={tiktok} alt="TikTok" className="w-full h-full rounded-full" />
               </a>
-              <a href="https://discord.gg/Udsstfpeze" target="_blank" rel="noreferrer" className="flex justify-center items-center w-10 h-10 rounded-full border-[cyan] border-[1px] p-[10px] no-underline transition-all">
+              <a href="https://discord.gg/Udsstfpeze" target="_blank" rel="noopener noreferrer" className="flex justify-center items-center w-10 h-10 rounded-full border-[cyan] border-[1px] p-[10px] no-underline transition-all">
                 <img src={discord} alt="Discord" className="w-full h-full rounded-full" />
               </a>
             </div>

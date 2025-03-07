@@ -1,5 +1,10 @@
 import React from 'react';
 import logo from '../img/Logo_Blue.png';
+import oxygen from "../img/Logo_OxygenGaming2.png"
+import twitter from "../img/twitter.png"
+import tiktok from "../img/tiktok.png"
+import instagram from "../img/instagram.png"
+import discord from "../img/discord.png"
 const missions = [
   { title: 'Síguenos en X', image: 'images-removebg-preview.png', points: 'Puntos:' },
   { title: 'Síguenos en Instagram', image: 'Logo_OxygenGaming2.png', points: 'Puntos:' },
@@ -46,7 +51,7 @@ const Missions = () => (
           <a href="/login" className="text-white no-underline px-2 py-2 rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md bg-blue-600 ml-4">Iniciar Sesión</a>
         </div>
       </header>
-    <section className="flex flex-wrap justify-center gap-16 pt-48">
+    <section className="flex flex-wrap justify-center gap-16">
       {missions.map((mission, index) => (
         <MissionCard key={index} {...mission} />
       ))}

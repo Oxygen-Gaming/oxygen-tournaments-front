@@ -1,5 +1,10 @@
 import React from 'react';
 import logo from '../img/Logo_Blue.png';
+import oxygen from "../img/Logo_OxygenGaming2.png"
+import twitter from "../img/twitter.png"
+import tiktok from "../img/tiktok.png"
+import instagram from "../img/instagram.png"
+import discord from "../img/discord.png"
 const Card = ({ image, title, points }) => {
   return (
     <div className="card w-1/5 h-52 bg-gradient-to-t from-[#18538a] to-[#1e90ff] rounded-lg shadow-lg transform transition duration-300 hover:scale-105">
@@ -30,7 +35,7 @@ const Rewards = () => {
         </div>
       </header>
 
-      <section className="cards-container flex flex-wrap justify-center gap-16 pt-48">
+      <section className="cards-container flex flex-wrap justify-center gap-16">
         <Card image="Logo_OxygenGaming2.png" title="Follow por parte de Oxygen" points="100" />
         <Card image="premio2.jpg" title="Clave aleatoria de Steam" points="200" />
         <Card image="premio3.jpg" title="Camiseta del club" points="300" />
