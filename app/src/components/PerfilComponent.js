@@ -6,7 +6,7 @@ import tiktok from "../img/tiktok.png"
 import instagram from "../img/instagram.png"
 import discord from "../img/discord.png"
 import juego from "../img/juego.png"
-import oxygen from "../img/Oxygen_Gaming.png"
+import oxygen from "../img/Logo_OxygenGaming2.png"
 const Perfil = () => {
     const [opcionSeleccionada, setOpcionSeleccionada] = useState('perfil')
     const [imagenPerfil, setImagenPerfil] = useState(perfil);
@@ -24,7 +24,7 @@ const Perfil = () => {
         switch(opcionSeleccionada) {
             case 'perfil':
                 return (
-                    <div class="flex flex-col gap-[30px]">
+                    <div class="flex flex-col gap-[30px] pl-[100px] pr-[100px] ">
                         <div class="flex w-full gap-[30px]">
                             <img src={imagenPerfil} alt="imagen de perfil" class="w-[150px] h-[150px] p-[10px] border-[2px] rounded-full"/>
                             <div class="text-[20px]">
@@ -43,12 +43,11 @@ const Perfil = () => {
                                 <p>0 Misiones</p>
                             </div>
                         </div>
-                        <button class="bg-[white] w-[150px] h-[40px] hover:bg-[#1AA9FF] hover:border-[white] hover:border-[1px] text-[black] rounded"><a href="/">Cerrar Sesion</a></button>
                     </div>
                 );
             case 'cuenta':
                 return (
-                    <div class="flex flex-col gap-[20px] pb-[20px]">
+                    <div class="flex flex-col gap-[20px] pb-[20px] pl-[100px] pr-[100px]">
                         <h1 class="text-[30px]">Información personal</h1>
                         <div class="flex justify-between items-center w-[50vh]">
                             <div class="relative w-[150px] h-[150px] float-right">
@@ -97,7 +96,7 @@ const Perfil = () => {
                 );
             case 'conexiones':
                 return (
-                    <div class="flex w-full justify-between">
+                    <div class="flex w-full justify-between pl-[100px] pr-[100px]">
                         <div class="bg-[white] text-[black] w-[45vh] flex items-center justify-between p-[20px] rounded-[20px]">
                             <img src={twitter} alt="Logo de Twitter" class="bg-[black] rounded-[10px] p-[7px] w-[50px] h-[50px]" />
                             <div>
@@ -134,7 +133,7 @@ const Perfil = () => {
                 );
             case 'cuentas de juego' :
                 return (
-                    <div class="flex flex-col gap-[30px]">
+                    <div class="flex flex-col gap-[30px] pl-[100px] pr-[100px]">
                         <h1 class="text-[40px]">Tus cuentas de juegos</h1>
                         <div>
                             <table class="flex flex-col">
@@ -181,7 +180,7 @@ const Perfil = () => {
                 );
             case 'inventario' :
                 return (
-                    <div class="flex flex-col gap-[30px]">
+                    <div class="flex flex-col gap-[30px] pl-[100px] pr-[100px]">
                         <h1 class="text-[30px]">Recompensas Canjeadas</h1>
                         <div class=" w-full rounded-[10px] flex justify-between">
                             <div class="text-[black] text-[20px] flex flex-col justify-between items-center p-[15px] w-[22%] h-[30vh] bg-gradient-to-t from-[#18538a] to-[#1e90ff] rounded-[15px]">
@@ -220,7 +219,7 @@ const Perfil = () => {
                 );
             case 'logros' :
                 return (
-                    <div class="flex justify-center">
+                    <div class="flex justify-center pl-[100px] pr-[100px]">
                         
                         <div class="flex flex-col justify-center items-center gap-[20px] w-[50%]">
                             <h1 class="text-[30px]">Misiones completadas</h1>
@@ -266,7 +265,7 @@ const Perfil = () => {
                 );
             case 'pedidos' :
                 return (
-                    <div class="p-[10px]">
+                    <div class="p-[10px] pl-[100px] pr-[100px]">
                         <h1 class="text-[40px]">Tus pedidos de la tienda</h1>
                         <table class="w-full rounded">
                             <th class="flex w-full text-[20px] justify-center items-center text-center bg-[#39cdeb] h-[50px]">
@@ -336,11 +335,26 @@ const Perfil = () => {
         return opcionSeleccionada === opcion ? "text-[black]" : "hover:text-[black]";
     };
     return(
-        <div class="bg-[#1AA9FF] pt-[50px] pl-[100px] pr-[100px] min-h-[100vh] text-[white] flex flex-col font-roboto-condensed gap-[35px]">
-            <div class="flex items-center text-center gap-[30px] font-bold">
+        <div class="bg-[#1AA9FF] min-h-[100vh] text-[white] flex flex-col font-roboto-condensed gap-[35px]">
+            <header className="flex justify-between items-center w-full px-4 py-4 md:px-6 bg-[#18538a]">
+                <a href="/" className="w-[70px] h-[70px] mr-8">
+                    <img src={oxygen} alt="OxygenGaming Logo" className="w-full h-full" />
+                </a>
+                    <nav className="flex items-center gap-2">
+                        <a href="/" className="text-white no-underline px-2 py-2 rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10 bg-blue-600">Inicio</a>
+                        <a href="/competiciones" className="text-white no-underline px-2 py-2 rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10">Competiciones</a>
+                        <a href="/reglamentos" className="text-white no-underline px-2 py-2 rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10">Contenido</a>
+                        <a href="/rewards" className="text-white no-underline px-2 py-2 rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10">Misiones</a>
+                        <a href="/rewards" className="text-white no-underline px-2 py-2 rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10">Recompensas</a>
+                    </nav>
+                <div className="flex items-center gap-2 ml-auto">
+                    <button class="bg-blue-600 w-[150px] h-[40px] hover:bg-[#18538a] hover:border-[white] hover:border-[1px] text-[white] rounded"><a href="/">Cerrar Sesion</a></button>
+                </div>
+            </header>
+            <div class="flex items-center text-center gap-[30px] pl-[100px] font-bold">
                 <p class="text-[30px]">Tu Perfil</p>
             </div>
-            <div>
+            <div class="pl-[100px]">
                 <div class="flex text-[20px] gap-[30px] w-[100%] font-bold">
                     <button onClick={() => setOpcionSeleccionada('perfil')} class="hover:text-[black]" className={getButtonClass('perfil')}>Perfil</button>
                     <button onClick={() => setOpcionSeleccionada('inventario')} class="hover:text-[black]" className={getButtonClass('inventario')}>Inventario</button>
@@ -352,12 +366,9 @@ const Perfil = () => {
                     
                 </div>
                 <hr class="underline w-full"></hr>
-            </div>
-            
-            
+            </div>           
             {renderContent()}
         </div>
     )
 }
-
 export default Perfil 
