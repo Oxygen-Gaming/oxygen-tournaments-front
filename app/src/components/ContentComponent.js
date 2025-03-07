@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import logo from '../img/Logo_Blue.png';
 const Contenido = () => {
     const [modalVisible, setModalVisible] = useState(false);
     const [modalVideoSrc, setModalVideoSrc] = useState('');
@@ -170,7 +170,6 @@ const Contenido = () => {
               <a href="https://oxygengaming.es/noticias/" className="no-underline text-gray-300 font-bold transition-colors hover:text-cyan-400">NOTICIAS</a>
               <a href="https://oxygengaming.es/tienda/" className="no-underline text-gray-300 font-bold transition-colors hover:text-cyan-400">TIENDA</a>
               <a href="https://oxygengaming.es/oxy-club/" className="no-underline text-gray-300 font-bold transition-colors hover:text-cyan-400">OXYCLUB</a>
-              <a href="https://oxygengaming.es/creadores/" className="no-underline text-gray-300 font-bold transition-colors hover:text-cyan-400">CREADORES</a>
               <a href="https://oxygengaming.es/contacto/" className="no-underline text-gray-300 font-bold transition-colors hover:text-cyan-400">CONTACTO</a>
             </div>
           </div>
