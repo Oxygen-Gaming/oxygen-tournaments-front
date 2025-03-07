@@ -183,7 +183,7 @@ const Perfil = () => {
                     <div class="flex flex-col gap-[30px]">
                         <h1 class="text-[30px]">Recompensas Canjeadas</h1>
                         <div class=" w-full rounded-[10px] flex justify-between">
-                            <div class="text-[black] text-[20px] p-[10px] w-[22%] bg-[#219ec6]">
+                            <div class="text-[black] text-[20px] p-[10px] w-[22%] bg-[#16bccd]">
                                 <img src={oxygen} alt="logo oxygen" />
                                 <h1>Follow por parte de Oxygen</h1>
                                 <p>Puntos: 0</p>
