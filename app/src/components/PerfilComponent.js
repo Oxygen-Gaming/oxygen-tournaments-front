@@ -43,7 +43,7 @@ const Perfil = () => {
                                 <p>0 Misiones</p>
                             </div>
                         </div>
-                        <button class="bg-[white] w-[150px] h-[40px] hover:bg-[#1AA9FF] hover:border-[white] hover:border-[1px] text-[black] rounded">Cerrar sesion</button>
+                        <button class="bg-[white] w-[150px] h-[40px] hover:bg-[#1AA9FF] hover:border-[white] hover:border-[1px] text-[black] rounded"><a href="/">Cerrar Sesion</a></button>
                     </div>
                 );
             case 'cuenta':
