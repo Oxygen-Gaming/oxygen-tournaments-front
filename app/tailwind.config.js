@@ -1,15 +1,11 @@
-/** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    "./src/**/*.{html,js,jsx,ts,tsx}", 
-  ],
+  content: ["./src/**/*.{html,js,jsx,ts,tsx}"],
   theme: {
     extend: {
       fontFamily: {
-        'roboto-condensed': ['Roboto Condensed', 'sans-serif'],
-      }
+        "roboto-condensed": ["Roboto Condensed", "sans-serif"],
+      },
     },
   },
   plugins: [],
-}
-
+};
