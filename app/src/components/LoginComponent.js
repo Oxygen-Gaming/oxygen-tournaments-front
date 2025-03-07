@@ -19,14 +19,9 @@ const Login = () => {
               </div>
   
             <button type="submit" class="bg-[white] w-[150px] h-[40px] hover:bg-[#1AA9FF] hover:border-[white] hover:border-[1px] rounded" >Iniciar sesión</button>
-  
-  
           </form>
         </div>
-  
       </div>
-
-
     )
 }
 
