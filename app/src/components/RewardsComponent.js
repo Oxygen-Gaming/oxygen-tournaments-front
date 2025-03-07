@@ -1,5 +1,5 @@
 import React from 'react';
-
+import oxygen from "../img/Logo_OxygenGaming2.png"
 const Card = ({ image, title, points }) => {
   return (
     <div className="card w-1/5 h-52 bg-gradient-to-t from-[#18538a] to-[#1e90ff] rounded-lg shadow-lg transform transition duration-300 hover:scale-105">
@@ -13,23 +13,24 @@ const Card = ({ image, title, points }) => {
 const Rewards = () => {
   return (
     <div className="bg-[#18538a] text-[18px]">
-      <header className="navbar fixed top-0 left-0 w-full bg-[#1465b6] text-white shadow-lg z-50 flex flex-col items-center p-5">
-        <div className="logo absolute left-5 top-5 flex items-center">
-          <img src="Logo_OxygenGaming2.png" alt="Logo" className="w-20 h-20 rounded-full transition-transform duration-300 hover:scale-110" />
-        </div>
-        <div className="page-title text-center">
-          <h1 className="text-4xl font-bold text-white hover:text-[#f0f8ff] transition duration-300">Recompensas</h1>
-          <nav className="nav-menu flex gap-4 mt-2">
-            <a href="#registration" className="hover:bg-white hover:text-blue-500 p-2 rounded transition">Inscripción</a>
-            <a href="#ranking" className="hover:bg-white hover:text-blue-500 p-2 rounded transition">Clasificación</a>
-            <a href="#history" className="hover:bg-white hover:text-blue-500 p-2 rounded transition">Historial</a>
-            <a href="/rewards" className="hover:bg-white hover:text-blue-500 p-2 rounded transition">Premios</a>
-            <a href="/missions" className="hover:bg-white hover:text-blue-500 p-2 rounded transition">Misiones</a>
-          </nav>
+      <header className="flex justify-between items-center px-4 py-4 md:px-6 bg-[#18538a]">
+        <a href="/" className="w-[70px] h-[70px] mr-8">
+          <img src={oxygen} alt="OxygenGaming Logo" className="w-full h-full" />
+        </a>
+        <nav className="flex items-center gap-2">
+          <a href="/" className="text-white no-underline px-2 py-2 rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10 bg-blue-600">Inicio</a>
+          <a href="/competiciones" className="text-white no-underline px-2 py-2 rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10">Competiciones</a>
+          <a href="/reglamentos" className="text-white no-underline px-2 py-2 rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10">Contenido</a>
+          <a href="/missions" className="text-white no-underline px-2 py-2 rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10">Misiones</a>
+          <a href="/rewards" className="text-white no-underline px-2 py-2 rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10">Recompensas</a>
+        </nav>
+        <div className="flex items-center gap-2 ml-auto">
+          <a href="/register" className="text-white no-underline px-2 py-2 rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md border-2 border-white bg-transparent">Registrarse</a>
+          <a href="/login" className="text-white no-underline px-2 py-2 rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md bg-blue-600 ml-4">Iniciar Sesión</a>
         </div>
       </header>
 
-      <section className="cards-container flex flex-wrap justify-center gap-16 pt-48">
+      <section className="cards-container flex flex-wrap justify-center gap-16">
         <Card image="Logo_OxygenGaming2.png" title="Follow por parte de Oxygen" points="100" />
         <Card image="premio2.jpg" title="Clave aleatoria de Steam" points="200" />
         <Card image="premio3.jpg" title="Camiseta del club" points="300" />

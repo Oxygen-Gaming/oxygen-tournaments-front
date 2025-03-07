@@ -4,6 +4,7 @@ const Register = () => {
     return (
       <div class="flex flex-col items-center justify-center w-full min-h-[100vh] bg-[#1AA9FF] p-[50px] font-roboto-condensed">
         <div class="w-[40%] flex flex-col gap-[20px]">
+        <a href="/" class="text-[20px]">Volver al inicio</a>
           <h1 class="text-[50px] font-semibold">Crear cuenta</h1>
           <p class="text-[20px]">¿Ya tienes cuenta?<a href="/login" class="underline">Inicia sesión</a></p>
           <form class="flex flex-col items-center justify-center gap-[30px] w-full">
