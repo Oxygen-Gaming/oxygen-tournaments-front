@@ -10,7 +10,7 @@ import RocketLeague from "../img/rocketleague.jpg";
 
 const Competition = () => {
   const [currentImage, setCurrentImage] = useState(0);
-  const [showGeneralView, setShowGeneralView] = useState(false);
+  const [showGeneralView, setShowGeneralView] = useState(true); // Set default to true
   const [showAllTournaments, setShowAllTournaments] = useState(false);
   const [selectedGame, setSelectedGame] = useState(null); // New state for selected game
   const images = [
