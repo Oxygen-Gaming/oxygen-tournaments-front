@@ -6,6 +6,7 @@ import tiktok from "../img/tiktok.png"
 import instagram from "../img/instagram.png"
 import discord from "../img/discord.png"
 import juego from "../img/juego.png"
+import oxygen from "../img/Oxygen_Gaming.png"
 const Perfil = () => {
     const [opcionSeleccionada, setOpcionSeleccionada] = useState('perfil')
     const [imagenPerfil, setImagenPerfil] = useState(perfil);
@@ -181,13 +182,27 @@ const Perfil = () => {
                 return (
                     <div class="flex flex-col gap-[30px]">
                         <h1 class="text-[30px]">Recompensas Canjeadas</h1>
-                        <div class="bg-[white] w-[50%] rounded-[10px]">
-                            <div class="text-[black] text-[30px] p-[10px]">
-                                <img src="#" alt="" />
+                        <div class=" w-full rounded-[10px] flex justify-between">
+                            <div class="text-[black] text-[20px] p-[10px] w-[22%] bg-[white]">
+                                <img src={oxygen} alt="logo oxygen" />
+                                <h1>Follow por parte de Oxygen</h1>
+                                <p>Puntos: 0</p>
                             </div>
-                            <p class="border-[1px] text-[black] text-[30px] p-[10px]">Ticket a sorteo</p>
-                            <p class="border-[1px] text-[black] text-[30px] p-[10px]">Camiseta del club</p>
-                            <p class="text-[black] text-[30px] p-[10px]">Silla playseat puma </p>
+                            <div class="text-[black] text-[20px] p-[10px] w-[22%] bg-[white]">
+                                <img src={oxygen} alt="logo oxygen" />
+                                <h1>Ticket a sorteo</h1>
+                                <p>Puntos: 0</p>
+                            </div>
+                            <div class="text-[black] text-[20px] p-[10px] w-[22%] bg-[white]">
+                                <img src={oxygen} alt="logo oxygen" />
+                                <h1>Camiseta del club</h1>
+                                <p>Puntos: 0</p>
+                            </div>
+                            <div class="text-[black] text-[20px] p-[10px] w-[22%] bg-[white]">
+                                <img src={oxygen} alt="logo oxygen" />
+                                <h1>Silla playseat puma</h1>
+                                <p>Puntos: 0</p>
+                            </div>
                         </div>
                     </div>
                 );
