@@ -39,8 +39,7 @@ const Register = () => {
               </div>
   
             <button type="submit" class="bg-[white] text-[black] lg:w-[150px] lg:h-[40px] w-[120px] h-[50px] hover:bg-blue-900 hover:text-[white] hover:border-[white] hover:border-[1px] rounded" >Registrarse</button>
-  
-  
+
           </form>
         </div>
   
