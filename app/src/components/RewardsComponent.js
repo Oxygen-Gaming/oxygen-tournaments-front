@@ -5,6 +5,7 @@ import twitter from "../img/twitter.png";
 import tiktok from "../img/tiktok.png";
 import instagram from "../img/instagram.png";
 import discord from "../img/discord.png";
+
 const Card = ({ image, title, points }) => {
   return (
     <div className="card w-1/5 h-52 bg-gradient-to-t from-[#18538a] to-[#1e90ff] rounded-lg shadow-lg transform transition duration-300 hover:scale-105">

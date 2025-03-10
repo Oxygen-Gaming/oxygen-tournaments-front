@@ -5,6 +5,7 @@ import twitter from "../img/twitter.png";
 import tiktok from "../img/tiktok.png";
 import instagram from "../img/instagram.png";
 import discord from "../img/discord.png";
+
 const missions = [
   {
     title: "Síguenos en X",
@@ -239,7 +240,6 @@ const Missions = () => (
             </a>
           </div>
         </div>
-
         <div
           id="redes_sociales"
           className="flex flex-col items-center text-center flex-1 min-w-[250px]"
