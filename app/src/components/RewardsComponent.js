@@ -1,12 +1,11 @@
-
 import React from 'react';
-import logo from '../img/Logo_Blue.png';
-import twitter from '../img/twitter.png';
-import instagram from '../img/instagram.png';
-import tiktok from '../img/tiktok.png';
-import discord from '../img/discord.png';
+import logo from '@imgs/Logo_Blue.png';
+import twitter from '@imgs/twitter.png';
+import instagram from '@imgs/instagram.png';
+import tiktok from '@imgs/tiktok.png';
+import discord from '@imgs/discord.png';
 import PropTypes from 'prop-types';
-import oxygen from '../img/Logo_OxygenGaming2.png';
+import oxygen from '@imgs/Logo_OxygenGaming2.png';
 
 const Card = ({ image, title, points }) => {
   return (
@@ -26,7 +25,6 @@ Card.propTypes = {
   title: PropTypes.string.isRequired,
   points: PropTypes.number.isRequired,
 };
-
 
 const Rewards = () => {
   return (
@@ -82,15 +80,28 @@ const Rewards = () => {
           </a>
         </div>
       </header>
-      <div className="container p-6 flex justify-center mt-10"> {/* Change mt-6 to mt-10 to move title down */}
-        <h1 className="text-white text-4xl font-bold ml-80">Recompensas</h1> {/* Move title slightly to the right */}
-    </div>
+      <div className="container p-6 flex justify-center mt-10">
+        {' '}
+        {/* Change mt-6 to mt-10 to move title down */}
+        <h1 className="text-white text-4xl font-bold ml-80">
+          Recompensas
+        </h1>{' '}
+        {/* Move title slightly to the right */}
+      </div>
 
-
-      <section className="cards-container flex flex-wrap justify-center gap-16 pt-40 mb-24"> {/* Add mb-24 for margin-bottom */}
-        <Card image="Logo_OxygenGaming2.png" title="Follow por parte de Oxygen" points="100" />
-        <Card image="premio2.jpg" title="Clave aleatoria de Steam" points="200" />
-
+      <section className="cards-container flex flex-wrap justify-center gap-16 pt-40 mb-24">
+        {' '}
+        {/* Add mb-24 for margin-bottom */}
+        <Card
+          image="Logo_OxygenGaming2.png"
+          title="Follow por parte de Oxygen"
+          points="100"
+        />
+        <Card
+          image="premio2.jpg"
+          title="Clave aleatoria de Steam"
+          points="200"
+        />
         <Card image="premio3.jpg" title="Camiseta del club" points="300" />
         <Card image="premio4.jpg" title="10€ Riot Points" points="400" />
         <Card image="premio4.jpg" title="Ticket a sorteo" points="500" />
@@ -276,6 +287,5 @@ const Rewards = () => {
     </div>
   );
 };
-
 
 export default Rewards;
