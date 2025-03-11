@@ -1,22 +1,11 @@
 
 import React from 'react';
-<<<<<<< HEAD
 import oxygen from "../img/Logo_OxygenGaming2.png"
 import twitter from "../img/twitter.png"
 import tiktok from "../img/tiktok.png"
 import instagram from "../img/instagram.png"
 import discord from "../img/discord.png"
 import logo from "../img/Logo_Blue.png"
-=======
-import logo from '../img/Logo_Blue.png';
-import twitter from '../img/twitter.png';
-import instagram from '../img/instagram.png';
-import tiktok from '../img/tiktok.png';
-import discord from '../img/discord.png';
-import PropTypes from 'prop-types';
-import oxygen from '../img/Logo_OxygenGaming2.png';
-
->>>>>>> f773fa3c4373a49f7754213465e72db9c81a9fb0
 const Card = ({ image, title, points }) => {
   return (
     <div className="card w-1/5 h-52 bg-gradient-to-t from-[#18538a] to-[#1e90ff] rounded-lg shadow-lg transform transition duration-300 hover:scale-105">
@@ -222,16 +211,7 @@ const Rewards = () => {
             className="flex flex-col items-center text-center flex-1 min-w-[250px]"
           >
             <a href="https://oxygengaming.es/">
-<<<<<<< HEAD
               <img id="logo_footer" src={logo} alt="Oxygen Gaming Logo" className="w-[80%] max-w-[200px] mb-4" />
-=======
-              <img
-                id="logo_footer"
-                src={oxygen}
-                alt="Oxygen Gaming Logo"
-                className="w-[80%] max-w-[200px] mb-4"
-              />
->>>>>>> f773fa3c4373a49f7754213465e72db9c81a9fb0
             </a>
             <div className="flex gap-4 mt-2">
               <a

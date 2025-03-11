@@ -1,78 +1,11 @@
 import React from "react";
-<<<<<<< HEAD
 import oxygen from "../img/Logo_OxygenGaming2.png"
 import twitter from "../img/twitter.png"
 import tiktok from "../img/tiktok.png"
 import instagram from "../img/instagram.png"
 import discord from "../img/discord.png"
 import logo from "../img/Logo_Blue.png"
-=======
-import Logo from "../img/Logo_OxygenGaming2.png";
 import Header from "./Header";
-import Footer from "./Footer";
-
-const rewards = [
-  {
-    title: "Watch Parties",
-    text: "Disfruta de eventos en vivo con otros miembros de OxyClub.",
-    image: "path/to/image1.jpg",
-  },
-  {
-    title: "Eventos de Comunidad",
-    text: "Participa en eventos exclusivos y conoce a otros gamers.",
-    image: "path/to/image2.jpg",
-  },
-  {
-    title: "Drops Exclusivos",
-    text: "Obtén recompensas únicas y exclusivas para miembros de OxyClub.",
-    image: "path/to/image3.jpg",
-  },
-  {
-    title: "Wallpapers",
-    text: "Descarga fondos de pantalla exclusivos para tu dispositivo.",
-    image: "path/to/image4.jpg",
-  },
-  {
-    title: "Descuento en Merchandising",
-    text: "Aprovecha descuentos especiales en nuestra tienda.",
-    image: "path/to/image5.jpg",
-  },
-  {
-    title: "Contenido exclusivo",
-    text: "Accede a contenido exclusivo solo para miembros de OxyClub.",
-    image: "path/to/image6.jpg",
-  },
-  {
-    title: "Acceso discord VIP",
-    text: "Únete a nuestro servidor VIP en Discord.",
-    image: "path/to/image7.jpg",
-  },
-  {
-    title: "Recompensas por misiones",
-    text: "Completa misiones y gana recompensas exclusivas.",
-    image: "path/to/image8.jpg",
-  },
-  {
-    title: "Guías competitivas",
-    text: "Accede a guías y estrategias para mejorar tu juego.",
-    image: "path/to/image9.jpg",
-  }
-]
-
-const Images = [
-
-  { image: Logo },
-  { image: Logo },
-  { image: Logo },
-  { image: Logo },
-  { image: Logo },
-  { image: Logo },
-  { image: Logo },
-  { image: Logo },
-  { image: Logo }
-]
-
->>>>>>> f773fa3c4373a49f7754213465e72db9c81a9fb0
 const OxygenGaming = () => {
   return (
     <div className="bg-blue-900 text-white overflow-x-hidden font-['Roboto_Condensed',sans-serif]">
@@ -145,7 +78,6 @@ const OxygenGaming = () => {
           ))}
           </div>
       </section>
-<<<<<<< HEAD
       {/* FOOTER */}
       <footer className="w-full bg-neutral-900">
         <div id="contenido_footer" className="flex justify-between items-start gap-4 p-10 max-w-[1200px] mx-auto">
@@ -201,9 +133,6 @@ const OxygenGaming = () => {
           </div>
         </div>
       </footer>
-=======
-<Footer></Footer>
->>>>>>> f773fa3c4373a49f7754213465e72db9c81a9fb0
     </div>
   );
 };
