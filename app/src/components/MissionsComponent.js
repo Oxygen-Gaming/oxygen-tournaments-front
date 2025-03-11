@@ -44,7 +44,6 @@ const MissionCard = ({ id, title, image, points }) => {
           <p className="text-lg absolute bottom-0 right-2 text-white mb-2">{points}</p>
         </div>
       </div>
-
     </div>  
   );
 
