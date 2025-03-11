@@ -19,7 +19,7 @@ function App() {
         <Route path="/competition" element={<Competition />} />
         <Route path="/rewards" element={<Rewards />} />
         <Route path="/missions" element={<Missions />} />
-        <Route path="/content" element={<Profile />} />
+        <Route path="/content" element={<Perfil />} />
       </Routes>
     </BrowserRouter>
   );
