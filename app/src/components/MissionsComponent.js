@@ -34,7 +34,7 @@ const MissionCard = ({ id, title, image, points }) => {
   return (
     <div
       id={`mission-card-${id}`}
-      className={`w-1/6 h-72 bg-gradient-to-t from-[#18538a] to-[#1e90ff] rounded-lg shadow-lg transform transition duration-310 hover:scale-105 relative perspective-1000 ${flipped ? 'rotate-y-180' : ''}`}
+      className={`w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6 h-72 bg-gradient-to-t from-[#18538a] to-[#1e90ff] rounded-lg shadow-lg transform transition duration-310 hover:scale-105 relative perspective-1000 ${flipped ? 'rotate-y-180' : ''}`}
     >
       <div className="w-full h-full relative transform-style-preserve-3d transition-transform duration-800">
         <div className="absolute w-full h-full flex flex-col items-center justify-center bg-gradient-to-t from-[#18538a] to-[#1e90ff] text-black transform rotate-y-180 backface-hidden rounded-lg">
@@ -48,32 +48,44 @@ const MissionCard = ({ id, title, image, points }) => {
 
 const Missions = () => (
   <div className="bg-[#18538a] text-[18px] font-['Roboto_Condensed'] min-h-screen">
-    <header className="flex justify-between items-center px-4 py-4 md:px-6 bg-[#18538a]">
+    <header className="flex flex-col md:flex-row justify-between items-center px-4 py-4 md:px-6 bg-[#18538a]">
       <a href="/" className="w-[70px] h-[70px] mr-8">
         <img src={logo} alt="Logo_Blue.png" className="w-full h-full" />
       </a>
-      <nav className="flex items-center gap-2">
+      <nav className="flex flex-wrap items-center gap-2">
         <a href="/" className="text-white no-underline px-2 py-2 rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10 bg-blue-600">Inicio</a>
-        <a href="/competiciones" className="text-white no-underline px-2 py-2 rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10">Competiciones</a>
+        <a href="/competition" className="text-white no-underline px-2 py-2 rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10">Competiciones</a>
         <a href="/content" className="text-white no-underline px-2 py-2 rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10">Contenido</a>
         <a href="/missions" className="text-white no-underline px-2 py-2 rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10">Misiones</a>
         <a href="/rewards" className="text-white no-underline px-2 py-2 rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10">Recompensas</a>
       </nav>
-      <div className="flex items-center gap-2 ml-auto">
+      <div className="flex items-center gap-2 mt-4 md:mt-0 ml-auto">
         <a href="/register" className="text-white no-underline px-2 py-2 rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md border-2 border-white bg-transparent">Registrarse</a>
         <a href="/login" className="text-white no-underline px-2 py-2 rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md bg-blue-600 ml-4">Iniciar Sesión</a>
       </div>
     </header>
-    <div className="container p-6 flex justify-center mt-10"> {/* Change mt-6 to mt-10 to move title down */}
-        <h1 className="text-white text-4xl font-bold ml-80">Misiones</h1> {/* Move title slightly to the right */}
+    <div className="container p-6 flex justify-center mt-10">
+        <h1 className="text-white text-4xl font-bold text-center md:text-left ml-0 md:ml-80">Misiones</h1>
     </div>
-    <section className="flex flex-wrap justify-center gap-x-16 gap-y-32 pt-24 pb-24 px-10 mb-24"> {/* Add mb-24 for margin-bottom */}
+    <section className="hidden md:flex flex-wrap justify-center gap-x-4 gap-y-8 md:gap-x-16 md:gap-y-32 pt-24 pb-24 px-4 md:px-10 mb-24">
       {missions.map((mission) => (
         <MissionCard key={mission.id} {...mission} />
       ))}
     </section>
+    <div className="md:hidden">
+      <div className="flex flex-wrap justify-center gap-2">
+        {missions.map((mission) => (
+          <div key={mission.id} className="w-1/2 p-2">
+            <div className="bg-gradient-to-t from-[#18538a] to-[#1e90ff] rounded-lg shadow-lg p-2">
+              <img src={mission.image} alt={mission.title} className="w-full h-full object-cover rounded-lg" />
+              <p className="text-white text-center text-sm">{mission.points}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
     <footer className="w-full bg-neutral-900">
-      <div id="contenido_footer" className="flex justify-between items-start gap-4 p-10 max-w-[1200px] mx-auto">
+      <div id="contenido_footer" className="flex flex-col md:flex-row justify-between items-start gap-4 p-10 max-w-[1200px] mx-auto">
         <div className="flex flex-col gap-2 flex-1 min-w-[200px]">
           <span className="text-cyan-400 font-bold text-[22px] mb-2">OXYGENGAMING</span>
           <div className="flex flex-col gap-4">
@@ -85,7 +97,6 @@ const Missions = () => (
             <a href="https://oxygengaming.es/contacto/" className="no-underline text-gray-300 font-bold transition-colors hover:text-cyan-400">CONTACTO</a>
           </div>
         </div>
-
         <div className="flex flex-col gap-2 flex-1 min-w-[200px]">
           <span className="text-cyan-400 font-bold text-[22px] mb-2">EQUIPOS</span>
           <div className="flex flex-col gap-4">
@@ -94,7 +105,6 @@ const Missions = () => (
             <a href="https://oxygengaming.es/creadores/" className="no-underline text-gray-300 font-bold transition-colors hover:text-cyan-400">CREADORES</a>
           </div>
         </div>
-
         <div className="flex flex-col gap-2 flex-1 min-w-[200px]">
           <span className="text-cyan-400 font-bold text-[22px] mb-2">Políticas</span>
           <div className="flex flex-col gap-4">
@@ -103,7 +113,6 @@ const Missions = () => (
             <a href="https://oxygengaming.es/creadores/" className="no-underline text-gray-300 font-bold transition-colors hover:text-cyan-400">COOKIES</a>
           </div>
         </div>
-
         <div id="redes_sociales" className="flex flex-col items-center text-center flex-1 min-w-[250px]">
           <a href="https://oxygengaming.es/">
             <img id="logo_footer" src={logo} alt="Oxygen Gaming Logo" className="w-[80%] max-w-[200px] mb-4" />

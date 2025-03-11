@@ -4,7 +4,8 @@ import Login from "./components/LoginComponent";
 import Rewards from "./components/RewardsComponent";
 import Missions from "./components/MissionsComponent";
 import Welcome from "./components/WelcomeComponent";
-import Profile from "./components/ContentComponent";
+import Content from "./components/ContentComponent";
+import Competition from "./components/CompetitionComponent";
 
 function App() {
   return (
@@ -15,7 +16,8 @@ function App() {
         <Route path="/login" element={<Login />} />   
         <Route path="/rewards" element={<Rewards />} />
         <Route path="/missions" element={<Missions />} />
-        <Route path="/content" element={<Profile />} />
+        <Route path="/content" element={<Content />} />
+        <Route path="/competition" element={<Competition />} />
       </Routes>
     </BrowserRouter>
   );
