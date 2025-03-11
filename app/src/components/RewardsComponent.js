@@ -5,6 +5,8 @@ import twitter from '../img/twitter.png';
 import instagram from '../img/instagram.png';
 import tiktok from '../img/tiktok.png';
 import discord from '../img/discord.png';
+import PropTypes from 'prop-types';
+import oxygen from '../img/Logo_OxygenGaming2.png';
 
 const Card = ({ image, title, points }) => {
   return (
