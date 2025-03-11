@@ -42,22 +42,59 @@ const OxygenGaming = () => {
           <a href="/rewards" className="text-white no-underline px-2 py-2 rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10">Recompensas</a>
         </nav>
         <div className="flex items-center gap-2 ml-auto">
-          <a href="/register" className="text-white no-underline px-2 py-2 rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md border-2 border-white bg-transparent">Registrarse</a>
-          <a href="/login" className="text-white no-underline px-2 py-2 rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md bg-blue-600 ml-4">Iniciar Sesión</a>
+          <a
+            href="/register"
+            className="text-white no-underline px-2 py-2 rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md border-2 border-white bg-transparent"
+          >
+            Registrarse
+          </a>
+          <a
+            href="/login"
+            className="text-white no-underline px-2 py-2 rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md bg-blue-600 ml-4"
+          >
+            Iniciar Sesión
+          </a>
         </div>
       </header>
       {/* MAIN CONTENT */}
       <main className="flex items-center h-[calc(100vh-80px)] px-16 relative overflow-hidden">
-        <svg className="absolute right-[-10%] top-1/2 -translate-y-1/2 w-[60%] opacity-10 z-[1]" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
-          <path d="M250,50 L400,250 L250,450 L100,250 Z" className="fill-orange-400 opacity-20" />
+        <svg
+          className="absolute right-[-10%] top-1/2 -translate-y-1/2 w-[60%] opacity-10 z-[1]"
+          viewBox="0 0 500 500"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M250,50 L400,250 L250,450 L100,250 Z"
+            className="fill-orange-400 opacity-20"
+          />
         </svg>
         <div className="max-w-[600px] z-10 relative">
-          <h1 className="text-3xl mb-4 leading-[1.2]">VENTAJAS EXCLUSIVAS PARA <span className="text-blue-600">GAMERS</span>.</h1>
-          <h1 className="text-3xl mb-4 leading-[1.2]">VIVE LA MEJOR EXPERIENCIA GAMER CON <span className="text-blue-600">OXYCLUB</span>.</h1>
-          <p className="mb-8 text-gray-300">¡Bienvenido a OxyClub! La plataforma que te da más: más acceso a competiciones, más contenido exclusivo, más premios y más oportunidades para demostrar tu talento y vivir el gaming al máximo.</p>
+          <h1 className="text-3xl mb-4 leading-[1.2]">
+            VENTAJAS EXCLUSIVAS PARA{" "}
+            <span className="text-blue-600">GAMERS</span>.
+          </h1>
+          <h1 className="text-3xl mb-4 leading-[1.2]">
+            VIVE LA MEJOR EXPERIENCIA GAMER CON{" "}
+            <span className="text-blue-600">OXYCLUB</span>.
+          </h1>
+          <p className="mb-8 text-gray-300">
+            ¡Bienvenido a OxyClub! La plataforma que te da más: más acceso a
+            competiciones, más contenido exclusivo, más premios y más
+            oportunidades para demostrar tu talento y vivir el gaming al máximo.
+          </p>
           <div className="flex gap-4">
-            <a href="/register" className="inline-block px-4 py-3 rounded font-bold transition transform hover:-translate-y-1 hover:shadow-md bg-blue-600 text-white">Únete a Oxyclub</a>
-            <a href="/faqs" className="inline-block px-4 py-3 rounded font-bold transition transform hover:-translate-y-1 hover:shadow-md bg-transparent text-white border-2 border-white">FAQs</a>
+            <a
+              href="/register"
+              className="inline-block px-4 py-3 rounded font-bold transition transform hover:-translate-y-1 hover:shadow-md bg-blue-600 text-white"
+            >
+              Únete a Oxyclub
+            </a>
+            <a
+              href="/faqs"
+              className="inline-block px-4 py-3 rounded font-bold transition transform hover:-translate-y-1 hover:shadow-md bg-transparent text-white border-2 border-white"
+            >
+              FAQs
+            </a>
           </div>
         </div>
       </main>
@@ -74,26 +111,83 @@ const OxygenGaming = () => {
       </section>
       {/* FOOTER */}
       <footer className="w-full bg-neutral-900">
-        <div id="contenido_footer" className="flex justify-between items-start gap-4 p-10 max-w-[1200px] mx-auto">
+        <div
+          id="contenido_footer"
+          className="flex justify-between items-start gap-4 p-10 max-w-[1200px] mx-auto"
+        >
           <div className="flex flex-col gap-2 flex-1 min-w-[200px]">
-            <span className="text-cyan-400 font-bold text-[22px] mb-2">OXYGENGAMING</span>
+            <span className="text-cyan-400 font-bold text-[22px] mb-2">
+              OXYGENGAMING
+            </span>
             <div className="flex flex-col gap-4">
-              <a href="https://oxygengaming.es/sobre-nosotros/" className="no-underline text-gray-300 font-bold transition-colors hover:text-cyan-400">SOBRE NOSOTROS</a>
-              <a href="https://oxygengaming.es/patrocinadores/" className="no-underline text-gray-300 font-bold transition-colors hover:text-cyan-400">PATROCINADORES</a>
-              <a href="https://oxygengaming.es/noticias/" className="no-underline text-gray-300 font-bold transition-colors hover:text-cyan-400">NOTICIAS</a>
-              <a href="https://oxygengaming.es/tienda/" className="no-underline text-gray-300 font-bold transition-colors hover:text-cyan-400">TIENDA</a>
-              <a href="https://oxygengaming.es/oxy-club/" className="no-underline text-gray-300 font-bold transition-colors hover:text-cyan-400">OXYCLUB</a>
-              <a href="https://oxygengaming.es/creadores/" className="no-underline text-gray-300 font-bold transition-colors hover:text-cyan-400">CREADORES</a>
-              <a href="https://oxygengaming.es/contacto/" className="no-underline text-gray-300 font-bold transition-colors hover:text-cyan-400">CONTACTO</a>
+              <a
+                href="https://oxygengaming.es/sobre-nosotros/"
+                className="no-underline text-gray-300 font-bold transition-colors hover:text-cyan-400"
+              >
+                SOBRE NOSOTROS
+              </a>
+              <a
+                href="https://oxygengaming.es/patrocinadores/"
+                className="no-underline text-gray-300 font-bold transition-colors hover:text-cyan-400"
+              >
+                PATROCINADORES
+              </a>
+              <a
+                href="https://oxygengaming.es/noticias/"
+                className="no-underline text-gray-300 font-bold transition-colors hover:text-cyan-400"
+              >
+                NOTICIAS
+              </a>
+              <a
+                href="https://oxygengaming.es/tienda/"
+                className="no-underline text-gray-300 font-bold transition-colors hover:text-cyan-400"
+              >
+                TIENDA
+              </a>
+              <a
+                href="https://oxygengaming.es/oxy-club/"
+                className="no-underline text-gray-300 font-bold transition-colors hover:text-cyan-400"
+              >
+                OXYCLUB
+              </a>
+              <a
+                href="https://oxygengaming.es/creadores/"
+                className="no-underline text-gray-300 font-bold transition-colors hover:text-cyan-400"
+              >
+                CREADORES
+              </a>
+              <a
+                href="https://oxygengaming.es/contacto/"
+                className="no-underline text-gray-300 font-bold transition-colors hover:text-cyan-400"
+              >
+                CONTACTO
+              </a>
             </div>
           </div>
 
           <div className="flex flex-col gap-2 flex-1 min-w-[200px]">
-            <span className="text-cyan-400 font-bold text-[22px] mb-2">EQUIPOS</span>
+            <span className="text-cyan-400 font-bold text-[22px] mb-2">
+              EQUIPOS
+            </span>
             <div className="flex flex-col gap-4">
-              <a href="https://oxygengaming.es/equipos/#leagueoflegends" className="no-underline text-gray-300 font-bold transition-colors hover:text-cyan-400">LEAGUE OF LEGENDS</a>
-              <a href="https://oxygengaming.es/equipos/#valorant" className="no-underline text-gray-300 font-bold transition-colors hover:text-cyan-400">VALORANT</a>
-              <a href="https://oxygengaming.es/creadores/" className="no-underline text-gray-300 font-bold transition-colors hover:text-cyan-400">CREADORES</a>
+              <a
+                href="https://oxygengaming.es/equipos/#leagueoflegends"
+                className="no-underline text-gray-300 font-bold transition-colors hover:text-cyan-400"
+              >
+                LEAGUE OF LEGENDS
+              </a>
+              <a
+                href="https://oxygengaming.es/equipos/#valorant"
+                className="no-underline text-gray-300 font-bold transition-colors hover:text-cyan-400"
+              >
+                VALORANT
+              </a>
+              <a
+                href="https://oxygengaming.es/creadores/"
+                className="no-underline text-gray-300 font-bold transition-colors hover:text-cyan-400"
+              >
+                CREADORES
+              </a>
             </div>
           </div>
 

@@ -174,7 +174,7 @@ const Competition = () => {
         <nav className="flex items-center gap-2">
           <a href="/" className="text-white no-underline px-2 py-2 rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10">Inicio</a>
           <a href="/competition" className="text-white no-underline px-2 py-2 rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10 bg-blue-600">Competiciones</a>
-          <a href="/reglamentos" className="text-white no-underline px-2 py-2 rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10">Contenido</a>
+          <a href="/content" className="text-white no-underline px-2 py-2 rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10">Contenido</a>
           <a href="/missions" className="text-white no-underline px-2 py-2 rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10">Misiones</a>
           <a href="/rewards" className="text-white no-underline px-2 py-2 rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10">Recompensas</a>
         </nav>
@@ -605,8 +605,8 @@ const Competition = () => {
       {selectedCard === 'Rocket League Tournament 3' && showModal && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
           <div className={buttonModalStyle}>
-            <h2 class="text-3xl font-bold mb-8 text-center">{modalContent}</h2> {/* Highlighted modal content title */}
-            <div class="flex flex-col gap-6 mt-4">
+            <h2 className="text-3xl font-bold mb-8 text-center">{modalContent}</h2> {/* Highlighted modal content title */}
+            <div className="flex flex-col gap-6 mt-4">
               <button className={buttonStyle} onClick={handleInfoClick}>Información del torneo</button>
               <button className={buttonStyle} onClick={handleRegistrationClick}>Inscripción</button> {/* Updated button */}
               <button className={buttonStyle} onClick={handleBracketClick}>Ver Bracket</button> {/* Updated button */}
@@ -924,11 +924,11 @@ const Competition = () => {
           </div>
 
           <div className="flex flex-col gap-2 flex-1 min-w=[200px]">
-            <span class="text-cyan-400 font-bold text-[22px] mb-2">EQUIPOS</span>
-            <div class="flex flex-col gap-4">
-              <a href="https://oxygengaming.es/equipos/#leagueoflegends" class="no-underline text-gray-300 font-bold transition-colors hover:text-cyan-400">LEAGUE OF LEGENDS</a>
-              <a href="https://oxygengaming.es/equipos/#valorant" class="no-underline text-gray-300 font-bold transition-colors hover:text-cyan-400">VALORANT</a>
-              <a href="https://oxygengaming.es/creadores/" class="no-underline text-gray-300 font-bold transition-colors hover:text-cyan-400">CREADORES</a>
+            <span className="text-cyan-400 font-bold text-[22px] mb-2">EQUIPOS</span>
+            <div className="flex flex-col gap-4">
+              <a href="https://oxygengaming.es/equipos/#leagueoflegends" className="no-underline text-gray-300 font-bold transition-colors hover:text-cyan-400">LEAGUE OF LEGENDS</a>
+              <a href="https://oxygengaming.es/equipos/#valorant" className="no-underline text-gray-300 font-bold transition-colors hover:text-cyan-400">VALORANT</a>
+              <a href="https://oxygengaming.es/creadores/" className="no-underline text-gray-300 font-bold transition-colors hover:text-cyan-400">CREADORES</a>
             </div>
           </div>
 
