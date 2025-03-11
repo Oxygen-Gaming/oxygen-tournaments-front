@@ -68,7 +68,9 @@ const MissionCard = ({ title, image, points }) => (
       </div>
     </div>
   </div>
-);
+)
+
+
 
 MissionCard.propTypes = {
   title: PropTypes.string.isRequired,
