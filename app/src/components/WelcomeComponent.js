@@ -4,8 +4,29 @@ import twitter from "../img/twitter.png"
 import tiktok from "../img/tiktok.png"
 import instagram from "../img/instagram.png"
 import discord from "../img/discord.png"
+import Tarjeta from "../img/poster1.jpg"
+import Tarjeta2 from "../img/poster2.jpg"
+import Tarjeta3 from "../img/poster3.jpg"
+import Tarjeta4 from "../img/poster4.jpg"
+import Tarjeta5 from "../img/poster5.jpg"
+import Tarjeta6 from "../img/poster6.jpg"
+import Tarjeta7 from "../img/poster7.jpg"
+import Tarjeta8 from "../img/poster8.jpg"
+import Tarjeta9 from "../img/poster9.jpg"
 
 const OxygenGaming = () => {
+  const cards = [
+    { image: Tarjeta },
+    { image: Tarjeta2 },
+    { image: Tarjeta3 },
+    { image: Tarjeta4 },
+    { image: Tarjeta5 },
+    { image: Tarjeta6 },
+    { image: Tarjeta7 },
+    { image: Tarjeta8 },
+    { image: Tarjeta9 },
+  ];
+
   return (
     <div className="bg-blue-900 text-white overflow-x-hidden font-['Roboto_Condensed',sans-serif]">
       {/* HEADER */}
@@ -43,21 +64,10 @@ const OxygenGaming = () => {
       {/* SECCIÓN DE VENTAJAS */}
       <section className="py-16 px-8 bg-blue-800">
         <h2 className="text-center text-2xl md:text-3xl mb-8">Ventajas de unirte a OxyClub</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {[
-            { title: "Watch Parties", text: "Disfruta de eventos en vivo con otros miembros de OxyClub.", image: "path/to/image1.jpg" },
-            { title: "Eventos de Comunidad", text: "Participa en eventos exclusivos y conoce a otros gamers.", image: "path/to/image2.jpg" },
-            { title: "Drops Exclusivos", text: "Obtén recompensas únicas y exclusivas para miembros de OxyClub.", image: "path/to/image3.jpg" },
-            { title: "Wallpapers", text: "Descarga fondos de pantalla exclusivos para tu dispositivo.", image: "path/to/image4.jpg" },
-            { title: "Descuento en Merchandising", text: "Aprovecha descuentos especiales en nuestra tienda.", image: "path/to/image5.jpg" },
-            { title: "Contenido exclusivo", text: "Accede a contenido exclusivo solo para miembros de OxyClub.", image: "path/to/image6.jpg" },
-            { title: "Acceso discord VIP", text: "Únete a nuestro servidor VIP en Discord.", image: "path/to/image7.jpg" },
-            { title: "Recompensas por misiones", text: "Completa misiones y gana recompensas exclusivas.", image: "path/to/image8.jpg" },
-            { title: "Guías competitivas", text: "Accede a guías y estrategias para mejorar tu juego.", image: "path/to/image9.jpg" }
-          ].map((item, index) => (
-            <div key={index} className="p-8 rounded-lg shadow-md bg-blue-700 transition-transform duration-300 hover:scale-105 hover:shadow-md" style={{ backgroundImage: `url(${item.image})`, backgroundSize: 'cover' }}>
-              <h3 className="text-xl mb-2">{item.title}</h3>
-              <p className="text-gray-300">{item.text}</p>
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-x-2 gap-y-4 justify-items-center">
+          {cards.map((item, index) => (
+            <div key={index} className="p-6 rounded-lg shadow-md bg-blue-700 transition-transform duration-300 hover:scale-105 hover:shadow-md" style={{ backgroundImage: `url(${item.image})`, backgroundSize: 'cover', backgroundPosition: 'center', width: '100%', height: '350px', maxWidth: '320px' }}>
+              {/* Image only, no text */}
             </div>
           ))}
         </div>
@@ -101,16 +111,16 @@ const OxygenGaming = () => {
               <img id="logo_footer" src={oxygen} alt="Oxygen Gaming Logo" className="w-[80%] max-w-[200px] mb-4" />
             </a>
             <div className="flex gap-4 mt-2">
-              <a href="https://twitter.com/GamingOxygen" target="_blank" rel="noreferrer" className="flex justify-center items-center w-10 h-10 rounded-full no-underline transition-all">
+              <a href="https://twitter.com/GamingOxygen" target="_blank" rel="noopener noreferrer" className="flex justify-center items-center w-10 h-10 rounded-full no-underline transition-all">
                 <img src={twitter} alt="Twitter" className="w-full h-full rounded-full" />
               </a>
-              <a href="https://instagram.com/GamingOxygen" target="_blank" rel="noreferrer" className="flex justify-center items-center w-10 h-10 rounded-full no-underline transition-all">
+              <a href="https://instagram.com/GamingOxygen" target="_blank" rel="noopener noreferrer" className="flex justify-center items-center w-10 h-10 rounded-full no-underline transition-all">
                 <img src={instagram} alt="Instagram" className="w-full h-full rounded-full" />
               </a>
-              <a href="https://www.tiktok.com/@oxg_esports?lang=es" target="_blank" rel="noreferrer" className="flex justify-center items-center w-10 h-10 rounded-full no-underline transition-all">
+              <a href="https://www.tiktok.com/@oxg_esports?lang=es" target="_blank" rel="noopener noreferrer" className="flex justify-center items-center w-10 h-10 rounded-full no-underline transition-all">
                 <img src={tiktok} alt="TikTok" className="w-full h-full rounded-full" />
               </a>
-              <a href="https://discord.gg/Udsstfpeze" target="_blank" rel="noreferrer" className="flex justify-center items-center w-10 h-10 rounded-full no-underline transition-all">
+              <a href="https://discord.gg/Udsstfpeze" target="_blank" rel="noopener noreferrer" className="flex justify-center items-center w-10 h-10 rounded-full no-underline transition-all">
                 <img src={discord} alt="Discord" className="w-full h-full rounded-full" />
               </a>
             </div>
