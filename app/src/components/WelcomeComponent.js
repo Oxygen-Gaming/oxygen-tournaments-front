@@ -1,12 +1,16 @@
 import React from "react";
 import logo from "../img/Logo_Blue.png";
+import twitter from "../img/twitter.png";
+import instagram from "../img/instagram.png";
+import tiktok from "../img/tiktok.png";
+import discord from "../img/discord.png";
 const OxygenGaming = () => {
   return (
     <div className="bg-blue-900 text-white overflow-x-hidden font-['Roboto_Condensed',sans-serif]">
       {/* HEADER */}
       <header className="flex justify-between items-center px-4 py-4 md:px-6 bg-[#18538a]">
         <a href="/" className="w-[70px] h-[70px] mr-8">
-          <img src={oxygen} alt="OxygenGaming Logo" className="w-full h-full" />
+          <img src={logo} alt="OxygenGaming Logo" className="w-full h-full" />
         </a>
         <nav className="flex items-center gap-2">
           <a href="/" className="text-white no-underline px-2 py-2 rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10 bg-blue-600">Inicio</a>

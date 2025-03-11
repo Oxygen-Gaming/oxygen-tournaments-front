@@ -1,5 +1,9 @@
 import React from 'react';
 import logo from '../img/Logo_Blue.png';
+import twitter from '../img/twitter.png';
+import instagram from '../img/instagram.png';
+import tiktok from '../img/tiktok.png';
+import discord from '../img/discord.png';
 const Card = ({ image, title, points }) => {
   return (
     <div className="card w-1/5 h-52 bg-gradient-to-t from-[#18538a] to-[#1e90ff] rounded-lg shadow-lg transform transition duration-300 hover:scale-105">
@@ -15,7 +19,7 @@ const Rewards = () => {
     <div className="bg-[#18538a] text-[18px]">
       <header className="flex justify-between items-center px-4 py-4 md:px-6 bg-[#18538a]">
         <a href="/" className="w-[70px] h-[70px] mr-8">
-          <img src={oxygen} alt="OxygenGaming Logo" className="w-full h-full" />
+          <img src={logo} alt="OxygenGaming Logo" className="w-full h-full" />
         </a>
         <nav className="flex items-center gap-2">
           <a href="/" className="text-white no-underline px-2 py-2 rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10 bg-blue-600">Inicio</a>
@@ -29,8 +33,11 @@ const Rewards = () => {
           <a href="/login" className="text-white no-underline px-2 py-2 rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md bg-blue-600 ml-4">Iniciar Sesión</a>
         </div>
       </header>
+      <div className="container p-6 flex justify-center mt-10"> {/* Change mt-6 to mt-10 to move title down */}
+        <h1 className="text-white text-4xl font-bold ml-80">Recompensas</h1> {/* Move title slightly to the right */}
+    </div>
 
-      <section className="cards-container flex flex-wrap justify-center gap-16 pt-48">
+      <section className="cards-container flex flex-wrap justify-center gap-16 pt-40 mb-24"> {/* Add mb-24 for margin-bottom */}
         <Card image="Logo_OxygenGaming2.png" title="Follow por parte de Oxygen" points="100" />
         <Card image="premio2.jpg" title="Clave aleatoria de Steam" points="200" />
         <Card image="premio3.jpg" title="Camiseta del club" points="300" />
