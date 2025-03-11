@@ -6,6 +6,21 @@ import instagram from "../img/instagram.png"
 import discord from "../img/discord.png"
 import logo from "../img/Logo_Blue.png"
 import Header from "./Header";
+
+const Images = {
+  // Define your images here
+  image1: 'path/to/image1.jpg',
+  image2: 'path/to/image2.jpg',
+  // ...other images...
+};
+
+const rewards = [
+  // Define your rewards here
+  { id: 1, title: 'Reward 1', description: 'Description 1' },
+  { id: 2, title: 'Reward 2', description: 'Description 2' },
+  // ...other rewards...
+];
+
 const OxygenGaming = () => {
   return (
     <div className="bg-blue-900 text-white overflow-x-hidden font-['Roboto_Condensed',sans-serif]">
