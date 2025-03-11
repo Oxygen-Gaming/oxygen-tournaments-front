@@ -70,26 +70,7 @@ const MissionCard = ({ title, image, points }) => (
   </div>
 )
 
-const Missions = () => (
-  <div className="bg-[#18538a] text-[18px] font-['Roboto_Condensed'] min-h-screen">
-    <header className="fixed top-0 left-0 w-full bg-[#1465b6] text-white shadow-lg z-50 flex flex-col items-center p-5">
-      <div className="absolute left-5 top-5 flex items-center">
-        <img src="Logo_OxygenGaming2.png" alt="Logo" className="w-20 h-20 rounded-full transition-transform duration-300 hover:scale-110" />
-      </div>
-      <div className="text-center">
-        <h1 className="text-4xl font-bold text-white hover:text-[#f0f8ff] transition duration-300">Misiones</h1>
-        <nav className="flex gap-4 mt-2">
-          <a href="#registration" className="hover:bg-white hover:text-blue-500 p-2 rounded transition">Inscripción</a>
-          <a href="#ranking" className="hover:bg-white hover:text-blue-500 p-2 rounded transition">Clasificación</a>
-          <a href="#history" className="hover:bg-white hover:text-blue-500 p-2 rounded transition">Historial</a>
-          <a href="/rewards" className="hover:bg-white hover:text-blue-500 p-2 rounded transition">Premios</a>
-          <a href="/missions" className="hover:bg-white hover:text-blue-500 p-2 rounded transition">Misiones</a>
-        </nav>
-      </div>
-    </header>
-    <section className="flex flex-wrap justify-center gap-16 pt-48">
 
-);
 
 MissionCard.propTypes = {
   title: PropTypes.string.isRequired,
