@@ -37,7 +37,7 @@ const OxygenGaming = () => {
         <nav className="flex items-center gap-2">
           <a href="/" className="text-white no-underline px-2 py-2 rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10 bg-blue-600">Inicio</a>
           <a href="/competition" className="text-white no-underline px-2 py-2 rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10">Competiciones</a>
-          <a href="/reglamentos" className="text-white no-underline px-2 py-2 rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10">Contenido</a>
+          <a href="/content" className="text-white no-underline px-2 py-2 rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10">Contenido</a>
           <a href="/missions" className="text-white no-underline px-2 py-2 rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10">Misiones</a>
           <a href="/rewards" className="text-white no-underline px-2 py-2 rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10">Recompensas</a>
         </nav>
@@ -98,7 +98,6 @@ const OxygenGaming = () => {
           </div>
         </div>
       </main>
-      {/* SECCIÓN DE VENTAJAS */}
       <section className="py-16 px-8 bg-blue-800">
         <h2 className="text-center text-2xl md:text-3xl mb-8">Ventajas de unirte a OxyClub</h2>
         <div className="grid grid-cols-2 md:grid-cols-5 gap-x-2 gap-y-4 justify-items-center">
@@ -115,9 +114,10 @@ const OxygenGaming = () => {
             <div key={index} className="p-8 rounded-lg shadow-md bg-blue-700 transition-transform duration-300 hover:scale-105 hover:shadow-md" style={{ backgroundImage: `url(${item.image})`, backgroundSize: "cover" }}>
               <h3 className="text-xl mb-2">{item.title}</h3>
               <p className="text-gray-300">{item.text}</p>
+
             </div>
           ))}
-        </div>
+          </div>
       </section>
       
       {/* FOOTER */}

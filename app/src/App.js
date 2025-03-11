@@ -7,6 +7,7 @@ import Competition from "./components/CompetitionComponent";
 import Perfil from "./components/PerfilComponent";
 import Rewards from "./components/RewardsComponent";
 import Missions from "./components/MissionsComponent";
+import Content from "./components/ContentComponent";
 
 function App() {
   return (
@@ -19,7 +20,7 @@ function App() {
         <Route path="/competition" element={<Competition />} />
         <Route path="/rewards" element={<Rewards />} />
         <Route path="/missions" element={<Missions />} />
-        <Route path="/content" element={<Perfil />} />
+        <Route path="/content" element={<Content />} />
       </Routes>
     </BrowserRouter>
   );
