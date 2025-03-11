@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import logo from '../img/Logo_Blue.png';
 import discord from '../img/discord.png';
@@ -62,56 +61,6 @@ const Contenido = () => {
   }, [modalVisible]);
 
   return (
-    <div className="font-sans bg-blue-900 text-black m-0 p-0">
-      <header className="flex justify-between items-center px-4 py-4 md:px-6 bg-[#18538a]">
-        <a href="/" className="w-[70px] h-[70px] mr-8">
-          <img src="" alt="OxygenGaming Logo" className="w-full h-full" />
-        </a>
-        <nav className="flex items-center gap-2">
-          <a
-            href="/"
-            className="text-white no-underline px-2 py-2 rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10 bg-blue-600"
-          >
-            Inicio
-          </a>
-          <a
-            href="/competition"
-            className="text-white no-underline px-2 py-2 rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10"
-          >
-            Competiciones
-          </a>
-          <a
-            href="/content"
-            className="text-white no-underline px-2 py-2 rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10"
-          >
-            Contenido
-          </a>
-          <a
-            href="/missions"
-            className="text-white no-underline px-2 py-2 rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10"
-          >
-            Misiones
-          </a>
-          <a
-            href="/rewards"
-            className="text-white no-underline px-2 py-2 rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10"
-          >
-            Recompensas
-          </a>
-        </nav>
-        <div className="flex items-center gap-2 ml-auto">
-          <a
-            href="/register"
-            className="text-white no-underline px-2 py-2 rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md border-2 border-white bg-transparent"
-          >
-            Registrarse
-          </a>
-          <a
-            href="/login"
-            className="text-white no-underline px-2 py-2 rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md bg-blue-600 ml-4"
-          >
-            Iniciar Sesión
-          </a>
     <div className="font-sans bg-blue-900 text-black m-0 p-0 min-h-screen flex flex-col"> {/* Add min-h-screen and flex classes */}
     <header className="flex justify-between items-center px-4 py-4 md:px-6 bg-[#18538a]">
 <a href="/" className="w-[70px] h-[70px] mr-8">
@@ -236,9 +185,7 @@ const Contenido = () => {
                     <a href="https://oxygengaming.es/oxy-club/" className="no-underline text-gray-300 font-bold transition-colors hover:text-cyan-400">OXYCLUB</a>
                     <a href="https://oxygengaming.es/contacto/" className="no-underline text-gray-300 font-bold transition-colors hover:text-cyan-400">CONTACTO</a>
                 </div>
-
             </div>
-
 
             <div className="flex flex-col gap-2 flex-1 min-w-[200px]">
                 <span className="text-cyan-400 font-bold text-[22px] mb-2">EQUIPOS</span>
@@ -247,9 +194,7 @@ const Contenido = () => {
                     <a href="https://oxygengaming.es/equipos/#valorant" className="no-underline text-gray-300 font-bold transition-colors hover:text-cyan-400">VALORANT</a>
                     <a href="https://oxygengaming.es/creadores/" className="no-underline text-gray-300 font-bold transition-colors hover:text-cyan-400">CREADORES</a>
                 </div>
-
             </div>
-
 
             <div className="flex flex-col gap-2 flex-1 min-w-[200px]">
                 <span className="text-cyan-400 font-bold text-[22px] mb-2">Políticas</span>
@@ -258,9 +203,7 @@ const Contenido = () => {
                     <a href="https://oxygengaming.es/equipos/#valorant" className="no-underline text-gray-300 font-bold transition-colors hover:text-cyan-400">PRIVACIDAD</a>
                     <a href="https://oxygengaming.es/creadores/" className="no-underline text-gray-300 font-bold transition-colors hover:text-cyan-400">COOKIES</a>
                 </div>
-
             </div>
-
 
             <div id="redes_sociales" className="flex flex-col items-center text-center flex-1 min-w-[250px]">
                 <a href="https://oxygengaming.es/">
@@ -280,15 +223,12 @@ const Contenido = () => {
                         <img src={discord} alt="Discord" className="w-full h-full rounded-full" />
                     </a>
                 </div>
-
             </div>
         </div>
-
     </footer>
 </div>
 
 );
-
 };
 
 export default Contenido;
