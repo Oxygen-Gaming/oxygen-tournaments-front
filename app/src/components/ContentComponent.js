@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import logo from '../img/Logo_Blue.png';
 import discord from '../img/discord.png';
@@ -185,7 +186,9 @@ const Contenido = () => {
                     <a href="https://oxygengaming.es/oxy-club/" className="no-underline text-gray-300 font-bold transition-colors hover:text-cyan-400">OXYCLUB</a>
                     <a href="https://oxygengaming.es/contacto/" className="no-underline text-gray-300 font-bold transition-colors hover:text-cyan-400">CONTACTO</a>
                 </div>
+
             </div>
+
 
             <div className="flex flex-col gap-2 flex-1 min-w-[200px]">
                 <span className="text-cyan-400 font-bold text-[22px] mb-2">EQUIPOS</span>
@@ -194,7 +197,9 @@ const Contenido = () => {
                     <a href="https://oxygengaming.es/equipos/#valorant" className="no-underline text-gray-300 font-bold transition-colors hover:text-cyan-400">VALORANT</a>
                     <a href="https://oxygengaming.es/creadores/" className="no-underline text-gray-300 font-bold transition-colors hover:text-cyan-400">CREADORES</a>
                 </div>
+
             </div>
+
 
             <div className="flex flex-col gap-2 flex-1 min-w-[200px]">
                 <span className="text-cyan-400 font-bold text-[22px] mb-2">Políticas</span>
@@ -203,7 +208,9 @@ const Contenido = () => {
                     <a href="https://oxygengaming.es/equipos/#valorant" className="no-underline text-gray-300 font-bold transition-colors hover:text-cyan-400">PRIVACIDAD</a>
                     <a href="https://oxygengaming.es/creadores/" className="no-underline text-gray-300 font-bold transition-colors hover:text-cyan-400">COOKIES</a>
                 </div>
+
             </div>
+
 
             <div id="redes_sociales" className="flex flex-col items-center text-center flex-1 min-w-[250px]">
                 <a href="https://oxygengaming.es/">
@@ -223,12 +230,15 @@ const Contenido = () => {
                         <img src={discord} alt="Discord" className="w-full h-full rounded-full" />
                     </a>
                 </div>
+
             </div>
         </div>
+
     </footer>
 </div>
 
 );
+
 };
 
 export default Contenido;
