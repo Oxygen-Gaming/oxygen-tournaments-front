@@ -1,3 +1,4 @@
+import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Register from "./components/RegisterComponent";  
 import Login from "./components/LoginComponent"
@@ -18,6 +19,7 @@ function App() {
         <Route path="/competition" element={<Competition />} />
         <Route path="/rewards" element={<Rewards />} />
         <Route path="/missions" element={<Missions />} />
+        <Route path="/content" element={<Profile />} />
       </Routes>
     </BrowserRouter>
   );
