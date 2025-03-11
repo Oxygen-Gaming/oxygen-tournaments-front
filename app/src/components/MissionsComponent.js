@@ -75,10 +75,10 @@ const Missions = () => (
     <div className="md:hidden">
       <div className="flex flex-wrap justify-center gap-2">
         {missions.map((mission) => (
-          <div key={mission.id} className="w-1/2 p-2">
-            <div className="bg-gradient-to-t from-[#18538a] to-[#1e90ff] rounded-lg shadow-lg p-2">
+          <div key={mission.id} className="w-1/2 p-1">
+            <div className="bg-gradient-to-t from-[#18538a] to-[#1e90ff] rounded-lg shadow-lg p-1 relative">
               <img src={mission.image} alt={mission.title} className="w-full h-full object-cover rounded-lg" />
-              <p className="text-white text-center text-sm">{mission.points}</p>
+              <p className="text-white text-xs absolute bottom-1 right-1">{mission.points}</p>
             </div>
           </div>
         ))}
