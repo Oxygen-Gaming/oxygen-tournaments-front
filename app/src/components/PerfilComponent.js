@@ -123,7 +123,7 @@ const Perfil = () => {
                 return (
                     <div className="flex flex-col gap-[20px] w-full justify-center items-center">
                         <h1 className="text-[35px]">Conexiones</h1>
-                        <div className="flex flex-wrap lg:flex-row w-full items-center gap-[30px] md:justify-center lg:justify-between lg:pl-[100px] lg:pr-[100px]">
+                        <div className="flex flex-wrap lg:flex-row w-full justify-center items-center gap-[30px] md:justify-center lg:justify-between lg:pl-[100px] lg:pr-[100px]">
                             <div className="bg-[white] text-[black] w-[45vh] md:w-[50vh] flex items-center justify-between p-[20px] rounded-[20px]">
                                 <img src={twitter} alt="Logo de Twitter" className="bg-[black] rounded-[10px] p-[7px] w-[50px] h-[50px]" />
                                 <div>
