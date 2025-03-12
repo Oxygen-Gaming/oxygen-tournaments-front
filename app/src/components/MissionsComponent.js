@@ -51,14 +51,8 @@ const MissionCard = ({ id, title, image, points }) => {
 
 const Missions = () => (
   <div className="bg-[#18538a] text-[18px] font-['Roboto_Condensed'] min-h-screen">
-<<<<<<< HEAD
     <header className="flex flex-col md:flex-row justify-between items-center px-2 py-2 md:px-6 md:py-4 bg-[#18538a]">
       <a href="/" className="w-[50px] h-[50px] md:w-[70px] md:h-[70px] mr-4 md:mr-8">
-=======
-    <header className="flex justify-between items-center px-4 py-4 md:px-6 bg-[#18538a]">
-      <a href="/" className="w-[70px] h-[70px] mr-8">
-
->>>>>>> main
         <img src={logo} alt="Logo_Blue.png" className="w-full h-full" />
       </a>
       <nav className="flex flex-wrap items-center gap-1 md:gap-2 text-xs md:text-base">
