@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import logo from '../img/Logo_Blue.png';
 import Amigo from '../img/Mision_Amigo.jpg';
@@ -26,6 +27,7 @@ const missions = [
   { id: 8, title: 'Mejor clip creadores oxygen', image: Clip, points: 'Puntos: 220' },
   { id: 9, title: 'Clip de la cagada de la semana', image: Caca, points: 'Puntos: 170' },
   { id: 10, title: 'Hazte con la camiseta', image: Camiseta, points: 'Puntos: 400' },
+
 ];
 
 const MissionCard = ({ id, title, image, points }) => {
@@ -44,12 +46,19 @@ const MissionCard = ({ id, title, image, points }) => {
       </div>
     </div>  
   );
+
 };
 
 const Missions = () => (
   <div className="bg-[#18538a] text-[18px] font-['Roboto_Condensed'] min-h-screen">
+<<<<<<< HEAD
     <header className="flex flex-col md:flex-row justify-between items-center px-2 py-2 md:px-6 md:py-4 bg-[#18538a]">
       <a href="/" className="w-[50px] h-[50px] md:w-[70px] md:h-[70px] mr-4 md:mr-8">
+=======
+    <header className="flex justify-between items-center px-4 py-4 md:px-6 bg-[#18538a]">
+      <a href="/" className="w-[70px] h-[70px] mr-8">
+
+>>>>>>> main
         <img src={logo} alt="Logo_Blue.png" className="w-full h-full" />
       </a>
       <nav className="flex flex-wrap items-center gap-1 md:gap-2 text-xs md:text-base">
@@ -95,17 +104,21 @@ const Missions = () => (
             <a href="https://oxygengaming.es/tienda/" className="no-underline text-gray-300 font-bold transition-colors hover:text-cyan-400">TIENDA</a>
             <a href="https://oxygengaming.es/oxy-club/" className="no-underline text-gray-300 font-bold transition-colors hover:text-cyan-400">OXYCLUB</a>
             <a href="https://oxygengaming.es/contacto/" className="no-underline text-gray-300 font-bold transition-colors hover:text-cyan-400">CONTACTO</a>
+
           </div>
         </div>
         <div className="flex flex-col gap-2 flex-1 min-w-[200px]">
+
           <span className="text-cyan-400 font-bold text-[22px] mb-2">EQUIPOS</span>
           <div className="flex flex-col gap-4">
             <a href="https://oxygengaming.es/equipos/#leagueoflegends" className="no-underline text-gray-300 font-bold transition-colors hover:text-cyan-400">LEAGUE OF LEGENDS</a>
             <a href="https://oxygengaming.es/equipos/#valorant" className="no-underline text-gray-300 font-bold transition-colors hover:text-cyan-400">VALORANT</a>
             <a href="https://oxygengaming.es/creadores/" className="no-underline text-gray-300 font-bold transition-colors hover:text-cyan-400">CREADORES</a>
+
           </div>
         </div>
         <div className="flex flex-col gap-2 flex-1 min-w-[200px]">
+
           <span className="text-cyan-400 font-bold text-[22px] mb-2">Políticas</span>
           <div className="flex flex-col gap-4">
             <a href="https://oxygengaming.es/equipos/#leagueoflegends" className="no-underline text-gray-300 font-bold transition-colors hover:text-cyan-400">AVISO LEGAL</a>
@@ -129,6 +142,7 @@ const Missions = () => (
             </a>
             <a href="https://discord.gg/Udsstfpeze" target="_blank" rel="noreferrer" className="flex justify-center items-center w-10 h-10 rounded-full border-[cyan] border-[1px] p-[10px] no-underline transition-all">
               <img src={discord} alt="Discord" className="w-full h-full rounded-full" />
+
             </a>
           </div>
         </div>
