@@ -48,20 +48,20 @@ const MissionCard = ({ id, title, image, points }) => {
 
 const Missions = () => (
   <div className="bg-[#18538a] text-[18px] font-['Roboto_Condensed'] min-h-screen">
-    <header className="flex flex-col md:flex-row justify-between items-center px-4 py-4 md:px-6 bg-[#18538a]">
-      <a href="/" className="w-[70px] h-[70px] mr-8">
+    <header className="flex flex-col md:flex-row justify-between items-center px-2 py-2 md:px-6 md:py-4 bg-[#18538a]">
+      <a href="/" className="w-[50px] h-[50px] md:w-[70px] md:h-[70px] mr-4 md:mr-8">
         <img src={logo} alt="Logo_Blue.png" className="w-full h-full" />
       </a>
-      <nav className="flex flex-wrap items-center gap-2">
-        <a href="/" className="text-white no-underline px-2 py-2 rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10 bg-blue-600">Inicio</a>
-        <a href="/competition" className="text-white no-underline px-2 py-2 rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10">Competiciones</a>
-        <a href="/content" className="text-white no-underline px-2 py-2 rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10">Contenido</a>
-        <a href="/missions" className="text-white no-underline px-2 py-2 rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10">Misiones</a>
-        <a href="/rewards" className="text-white no-underline px-2 py-2 rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10">Recompensas</a>
+      <nav className="flex flex-wrap items-center gap-1 md:gap-2 text-xs md:text-base">
+        <a href="/" className="text-white no-underline px-1 py-1 md:px-2 md:py-2 rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10 bg-blue-600">Inicio</a>
+        <a href="/competition" className="text-white no-underline px-1 py-1 md:px-2 md:py-2 rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10">Competiciones</a>
+        <a href="/content" className="text-white no-underline px-1 py-1 md:px-2 md:py-2 rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10">Contenido</a>
+        <a href="/missions" className="text-white no-underline px-1 py-1 md:px-2 md:py-2 rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10">Misiones</a>
+        <a href="/rewards" className="text-white no-underline px-1 py-1 md:px-2 md:py-2 rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10">Recompensas</a>
       </nav>
-      <div className="flex items-center gap-2 mt-4 md:mt-0 ml-auto">
-        <a href="/register" className="text-white no-underline px-2 py-2 rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md border-2 border-white bg-transparent">Registrarse</a>
-        <a href="/login" className="text-white no-underline px-2 py-2 rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md bg-blue-600 ml-4">Iniciar Sesión</a>
+      <div className="flex items-center gap-1 md:gap-2 mt-2 md:mt-0 ml-auto text-xs md:text-base">
+        <a href="/register" className="text-white no-underline px-1 py-1 md:px-2 md:py-2 rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md border-2 border-white bg-transparent">Registrarse</a>
+        <a href="/login" className="text-white no-underline px-1 py-1 md:px-2 md:py-2 rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md bg-blue-600 ml-2 md:ml-4">Iniciar Sesión</a>
       </div>
     </header>
     <div className="container p-6 flex justify-center mt-10">
@@ -73,9 +73,9 @@ const Missions = () => (
       ))}
     </section>
     <div className="md:hidden">
-      <div className="flex flex-wrap justify-center gap-2">
+      <div className="grid grid-cols-2 gap-2 gap-y-4">
         {missions.map((mission) => (
-          <div key={mission.id} className="w-1/2 p-1">
+          <div key={mission.id} className="p-1">
             <div className="bg-gradient-to-t from-[#18538a] to-[#1e90ff] rounded-lg shadow-lg p-1 relative">
               <img src={mission.image} alt={mission.title} className="w-full h-full object-cover rounded-lg" />
               <p className="text-white text-xs absolute bottom-1 right-1">{mission.points}</p>
@@ -84,7 +84,7 @@ const Missions = () => (
         ))}
       </div>
     </div>
-    <footer className="w-full bg-neutral-900">
+    <footer className="w-full bg-neutral-900 mt-4 md:mt-0">
       <div id="contenido_footer" className="flex flex-col md:flex-row justify-between items-start gap-4 p-10 max-w-[1200px] mx-auto">
         <div className="flex flex-col gap-2 flex-1 min-w-[200px]">
           <span className="text-cyan-400 font-bold text-[22px] mb-2">OXYGENGAMING</span>
@@ -113,7 +113,7 @@ const Missions = () => (
             <a href="https://oxygengaming.es/creadores/" className="no-underline text-gray-300 font-bold transition-colors hover:text-cyan-400">COOKIES</a>
           </div>
         </div>
-        <div id="redes_sociales" className="flex flex-col items-center text-center flex-1 min-w-[250px]">
+        <div id="redes_sociales" className="flex flex-col items-center text-center flex-1 min-w-[250px] mt-4 md:mt-0">
           <a href="https://oxygengaming.es/">
             <img id="logo_footer" src={logo} alt="Oxygen Gaming Logo" className="w-[80%] max-w-[200px] mb-4" />
           </a>

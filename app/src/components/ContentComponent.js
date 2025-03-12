@@ -61,7 +61,7 @@ const Contenido = () => {
   }, [modalVisible]);
 
   return (
-    <div className="font-sans bg-blue-900 text-black m-0 p-0 min-h-screen flex flex-col"> {/* Add min-h-screen and flex classes */}
+    <div className="font-['Roboto_Condensed',sans-serif] bg-blue-900 text-black m-0 p-0 min-h-screen flex flex-col"> {/* Add min-h-screen and flex classes */}
     <header className="flex justify-between items-center px-4 py-4 md:px-6 bg-[#18538a]">
 <a href="/" className="w-[70px] h-[70px] mr-8">
   <img src={oxygen} alt="OxygenGaming Logo" className="w-full h-full" />
@@ -173,6 +173,7 @@ const Contenido = () => {
             </div>
         </div>
     )}
+    <div className="mt-10 md:mt-24"></div> {/* Add separation between content and footer */}
     <footer className="w-full bg-neutral-900 mt-24"> {/* Add mt-24 to create space above the footer */}
         <div id="contenido_footer" className="flex justify-between items-start gap-4 p-10 max-w-[1200px] mx-auto">
             <div className="flex flex-col gap-2 flex-1 min-w-[200px]">
