@@ -1,8 +1,8 @@
 import React from "react";
-import LeagueOfLegends from "../../img/League.jpg";
-import Valorant from "../../img/valorant.jpg";
-import RocketLeague from "../../img/rocketleague.jpg";
-import Logo from "../../img/Logo_OxygenGaming2.png";
+import LeagueOfLegends from "@imgs/League.jpg";
+import Valorant from "@imgs/valorant.jpg";
+import RocketLeague from "@imgs/rocketleague.jpg";
+import Logo from "@imgs/Logo_OxygenGaming2.png";
 
 const View = ({ handleCardClick, handleViewAll }) => {
   return (

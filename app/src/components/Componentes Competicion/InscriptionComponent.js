@@ -1,7 +1,7 @@
 import React from "react";
-import LeagueOfLegends from "../../img/League.jpg";
-import Valorant from "../../img/valorant.jpg";
-import RocketLeague from "../../img/rocketleague.jpg";
+import LeagueOfLegends from "@imgs/League.jpg";
+import Valorant from "@imgs/valorant.jpg";
+import RocketLeague from "@imgs/rocketleague.jpg";
 
 const Inscription = ({
   selectedCard,

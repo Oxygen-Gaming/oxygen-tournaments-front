@@ -1,18 +1,13 @@
 import React from "react";
-import oxygen from "../img/Logo_OxygenGaming2.png"
-import twitter from "../img/twitter.png"
-import tiktok from "../img/tiktok.png"
-import instagram from "../img/instagram.png"
-import discord from "../img/discord.png"
-import Tarjeta from "../img/poster1.jpg"
-import Tarjeta2 from "../img/poster2.jpg"
-import Tarjeta3 from "../img/poster3.jpg"
-import Tarjeta4 from "../img/poster4.jpg"
-import Tarjeta5 from "../img/poster5.jpg"
-import Tarjeta6 from "../img/poster6.jpg"
-import Tarjeta7 from "../img/poster7.jpg"
-import Tarjeta8 from "../img/poster8.jpg"
-import Tarjeta9 from "../img/poster9.jpg"
+import Tarjeta from "@imgs/poster1.jpg"
+import Tarjeta2 from "@imgs/poster2.jpg"
+import Tarjeta3 from "@imgs/poster3.jpg"
+import Tarjeta4 from "@imgs/poster4.jpg"
+import Tarjeta5 from "@imgs/poster5.jpg"
+import Tarjeta6 from "@imgs/poster6.jpg"
+import Tarjeta7 from "@imgs/poster7.jpg"
+import Tarjeta8 from "@imgs/poster8.jpg"
+import Tarjeta9 from "@imgs/poster9.jpg"
 import Header from "./Header"; // Import Header component
 import Footer from "./Footer"; // Import Footer component
 

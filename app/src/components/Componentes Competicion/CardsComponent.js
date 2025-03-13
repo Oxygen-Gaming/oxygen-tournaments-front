@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import LeagueOfLegends from "../../img/League.jpg";
-import Valorant from "../../img/valorant.jpg";
-import RocketLeague from "../../img/rocketleague.jpg";
-import Logo from "../../img/Logo_Blue.png";
+import LeagueOfLegends from "@imgs/League.jpg";
+import Valorant from "@imgs/valorant.jpg";
+import RocketLeague from "@imgs/rocketleague.jpg";
+import Logo from "@imgs/Logo_Blue.png";
 
 const CardsComponent = ({ handleCardClick }) => {
     const [selectedGame, setSelectedGame] = useState(null);

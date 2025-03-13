@@ -1,16 +1,16 @@
-import React, { useState, useEffect } from "react";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import Bracket from "../components/Componentes Competicion/BracketComponent";
-import Info from "../components/Componentes Competicion/InfoComponent";
-import Inscription from "../components/Componentes Competicion/InscriptionComponent";
-import View from "../components/Componentes Competicion/ViewComponent";
-import TournamentComponent from '../components/Componentes Competicion/TournamentComponent';
-import CardsComponent from '../components/Componentes Competicion/CardsComponent';
-import ButtonsComponent from '../components/Componentes Competicion/ButtonsComponent';
-import LeagueOfLegends from "../img/League.jpg";
-import Valorant from "../img/valorant.jpg";
-import RocketLeague from "../img/rocketleague.jpg";
+import React, { useEffect, useState } from "react";
+import Header from "@components/Header";
+import Footer from "@components/Footer";
+import Bracket from "@components/Componentes Competicion/BracketComponent";
+import Info from "@components/Componentes Competicion/InfoComponent";
+import Inscription from "@components/Componentes Competicion/InscriptionComponent";
+import View from "@components/Componentes Competicion/ViewComponent";
+import TournamentComponent from '@components/Componentes Competicion/TournamentComponent';
+import CardsComponent from '@components/Componentes Competicion/CardsComponent';
+import ButtonsComponent from '@components/Componentes Competicion/ButtonsComponent';
+import LeagueOfLegends from "@imgs/League.jpg";
+import Valorant from "@imgs/valorant.jpg";
+import RocketLeague from "@imgs/rocketleague.jpg";
 
 const Competition = () => {
   const [currentImage, setCurrentImage] = useState(0);

@@ -1,11 +1,11 @@
 import React from "react";
-import LeagueOfLegends from "../../img/League.jpg";
-import Valorant from "../../img/valorant.jpg";
-import RocketLeague from "../../img/rocketleague.jpg";
-import Twitter from "../../img/twitter.png";
-import Instagram from "../../img/instagram.png";
-import TikTok from "../../img/tiktok.png";
-import Discord from "../../img/discord.png";
+import LeagueOfLegends from "@imgs/League.jpg";
+import Valorant from "@imgs/valorant.jpg";
+import RocketLeague from "@imgs/rocketleague.jpg";
+import Twitter from "@imgs/twitter.png";
+import Instagram from "@imgs/instagram.png";
+import TikTok from "@imgs/tiktok.png";
+import Discord from "@imgs/discord.png";
 
 const Info = ({
   selectedCard,

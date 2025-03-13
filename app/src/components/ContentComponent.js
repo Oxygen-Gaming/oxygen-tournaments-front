@@ -1,12 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Header from "./Header"; // Import Header component
 import Footer from "./Footer"; // Import Footer component
-import logo from '../img/Logo_Blue.png';
-import discord from '../img/discord.png';
-import instagram from '../img/instagram.png';
-import tiktok from '../img/tiktok.png';
-import twitter from '../img/twitter.png';
-import oxygen from '../img/Logo_Blue.png';
 
 const Contenido = () => {
   const [modalVisible, setModalVisible] = useState(false);
