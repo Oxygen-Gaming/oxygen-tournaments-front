@@ -1,13 +1,13 @@
-import Amigo from '../../img/Mision_Amigo.jpg';
-import Clip from '../../img/Mision_Clip.jpg';
-import Discord from '../../img/Mision_Discord.jpg';
-import Instagram from '../../img/Mision_Instagram.jpg';
-import Quiz from '../../img/Mision_Quiz.jpg';
-import TikTok from '../../img/Mision_TikTok.jpg';
-import Twitter from '../../img/Mision_X.jpg';
-import Camiseta from '../../img/Mision_Camiseta.jpg';
-import Meme from '../../img/Mision_Meme.jpg';
-import Caca from '../../img/Mision_Caca.jpg';
+import Amigo from '@imgs/Mision_Amigo.jpg';
+import Clip from '@imgs/Mision_Clip.jpg';
+import Discord from '@imgs/Mision_Discord.jpg';
+import Instagram from '@imgs/Mision_Instagram.jpg';
+import Quiz from '@imgs/Mision_Quiz.jpg';
+import TikTok from '@imgs/Mision_TikTok.jpg';
+import Twitter from '@imgs/Mision_X.jpg';
+import Camiseta from '@imgs/Mision_Camiseta.jpg';
+import Meme from '@imgs/Mision_Meme.jpg';
+import Caca from '@imgs/Mision_Caca.jpg';
 
 const missions = [
   { id: 1, title: 'Síguenos en X', image: Twitter, points: 'Puntos: 120' },

@@ -8,8 +8,8 @@ import Tarjeta6 from "@imgs/poster6.jpg"
 import Tarjeta7 from "@imgs/poster7.jpg"
 import Tarjeta8 from "@imgs/poster8.jpg"
 import Tarjeta9 from "@imgs/poster9.jpg"
-import Header from "./Header"; 
-import Footer from "./Footer"; 
+import Header from "./Header"; // Import Header component
+import Footer from "./Footer"; // Import Footer component
 
 const OxygenGaming = () => {
   const cards = [
@@ -26,9 +26,7 @@ const OxygenGaming = () => {
 
   return (
     <div className="bg-blue-900 text-white overflow-x-hidden font-['Roboto_Condensed',sans-serif]">
-      {/* HEADER */}
-      
-      <Header />
+      <Header /> {/* Replace existing header with Header component */}
       {/* MAIN CONTENT */}
       <main className="flex items-center h-[calc(100vh-80px)] px-16 relative overflow-hidden">
         <svg
@@ -72,20 +70,19 @@ const OxygenGaming = () => {
         </div>
       </main>
       <section className="py-16 px-8 bg-blue-800">
-        <h2 className="text-center text-2xl md:text-3xl mb-8">
-          Ventajas de unirte a OxyClub
-        </h2>
+        <h2 className="text-center text-2xl md:text-3xl mb-8">Ventajas de unirte a OxyClub</h2>
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-x-2 gap-y-4 justify-items-center">
+          {cards.map((item, index) => (
+            <div key={index} className="p-6 rounded-lg shadow-md bg-blue-700 transition-transform duration-300 hover:scale-105 hover:shadow-md" style={{ backgroundImage: `url(${item.image})`, backgroundSize: 'cover', backgroundPosition: 'center', width: '100%', height: '350px', maxWidth: '320px' }}>
+              {/* Image only, no text */}
+            </div>
+          ))}
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {
-          rewards.map((item, index) => (
-            <div
-              key={index}
-              className="p-8 rounded-lg shadow-md bg-blue-700 transition-transform duration-300 hover:scale-105 hover:shadow-md"
-              style={{
-                backgroundImage: `url(${item.image})`,
-                backgroundSize: "cover",
-              }}
-            >
+          {[
+          
+          ].map((item, index) => (
+            <div key={index} className="p-8 rounded-lg shadow-md bg-blue-700 transition-transform duration-300 hover:scale-105 hover:shadow-md" style={{ backgroundImage: `url(${item.image})`, backgroundSize: "cover" }}>
               <h3 className="text-xl mb-2">{item.title}</h3>
               <p className="text-gray-300">{item.text}</p>
             </div>
