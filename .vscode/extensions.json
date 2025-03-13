@@ -1,0 +1,14 @@
+{
+    "recommendations": [
+      "dbaeumer.vscode-eslint", // ESLint for linting JavaScript and JSX
+      "esbenp.prettier-vscode", // Prettier for code formatting
+      "dsznajder.es7-react-js-snippets", // ES7 React/Redux/GraphQL/React-Native snippets
+      "formulahendry.auto-rename-tag", // Auto Rename Tag for renaming paired HTML/XML tags
+      "formulahendry.auto-close-tag", // Auto Close Tag for automatically closing HTML/XML tags
+      "eamodio.gitlens", // GitLens for Git superpowers
+      "wix.vscode-import-cost", // Import Cost for displaying the size of the imported package
+      "streetsidesoftware.code-spell-checker", // Code Spell Checker for spell checking
+      "msjsdiag.debugger-for-chrome", // Debugger for Chrome for debugging React apps
+      "mgmcdermott.vscode-language-babel" // Language Babel for better syntax highlighting
+    ]
+  }
