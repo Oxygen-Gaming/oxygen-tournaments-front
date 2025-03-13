@@ -2,7 +2,7 @@ import React from 'react';
 
 const RankingTable = () => {
   return (
-    <table className="ranking-table w-1/5 m-5 mr-10 border-collapse shadow-lg rounded-lg overflow-hidden">
+    <table className="ranking-table w-full md:w-1/5 m-5 mr-10 border-collapse shadow-lg rounded-lg overflow-hidden md:w-1/5 w-4/5">
       <thead>
         <tr>
           <th className="bg-blue-500 text-white font-bold p-2.5">Posición</th>

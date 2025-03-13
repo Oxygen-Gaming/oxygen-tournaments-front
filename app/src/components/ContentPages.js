@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Header from './Header';
 import Footer from './Footer';
-import VideoSection from './VideoSection';
-import RankingTable from './RankingTable';
+import VideoSection from './Contenido/VideoSection';
+import RankingTable from './Contenido/RankingTable';
 
 const Contenido = () => {
   const [modalVisible, setModalVisible] = useState(false);
@@ -64,17 +64,19 @@ const Contenido = () => {
       <div className="container p-5 flex justify-center items-center mt-16">
         <h1 className="text-white text-4xl font-bold ml-80">Contenido</h1>
       </div>
-      <div className="flex-grow flex justify-between mt-12">
-        <div className="info-card w-2/5 ml-10 m-5 p-5 bg-gradient-to-t from-blue-900 to-blue-500 text-white rounded-lg shadow-lg">
+      <div className="flex-grow flex justify-between mt-12 flex-col md:flex-row items-center md:items-start">
+        <div className="info-card w-full md:w-2/5 ml-10 m-5 p-5 bg-gradient-to-t from-blue-900 to-blue-500 text-white rounded-lg shadow-lg md:w-2/5 w-4/5">
           <h2 className="text-2xl">Sobre Oxygen Gaming</h2>
           <p>Oxygen Gaming es una plataforma dedicada a la organización de torneos de videojuegos. Ofrecemos una amplia variedad de contenido para los entusiastas de los videojuegos, incluyendo:</p>
           <ul className="list-disc list-inside">
+            <br></br>
             <li>Transmisiones en vivo de torneos</li>
             <li>Videos destacados de partidas</li>
             <li>Entrevistas con jugadores profesionales</li>
             <li>Guías y tutoriales para mejorar tus habilidades</li>
             <li>Noticias y actualizaciones sobre el mundo de los videojuegos</li>
           </ul>
+          <br></br>
           <p>Únete a nuestra comunidad y participa en nuestros torneos para ganar premios y reconocimiento. ¡Mantente conectado y sigue mejorando con Oxygen Gaming!</p>
         </div>
         <RankingTable />
@@ -94,6 +96,10 @@ const Contenido = () => {
       )}
       <div className="mt-10 md:mt-24"></div>
       <Footer />
+      {/* Mobile-only section */}
+      <div className="block md:hidden flex-grow flex items-center justify-center">
+        <h1 className="text-white text-2xl font-bold">Contenido Móvil</h1>
+      </div>
     </div>
   );
 };

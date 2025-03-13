@@ -3,10 +3,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Register from "./components/RegisterComponent";
 import Perfil from "./components/PerfilComponent";
 import Login from "./components/LoginComponent";
-import Rewards from "./components/RewardsComponent";
-import Missions from "../src/pages/MissionsComponent";
+import Rewards from "../src/pages/RewardsPages";
+import Missions from "../src/pages/MissionsPages";
 import Welcome from "./components/WelcomeComponent";
-import Content from "./components/ContentComponent";
+import Content from "./components/ContentPages";
 
 function App() {
   return (
