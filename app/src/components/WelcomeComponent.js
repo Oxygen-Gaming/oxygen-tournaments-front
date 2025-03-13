@@ -24,7 +24,6 @@ const rewards = [
 const OxygenGaming = () => {
   return (
     <div className="bg-blue-900 text-white overflow-x-hidden font-['Roboto_Condensed',sans-serif]">
-<<<<<<< HEAD
       {/* HEADER */}
       <header className="flex justify-between items-center px-4 py-4 md:px-6 bg-[#18538a]">
         <a href="/" className="w-[70px] h-[70px] mr-8">
@@ -43,9 +42,6 @@ const OxygenGaming = () => {
         </div>
       </header>
       {/* MAIN CONTENT */}
-=======
-      <Header />
->>>>>>> main
       <main className="flex items-center h-[calc(100vh-80px)] px-16 relative overflow-hidden">
         <svg
           className="absolute right-[-10%] top-1/2 -translate-y-1/2 w-[60%] opacity-10 z-[1]"
@@ -92,11 +88,6 @@ const OxygenGaming = () => {
           Ventajas de unirte a OxyClub
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {Images.map((item, index) => (
-            <div key={index} className="p-8 rounded-lg shadow-md bg-blue-700 transition-transform duration-300 hover:scale-105 hover:shadow-md">
-              <img src={item.image} alt={`Ventaja ${index + 1}`} className="w-full h-full" />
-            </div>
-          ))}
           {
           rewards.map((item, index) => (
             <div
