@@ -46,11 +46,11 @@ const OxygenGaming = () => {
         </svg>
         <div className="max-w-[600px] z-10 relative">
           <h1 className="text-3xl mb-4 leading-[1.2]">
-            VENTAJAS EXCLUSIVAS PARA{" "}
+            VENTAJAS EXCLUSIVAS PARA{' '}
             <span className="text-blue-600">GAMERS</span>.
           </h1>
           <h1 className="text-3xl mb-4 leading-[1.2]">
-            VIVE LA MEJOR EXPERIENCIA GAMER CON{" "}
+            VIVE LA MEJOR EXPERIENCIA GAMER CON{' '}
             <span className="text-blue-600">OXYCLUB</span>.
           </h1>
           <p className="mb-8 text-gray-300">
@@ -90,13 +90,11 @@ const OxygenGaming = () => {
             <div key={index} className="p-8 rounded-lg shadow-md bg-blue-700 transition-transform duration-300 hover:scale-105 hover:shadow-md" style={{ backgroundImage: `url(${item.image})`, backgroundSize: "cover" }}>
               <h3 className="text-xl mb-2">{item.title}</h3>
               <p className="text-gray-300">{item.text}</p>
-
             </div>
           ))}
-          </div>
+        </div>
       </section>
-      
-      <Footer /> {/* Replace existing footer with Footer component */}
+      <Footer></Footer>
     </div>
   );
 };

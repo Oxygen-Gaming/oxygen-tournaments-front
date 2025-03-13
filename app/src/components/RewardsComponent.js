@@ -1,13 +1,7 @@
 import React from 'react';
-import logo from '../img/Logo_Blue.png';
-import twitter from '../img/twitter.png';
-import instagram from '../img/instagram.png';
-import tiktok from '../img/tiktok.png';
-import discord from '../img/discord.png';
 import PropTypes from 'prop-types';
-import oxygen from '../img/Logo_OxygenGaming2.png';
-import Header from "./Header"; // Import Header component
-import Footer from "./Footer"; // Import Footer component
+import Header from '@components/Header';
+import Footer from '@components/Footer';
 
 const Card = ({ image, title, points }) => {
   return (
