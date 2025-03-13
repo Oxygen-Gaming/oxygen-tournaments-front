@@ -35,7 +35,7 @@ const Perfil = () => {
     return (
         <div className="bg-blue-900 min-h-[100vh] text-[white] flex flex-col font-roboto-condensed gap-[35px] w-full pt-[30px] lg:p-0">
             <Header />
-            <button className="lg:hidden w-full flex flex-col items-center justify-center transition-transform ease-out duration-300" onClick={() => setIsOpen(!isOpen)}>
+            <button className="lg:hidden w-full flex flex-col items-center justify-center" onClick={() => setIsOpen(!isOpen)}>
                 <div className="w-6 h-0.5 bg-white mb-1"></div>
                 <div className="w-6 h-0.5 bg-white mb-1"></div>
                 <div className="w-6 h-0.5 bg-white"></div>
