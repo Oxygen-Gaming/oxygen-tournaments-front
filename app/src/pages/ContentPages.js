@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import Header from './Header';
-import Footer from './Footer';
-import VideoSection from './Contenido/VideoSection';
-import RankingTable from './Contenido/RankingTable';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import VideoSection from '../components/Contenido/VideoSection';
+import RankingTable from '../components/Contenido/RankingTable';
 
 const Contenido = () => {
   const [modalVisible, setModalVisible] = useState(false);
@@ -62,7 +62,7 @@ const Contenido = () => {
     <div className="font-['Roboto_Condensed',sans-serif] bg-blue-900 text-black m-0 p-0 min-h-screen flex flex-col">
       <Header />
       <div className="container p-5 flex justify-center items-center mt-16">
-        <h1 className="text-white text-4xl font-bold ml-80">Contenido</h1>
+        <h1 className="text-white text-4xl font-bold ml-80 md:ml-0 md:text-left text-left md:text-center">Contenido</h1>
       </div>
       <div className="flex-grow flex justify-between mt-12 flex-col md:flex-row items-center md:items-start">
         <div className="info-card w-full md:w-2/5 ml-10 m-5 p-5 bg-gradient-to-t from-blue-900 to-blue-500 text-white rounded-lg shadow-lg md:w-2/5 w-4/5">
@@ -97,8 +97,9 @@ const Contenido = () => {
       <div className="mt-10 md:mt-24"></div>
       <Footer />
       {/* Mobile-only section */}
-      <div className="block md:hidden flex-grow flex items-center justify-center">
-        <h1 className="text-white text-2xl font-bold">Contenido Móvil</h1>
+      <div className="block md:hidden flex-grow flex flex-col items-center justify-center mt-8">
+        <h1 className="text-white text-2xl font-bold mb-4">Contenido Móvil</h1>
+        <RankingTable />
       </div>
     </div>
   );

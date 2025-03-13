@@ -6,7 +6,7 @@ import Login from "./components/LoginComponent";
 import Rewards from "../src/pages/RewardsPages";
 import Missions from "../src/pages/MissionsPages";
 import Welcome from "./components/WelcomeComponent";
-import Content from "./components/ContentPages";
+import Content from "../src/pages/ContentPages";
 
 function App() {
   return (
