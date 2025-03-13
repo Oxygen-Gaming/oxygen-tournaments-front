@@ -18,42 +18,6 @@ const Perfil = () => {
   const [recompensas_canjeadas, setCanjeadas] = useState([]);
   const [misiones_completadas, setCompletadas] = useState([]);
 
-  useEffect(() => {
-    setPedidos([
-      {
-        codigo: '1',
-        producto: 'Camiseta Oxygen Gaming',
-        precio: 10,
-        fecha: '06-03-2025',
-        estado: 'Enviado',
-        imagen: oxygen,
-      },
-      {
-        codigo: '2',
-        producto: 'Nombre del Producto',
-        precio: 20,
-        fecha: '09-03-2025',
-        estado: 'enviado',
-        imagen: oxygen,
-      },
-      {
-        codigo: '3',
-        producto: 'Nombre del Producto',
-        precio: 20,
-        fecha: '09-03-2025',
-        estado: 'enviado',
-        imagen: oxygen,
-      },
-      {
-        codigo: '4',
-        producto: 'Nombre del Producto',
-        precio: 20,
-        fecha: '09-03-2025',
-        estado: 'enviado',
-        imagen: oxygen,
-      },
-    ]);
-  }, []);
 
   useEffect(() => {
     setCuentas([
@@ -72,12 +36,7 @@ const Perfil = () => {
     ]);
   }, []);
 
-  useEffect(() => {
-    setCanjeadas([
-      { imagen: oxygen, juego: 'Camiseta del club', puntos: 50 },
-      { imagen: oxygen, juego: 'Silla Playseat Puma', puntos: 100 },
-    ]);
-  }, []);
+
 
   useEffect(() => {
     setSolicitadas([
@@ -86,16 +45,9 @@ const Perfil = () => {
     ]);
   }, []);
 
-  useEffect(() => {
-    setCompletadas([
-      { imagen: oxygen, juego: 'Clip de la cagada de la semana', puntos: 20 },
-      { imagen: oxygen, juego: 'Completa el quiz semanal', puntos: 100 },
-    ]);
-  }, []);
+  
 
-  const handleLinkClick = () => {
-    setIsOpen(false);
-  };
+ 
 
   const handleImageChange = (event) => {
     const file = event.target.files[0];
