@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Register from '@components/RegisterComponent';
-import Perfil from '@components/PerfilComponent';
+import Perfil from './pages/PerfilPage';
 import Login from '@components/LoginComponent';
 import Rewards from '@components/RewardsComponent';
 import Missions from '@components/MissionsComponent';

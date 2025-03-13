@@ -1,14 +1,14 @@
 import React, { useState } from "react";
-import Header from "./Header";
-import Footer from "./Footer";
-import Enlace from "./componentesPerfil/enlacesPerfilComponent";
-import Perfil2 from "./componentesPerfil/interfazPerfilComponent";
-import Cuenta, { getImagenPerfil } from "./componentesPerfil/interfazCuentaComponent";
-import Conexiones from "./componentesPerfil/interfazConexionesComponent";
-import CuentasJuego from "./componentesPerfil/interfazCuentasJuegoComponent";
-import Inventario from "./componentesPerfil/interfazInventarioComponent";
-import Pedidos from "./componentesPerfil/interfazPedidosComponent";
-import Logros from "./componentesPerfil/interfazLogrosComponent";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import Enlace from "../components/componentesPerfil/enlacesPerfilComponent";
+import Perfil2 from "../components/componentesPerfil/interfazPerfilComponent";
+import Cuenta, { getImagenPerfil } from "../components/componentesPerfil/interfazCuentaComponent";
+import Conexiones from "../components/componentesPerfil/interfazConexionesComponent";
+import CuentasJuego from "../components/componentesPerfil/interfazCuentasJuegoComponent";
+import Inventario from "../components/componentesPerfil/interfazInventarioComponent";
+import Pedidos from "../components/componentesPerfil/interfazPedidosComponent";
+import Logros from "../components/componentesPerfil/interfazLogrosComponent";
 const Perfil = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [opcionSeleccionada, setOpcionSeleccionada] = useState('perfil');
