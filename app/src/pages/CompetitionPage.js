@@ -161,10 +161,22 @@ const Competition = () => {
   const panelStyle = "bg-[#003f7f] p-4 rounded-lg shadow-lg w-3/4"; // Style for panels with reduced width
   const infoTitleStyle = "text-4xl font-bold mb-4 text-center relative"; // New style for info modal title
   const hoverEffect = "transition-transform transform hover:scale-105 border-2 border-white text-white bg-transparent hover:bg-white hover:text-blue-900 duration-500"; // Updated hover effect class with slower duration
-
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="bg-blue-900 text-white overflow-x-hidden font-['Roboto_Condensed',sans-serif]">
       <Header />
+      <button className="lg:hidden w-full flex flex-col items-center justify-center" onClick={() => setIsOpen(!isOpen)}>
+        <div className="w-6 h-0.5 bg-white mb-1"></div>
+        <div className="w-6 h-0.5 bg-white mb-1"></div>
+        <div className="w-6 h-0.5 bg-white"></div>
+      </button>
+      <div className={`lg:hidden absolute ${isOpen ? 'block' : 'hidden'} w-full relative bg-blue-900 h-full flex flex-col justify-center items-center mt-4 gap-[20px] transition-transform ease-in-out duration-300`}>
+        <a href="/" className="text-white no-underline rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10">Inicio</a>
+        <a href="/competiciones" className="text-white no-underline rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10">Competiciones</a>
+        <a href="/reglamentos" className="text-white no-underline rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10">Contenido</a>
+        <a href="/rewards" className="text-white no-underline rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10">Misiones</a>
+        <a href="/rewards" className="text-white no-underline rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10">Recompensas</a>        
+      </div>
       {/* BANNER */}
       <div className="w-11/12 mx-auto h-80 bg-cover bg-center rounded-lg transition-all duration-1000 mt-8" style={{ backgroundImage: `url(${images[currentImage].src})` }}>
         <div className="w-full h-full flex items-center justify-center bg-black bg-opacity-50 rounded-lg">

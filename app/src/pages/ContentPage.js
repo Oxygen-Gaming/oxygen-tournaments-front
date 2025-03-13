@@ -57,10 +57,22 @@ const Contenido = () => {
       document.body.style.overflow = 'auto'; // Enable scrolling
     }
   }, [modalVisible]);
-
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="font-['Roboto_Condensed',sans-serif] bg-blue-900 text-black m-0 p-0 min-h-screen flex flex-col">
       <Header />
+      <button className="lg:hidden w-full flex flex-col items-center justify-center" onClick={() => setIsOpen(!isOpen)}>
+        <div className="w-6 h-0.5 bg-white mb-1"></div>
+        <div className="w-6 h-0.5 bg-white mb-1"></div>
+        <div className="w-6 h-0.5 bg-white"></div>
+      </button>
+      <div className={`lg:hidden absolute ${isOpen ? 'block' : 'hidden'} w-full relative bg-blue-900 h-full flex flex-col justify-center items-center mt-4 gap-[20px] transition-transform ease-in-out duration-300`}>
+        <a href="/" className="text-white no-underline rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10">Inicio</a>
+        <a href="/competiciones" className="text-white no-underline rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10">Competiciones</a>
+        <a href="/reglamentos" className="text-white no-underline rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10">Contenido</a>
+        <a href="/rewards" className="text-white no-underline rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10">Misiones</a>
+        <a href="/rewards" className="text-white no-underline rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10">Recompensas</a>        
+      </div>
       <div className="container p-5 flex justify-center items-center mt-16">
         <h1 className="text-white text-4xl font-bold ml-80 md:ml-0 md:text-left text-left md:text-center">Contenido</h1>
       </div>
@@ -96,11 +108,6 @@ const Contenido = () => {
       )}
       <div className="mt-10 md:mt-24"></div>
       <Footer />
-      {/* Mobile-only section */}
-      <div className="block md:hidden flex-grow flex flex-col items-center justify-center mt-8">
-        <h1 className="text-white text-2xl font-bold mb-4">Contenido Móvil</h1>
-        <RankingTable />
-      </div>
     </div>
   );
 };
