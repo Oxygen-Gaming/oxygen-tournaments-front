@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Register from "./components/RegisterComponent";  
-import Login from "./components/LoginComponent"
-import Welcome from "./components/WelcomeComponent"
+import Login from "./components/LoginComponent";
+import Welcome from "./components/WelcomeComponent";
 import Competition from "../src/pages/CompetitionComponent";
 import Perfil from "./components/PerfilComponent";
 import Rewards from "./components/RewardsComponent";
