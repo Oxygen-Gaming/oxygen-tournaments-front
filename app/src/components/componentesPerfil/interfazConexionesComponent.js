@@ -1,8 +1,8 @@
 import React from "react";
-import twitter from "../../img/twitter.png"
-import tiktok from "../../img/tiktok.png"
-import instagram from "../../img/instagram.png"
-import discord from "../../img/discord.png"
+import twitter from "@imgs/twitter.png"
+import tiktok from "@imgs/tiktok.png"
+import instagram from "@imgs/instagram.png"
+import discord from "@imgs/discord.png"
 import Red from "./redesConexionesComponent";
 
 const Conexiones = () => {

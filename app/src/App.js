@@ -1,15 +1,3 @@
-<<<<<<< HEAD
-import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Register from "./components/RegisterComponent";
-import Perfil from "./components/PerfilComponent";
-import Login from "./components/LoginComponent";
-import Rewards from "./components/RewardsComponent";
-import Missions from "./components/MissionsComponent";
-import Welcome from "./components/WelcomeComponent";
-import Profile from "./components/ContentComponent";
-import Competition from "./components/CompetitionComponent"
-=======
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Register from '@components/RegisterComponent';
@@ -20,7 +8,6 @@ import Missions from '@components/MissionsComponent';
 import Welcome from '@components/WelcomeComponent';
 import Content from '@components/ContentComponent';
 import Competition from "./pages/CompetitionPage";
->>>>>>> main
 
 function App() {
   return (
@@ -33,12 +20,7 @@ function App() {
         <Route path="/competition" element={<Competition />} />
         <Route path="/rewards" element={<Rewards />} />
         <Route path="/missions" element={<Missions />} />
-<<<<<<< HEAD
-        <Route path="/content" element={<Profile />} />
-        <Route path="/competition" element={<Competition />} />
-=======
         <Route path="/content" element={<Content />} />
->>>>>>> main
       </Routes>
     </BrowserRouter>
   );

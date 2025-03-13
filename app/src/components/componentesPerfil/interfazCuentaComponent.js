@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import perfil from "../../img/perfil.png";
+import perfil from "@imgs/perfil.png";
 
 let imagenPerfil = perfil
 

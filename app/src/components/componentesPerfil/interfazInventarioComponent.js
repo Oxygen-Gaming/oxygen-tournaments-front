@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import oxygen from "../../img/Logo_OxygenGaming.jpg"
+import oxygen from "@imgs/Logo_OxygenGaming.jpg"
 import Logro from "./logroComponent";
 const Inventario = () => {
     const [recompensas_canjeadas, setCanjeadas] = useState([]);

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Logro from "./logroComponent";
-import oxygen from "../../img/Logo_OxygenGaming2.png";
+import oxygen from "@imgs/Logo_OxygenGaming2.png";
 
 const Logros = () => {
     const [misionesCompletadas, setMisionesCompletadas] = useState([]);
