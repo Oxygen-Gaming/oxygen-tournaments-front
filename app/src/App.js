@@ -1,12 +1,13 @@
-import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Register from "./components/RegisterComponent";
-import Perfil from "./components/PerfilComponent";
-import Login from "./components/LoginComponent";
-import Rewards from "../src/pages/RewardsPages";
-import Missions from "../src/pages/MissionsPages";
-import Welcome from "./components/WelcomeComponent";
-import Content from "../src/pages/ContentPages";
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Register from '@components/RegisterComponent';
+import Perfil from '@components/PerfilComponent';
+import Login from '@components/LoginComponent';
+import Rewards from '@components/RewardsComponent';
+import Missions from '@components/MissionsComponent';
+import Welcome from '@components/WelcomeComponent';
+import Content from '@components/ContentComponent';
+import Competition from "./pages/CompetitionPage";
 
 function App() {
   return (
@@ -15,7 +16,8 @@ function App() {
         <Route path="/" element={<Welcome />} />
         <Route path="/register" element={<Register />} />
         <Route path="/perfil" element={<Perfil />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/login" element={<Login />} />   
+        <Route path="/competition" element={<Competition />} />
         <Route path="/rewards" element={<Rewards />} />
         <Route path="/missions" element={<Missions />} />
         <Route path="/content" element={<Content />} />
