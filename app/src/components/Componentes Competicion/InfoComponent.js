@@ -19,7 +19,8 @@ const Info = ({
   const modalContentStyle = "overflow-y-auto h-full pr-4";
   const panelStyle = "bg-[#003f7f] p-4 rounded-lg shadow-lg w-3/4";
   const infoTitleStyle = "text-4xl font-bold mb-4 text-center relative";
-  const noZoomButtonStyle = "px-3 py-2 rounded-lg border-2 border-white text-white bg-transparent hover:bg-white hover:text-blue-900";
+  const noZoomButtonStyle = "px-3 py-2 rounded-lg border-2 border-white text-white bg-transparent";
+  const disabledButtonStyle = "opacity-50 cursor-not-allowed";
   const hoverEffect = "transition-transform transform hover:scale-105 border-2 border-white text-white bg-transparent hover:bg-white hover:text-blue-900 duration-500";
 
   return (
@@ -28,16 +29,16 @@ const Info = ({
         <div className={modalContentStyle}>
           <img
             src={
-              selectedCard.includes("League of Legends")
+              selectedCard[1].includes("League of Legends")
                 ? LeagueOfLegends
-                : selectedCard.includes("Valorant")
+                : selectedCard[1].includes("Valorant")
                 ? Valorant
                 : RocketLeague
             }
-            alt={selectedCard}
+            alt={selectedCard[1]}
             className="w-full h-48 object-cover rounded-lg mb-4"
           />
-          <h2 className={infoTitleStyle}>{modalContent}</h2>
+          <h2 className={infoTitleStyle}>{selectedCard[2]}</h2> {/* Cambiar modalContent a selectedCard[2] */}
           <div className="flex flex-col items-center w-full text-center">
             <h3 className="text-2xl font-semibold">Información General</h3>
             <div className={`${panelStyle} text-left mb-4`}>
@@ -63,8 +64,8 @@ const Info = ({
             </div>
             <h3 className="text-2xl font-semibold">Estado de inscripción</h3>
             <div className={`${panelStyle} text-center mb-4`}>
-              <p className={inscriptionStatus[selectedCard] ? "text-green-500 font-bold" : "text-red-500 font-bold"}>
-                {inscriptionStatus[selectedCard] ? "Inscrito" : "No inscrito"}
+              <p className={inscriptionStatus[selectedCard[0]] ? "text-green-500 font-bold" : "text-red-500 font-bold"}>
+                {inscriptionStatus[selectedCard[0]] ? "Inscrito" : "No inscrito"}
               </p>
               <p>
                 ¡Prepárate para la batalla y demuestra que eres el mejor! Inscríbete ahora y sé parte de esta competencia
@@ -72,10 +73,11 @@ const Info = ({
                 novedades.
               </p>
               <button
-                onClick={inscriptionStatus[selectedCard] ? handleCancelRegistration : handleInscriptionRedirect}
-                className={`${noZoomButtonStyle} ${hoverEffect} w-1/4 mt-4`}
+                onClick={inscriptionStatus[selectedCard[0]] ? handleCancelRegistration : handleInscriptionRedirect}
+                className={`${noZoomButtonStyle} ${selectedCard[4] !== 'upcoming' ? disabledButtonStyle : hoverEffect} w-1/4 mt-4`}
+                disabled={selectedCard[4] !== 'upcoming'}
               >
-                {inscriptionStatus[selectedCard] ? "Cancelar inscripción" : "Inscribirse"}
+                {inscriptionStatus[selectedCard[0]] ? "Cancelar inscripción" : "Inscribirse"}
               </button>
             </div>
             <h3 className="text-2xl font-semibold">Formato del torneo</h3>
@@ -125,7 +127,7 @@ const Info = ({
               <p className="text-2xl font-medium text-gray-500">🥉 3er Lugar: 25$</p>
             </div>
           </div>
-          <button onClick={closeInfoModal} className={`mt-8 ${noZoomButtonStyle} mx-auto block`}>
+          <button onClick={closeInfoModal} className={`mt-8 ${noZoomButtonStyle} ${hoverEffect} mx-auto block`}>
             Cerrar
           </button>
         </div>

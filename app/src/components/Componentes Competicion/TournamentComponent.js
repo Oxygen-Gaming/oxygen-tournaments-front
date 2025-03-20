@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import CardsComponent from './CardsComponent';
+import ViewAllComponent from './ViewAllComponent';
 
 const TournamentComponent = ({ handleCardClick }) => {
     const [selectedGame, setSelectedGame] = useState(null);
@@ -10,7 +10,7 @@ const TournamentComponent = ({ handleCardClick }) => {
 
     return (
         <div className="container mx-auto p-5">
-            <CardsComponent handleCardClick={handleCardClick} />
+            <ViewAllComponent handleCardClick={handleCardClick} />
         </div>
     );
 };

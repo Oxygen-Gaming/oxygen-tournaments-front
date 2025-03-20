@@ -23,16 +23,16 @@ const Inscription = ({
         <div className={modalContentStyle}>
           <img
             src={
-              selectedCard.includes("League of Legends")
+              selectedCard[1].includes("League of Legends")
                 ? LeagueOfLegends
-                : selectedCard.includes("Valorant")
+                : selectedCard[1].includes("Valorant")
                 ? Valorant
                 : RocketLeague
             }
-            alt={selectedCard}
+            alt={selectedCard[1]}
             className="w-full h-48 object-cover rounded-lg mb-4"
           />
-          <h2 className={infoTitleStyle}>{modalContent}</h2>
+          <h2 className={infoTitleStyle}>{selectedCard[2]}</h2>
           <form className="flex flex-col gap-4 items-center" onSubmit={handleSubmit}>
             <input
               type="text"
