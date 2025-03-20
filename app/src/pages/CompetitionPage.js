@@ -8,6 +8,7 @@ import View from "@components/Componentes Competicion/ViewComponent";
 import TournamentComponent from '@components/Componentes Competicion/TournamentComponent';
 import CardsComponent from '@components/Componentes Competicion/CardsComponent';
 import ButtonsComponent from '@components/Componentes Competicion/ButtonsComponent';
+import SpecificGameComponent from '@components/Componentes Competicion/SpecificGameComponent';
 import LeagueOfLegends from "@imgs/League.jpg";
 import Valorant from "@imgs/valorant.jpg";
 import RocketLeague from "@imgs/rocketleague.jpg";
@@ -74,7 +75,7 @@ const Competition = () => {
 
   const handleViewAll = (game) => {
     setSelectedGame(game);
-    setShowAllTournaments(false);
+    setShowAllTournaments(false); // Change to false to show specific tournaments
     setShowGeneralView(false);
   };
 
@@ -217,6 +218,10 @@ const Competition = () => {
 
         {showAllTournaments && !selectedGame && (
           <CardsComponent handleCardClick={handleCardClick} />
+        )}
+
+        {selectedGame && !showAllTournaments && (
+          <SpecificGameComponent selectedGame={selectedGame} handleCardClick={handleCardClick} />
         )}
       </div>
 
