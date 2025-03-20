@@ -1,37 +1,28 @@
-import React, { useState, useEffect } from 'react';
-import CardsComponent from '@components/Componentes Competicion/CardsComponent';
+import React, { useState } from 'react';
+import ViewAllComponent from '@components/Componentes Competicion/ViewAllComponent';
 
-const SpecificGameComponent = ({ selectedGame, handleCardClick }) => {
-  const [filteredGame, setFilteredGame] = useState(selectedGame);
+const SpecificGameComponent = ({ handleCardClick }) => {
+    const [selectedGame, setSelectedGame] = useState(null);
 
-  useEffect(() => {
-    setFilteredGame(selectedGame);
-  }, [selectedGame]);
+    const handleViewAll = (game) => {
+        setSelectedGame(game);
+    };
 
-  const handleGameClick = (game) => {
-    setFilteredGame(game);
-    handleCardClick(game);
-  };
-
-  return (
-    <div className="container mx-auto p-5">
-      <h2 className="text-3xl font-bold mb-4 text-center">Torneos de {filteredGame}</h2>
-      <div className="flex justify-around">
-        <div className="w-1/3">
-          <h3 className="text-xl font-bold mb-4 text-center">Torneos Próximos</h3>
-          <CardsComponent handleCardClick={handleGameClick} selectedGame={filteredGame} status="upcoming" />
+    return (
+        <div className="container mx-auto p-5">
+            {!selectedGame ? (
+                <ViewAllComponent 
+                    handleCardClick={handleCardClick} 
+                    handleViewAll={handleViewAll} // Pass handleViewAll to ViewAllComponent
+                />
+            ) : (
+                <ViewAllComponent 
+                    handleCardClick={handleCardClick} 
+                    selectedGame={selectedGame} // Pass selectedGame to ViewAllComponent
+                />
+            )}
         </div>
-        <div className="w-1/3">
-          <h3 className="text-xl font-bold mb-4 text-center">Torneos en Curso</h3>
-          <CardsComponent handleCardClick={handleGameClick} selectedGame={filteredGame} status="ongoing" />
-        </div>
-        <div className="w-1/3">
-          <h3 className="text-xl font-bold mb-4 text-center">Torneos Finalizados</h3>
-          <CardsComponent handleCardClick={handleGameClick} selectedGame={filteredGame} status="finished" />
-        </div>
-      </div>
-    </div>
-  );
+    );
 };
 
 export default SpecificGameComponent;

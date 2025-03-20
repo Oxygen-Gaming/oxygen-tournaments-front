@@ -8,13 +8,13 @@ const ButtonsComponent = ({ selectedCard, modalContent, handleInfoClick, handleC
     return (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
             <div className={buttonModalStyle}>
-                <h2 className="text-3xl font-bold mb-8 text-center">{modalContent}</h2>
+                <h2 className="text-3xl font-bold mb-8 text-center">{selectedCard[2]}</h2> {/* Cambiar modalContent a selectedCard[2] */}
                 <div className="flex flex-col gap-6 mt-4">
                     <button className={buttonStyle} onClick={handleInfoClick}>Información del torneo</button>
-                    {inscriptionStatus[selectedCard] ? (
+                    {inscriptionStatus[selectedCard[0]] ? (
                         <button className={buttonStyle} onClick={handleCancelRegistration}>Cancelar Inscripción</button>
                     ) : (
-                        <button className={buttonStyle} onClick={handleRegistrationClick}>Inscripción</button>
+                        selectedCard[4] === 'upcoming' && <button className={buttonStyle} onClick={handleRegistrationClick}>Inscripción</button>
                     )}
                     <button className={buttonStyle} onClick={handleBracketClick}>Ver Bracket</button>
                 </div>

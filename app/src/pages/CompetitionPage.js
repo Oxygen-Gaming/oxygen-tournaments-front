@@ -5,10 +5,8 @@ import Bracket from "@components/Componentes Competicion/BracketComponent";
 import Info from "@components/Componentes Competicion/InfoComponent";
 import Inscription from "@components/Componentes Competicion/InscriptionComponent";
 import View from "@components/Componentes Competicion/ViewComponent";
-import TournamentComponent from '@components/Componentes Competicion/TournamentComponent';
 import CardsComponent from '@components/Componentes Competicion/CardsComponent';
 import ButtonsComponent from '@components/Componentes Competicion/ButtonsComponent';
-import SpecificGameComponent from '@components/Componentes Competicion/SpecificGameComponent';
 import LeagueOfLegends from "@imgs/League.jpg";
 import Valorant from "@imgs/valorant.jpg";
 import RocketLeague from "@imgs/rocketleague.jpg";
@@ -75,8 +73,8 @@ const Competition = () => {
 
   const handleViewAll = (game) => {
     setSelectedGame(game);
-    setShowAllTournaments(false); // Change to false to show specific tournaments
     setShowGeneralView(false);
+    setShowAllTournaments(true); // Show all tournaments
   };
 
   const handleCardClick = (content) => {
@@ -120,7 +118,7 @@ const Competition = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setShowSuccessMessage(true);
-    setInscriptionStatus({ ...inscriptionStatus, [selectedCard]: true }); // Update inscription status
+    setInscriptionStatus({ ...inscriptionStatus, [selectedCard[0]]: true }); // Update inscription status
     setTimeout(() => {
       setShowSuccessMessage(false);
       closeRegistrationModal();
@@ -137,7 +135,7 @@ const Competition = () => {
   };
 
   const confirmCancelRegistration = () => {
-    setInscriptionStatus({ ...inscriptionStatus, [selectedCard]: false });
+    setInscriptionStatus({ ...inscriptionStatus, [selectedCard[0]]: false });
     setShowModal(false);
     setShowCancelConfirmation(false); // Hide confirmation modal
   };
@@ -164,7 +162,7 @@ const Competition = () => {
   const hoverEffect = "transition-transform transform hover:scale-105 border-2 border-white text-white bg-transparent hover:bg-white hover:text-blue-900 duration-500"; // Updated hover effect class with slower duration
 
   return (
-    <div className="bg-blue-900 text-white overflow-x-hidden font-['Roboto_Condensed',sans-serif]">
+    <div className="bg-[#003366] text-white overflow-x-hidden font-['Roboto_Condensed',sans-serif]">
       <Header />
       {/* BANNER */}
       <div className="w-11/12 mx-auto h-80 bg-cover bg-center rounded-lg transition-all duration-1000 mt-8" style={{ backgroundImage: `url(${images[currentImage].src})` }}>
@@ -177,44 +175,39 @@ const Competition = () => {
       </div>
       {/* BUTTONS */}
       <div className="w-11/12 mx-auto mt-6 flex justify-center gap-4">
-        <button
-          className={`px-4 py-2 text-white border-2 rounded-lg transition-all duration-300 transform hover:scale-110 hover:bg-green-500 hover:text-black ${showGeneralView && !showAllTournaments && !selectedGame ? 'bg-green-500 text-black' : 'border-green-500'}`}
-          onClick={() => {
-            setShowGeneralView(true);
-            setShowAllTournaments(false);
-            setSelectedGame(null);
-          }}
-        >
-          Vista General
-        </button>
-        <button
-          className={`px-4 py-2 text-white border-2 rounded-lg transition-all duration-300 transform hover:scale-110 hover:bg-blue-500 hover:text-black ${showAllTournaments && !selectedGame ? 'bg-blue-500 text-black' : 'border-blue-500'}`}
-          onClick={() => {
-            setShowAllTournaments(true);
-            setShowGeneralView(false);
-            setSelectedGame(null);
-          }}
-        >
-          Torneos 
-        </button>
+        {/* Remove Vista General button */}
       </div>
 
       <div className="container mx-auto p-5">
-        {showGeneralView && !showAllTournaments && !selectedGame && (
-          <View handleCardClick={handleCardClick} handleViewAll={handleViewAll} />
+        {showGeneralView && !selectedGame && (
+          <View handleCardClick={handleCardClick} handleViewAll={handleViewAll} inscriptionStatus={inscriptionStatus} />
         )}
 
-        {showAllTournaments && !selectedGame && (
-          <CardsComponent handleCardClick={handleCardClick} />
-        )}
+        {selectedGame && showAllTournaments && (
+          <>
+            <h2 className="text-3xl font-bold mb-4">Próximos torneos</h2>
+            <CardsComponent handleCardClick={handleCardClick} selectedGame={selectedGame} filter="upcoming" inscriptionStatus={inscriptionStatus} />
+            
+            <h2 className="text-3xl font-bold mb-4 mt-8">Torneos en curso</h2>
+            <CardsComponent handleCardClick={handleCardClick} selectedGame={selectedGame} filter="ongoing" inscriptionStatus={inscriptionStatus} />
+            
+            <h2 className="text-3xl font-bold mb-4 mt-8">Torneos Finalizados</h2>
+            <CardsComponent handleCardClick={handleCardClick} selectedGame={selectedGame} filter="finished" inscriptionStatus={inscriptionStatus} />
 
-        {selectedGame && !showAllTournaments && (
-          <SpecificGameComponent selectedGame={selectedGame} handleCardClick={handleCardClick} />
+            <div className="flex justify-center mt-8">
+              <button
+                className="px-4 py-2 bg-blue-500 text-white rounded-lg transition-all duration-300 transform hover:scale-110"
+                onClick={() => {
+                  setShowGeneralView(true);
+                  setSelectedGame(null);
+                  setShowAllTournaments(false);
+                }}
+              >
+                Volver
+              </button>
+            </div>
+          </>
         )}
-      </div>
-
-      <div>
-        {showTournaments && <TournamentComponent handleCardClick={handleCardClick} />}
       </div>
 
       {showModal && (
