@@ -13,7 +13,7 @@ const View = ({ handleCardClick, handleViewAll, inscriptionStatus }) => {
 
   return (
     <div className="w-11/12 mx-auto mt-8">
-      <h2 className="text-3xl font-bold mb-4 text-left">Torneos Destacados</h2>
+      <h2 className="text-3xl font-bold mb-4 text-left">Grandes Torneos</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {games.map(game => (
           <div key={game.name} className="relative card">
