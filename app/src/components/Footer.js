@@ -1,184 +1,62 @@
 import React from 'react';
-import oxygen from '@imgs/Logo_OxygenGaming2.png';
-import twitter from '@imgs/twitter.png';
-import instagram from '@imgs/instagram.png';
-import tiktok from '@imgs/tiktok.png';
-import discord from '@imgs/discord.png';
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-neutral-900">
-      <div
-        id="contenido_footer"
-        className="flex justify-between items-start gap-4 p-10 max-w-[1200px] mx-auto"
-      >
-        <div className="flex flex-col gap-2 flex-1 min-w-[200px]">
-          <span className="text-cyan-400 font-bold text-[22px] mb-2">
-            OXYGENGAMING
-          </span>
-          <div className="flex flex-col gap-4">
-            <a
-              href="https://oxygengaming.es/sobre-nosotros/"
-              className="no-underline text-gray-300 font-bold transition-colors hover:text-cyan-400"
-            >
-              SOBRE NOSOTROS
-            </a>
-            <a
-              href="https://oxygengaming.es/patrocinadores/"
-              className="no-underline text-gray-300 font-bold transition-colors hover:text-cyan-400"
-            >
-              PATROCINADORES
-            </a>
-            <a
-              href="https://oxygengaming.es/noticias/"
-              className="no-underline text-gray-300 font-bold transition-colors hover:text-cyan-400"
-            >
-              NOTICIAS
-            </a>
-            <a
-              href="https://oxygengaming.es/tienda/"
-              className="no-underline text-gray-300 font-bold transition-colors hover:text-cyan-400"
-            >
-              TIENDA
-            </a>
-            <a
-              href="https://oxygengaming.es/oxy-club/"
-              className="no-underline text-gray-300 font-bold transition-colors hover:text-cyan-400"
-            >
-              OXYCLUB
-            </a>
-            <a
-              href="https://oxygengaming.es/creadores/"
-              className="no-underline text-gray-300 font-bold transition-colors hover:text-cyan-400"
-            >
-              CREADORES
-            </a>
-            <a
-              href="https://oxygengaming.es/contacto/"
-              className="no-underline text-gray-300 font-bold transition-colors hover:text-cyan-400"
-            >
-              CONTACTO
-            </a>
+    <div id="contenido_footer" className="flex flex-col items-center justify-center gap-6 bg-[#1a191d] px-8 py-6 w-full lg:h-[520px]">
+      <div id="arriba_footer" className="flex flex-col items-center w-full gap-8 md:gap-12 lg:flex-row lg:items-start lg:justify-center lg:gap-[12vh] lg:mb-[100px]">
+          <div className="menus_footer flex flex-col gap-4 min-w-[200px] text-center lg:text-left">
+              <span className="text-[#1AA9FF] font-bold text-xl lg:text-[22px] md:text-[35px]">OXYGENGAMING</span>
+              <div className="info_footer flex flex-col gap-3">
+                  <a href="https://oxygengaming.es/sobre-nosotros/" className="text-[#b0b0b0] font-bold transition-colors duration-300 hover:text-[#1AA9FF] md:text-[25px] lg:text-[18px]">SOBRE NOSOTROS</a>
+                  <a href="https://oxygengaming.es/patrocinadores/" className="text-[#b0b0b0] font-bold transition-colors duration-300 hover:text-[#1AA9FF] md:text-[25px] lg:text-[18px]">PATROCINADORES</a>
+                  <a href="https://oxygengaming.es/noticias/" className="text-[#b0b0b0] font-bold transition-colors duration-300 hover:text-[#1AA9FF]  md:text-[25px] lg:text-[18px]">NOTICIAS</a>
+                  <a href="https://oxygengaming.es/tienda/" className="text-[#b0b0b0] font-bold transition-colors duration-300 hover:text-[#1AA9FF] md:text-[25px] lg:text-[18px]">TIENDA</a>
+                  <a href="https://oxygengaming.es/oxy-club/" className="text-[#b0b0b0] font-bold transition-colors duration-300 hover:text-[#1AA9FF] md:text-[25px] lg:text-[18px]">OXYCLUB</a>
+                  <a href="https://oxygengaming.es/contacto/" className="text-[#b0b0b0] font-bold transition-colors duration-300 hover:text-[#1AA9FF] md:text-[25px] lg:text-[18px]">CONTACTO</a>
+              </div>
           </div>
-        </div>
 
-        <div className="flex flex-col gap-2 flex-1 min-w-[200px]">
-          <span className="text-cyan-400 font-bold text-[22px] mb-2">
-            EQUIPOS
-          </span>
-          <div className="flex flex-col gap-4">
-            <a
-              href="https://oxygengaming.es/equipos/#leagueoflegends"
-              className="no-underline text-gray-300 font-bold transition-colors hover:text-cyan-400"
-            >
-              LEAGUE OF LEGENDS
-            </a>
-            <a
-              href="https://oxygengaming.es/equipos/#valorant"
-              className="no-underline text-gray-300 font-bold transition-colors hover:text-cyan-400"
-            >
-              VALORANT
-            </a>
-            <a
-              href="https://oxygengaming.es/creadores/"
-              className="no-underline text-gray-300 font-bold transition-colors hover:text-cyan-400"
-            >
-              CREADORES
-            </a>
+          <div className="menus_footer flex flex-col gap-4 min-w-[200px] text-center lg:text-left">
+              <span className="text-[#1AA9FF] font-bold text-xl lg:text-[22px] md:text-[35px]">EQUIPOS</span>
+              <div className="info_footer flex flex-col gap-3">
+                  <a href="https://oxygengaming.es/equipos/#leagueoflegends" className="text-[#b0b0b0] font-bold transition-colors duration-300 hover:text-[#1AA9FF] md:text-[25px] lg:text-[18px]">LEAGUE OF LEGENDS</a>
+                  <a href="#" className="text-[#b0b0b0] font-bold transition-colors duration-300 hover:text-[#1AA9FF] md:text-[25px] lg:text-[18px]">VALORANT</a>
+                  <a href="https://oxygengaming.es/creadores/" className="text-[#b0b0b0] font-bold transition-colors duration-300 hover:text-[#1AA9FF] md:text-[25px] lg:text-[18px]">CREADORES</a>
+              </div>
           </div>
-        </div>
 
-        <div className="flex flex-col gap-2 flex-1 min-w-[200px]">
-          <span className="text-cyan-400 font-bold text-[22px] mb-2">
-            Políticas
-          </span>
-          <div className="flex flex-col gap-4">
-            <a
-              href="https://oxygengaming.es/equipos/#leagueoflegends"
-              className="no-underline text-gray-300 font-bold transition-colors hover:text-cyan-400"
-            >
-              AVISO LEGAL
-            </a>
-            <a
-              href="https://oxygengaming.es/equipos/#valorant"
-              className="no-underline text-gray-300 font-bold transition-colors hover:text-cyan-400"
-            >
-              PRIVACIDAD
-            </a>
-            <a
-              href="https://oxygengaming.es/creadores/"
-              className="no-underline text-gray-300 font-bold transition-colors hover:text-cyan-400"
-            >
-              COOKIES
-            </a>
+          <div className="menus_footer flex flex-col gap-4 min-w-[200px] text-center lg:text-left">
+              <span className="text-[#1AA9FF] font-bold text-xl lg:text-[22px] md:text-[35px]">POLÍTICAS</span>
+              <div className="info_footer flex flex-col gap-3">
+                  <a href="https://oxygengaming.es/aviso-legal/" className="text-[#b0b0b0] font-bold transition-colors duration-300 hover:text-[#1AA9FF] md:text-[25px] lg:text-[18px]">AVISO LEGAL</a>
+                  <a href="https://oxygengaming.es/politica-de-privacidad/" className="text-[#b0b0b0] font-bold transition-colors duration-300 hover:text-[#1AA9FF] md:text-[25px] lg:text-[18px]">PRIVACIDAD</a>
+                  <a href="https://oxygengaming.es/politica-de-cookies/" className="text-[#b0b0b0] font-bold transition-colors duration-300 hover:text-[#1AA9FF] md:text-[25px] lg:text-[18px]">COOKIES</a>
+              </div>
           </div>
-        </div>
 
-        <div
-          id="redes_sociales"
-          className="flex flex-col items-center text-center flex-1 min-w-[250px]"
-        >
-          <a href="https://oxygengaming.es/">
-            <img
-              id="logo_footer"
-              src={oxygen}
-              alt="Oxygen Gaming Logo"
-              className="w-[80%] max-w-[200px] mb-4"
-            />
-          </a>
-          <div className="flex gap-4 mt-2">
-            <a
-              href="https://twitter.com/GamingOxygen"
-              target="_blank"
-              rel="noreferrer"
-              className="flex justify-center items-center w-10 h-10 rounded-full border-[cyan] border-[1px] p-[10px] no-underline transition-all"
-            >
-              <img
-                src={twitter}
-                alt="Twitter"
-                className="w-full h-full rounded-full"
-              />
-            </a>
-            <a
-              href="https://instagram.com/GamingOxygen"
-              target="_blank"
-              rel="noreferrer"
-              className="flex justify-center items-center w-10 h-10 rounded-full border-[cyan] border-[1px] p-[10px] no-underline transition-all"
-            >
-              <img
-                src={instagram}
-                alt="Instagram"
-                className="w-full h-full rounded-full"
-              />
-            </a>
-            <a
-              href="https://www.tiktok.com/@oxg_esports?lang=es"
-              target="_blank"
-              rel="noreferrer"
-              className="flex justify-center items-center w-10 h-10 rounded-full border-[cyan] border-[1px] p-[10px] no-underline transition-all"
-            >
-              <img
-                src={tiktok}
-                alt="TikTok"
-                className="w-full h-full rounded-full"
-              />
-            </a>
-            <a
-              href="https://discord.gg/Udsstfpeze"
-              target="_blank"
-              rel="noreferrer"
-              className="flex justify-center items-center w-10 h-10 rounded-full border-[cyan] border-[1px] p-[10px] no-underline transition-all"
-            >
-              <img
-                src={discord}
-                alt="Discord"
-                className="w-full h-full rounded-full"
-              />
-            </a>
+          <div id="redes_sociales" className="flex flex-col items-center text-center">
+              <a href="https://oxygengaming.es/">
+                  <img id="logo_footer" src="https://oxygengaming.es/wp-content/uploads/2025/03/Logo_Blue.png" alt="Oxygen Gaming Logo" className="w-[200px] mb-3.5"/>
+              </a>
+              <div className="social-links flex gap-4 md:gap-6 lg:gap-8">
+                <a href="https://twitter.com/GamingOxygen" target="_blank" rel="noreferrer noopener" className="flex justify-center items-center text-white bg-[#222] border-2 border-[#1AA9FF] w-10 h-10 rounded-full transition-all duration-300 hover:text-[#1AA9FF] text-[20px] md:w-[70px] md:h-[70px] md:text-[30px] lg:w-[50px] lg:h-[50px] lg:text-[20px]">
+                    <i className="fab fa-twitter"></i>
+                </a>
+                <a href="https://instagram.com/GamingOxygen" target="_blank" rel="noreferrer noopener" className="flex justify-center items-center text-white bg-[#222] border-2 border-[#1AA9FF] w-10 h-10 rounded-full transition-all duration-300 hover:text-[#e4405f] text-[20px] md:w-[70px] md:h-[70px] md:text-[30px] lg:w-[50px] lg:h-[50px] lg:text-[20px]">
+                    <i className="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.tiktok.com/@oxg_esports?lang=es" target="_blank" rel="noreferrer noopener" className="flex justify-center items-center text-white bg-[#222] border-2 border-[#1AA9FF] w-10 h-10 rounded-full transition-all duration-300 hover:text-[#69c9d0] text-[20px] md:w-[70px] md:h-[70px] md:text-[30px] lg:w-[50px] lg:h-[50px] lg:text-[20px]">
+                    <i className="fab fa-tiktok"></i>
+                </a>
+                <a href="https://discord.gg/Udsstfpeze" target="_blank" rel="noreferrer noopener" className="flex justify-center items-center text-white bg-[#222] border-2 border-[#1AA9FF] w-10 h-10 rounded-full transition-all duration-300 hover:text-[#7289da] text-[20px] md:w-[70px] md:h-[70px] md:text-[30px] lg:w-[50px] lg:h-[50px] lg:text-[20px]">
+                    <i className="fab fa-discord"></i>
+                </a>
+              </div>
           </div>
-        </div>
       </div>
-    </footer>
+    </div>
+
+    
   );
 };
 export default Footer;

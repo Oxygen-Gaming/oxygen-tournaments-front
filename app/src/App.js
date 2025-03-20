@@ -1,14 +1,14 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Register from '@components/RegisterComponent';
-import Perfil from '@components/PerfilComponent';
 import Login from '@components/LoginComponent';
-import Rewards from '@components/RewardsComponent';
-import Missions from '@components/MissionsComponent';
+import Rewards from './pages/RewardsPage';
+import Missions from './pages/MissionsPage';
 import Welcome from '@components/WelcomeComponent';
-import Content from '@components/ContentComponent';
+import Content from './pages/ContentPage';
 import Competition from "./pages/CompetitionPage";
 import SpecificGameComponent from './components/Componentes Competicion/SpecificGameComponent';
+import Perfil from './pages/PerfilPage';
 
 function App() {
   return (
@@ -16,10 +16,10 @@ function App() {
       <Routes>
         <Route path="/" element={<Welcome />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/perfil" element={<Perfil />} />
         <Route path="/login" element={<Login />} />   
         <Route path="/competition" element={<Competition />} />
         <Route path="/rewards" element={<Rewards />} />
+        <Route path='/perfil' element={<Perfil />} />
         <Route path="/missions" element={<Missions />} />
         <Route path="/content" element={<Content />} />
         <Route path="/game" element={<SpecificGameComponent />} />
