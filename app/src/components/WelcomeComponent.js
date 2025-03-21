@@ -40,7 +40,7 @@ const OxygenGaming = () => {
         <a href="/missions" className="text-white no-underline rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10" onClick={() => setIsOpen(!isOpen)}>Misiones</a>
         <a href="/rewards" className="text-white no-underline rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10" onClick={() => setIsOpen(!isOpen)}>Recompensas</a>        
       </div>
-      <main className="flex items-center h-[calc(100vh-80px)] px-16 relative overflow-hidden">
+      <main className="flex items-center h-[calc(100vh-80px)] px-16 relative overflow-hidden md:mt-0 mt-8 pt-7">
         <svg
           className="absolute right-[-10%] top-1/2 -translate-y-1/2 w-[60%] opacity-10 z-[1]"
           viewBox="0 0 500 500"
@@ -65,7 +65,7 @@ const OxygenGaming = () => {
             competiciones, más contenido exclusivo, más premios y más
             oportunidades para demostrar tu talento y vivir el gaming al máximo.
           </p>
-          <div className="flex gap-4">
+          <div className="flex gap-4 mt-[-20px]">
             <a
               href="/register"
               className="inline-block px-4 py-3 rounded font-bold transition transform hover:-translate-y-1 hover:shadow-md bg-blue-600 text-white"
@@ -83,9 +83,10 @@ const OxygenGaming = () => {
       </main>
       <section className="py-16 px-8 bg-blue-800">
         <h2 className="text-center text-2xl md:text-3xl mb-8">Ventajas de unirte a OxyClub</h2>
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-x-2 gap-y-4 justify-items-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-5 gap-x-2 gap-y-4 justify-items-center">
           {cards.map((item, index) => (
             <div key={index} className="p-6 rounded-lg shadow-md bg-blue-700 transition-transform duration-300 hover:scale-105 hover:shadow-md" style={{ backgroundImage: `url(${item.image})`, backgroundSize: 'cover', backgroundPosition: 'center', width: '100%', height: '350px', maxWidth: '320px' }}>
+              <div className="md:hidden" style={{ backgroundSize: 'contain', backgroundRepeat: 'no-repeat', backgroundPosition: 'center', height: '300px', maxWidth: '280px' }}></div>
               {/* Image only, no text */}
             </div>
           ))}
@@ -94,7 +95,8 @@ const OxygenGaming = () => {
           {[
           
           ].map((item, index) => (
-            <div key={index} className="p-8 rounded-lg shadow-md bg-blue-700 transition-transform duration-300 hover:scale-105 hover:shadow-md" style={{ backgroundImage: `url(${item.image})`, backgroundSize: "cover" }}>
+            <div key={index} className="p-8 rounded-lg shadow-md bg-blue-700 transition-transform duration-300 hover:scale-105 hover:shadow-md" style={{ backgroundImage: `url(${item.image})`, backgroundSize: "cover", backgroundPosition: 'center', width: '100%', height: '350px', maxWidth: '320px' }}>
+              <div className="md:hidden" style={{ backgroundSize: 'contain', backgroundRepeat: 'no-repeat', backgroundPosition: 'center', height: '300px', maxWidth: '280px' }}></div>
               <h3 className="text-xl mb-2">{item.title}</h3>
               <p className="text-gray-300">{item.text}</p>
             </div>
