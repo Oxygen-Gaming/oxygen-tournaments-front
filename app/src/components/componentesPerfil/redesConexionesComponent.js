@@ -1,9 +1,9 @@
 import React from "react";
 
-const Red = ({logo, nombre, estado, boton}) => {
+const Red = ({logo, nombre, estado, boton, fondo, relleno}) => {
     return (
-        <div className="bg-[white] text-[black] w-[45vh] md:w-[50vh] flex items-center justify-between p-[20px] rounded-[20px]">
-            <img src={logo} alt="Logo de Twitter" className="bg-[black] rounded-[10px] p-[7px] w-[50px] h-[50px]" />
+        <div className="bg-[white] text-[black] lg:w-[23%] w-[45vh] md:w-[40%] sm:w-[40%] flex items-center justify-between p-[20px] rounded-[20px]">
+            <img src={logo} alt="Logo" className={` rounded-[10px] w-[50px] h-[50px] bg-[${fondo}] p-[${relleno}]`} />
             <div>
                 <h1 className="text-[25px]">{nombre}</h1>
                 <p className="text-[#545454]">{estado}</p>

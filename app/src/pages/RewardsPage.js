@@ -7,6 +7,7 @@ import { useState } from 'react';
 const Rewards = () => {
    const [isOpen, setIsOpen] = useState(false);
    return (
+
   <div className="bg-blue-900 text-[18px] font-['Roboto_Condensed'] min-h-screen">
     <Header />
     <button className="lg:hidden w-full flex flex-col items-center justify-center" onClick={() => setIsOpen(!isOpen)}>
@@ -33,18 +34,26 @@ const Rewards = () => {
     <br></br>
     <div className="md:hidden px-4 mb-16">
       <div className="grid grid-cols-2 gap-2 gap-y-4 mt-4">
+
         {rewards.map((reward) => (
-          <div key={reward.id} className="p-1">
-            <div className="bg-gradient-to-t from-[#18538a] to-[#1e90ff] rounded-lg shadow-lg p-1 relative">
-              <img src={reward.image} alt={reward.title} className="w-full h-36 object-cover rounded-lg" />
-              <p className="text-white text-xs absolute bottom-1 right-1">{reward.points}</p>
-            </div>
-          </div>
+          <Card key={reward.id} {...reward} />
         ))}
+      </section>
+      <br></br>
+      <div className="md:hidden px-4 mb-16">
+        <div className="grid grid-cols-2 gap-2 gap-y-4 mt-4">
+          {rewards.map((reward) => (
+            <div key={reward.id} className="p-1">
+              <div className="bg-gradient-to-t from-[#18538a] to-[#1e90ff] rounded-lg shadow-lg p-1 relative">
+                <img src={reward.image} alt={reward.title} className="w-full h-36 object-cover rounded-lg" />
+                <p className="text-white text-xs absolute bottom-1 right-1">{reward.points}</p>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
+      <Footer />
     </div>
-    <Footer />
-  </div>
    );
 }
 
