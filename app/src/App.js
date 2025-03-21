@@ -7,6 +7,8 @@ import Missions from './pages/MissionsPage';
 import Welcome from '@components/WelcomeComponent';
 import Content from './pages/ContentPage';
 import Competition from "./pages/CompetitionPage";
+import SpecificGameComponent from './components/Componentes Competicion/SpecificGameComponent';
+import Perfil from './pages/PerfilPage';
 
 function App() {
   return (
@@ -17,8 +19,10 @@ function App() {
         <Route path="/login" element={<Login />} />   
         <Route path="/competition" element={<Competition />} />
         <Route path="/rewards" element={<Rewards />} />
+        <Route path='/perfil' element={<Perfil />} />
         <Route path="/missions" element={<Missions />} />
         <Route path="/content" element={<Content />} />
+        <Route path="/game" element={<SpecificGameComponent />} />
       </Routes>
     </BrowserRouter>
   );

@@ -8,7 +8,7 @@ import { useState } from 'react';
 const Missions = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <div className="bg-[#18538a] text-[18px] font-['Roboto_Condensed'] min-h-screen">
+    <div className="bg-[#18538a] text-[18px] font-['Roboto_Condensed'] min-h-screen lg:p-0 pt-[30px] flex flex-col gap-[35px]">
       <Header />
       <button className="lg:hidden w-full flex flex-col items-center justify-center" onClick={() => setIsOpen(!isOpen)}>
                   <div className="w-6 h-0.5 bg-white mb-1"></div>
