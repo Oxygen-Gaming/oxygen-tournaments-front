@@ -7,7 +7,7 @@ import { useState } from 'react';
 const Rewards = () => {
    const [isOpen, setIsOpen] = useState(false);
    return (
-  <div className="bg-[#18538a] text-[18px] font-['Roboto_Condensed'] min-h-screen">
+  <div className="bg-blue-900 text-[18px] font-['Roboto_Condensed'] min-h-screen">
     <Header />
     <button className="lg:hidden w-full flex flex-col items-center justify-center" onClick={() => setIsOpen(!isOpen)}>
       <div className="w-6 h-0.5 bg-white mb-1"></div>
@@ -22,7 +22,7 @@ const Rewards = () => {
       <a href="/rewards" className="text-white no-underline rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10">Recompensas</a>        
     </div>
     <div className="container p-6 flex justify-center mt-10">
-      <h1 className="text-white text-4xl font-bold text-center md:text-left ml-0 md:ml-80">Recompensas</h1>
+      <h1 className="text-white text-4xl font-bold text-center md:mx-auto">Recompensas</h1>
       <br></br>
     </div>
     <section className="hidden md:flex flex-wrap justify-center gap-x-4 gap-y-8 md:gap-x-16 md:gap-y-32 pt-24 pb-24 px-4 md:px-10 mb-24">
