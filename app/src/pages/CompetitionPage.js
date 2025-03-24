@@ -161,6 +161,13 @@ const Competition = () => {
   const infoTitleStyle = "text-4xl font-bold mb-4 text-center relative"; // New style for info modal title
   const hoverEffect = "transition-transform transform hover:scale-105 border-2 border-white text-white bg-transparent hover:bg-white hover:text-blue-900 duration-500"; // Updated hover effect class with slower duration
   const [isOpen, setIsOpen] = useState(false);
+
+  const teamNamesByTournament = {
+    "LoL Championship Series": ["Dragons", "Warriors", "Titans", "Phoenix", "Sharks", "Wolves", "Eagles", "Lions", "Bears", "Panthers", "Hawks", "Tigers", "Bulls", "Raptors", "Knights", "Spartans", "Vikings", "Samurais", "Ninjas", "Pirates", "Gladiators", "Raiders", "Giants", "Cyclones", "Storm", "Thunder", "Lightning", "Blaze", "Inferno", "Tornadoes", "Avalanche", "Quakes"],
+    "Valorant Open": ["Vipers", "Cobras", "Pythons", "Anacondas", "Rattlesnakes", "Mambas", "Copperheads", "Boomslangs", "Taipans", "Kraits", "Adders", "Asps", "Bushmasters", "Fer-de-lances", "Cottonmouths", "Sidewinders", "Coral Snakes", "Sea Snakes", "Garter Snakes", "King Snakes", "Milk Snakes", "Rat Snakes", "Corn Snakes", "Water Snakes", "Tree Snakes", "Vine Snakes", "Whip Snakes", "Blind Snakes", "Thread Snakes", "Pipe Snakes", "Shieldtail Snakes", "Sunbeam Snakes"],
+    "Rocket League Invitational": ["Jets", "Rockets", "Comets", "Asteroids", "Meteors", "Stars", "Planets", "Galaxies", "Nebulas", "Quasars", "Pulsars", "Supernovas", "Black Holes", "White Dwarfs", "Red Giants", "Blue Giants", "Brown Dwarfs", "Neutron Stars", "Protostars", "T Tauri Stars", "Wolf-Rayet Stars", "Hypergiants", "Supergiants", "Main Sequence Stars", "Variable Stars", "Cepheid Variables", "RR Lyrae Variables", "Mira Variables", "Eclipsing Binaries", "Spectroscopic Binaries", "X-ray Binaries", "Gamma-ray Binaries"]
+  };
+
   return (
     <div className="bg-[#003366] text-white overflow-x-hidden font-['Roboto_Condensed',sans-serif]">
       <Header />
@@ -267,8 +274,8 @@ const Competition = () => {
         </div>
       )}
 
-      {showBracket && (
-        <Bracket closeBracket={closeBracket} />
+      {showBracket && selectedCard && (
+        <Bracket closeBracket={closeBracket} tournamentName={selectedCard[2]} />
       )}
 
       {showCancelConfirmation && (
