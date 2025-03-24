@@ -8,10 +8,9 @@ import { useState } from 'react';
 const Missions = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <div className="bg-[#18538a] text-[18px] font-['Roboto_Condensed'] min-h-screen lg:p-0 pt-[30px] flex flex-col gap-[35px]">
+    <div className="bg-[#18538a] text-[18px] font-['Roboto_Condensed'] min-h-screen">
       <Header />
       <button className="lg:hidden w-full flex flex-col items-center justify-center" onClick={() => setIsOpen(!isOpen)}>
-
                   <div className="w-6 h-0.5 bg-white mb-1"></div>
                   <div className="w-6 h-0.5 bg-white mb-1"></div>
                   <div className="w-6 h-0.5 bg-white"></div>
@@ -27,10 +26,9 @@ const Missions = () => {
               </div>
       <div className="container p-6 flex justify-center items-center mt-10 md:mt-16 lg:mt-24">
         <h1 className="text-white text-4xl md:text-5xl font-bold text-center">Misiones</h1>
-
         <br></br>
       </div>
-      <section className="hidden md:flex flex-wrap justify-center gap-x-6 gap-y-10 md:gap-x-16 md:gap-y-20 pt-40 pb-24 px-4 md:px-20 mb-24 lg:flex">
+      <section className="hidden md:flex flex-wrap justify-center gap-x-12 gap-y-16 md:gap-x-24 md:gap-y-32 pt-60 pb-24 px-4 md:px-28 mb-24 lg:flex">
         {missions.map((mission) => (
           <MissionCard key={mission.id} {...mission} />
         ))}
