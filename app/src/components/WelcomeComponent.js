@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Tarjeta from "@imgs/poster1.jpg"
 import Tarjeta2 from "@imgs/poster2.jpg"
 import Tarjeta3 from "@imgs/poster3.jpg"
@@ -10,7 +10,6 @@ import Tarjeta8 from "@imgs/poster8.jpg"
 import Tarjeta9 from "@imgs/poster9.jpg"
 import Header from "./Header"; // Import Header component
 import Footer from "./Footer"; // Import Footer component
-import { useState } from 'react';
 
 const OxygenGaming = () => {
   const cards = [
@@ -25,8 +24,39 @@ const OxygenGaming = () => {
     { image: Tarjeta9 },
   ];
   const [isOpen, setIsOpen] = useState(false);
+  const [visibleCards, setVisibleCards] = useState([]);
+  const [activeCardIndex, setActiveCardIndex] = useState(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + window.innerHeight;
+      const newVisibleCards = cards.map((_, index) => {
+        const cardElement = document.getElementById(`card-${index}`);
+        if (cardElement && !visibleCards[index]) { // Check if the card is not already visible
+          const cardPosition = cardElement.offsetTop + cardElement.clientHeight / 2;
+          return scrollPosition >= cardPosition;
+        }
+        return visibleCards[index]; // Keep the card visible once it has appeared
+      });
+      setVisibleCards(newVisibleCards);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [cards, visibleCards]);
+
+  useEffect(() => {
+    let currentIndex = 0;
+    const interval = setInterval(() => {
+      setActiveCardIndex(currentIndex);
+      currentIndex = (currentIndex + 1) % cards.length; // Loop through cards
+    }, 4000); // Change card every 4 seconds
+
+    return () => clearInterval(interval); // Cleanup on unmount
+  }, [cards.length]);
+
   return (
-    <div className="bg-blue-900 text-white overflow-x-hidden font-['Roboto_Condensed',sans-serif] lg:p-0 pt-[30px] flex flex-col gap-[35px]">
+    <div className="bg-blue-900 text-white overflow-x-hidden font-['Roboto_Condensed',sans-serif] lg:p-0 pt-[30px] flex flex-col gap-0"> {/* Removed gap between sections */}
       <Header /> 
       <button className="lg:hidden w-full mt-4 flex flex-col items-center justify-center" onClick={() => setIsOpen(!isOpen)}>
         <div className="w-6 h-0.5 bg-white mb-1"></div>
@@ -40,7 +70,14 @@ const OxygenGaming = () => {
         <a href="/missions" className="text-white no-underline rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10" onClick={() => setIsOpen(!isOpen)}>Misiones</a>
         <a href="/rewards" className="text-white no-underline rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10" onClick={() => setIsOpen(!isOpen)}>Recompensas</a>        
       </div>
-      <main className="flex items-center h-[calc(100vh-80px)] px-16 relative overflow-hidden md:mt-0 mt-8 pt-7">
+      <main 
+        className="flex items-center h-[calc(100vh-80px)] px-16 relative overflow-hidden md:mt-0 mt-0 pt-7 bg-blue-900" // Removed fixed background color
+        style={{
+          backgroundImage: 'url("https://via.placeholder.com/1920x1080")', // Example background image
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      >
         <svg
           className="absolute right-[-10%] top-1/2 -translate-y-1/2 w-[60%] opacity-10 z-[1]"
           viewBox="0 0 500 500"
@@ -72,20 +109,40 @@ const OxygenGaming = () => {
             >
               Únete a Oxyclub
             </a>
-            <a
-              href="/faqs"
-              className="inline-block px-4 py-3 rounded font-bold transition transform hover:-translate-y-1 hover:shadow-md bg-transparent text-white border-2 border-white"
-            >
-              FAQs
-            </a>
+            {/* Removed the FAQs button */}
           </div>
         </div>
       </main>
-      <section className="py-16 px-8 bg-blue-800">
-        <h2 className="text-center text-2xl md:text-3xl mb-8">Ventajas de unirte a OxyClub</h2>
+      <section 
+        className="py-8 px-8 mt-0" // Removed fixed background color class
+        style={{
+          background: 'linear-gradient(135deg, #2563eb, #1e3a8a)', // Reversed gradient background
+        }}
+      >
+        <h2 
+          className="text-center text-3xl md:text-4xl mb-8 font-bold" // Increased font size
+          style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)' }} // Add subtle text shadow
+        >
+          Ventajas de unirte a OxyClub
+        </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-5 gap-x-2 gap-y-4 justify-items-center">
           {cards.map((item, index) => (
-            <div key={index} className="p-6 rounded-lg shadow-md bg-blue-700 transition-transform duration-300 hover:scale-105 hover:shadow-md" style={{ backgroundImage: `url(${item.image})`, backgroundSize: 'cover', backgroundPosition: 'center', width: '100%', height: '350px', maxWidth: '320px' }}>
+            <div
+              key={index}
+              id={`card-${index}`}
+              className={`p-6 rounded-lg shadow-md bg-blue-700 transition-opacity duration-700 ease-in-out ${visibleCards[index] ? 'opacity-100' : 'opacity-0'}`} // Fade-in animation restored
+              style={{
+                backgroundImage: `url(${item.image})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                width: '100%',
+                height: '350px',
+                maxWidth: '320px',
+                transform: activeCardIndex === index ? 'scale(1.05)' : 'scale(1)', // Highlight active card
+                boxShadow: activeCardIndex === index ? '0 0 20px 5px rgba(255, 255, 255, 0.8)' : 'none', // Glow effect for active card
+                transition: 'transform 0.7s ease-in-out, box-shadow 0.7s ease-in-out, opacity 0.7s ease-in-out', // Ensure opacity transition
+              }}
+            >
               <div className="md:hidden" style={{ backgroundSize: 'contain', backgroundRepeat: 'no-repeat', backgroundPosition: 'center', height: '300px', maxWidth: '280px' }}></div>
               {/* Image only, no text */}
             </div>
