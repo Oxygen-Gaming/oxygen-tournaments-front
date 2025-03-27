@@ -10,6 +10,7 @@ import ButtonsComponent from '@components/Componentes Competicion/ButtonsCompone
 import LeagueOfLegends from "@imgs/League.jpg";
 import Valorant from "@imgs/valorant.jpg";
 import RocketLeague from "@imgs/rocketleague.jpg";
+import PopUpsComponent from "@components/Componentes Competicion/PopUpsComponent";
 
 const Competition = () => {
   const [currentImage, setCurrentImage] = useState(0);
@@ -32,6 +33,8 @@ const Competition = () => {
   const [inscriptionStatus, setInscriptionStatus] = useState({}); // New state for inscription status
   const [showCancelConfirmation, setShowCancelConfirmation] = useState(false); // New state for cancel confirmation modal
   const [showTournaments, setShowTournaments] = useState(false);
+  const [currentPopUp, setCurrentPopUp] = useState(Math.floor(Math.random() * 3)); // Randomly select the first pop-up
+  const [showPopUp, setShowPopUp] = useState(true);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -89,8 +92,9 @@ const Competition = () => {
     setSelectedCard(null); // Add this line to reset the selected card
   };
 
-  const handleInfoClick = () => {
-    setShowInfoModal(true);
+  const handleInfoClick = (card) => {
+    setSelectedCard(card); // Set the selected card to display its content
+    setShowInfoModal(true); // Open the tournament information modal
   };
 
   const closeInfoModal = () => {
@@ -150,6 +154,22 @@ const Competition = () => {
     setShowAllTournaments(false);
   };
 
+  const handlePopUpClose = () => {
+    setShowPopUp(false); // Hide all pop-ups when the "X" button is clicked
+  };
+
+  const handleMoreInfo = (tournamentName) => {
+    setShowPopUp(false); // Hide the pop-up
+    setSelectedCard([tournamentName, tournamentName, `${tournamentName} Championship`, '30/03/2025', 'upcoming']);
+    setShowInfoModal(true); // Open the tournament information modal
+    setTimeout(() => {
+        const infoSection = document.getElementById("info-section");
+        if (infoSection) {
+            infoSection.scrollIntoView({ behavior: "smooth" });
+        }
+    }, 300); // Delay to ensure modal opens before scrolling
+  };
+
   const modalStyle = "bg-[#002f5f] text-white p-5 rounded-lg w-[85%] max-w-[1300px] h-[75%] overflow-hidden fixed"; // Keep this for info modal
   const buttonModalStyle = "bg-[#002f5f] text-white p-5 rounded-lg w-[40%] max-w-[500px] h-[40%] overflow-hidden fixed"; // Smaller size for button modal
   const bracketModalStyle = "bg-gray-900 text-white p-5 rounded-lg w-[90%] max-w-[1400px] h-[85%] fixed"; // Adjusted size for bracket modal
@@ -168,8 +188,42 @@ const Competition = () => {
     "Rocket League Invitational": ["Jets", "Rockets", "Comets", "Asteroids", "Meteors", "Stars", "Planets", "Galaxies", "Nebulas", "Quasars", "Pulsars", "Supernovas", "Black Holes", "White Dwarfs", "Red Giants", "Blue Giants", "Brown Dwarfs", "Neutron Stars", "Protostars", "T Tauri Stars", "Wolf-Rayet Stars", "Hypergiants", "Supergiants", "Main Sequence Stars", "Variable Stars", "Cepheid Variables", "RR Lyrae Variables", "Mira Variables", "Eclipsing Binaries", "Spectroscopic Binaries", "X-ray Binaries", "Gamma-ray Binaries"]
   };
 
+  const popUps = [
+    {
+      title: "League of Legends Championship",
+      message: "¡Prepárate para la batalla definitiva en el torneo de League of Legends! Inscríbete ahora y demuestra tu habilidad.",
+      image: LeagueOfLegends,
+      onMoreInfo: () => handleMoreInfo("League of Legends"),
+      linkText: "Más Información",
+    },
+    {
+      title: "Valorant Championship",
+      message: "¡El torneo de Valorant está aquí! Compete con los mejores y lleva a tu equipo a la victoria.",
+      image: Valorant,
+      onMoreInfo: () => handleMoreInfo("Valorant"),
+      linkText: "Más Información",
+    },
+    {
+      title: "Rocket League Championship",
+      message: "¡Desafía la gravedad en el Rocket League Championship! Inscríbete y compite por premios increíbles.",
+      image: RocketLeague,
+      onMoreInfo: () => handleMoreInfo("Rocket League"),
+      linkText: "Más Información",
+    },
+  ];
+
   return (
     <div className="bg-[#003366] text-white overflow-x-hidden font-['Roboto_Condensed',sans-serif]">
+      {showPopUp && (
+        <PopUpsComponent
+          title={popUps[currentPopUp].title}
+          message={popUps[currentPopUp].message}
+          image={popUps[currentPopUp].image}
+          linkText={popUps[currentPopUp].linkText}
+          onMoreInfo={popUps[currentPopUp].onMoreInfo}
+          onClose={handlePopUpClose}
+        />
+      )}
       <Header />
       <button className="lg:hidden w-full flex flex-col items-center justify-center" onClick={() => setIsOpen(!isOpen)}>
         <div className="w-6 h-0.5 bg-white mb-1"></div>
@@ -232,7 +286,6 @@ const Competition = () => {
       {showModal && (
         <ButtonsComponent
           selectedCard={selectedCard}
-          modalContent={modalContent}
           handleInfoClick={handleInfoClick}
           handleCancelRegistration={handleCancelRegistration}
           handleRegistrationClick={handleRegistrationClick}
@@ -245,7 +298,6 @@ const Competition = () => {
       {showInfoModal && (
         <Info
           selectedCard={selectedCard}
-          modalContent={modalContent}
           closeInfoModal={closeInfoModal}
           handleCancelRegistration={handleCancelRegistration}
           handleInscriptionRedirect={handleInscriptionRedirect}
@@ -289,6 +341,17 @@ const Competition = () => {
             </div>
           </div>
         </div>
+      )}
+
+      {showPopUp && (
+        <PopUpsComponent
+          title={popUps[currentPopUp].title}
+          message={popUps[currentPopUp].message}
+          image={popUps[currentPopUp].image}
+          onMoreInfo={popUps[currentPopUp].onMoreInfo}
+          linkText={popUps[currentPopUp].linkText}
+          onClose={handlePopUpClose}
+        />
       )}
 
       <Footer />
