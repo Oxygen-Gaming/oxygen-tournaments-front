@@ -19,17 +19,12 @@ const Rewards = () => {
        
       </section>
       <div className="bg-blue-900 text-[18px] font-['Roboto_Condensed'] min-h-screen flex justify-center items-center">
-      <div className="grid grid-cols-2 gap-12 gap-y-16 justify-items-center px-4"> 
-        {rewards.map((reward) => (
-          <div key={reward.id} className="p-4">
-            <div className="bg-gradient-to-t from-[#18538a] to-[#1e90ff] rounded-lg shadow-lg p-4 relative w-full">
-              <img src={reward.image} alt="" className="w-full h-[30rem] object-cover rounded-lg" />
-              <p className="text-white text-lg absolute bottom-4 right-4">{reward.points}</p>
-            </div>
-          </div>
-        ))}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 gap-y-16 justify-items-center px-4"> 
+          {rewards.map((reward) => (
+            <Card key={reward.id} image={reward.image} points={reward.points} />
+          ))}
+        </div>
       </div>
-    </div>
     <br></br>
       <Footer />
     </div>
