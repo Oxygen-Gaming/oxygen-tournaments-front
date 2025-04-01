@@ -10,13 +10,14 @@ import ButtonsComponent from '@components/Componentes Competicion/ButtonsCompone
 import LeagueOfLegends from "@imgs/League.jpg";
 import Valorant from "@imgs/valorant.jpg";
 import RocketLeague from "@imgs/rocketleague.jpg";
+import PopUpsComponent from "@components/Componentes Competicion/PopUpsComponent";
+import { useNavigate } from "react-router-dom"; // Importamos useNavigate
 
 const Competition = () => {
   const [currentImage, setCurrentImage] = useState(0);
   const [showGeneralView, setShowGeneralView] = useState(true); // Set default to true
   const [showAllTournaments, setShowAllTournaments] = useState(false);
   const [selectedGame, setSelectedGame] = useState(null); // New state for selected game
-  const [showModal, setShowModal] = useState(false); // New state for modal visibility
   const [modalContent, setModalContent] = useState(null); // New state for modal content
   const [selectedCard, setSelectedCard] = useState(null); // New state for selected card
   const [showInfoModal, setShowInfoModal] = useState(false); // New state for info modal visibility
@@ -32,6 +33,15 @@ const Competition = () => {
   const [inscriptionStatus, setInscriptionStatus] = useState({}); // New state for inscription status
   const [showCancelConfirmation, setShowCancelConfirmation] = useState(false); // New state for cancel confirmation modal
   const [showTournaments, setShowTournaments] = useState(false);
+  const [currentPopUp, setCurrentPopUp] = useState(Math.floor(Math.random() * 3)); // Randomly select the first pop-up
+  const [showPopUp, setShowPopUp] = useState(true);
+  const [showSuccessPopUp, setShowSuccessPopUp] = useState(false); // New state for success pop-up
+
+  const [showInfoSection, setShowInfoSection] = useState(false);
+  const [showBracketSection, setShowBracketSection] = useState(false);
+  const [showInscriptionSection, setShowInscriptionSection] = useState(false);
+
+  const navigate = useNavigate(); // Inicializamos useNavigate
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -64,12 +74,12 @@ const Competition = () => {
   }, [showBracket]);
 
   useEffect(() => {
-    if (showModal || showInfoModal || showBracket || showRegistrationModal || showCancelConfirmation) {
+    if (showInfoModal || showBracket || showRegistrationModal || showCancelConfirmation) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'auto';
     }
-  }, [showModal, showInfoModal, showBracket, showRegistrationModal, showCancelConfirmation]);
+  }, [showInfoModal, showBracket, showRegistrationModal, showCancelConfirmation]);
 
   const handleViewAll = (game) => {
     setSelectedGame(game);
@@ -78,19 +88,13 @@ const Competition = () => {
   };
 
   const handleCardClick = (content) => {
-    setModalContent(content);
-    setShowModal(true);
-    setSelectedCard(content); // Add this line to set the selected card
+    setSelectedCard(content);
+    navigate("/tournament-details", { state: { selectedCard: content } }); // Aseguramos que la ruta sea "/tournament-details"
   };
 
-  const closeModal = () => {
-    setShowModal(false);
-    setModalContent(null);
-    setSelectedCard(null); // Add this line to reset the selected card
-  };
-
-  const handleInfoClick = () => {
-    setShowInfoModal(true);
+  const handleInfoClick = (card) => {
+    setSelectedCard(card); // Set the selected card to display its content
+    setShowInfoModal(true); // Open the tournament information modal
   };
 
   const closeInfoModal = () => {
@@ -99,7 +103,6 @@ const Competition = () => {
 
   const handleBracketClick = () => {
     setShowBracket(true);
-    setShowModal(false);
   };
 
   const closeBracket = () => {
@@ -108,7 +111,6 @@ const Competition = () => {
 
   const handleRegistrationClick = () => {
     setShowRegistrationModal(true);
-    setShowModal(false);
   };
 
   const closeRegistrationModal = () => {
@@ -117,12 +119,17 @@ const Competition = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setInscriptionStatus((prevStatus) => ({
+      ...prevStatus,
+      [selectedCard[0]]: true, // Actualiza el estado de inscripción
+    }));
     setShowSuccessMessage(true);
-    setInscriptionStatus({ ...inscriptionStatus, [selectedCard[0]]: true }); // Update inscription status
+    setShowSuccessPopUp(true); // Muestra el pop-up de éxito
     setTimeout(() => {
       setShowSuccessMessage(false);
+      setShowSuccessPopUp(false); // Oculta el pop-up después de 3 segundos
       closeRegistrationModal();
-    }, 3000); // Hide message after 3 seconds
+    }, 3000);
   };
 
   const handleInscriptionRedirect = () => {
@@ -136,7 +143,6 @@ const Competition = () => {
 
   const confirmCancelRegistration = () => {
     setInscriptionStatus({ ...inscriptionStatus, [selectedCard[0]]: false });
-    setShowModal(false);
     setShowCancelConfirmation(false); // Hide confirmation modal
   };
 
@@ -150,6 +156,22 @@ const Competition = () => {
     setShowAllTournaments(false);
   };
 
+  const handlePopUpClose = () => {
+    setShowPopUp(false); // Hide all pop-ups when the "X" button is clicked
+  };
+
+  const handleMoreInfo = (tournamentName) => {
+    setShowPopUp(false); // Hide the pop-up
+    setSelectedCard([tournamentName, tournamentName, `${tournamentName} Championship`, '30/03/2025', 'upcoming']);
+    setShowInfoModal(true); // Open the tournament information modal
+    setTimeout(() => {
+        const infoSection = document.getElementById("info-section");
+        if (infoSection) {
+            infoSection.scrollIntoView({ behavior: "smooth" });
+        }
+    }, 300); // Delay to ensure modal opens before scrolling
+  };
+
   const modalStyle = "bg-[#002f5f] text-white p-5 rounded-lg w-[85%] max-w-[1300px] h-[75%] overflow-hidden fixed"; // Keep this for info modal
   const buttonModalStyle = "bg-[#002f5f] text-white p-5 rounded-lg w-[40%] max-w-[500px] h-[40%] overflow-hidden fixed"; // Smaller size for button modal
   const bracketModalStyle = "bg-gray-900 text-white p-5 rounded-lg w-[90%] max-w-[1400px] h-[85%] fixed"; // Adjusted size for bracket modal
@@ -161,6 +183,44 @@ const Competition = () => {
   const infoTitleStyle = "text-4xl font-bold mb-4 text-center relative"; // New style for info modal title
   const hoverEffect = "transition-transform transform hover:scale-105 border-2 border-white text-white bg-transparent hover:bg-white hover:text-blue-900 duration-500"; // Updated hover effect class with slower duration
   const [isOpen, setIsOpen] = useState(false);
+
+  const teamNamesByTournament = {
+    "LoL Championship Series": ["Dragons", "Warriors", "Titans", "Phoenix", "Sharks", "Wolves", "Eagles", "Lions", "Bears", "Panthers", "Hawks", "Tigers", "Bulls", "Raptors", "Knights", "Spartans", "Vikings", "Samurais", "Ninjas", "Pirates", "Gladiators", "Raiders", "Giants", "Cyclones", "Storm", "Thunder", "Lightning", "Blaze", "Inferno", "Tornadoes", "Avalanche", "Quakes"],
+    "Valorant Open": ["Vipers", "Cobras", "Pythons", "Anacondas", "Rattlesnakes", "Mambas", "Copperheads", "Boomslangs", "Taipans", "Kraits", "Adders", "Asps", "Bushmasters", "Fer-de-lances", "Cottonmouths", "Sidewinders", "Coral Snakes", "Sea Snakes", "Garter Snakes", "King Snakes", "Milk Snakes", "Rat Snakes", "Corn Snakes", "Water Snakes", "Tree Snakes", "Vine Snakes", "Whip Snakes", "Blind Snakes", "Thread Snakes", "Pipe Snakes", "Shieldtail Snakes", "Sunbeam Snakes"],
+    "Rocket League Invitational": ["Jets", "Rockets", "Comets", "Asteroids", "Meteors", "Stars", "Planets", "Galaxies", "Nebulas", "Quasars", "Pulsars", "Supernovas", "Black Holes", "White Dwarfs", "Red Giants", "Blue Giants", "Brown Dwarfs", "Neutron Stars", "Protostars", "T Tauri Stars", "Wolf-Rayet Stars", "Hypergiants", "Supergiants", "Main Sequence Stars", "Variable Stars", "Cepheid Variables", "RR Lyrae Variables", "Mira Variables", "Eclipsing Binaries", "Spectroscopic Binaries", "X-ray Binaries", "Gamma-ray Binaries"]
+  };
+
+  const popUps = [
+    {
+      title: "League of Legends Championship",
+      message: "¡Prepárate para la batalla definitiva en el torneo de League of Legends! Inscríbete ahora y demuestra tu habilidad.",
+      image: LeagueOfLegends,
+      onMoreInfo: () => handleMoreInfo("League of Legends"),
+      linkText: "Más Información",
+    },
+    {
+      title: "Valorant Championship",
+      message: "¡El torneo de Valorant está aquí! Compete con los mejores y lleva a tu equipo a la victoria.",
+      image: Valorant,
+      onMoreInfo: () => handleMoreInfo("Valorant"),
+      linkText: "Más Información",
+    },
+    {
+      title: "Rocket League Championship",
+      message: "¡Desafía la gravedad en el Rocket League Championship! Inscríbete y compite por premios increíbles.",
+      image: RocketLeague,
+      onMoreInfo: () => handleMoreInfo("Rocket League"),
+      linkText: "Más Información",
+    },
+  ];
+
+  const getImageForGame = (gameName) => {
+    if (gameName === "League of Legends") return LeagueOfLegends;
+    if (gameName === "Valorant") return Valorant;
+    if (gameName === "Rocket League") return RocketLeague;
+    return null;
+  };
+
   return (
     <div className="bg-[#003366] text-white overflow-x-hidden font-['Roboto_Condensed',sans-serif]">
       <Header />
@@ -198,13 +258,31 @@ const Competition = () => {
         {selectedGame && showAllTournaments && (
           <>
             <h2 className="text-3xl font-bold mb-4">Próximos torneos</h2>
-            <CardsComponent handleCardClick={handleCardClick} selectedGame={selectedGame} filter="upcoming" inscriptionStatus={inscriptionStatus} />
+            <CardsComponent
+                handleCardClick={handleCardClick}
+                selectedGame={selectedGame}
+                filter="upcoming"
+                inscriptionStatus={inscriptionStatus}
+                selectedCard={selectedCard} // Pasamos la tarjeta seleccionada
+            />
             
             <h2 className="text-3xl font-bold mb-4 mt-8">Torneos en curso</h2>
-            <CardsComponent handleCardClick={handleCardClick} selectedGame={selectedGame} filter="ongoing" inscriptionStatus={inscriptionStatus} />
+            <CardsComponent
+                handleCardClick={handleCardClick}
+                selectedGame={selectedGame}
+                filter="ongoing"
+                inscriptionStatus={inscriptionStatus}
+                selectedCard={selectedCard} // Pasamos la tarjeta seleccionada
+            />
             
             <h2 className="text-3xl font-bold mb-4 mt-8">Torneos Finalizados</h2>
-            <CardsComponent handleCardClick={handleCardClick} selectedGame={selectedGame} filter="finished" inscriptionStatus={inscriptionStatus} />
+            <CardsComponent
+                handleCardClick={handleCardClick}
+                selectedGame={selectedGame}
+                filter="finished"
+                inscriptionStatus={inscriptionStatus}
+                selectedCard={selectedCard} // Pasamos la tarjeta seleccionada
+            />
 
             <div className="flex justify-center mt-8">
               <button
@@ -213,6 +291,7 @@ const Competition = () => {
                   setShowGeneralView(true);
                   setSelectedGame(null);
                   setShowAllTournaments(false);
+                  setSelectedCard(null); // Reset selected card
                 }}
               >
                 Volver
@@ -220,66 +299,98 @@ const Competition = () => {
             </div>
           </>
         )}
+
+        {/* Nueva sección para mostrar información del torneo seleccionado */}
+        {selectedCard && (
+          <div id="detailed-section" className="mt-8">
+            <div className="bg-[#002f5f] text-white rounded-lg w-full max-w-[1300px] mx-auto">
+              {/* Encabezado del torneo */}
+              <div
+                className="relative bg-cover bg-center rounded-t-lg h-[300px] flex items-center justify-center"
+                style={{
+                  backgroundImage: `url(${getImageForGame(selectedCard[1])})`,
+                }}
+              >
+                <div className="absolute inset-0 bg-black bg-opacity-50 rounded-t-lg"></div>
+                <div className="relative z-10 text-center">
+                  <h1 className="text-5xl font-extrabold">{selectedCard[2]}</h1>
+                  <p className="text-lg mt-2">
+                    En alrededor de 2 horas • {selectedCard[3]}
+                  </p>
+                  <button className="mt-4 px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition">
+                    Unirse al torneo
+                  </button>
+                </div>
+              </div>
+
+              {/* Barra de progreso */}
+              <div className="bg-[#003f7f] p-6">
+                <div className="flex justify-between items-center text-sm text-gray-300">
+                  <span>Inscripción</span>
+                  <span>Confirmación</span>
+                  <span>Clasificación</span>
+                  <span>Comienzo</span>
+                </div>
+                <div className="relative mt-2">
+                  <div className="h-2 bg-gray-600 rounded-full"></div>
+                  <div className="absolute top-0 left-0 h-2 bg-blue-500 rounded-full" style={{ width: '25%' }}></div>
+                  <div className="absolute top-[-6px] left-[25%] w-4 h-4 bg-blue-500 rounded-full"></div>
+                </div>
+                <p className="text-center mt-2 text-sm text-gray-300">
+                  Las inscripciones están abiertas, es el momento de registrarse.
+                </p>
+              </div>
+
+              {/* Secciones de información */}
+              <div className="p-6">
+                <h2 className="text-3xl font-bold mb-4">Formato</h2>
+                <p className="text-gray-300 mb-6">
+                  Eliminación directa con partidas al mejor de 3. Los mejores equipos avanzarán a la siguiente fase.
+                </p>
+
+                <h2 className="text-3xl font-bold mb-4">Jugadores</h2>
+                <p className="text-gray-300 mb-6">3 jugadores registrados hasta ahora.</p>
+
+                <h2 className="text-3xl font-bold mb-4">Premios</h2>
+                <div className="flex gap-8">
+                  <div className="text-center">
+                    <span className="text-5xl text-yellow-400">🥇</span>
+                    <p className="text-lg font-bold mt-2">1er Lugar</p>
+                    <p className="text-md">$100</p>
+                  </div>
+                  <div className="text-center">
+                    <span className="text-5xl text-gray-400">🥈</span>
+                    <p className="text-lg font-bold mt-2">2do Lugar</p>
+                    <p className="text-md">$50</p>
+                  </div>
+                  <div className="text-center">
+                    <span className="text-5xl text-orange-400">🥉</span>
+                    <p className="text-lg font-bold mt-2">3er Lugar</p>
+                    <p className="text-md">$25</p>
+                  </div>
+                </div>
+
+                <h2 className="text-3xl font-bold mt-8 mb-4">Reglas</h2>
+                <ul className="list-disc list-inside text-gray-300">
+                  <li>Juego limpio: No se permite el uso de hacks o trampas.</li>
+                  <li>Respeto entre jugadores: Conducta ofensiva resultará en descalificación.</li>
+                  <li>Puntualidad: Los jugadores deben estar presentes según el horario.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
 
-      {showModal && (
-        <ButtonsComponent
-          selectedCard={selectedCard}
-          modalContent={modalContent}
-          handleInfoClick={handleInfoClick}
-          handleCancelRegistration={handleCancelRegistration}
-          handleRegistrationClick={handleRegistrationClick}
-          handleBracketClick={handleBracketClick}
-          closeModal={closeModal}
-          inscriptionStatus={inscriptionStatus}
-        />
-      )}
-
-      {showInfoModal && (
-        <Info
-          selectedCard={selectedCard}
-          modalContent={modalContent}
-          closeInfoModal={closeInfoModal}
-          handleCancelRegistration={handleCancelRegistration}
-          handleInscriptionRedirect={handleInscriptionRedirect}
-          inscriptionStatus={inscriptionStatus}
-        />
-      )}
-
-      {showRegistrationModal && (
-        <Inscription
-          selectedCard={selectedCard}
-          modalContent={modalContent}
-          closeRegistrationModal={closeRegistrationModal}
-          handleInputChange={handleInputChange}
-          handleSubmit={handleSubmit}
-          formData={formData}
-          isFormValid={isFormValid}
-        />
-      )}
-
-      {showSuccessMessage && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-          <div className="bg-gray-800 text-white p-10 rounded-lg shadow-lg transform transition-transform duration-500 ease-in-out scale-105">
-            <h2 className="text-4xl font-bold mb-4">¡Registro Exitoso!</h2>
-            <p className="text-lg">Tu inscripción ha sido completada correctamente.</p>
-          </div>
-        </div>
-      )}
-
-      {showBracket && (
-        <Bracket closeBracket={closeBracket} />
-      )}
-
-      {showCancelConfirmation && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-          <div className="bg-[#002f5f] text-white p-5 rounded-lg w-[90%] max-w-[500px] h-auto overflow-hidden fixed">
-            <h2 className="text-3xl font-bold mb-4 text-center">¿Estas seguro de que deseas cancelar tu inscripción?</h2>
-            <p className="text-sm mb-8 text-center">Una vez cancelada, se te quitará la plaza para el torneo, por lo tanto si alguien se inscribe se le asignará tu plaza reservada. Es posible que después de la cancelación te quedes sin plaza.</p>
-            <div className="flex justify-around">
-              <button className={buttonStyle} onClick={confirmCancelRegistration}>Sí</button>
-              <button className={buttonStyle} onClick={closeCancelConfirmation}>No</button>
-            </div>
+      {showSuccessPopUp && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+          <div className="bg-gray-800 text-white p-10 rounded-lg shadow-lg w-[600px] text-center">
+            <h2 className="text-3xl font-bold mb-6">¡Registro Exitoso!</h2>
+            <p className="text-lg mb-6">
+              ¡Felicidades! Te has inscrito correctamente al torneo. Prepárate para demostrar tus habilidades y competir contra los mejores. 
+              Recuerda revisar tu correo electrónico para más detalles sobre el torneo y las próximas etapas. ¡Buena suerte!
+            </p>
+            {/* Removed inscription status text */}
           </div>
         </div>
       )}
