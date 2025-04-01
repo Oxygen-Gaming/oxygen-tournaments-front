@@ -17,10 +17,10 @@ const Bracket = ({ tournamentName }) => {
       { top: '18rem' }, { top: '58rem' }, { top: '96rem' }, { top: '136rem' }
     ],
     semifinales: [
-      { top: '35rem' }, { top: '65rem' }
+      { top: '35rem' }, { top: '115rem' }
     ],
-    final: { top: '51rem' },
-    tercerPuesto: { top: '75rem' }
+    final: { top: '78rem' },
+    tercerPuesto: { top: '85rem' }
   };
 
   return (
