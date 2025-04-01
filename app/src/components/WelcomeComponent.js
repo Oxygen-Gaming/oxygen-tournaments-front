@@ -1,18 +1,21 @@
 import React, { useState, useEffect } from "react";
-import Tarjeta from "@imgs/poster1.jpg"
-import Tarjeta2 from "@imgs/poster2.jpg"
-import Tarjeta3 from "@imgs/poster3.jpg"
-import Tarjeta4 from "@imgs/poster4.jpg"
-import Tarjeta5 from "@imgs/poster5.jpg"
-import Tarjeta6 from "@imgs/poster6.jpg"
-import Tarjeta7 from "@imgs/poster7.jpg"
-import Tarjeta8 from "@imgs/poster8.jpg"
-import Tarjeta9 from "@imgs/poster9.jpg"
-import Header from "./Header"; // Import Header component
-import Footer from "./Footer"; // Import Footer component
+import Tarjeta from "@imgs/poster1.jpg";
+import Tarjeta2 from "@imgs/poster2.jpg";
+import Tarjeta3 from "@imgs/poster3.jpg";
+import Tarjeta4 from "@imgs/poster4.jpg";
+import Tarjeta5 from "@imgs/poster5.jpg";
+import Tarjeta6 from "@imgs/poster6.jpg";
+import Tarjeta7 from "@imgs/poster7.jpg";
+import Tarjeta8 from "@imgs/poster8.jpg";
+import Tarjeta9 from "@imgs/poster9.jpg";
+import Header from "./Header";
+import Footer from "./Footer";
 
 const OxygenGaming = () => {
-  const cards = [
+  const [isOpen, setIsOpen] = useState(false); // Define isOpen state
+
+  const normalCards = []; // Cleared the normalCards array
+  const premiumCards = [
     { image: Tarjeta },
     { image: Tarjeta2 },
     { image: Tarjeta3 },
@@ -23,41 +26,37 @@ const OxygenGaming = () => {
     { image: Tarjeta8 },
     { image: Tarjeta9 },
   ];
-  const [isOpen, setIsOpen] = useState(false);
-  const [visibleCards, setVisibleCards] = useState([]);
-  const [activeCardIndex, setActiveCardIndex] = useState(null);
+
+  const [randomIndexNormal, setRandomIndexNormal] = useState(0);
+  const [fadeClassNormal, setFadeClassNormal] = useState("opacity-100");
+  const [isHoveredNormal, setIsHoveredNormal] = useState(false);
+
+  const [randomIndexPremium, setRandomIndexPremium] = useState(0);
+  const [fadeClassPremium, setFadeClassPremium] = useState("opacity-100");
+  const [isHoveredPremium, setIsHoveredPremium] = useState(false);
+
+  const [showAllNormal, setShowAllNormal] = useState(false);
+  const [showAllPremium, setShowAllPremium] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY + window.innerHeight;
-      const newVisibleCards = cards.map((_, index) => {
-        const cardElement = document.getElementById(`card-${index}`);
-        if (cardElement && !visibleCards[index]) { // Check if the card is not already visible
-          const cardPosition = cardElement.offsetTop + cardElement.clientHeight / 2;
-          return scrollPosition >= cardPosition;
-        }
-        return visibleCards[index]; // Keep the card visible once it has appeared
-      });
-      setVisibleCards(newVisibleCards);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [cards, visibleCards]);
-
-  useEffect(() => {
-    let currentIndex = 0;
     const interval = setInterval(() => {
-      setActiveCardIndex(currentIndex);
-      currentIndex = (currentIndex + 1) % cards.length; // Loop through cards
-    }, 4000); // Change card every 4 seconds
+      setRandomIndexNormal((prevIndex) => (prevIndex + 1) % normalCards.length);
+    }, 5000); // Change image every 5 seconds
 
-    return () => clearInterval(interval); // Cleanup on unmount
-  }, [cards.length]);
+    return () => clearInterval(interval);
+  }, [normalCards.length]);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setRandomIndexPremium((prevIndex) => (prevIndex + 1) % premiumCards.length);
+    }, 5000); // Change image every 5 seconds
+
+    return () => clearInterval(interval);
+  }, [premiumCards.length]);
 
   return (
-    <div className="bg-blue-900 text-white overflow-x-hidden font-['Roboto_Condensed',sans-serif] lg:p-0 pt-[30px] flex flex-col gap-0"> {/* Removed gap between sections */}
-      <Header /> 
+    <div className="bg-blue-900 text-white overflow-x-hidden font-['Roboto_Condensed',sans-serif] lg:p-0 pt-[30px] flex flex-col gap-0">
+      <Header />
       <button className="lg:hidden w-full mt-4 flex flex-col items-center justify-center" onClick={() => setIsOpen(!isOpen)}>
         <div className="w-6 h-0.5 bg-white mb-1"></div>
         <div className="w-6 h-0.5 bg-white mb-1"></div>
@@ -109,56 +108,97 @@ const OxygenGaming = () => {
             >
               Únete a Oxyclub
             </a>
-            {/* Removed the FAQs button */}
           </div>
         </div>
       </main>
+      <section className="w-11/12 max-w-7xl mx-auto mt-16 p-10 bg-blue-800 rounded-lg shadow-lg flex flex-col md:flex-row gap-10">
+        <div className="w-full md:w-1/2 flex justify-start items-center order-1 md:order-none pl-10"> {/* Aligned to the left */}
+          {/* Removed the image container */}
+        </div>
+        <div className="w-full md:w-1/2 flex flex-col justify-center text-white order-2 md:order-none"> {/* Text on the right */}
+          <h2 
+            className="text-5xl md:text-6xl font-extrabold mb-6"
+            style={{ textShadow: '0 0 10px rgba(0, 0, 0, 0.8)' }}
+          >
+            Ventajas de unirte a OxyClub
+          </h2>
+          <p className="text-xl leading-relaxed">
+            Únete a OxyClub y disfruta de beneficios exclusivos diseñados para gamers como tú. 
+            Participa en competiciones emocionantes, accede a contenido único y gana premios increíbles. 
+            ¡Es tu momento de brillar y demostrar tu talento en el mundo del gaming!
+          </p>
+          <div className="relative w-full h-[300px] overflow-hidden rounded-lg mt-6">
+            {showAllNormal ? (
+              <div className="grid grid-cols-3 gap-4">
+                {/* Removed rendering of normalCards */}
+              </div>
+            ) : (
+              <div className="flex justify-center items-center h-full text-gray-400">
+                No hay ventajas normales disponibles.
+              </div>
+            )}
+          </div>
+          <button
+            className="mt-6 bg-white text-blue-800 font-bold px-4 py-2 rounded-lg shadow-lg transition-transform transform hover:scale-110 self-start md:self-center"
+            onClick={() => setShowAllNormal(!showAllNormal)}
+          >
+            {showAllNormal ? "Ocultar" : "Ver Todas"}
+          </button>
+        </div>
+      </section>
       <section 
-        className="py-8 px-8 mt-0" // Removed fixed background color class
+        className="w-11/12 max-w-7xl mx-auto mt-20 p-10 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-lg shadow-lg flex flex-col md:flex-row gap-10"
         style={{
-          background: 'linear-gradient(135deg, #2563eb, #1e3a8a)', // Reversed gradient background
+          boxShadow: '0 0 30px 10px rgba(255, 215, 0, 0.8)', // Removed border
         }}
       >
-        <h2 
-          className="text-center text-3xl md:text-4xl mb-8 font-bold" // Increased font size
-          style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)' }} // Add subtle text shadow
+        <div className="w-full md:w-1/2 flex flex-col justify-center text-black order-1 md:order-none pr-10"> {/* Text on the left */}
+          <h2 
+            className="text-6xl md:text-7xl font-extrabold mb-6"
+            style={{ textShadow: '0 0 15px rgba(255, 215, 0, 0.9)' }}
+          >
+            Ventajas Premium
+          </h2>
+          <p className="text-xl leading-relaxed">
+            Conviértete en miembro premium de OxyClub y accede a un nivel superior de beneficios. 
+            Obtén recompensas exclusivas, participa en torneos de élite y disfruta de una experiencia de gaming incomparable. 
+            ¡Haz que cada partida cuente y alcanza la cima con OxyClub Premium!
+          </p>
+        </div>
+        <div
+          className="w-full md:w-1/2 flex justify-center items-center order-2 md:order-none"> {/* Image on the right */}
+          <div className="relative w-full h-[400px] md:h-[500px] overflow-hidden rounded-lg flex items-center"> {/* Added flex and items-center */}
+            {showAllPremium ? (
+              <div className="grid grid-cols-3 gap-4">
+                {premiumCards.map((card, index) => (
+                  <img
+                    key={index}
+                    src={card.image}
+                    alt={`Ventaja Premium ${index + 1}`}
+                    className="w-full h-[155px] object-cover rounded-lg" // Added fixed height and rounded borders
+                  />
+                ))}
+              </div>
+            ) : (
+              premiumCards.map((card, index) => (
+                <img
+                  key={index}
+                  src={card.image}
+                  alt={`Ventaja Premium ${index + 1}`}
+                  className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
+                    index === randomIndexPremium ? "opacity-100" : "opacity-0"
+                  } rounded-lg`} // Added rounded borders
+                />
+              ))
+            )}
+          </div>
+        </div>
+        <button
+          className="mt-6 bg-white text-orange-500 font-bold px-4 py-2 rounded-lg shadow-lg transition-transform transform hover:scale-110"
+          onClick={() => setShowAllPremium(!showAllPremium)}
         >
-          Ventajas de unirte a OxyClub
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-5 gap-x-2 gap-y-4 justify-items-center">
-          {cards.map((item, index) => (
-            <div
-              key={index}
-              id={`card-${index}`}
-              className={`p-6 rounded-lg shadow-md bg-blue-700 transition-opacity duration-700 ease-in-out ${visibleCards[index] ? 'opacity-100' : 'opacity-0'}`} // Fade-in animation restored
-              style={{
-                backgroundImage: `url(${item.image})`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                width: '100%',
-                height: '350px',
-                maxWidth: '320px',
-                transform: activeCardIndex === index ? 'scale(1.05)' : 'scale(1)', // Highlight active card
-                boxShadow: activeCardIndex === index ? '0 0 20px 5px rgba(255, 255, 255, 0.8)' : 'none', // Glow effect for active card
-                transition: 'transform 0.7s ease-in-out, box-shadow 0.7s ease-in-out, opacity 0.7s ease-in-out', // Ensure opacity transition
-              }}
-            >
-              <div className="md:hidden" style={{ backgroundSize: 'contain', backgroundRepeat: 'no-repeat', backgroundPosition: 'center', height: '300px', maxWidth: '280px' }}></div>
-              {/* Image only, no text */}
-            </div>
-          ))}
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {[
-          
-          ].map((item, index) => (
-            <div key={index} className="p-8 rounded-lg shadow-md bg-blue-700 transition-transform duration-300 hover:scale-105 hover:shadow-md" style={{ backgroundImage: `url(${item.image})`, backgroundSize: "cover", backgroundPosition: 'center', width: '100%', height: '350px', maxWidth: '320px' }}>
-              <div className="md:hidden" style={{ backgroundSize: 'contain', backgroundRepeat: 'no-repeat', backgroundPosition: 'center', height: '300px', maxWidth: '280px' }}></div>
-              <h3 className="text-xl mb-2">{item.title}</h3>
-              <p className="text-gray-300">{item.text}</p>
-            </div>
-          ))}
-        </div>
+          {showAllPremium ? "Ocultar" : "Ver Todas"}
+        </button>
       </section>
       <Footer></Footer>
     </div>

@@ -35,14 +35,16 @@ const CardsComponent = ({ handleCardClick, selectedGame, filter, inscriptionStat
 
     return (
         <>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"> {/* Aumentamos el gap entre tarjetas */}
                 {filteredCards.map(card => (
                     <div
                         key={card[0]}
-                        className={`card ${card[4] === 'finished' ? 'opacity-50' : ''}`}
+                        className={`card relative overflow-hidden rounded-lg shadow-lg ${
+                            selectedCard && selectedCard[0] === card[0] ? 'ring-4 ring-blue-500' : 'hover:scale-105 transition-transform'
+                        }`} // Efecto de zoom solo al pasar el mouse
                         onClick={() => handleCardSelection(card)}
                     >
-                        <div className="bg-gradient-to-r from-[#0074D9] to-[#003f7f] rounded-lg p-5 transition-transform transform hover:scale-105 shadow-lg flex flex-col justify-between h-[450px]">
+                        <div className="relative bg-gradient-to-r from-[#0074D9] to-[#003f7f] p-5 flex flex-col justify-between h-[450px]">
                             <img src={card[6]} alt={card[1]} className="w-full h-[220px] object-cover rounded-lg mb-4" />
                             <h2 className="text-white text-2xl font-bold mb-2">{card[2]}</h2>
                             <p className="text-sm mb-2">Fecha de Inicio: {card[3]}</p>
@@ -50,7 +52,7 @@ const CardsComponent = ({ handleCardClick, selectedGame, filter, inscriptionStat
                                 <img src={Logo} alt="Trophy" className="w-6 h-6 mr-2" />
                                 <span className={card[4] === 'finished' ? 'text-red-500' : card[4] === 'ongoing' ? 'text-yellow-400' : 'text-green-500'}>
                                     {card[4] === 'upcoming' ? 'Inscripciones Abiertas' : card[4] === 'ongoing' ? 'En Curso' : 'Finalizado'}
-                                </span> {/* Changed to text-yellow-400 for "En Curso" */}
+                                </span>
                             </div>
                             <div className="flex justify-between text-sm">
                                 <span>Jugadores Inscritos: {card[5]}</span>

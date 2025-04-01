@@ -9,6 +9,7 @@ import Welcome from '@components/WelcomeComponent';
 import Content from '@components/ContentComponent';
 import Competition from "./pages/CompetitionPage";
 import SpecificGameComponent from './components/Componentes Competicion/SpecificGameComponent';
+import TournamentDetailsPage from "./pages/TournamentDetailsPage";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/missions" element={<Missions />} />
         <Route path="/content" element={<Content />} />
         <Route path="/game" element={<SpecificGameComponent />} />
+        <Route path="/tournament-details" element={<TournamentDetailsPage />} />
       </Routes>
     </BrowserRouter>
   );
