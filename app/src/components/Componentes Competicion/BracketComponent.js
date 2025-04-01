@@ -1,9 +1,7 @@
 import React from "react";
 import CuadrosBracket from "./CuadrosBracket";
 
-const Bracket = ({ closeBracket, tournamentName }) => {
-  const bracketModalStyle = "bg-gray-900 text-white p-5 rounded-lg w-[95%] max-w-[1600px] h-[90%] fixed overflow-auto scrollbar-hide"; // Added scrollbar-hide
-
+const Bracket = ({ tournamentName }) => {
   const positions = {
     dieciseisavos: [
       { top: '0rem' }, { top: '4rem' }, { top: '8rem' }, { top: '12rem' },
@@ -26,15 +24,16 @@ const Bracket = ({ closeBracket, tournamentName }) => {
   };
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"> {/* Added z-50 */}
-      <div className={bracketModalStyle}>
-        <div className="relative z-10 mb-8 border-b border-blue-500 pb-3">
-          <h1 className="text-2xl font-extrabold tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-600 drop-shadow-md">
-            {tournamentName} - BRACKET
-          </h1>
-          <button onClick={closeBracket} className="absolute top-2 right-2 text-white text-2xl font-bold">X</button>
+    <div className="bg-gray-900 text-white p-5 rounded-lg w-full max-w-[1400px] mx-auto mt-8">
+      <div className="relative mb-8 border-b border-blue-500 pb-3">
+        <h1 className="text-2xl font-extrabold tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-600 drop-shadow-md">
+          {tournamentName} - BRACKET
+        </h1>
+      </div>
+      <div className="overflow-x-auto">
+        <div className="min-w-[1200px]"> {/* Ajustamos el ancho mínimo */}
+          <CuadrosBracket positions={positions} />
         </div>
-        <CuadrosBracket positions={positions} />
       </div>
     </div>
   );
