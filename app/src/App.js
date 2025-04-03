@@ -4,12 +4,13 @@ import Register from '@components/RegisterComponent';
 import Login from '@components/LoginComponent';
 import Rewards from './pages/RewardsPage';
 import Missions from './pages/MissionsPage';
-import Welcome from '@components/WelcomeComponent';
+import Welcome from './pages/WelcomePage';
 import Content from './pages/ContentPage';
 import Competition from "./pages/CompetitionPage";
 import SpecificGameComponent from './components/Componentes Competicion/SpecificGameComponent';
 import TournamentDetailsPage from "./pages/TournamentDetailsPage";
 import Perfil from './pages/PerfilPage';
+import Ventajas from './pages/VentajasPage';
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
         <Route path="/content" element={<Content />} />
         <Route path="/game" element={<SpecificGameComponent />} />
         <Route path="/tournament-details" element={<TournamentDetailsPage />} />
+        <Route path="/ventajas" element={<Ventajas />} />
       </Routes>
     </BrowserRouter>
   );

@@ -6,6 +6,7 @@ import LeagueOfLegends from "@imgs/League.jpg";
 import Valorant from "@imgs/valorant.jpg";
 import RocketLeague from "@imgs/rocketleague.jpg";
 import Bracket from "@components/Componentes Competicion/BracketComponent";
+import MenuHamburguesaNormal from "@components/ComponentesMenuHamburguesa/MenuHamburguesaNormalComponent";
 
 const TournamentDetailsPage = () => {
   const location = useLocation();
@@ -31,6 +32,7 @@ const TournamentDetailsPage = () => {
   return (
     <div className="bg-[#003366] text-white overflow-x-hidden font-['Roboto_Condensed',sans-serif]">
       <Header />
+      <MenuHamburguesaNormal />
       <div className="container mx-auto p-5">
         <div className="bg-[#002f5f] text-white rounded-lg w-full max-w-[1300px] mx-auto">
           {/* Encabezado del torneo */}
