@@ -24,5 +24,4 @@ const SpecificGameComponent = ({ handleCardClick }) => {
         </div>
     );
 };
-
 export default SpecificGameComponent;
