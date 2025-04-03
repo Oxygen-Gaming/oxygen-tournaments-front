@@ -3,27 +3,20 @@ import React from 'react';
 const Footer = () => {
   return (
     <div id="contenido_footer" className="flex flex-col items-center justify-center gap-6 bg-[#1a191d] px-8 py-6 w-full lg:h-[520px]">
-      <div id="arriba_footer" className="flex flex-col items-center w-full gap-8 md:gap-12 lg:flex-row lg:items-start lg:justify-center lg:gap-[12vh] lg:mb-[100px]">
+      <div id="arriba_footer" className="flex flex-col items-center w-full gap-8 md:gap-12 lg:flex-row lg:items-start lg:justify-center lg:gap-[20vh] lg:mb-[100px]">
           <div className="menus_footer flex flex-col gap-4 min-w-[200px] text-center lg:text-left">
               <span className="text-[#1AA9FF] font-bold text-xl lg:text-[22px] md:text-[35px]">OXYGENGAMING</span>
               <div className="info_footer flex flex-col gap-3">
-                  <a href="https://oxygengaming.es/sobre-nosotros/" className="text-[#b0b0b0] font-bold transition-colors duration-300 hover:text-[#1AA9FF] md:text-[25px] lg:text-[18px]">SOBRE NOSOTROS</a>
-                  <a href="https://oxygengaming.es/patrocinadores/" className="text-[#b0b0b0] font-bold transition-colors duration-300 hover:text-[#1AA9FF] md:text-[25px] lg:text-[18px]">PATROCINADORES</a>
-                  <a href="https://oxygengaming.es/noticias/" className="text-[#b0b0b0] font-bold transition-colors duration-300 hover:text-[#1AA9FF]  md:text-[25px] lg:text-[18px]">NOTICIAS</a>
-                  <a href="https://oxygengaming.es/tienda/" className="text-[#b0b0b0] font-bold transition-colors duration-300 hover:text-[#1AA9FF] md:text-[25px] lg:text-[18px]">TIENDA</a>
-                  <a href="https://oxygengaming.es/oxy-club/" className="text-[#b0b0b0] font-bold transition-colors duration-300 hover:text-[#1AA9FF] md:text-[25px] lg:text-[18px]">OXYCLUB</a>
-                  <a href="https://oxygengaming.es/contacto/" className="text-[#b0b0b0] font-bold transition-colors duration-300 hover:text-[#1AA9FF] md:text-[25px] lg:text-[18px]">CONTACTO</a>
+                  <a href="/competition" className="text-[#b0b0b0] font-bold transition-colors duration-300 hover:text-[#1AA9FF] md:text-[25px] lg:text-[18px]">COMPETICIONES</a>
+                  <a href="/content" className="text-[#b0b0b0] font-bold transition-colors duration-300 hover:text-[#1AA9FF] md:text-[25px] lg:text-[18px]">CONTENIDO</a>
+                  <a href="/missions" className="text-[#b0b0b0] font-bold transition-colors duration-300 hover:text-[#1AA9FF]  md:text-[25px] lg:text-[18px]">MISIONES</a>
+                  <a href="/rewards" className="text-[#b0b0b0] font-bold transition-colors duration-300 hover:text-[#1AA9FF] md:text-[25px] lg:text-[18px]">RECOMPENSAS</a>
+                  <a href="/perfil" className="text-[#b0b0b0] font-bold transition-colors duration-300 hover:text-[#1AA9FF] md:text-[25px] lg:text-[18px]">MI CUENTA</a>
+                  
               </div>
           </div>
 
-          <div className="menus_footer flex flex-col gap-4 min-w-[200px] text-center lg:text-left">
-              <span className="text-[#1AA9FF] font-bold text-xl lg:text-[22px] md:text-[35px]">EQUIPOS</span>
-              <div className="info_footer flex flex-col gap-3">
-                  <a href="https://oxygengaming.es/equipos/#leagueoflegends" className="text-[#b0b0b0] font-bold transition-colors duration-300 hover:text-[#1AA9FF] md:text-[25px] lg:text-[18px]">LEAGUE OF LEGENDS</a>
-                  <a href="#" className="text-[#b0b0b0] font-bold transition-colors duration-300 hover:text-[#1AA9FF] md:text-[25px] lg:text-[18px]">VALORANT</a>
-                  <a href="https://oxygengaming.es/creadores/" className="text-[#b0b0b0] font-bold transition-colors duration-300 hover:text-[#1AA9FF] md:text-[25px] lg:text-[18px]">CREADORES</a>
-              </div>
-          </div>
+          
 
           <div className="menus_footer flex flex-col gap-4 min-w-[200px] text-center lg:text-left">
               <span className="text-[#1AA9FF] font-bold text-xl lg:text-[22px] md:text-[35px]">POLÍTICAS</span>
