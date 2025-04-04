@@ -8,6 +8,7 @@ import Tarjeta6 from "@imgs/poster6.jpg";
 import Tarjeta7 from "@imgs/poster7.jpg";
 import Tarjeta8 from "@imgs/poster8.jpg";
 import Tarjeta9 from "@imgs/poster9.jpg";
+import PortadaDeHome from "@imgs/Portada_de_Home.jpg"; // Import the background image
 import Header from "./Header";
 import Footer from "./Footer";
 
@@ -70,24 +71,17 @@ const OxygenGaming = () => {
         <a href="/rewards" className="text-white no-underline rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10" onClick={() => setIsOpen(!isOpen)}>Recompensas</a>        
       </div>
       <main 
-        className="flex items-center h-[calc(100vh-80px)] px-16 relative overflow-hidden md:mt-0 mt-0 pt-7 bg-blue-900" // Removed fixed background color
+        className="flex items-center h-[calc(100vh-80px)] px-16 relative overflow-hidden md:mt-0 mt-0 pt-7"
         style={{
-          backgroundImage: 'url("https://via.placeholder.com/1920x1080")', // Example background image
+          backgroundImage: `url(${PortadaDeHome})`, // Set the background image
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
       >
-        <svg
-          className="absolute right-[-10%] top-1/2 -translate-y-1/2 w-[60%] opacity-10 z-[1]"
-          viewBox="0 0 500 500"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M250,50 L400,250 L250,450 L100,250 Z"
-            className="fill-orange-400 opacity-20"
-          />
-        </svg>
-        <div className="max-w-[600px] z-10 relative">
+        <div className="absolute inset-0 bg-black bg-opacity-50 z-0"></div> {/* Add a dark overlay */}
+        {/* Gradient at the bottom */}
+        <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-b from-transparent to-blue-900 z-10"></div>
+        <div className="max-w-[600px] z-20 relative">
           <h1 className="text-3xl mb-4 leading-[1.2]">
             VENTAJAS EXCLUSIVAS PARA{' '}
             <span className="text-blue-600">GAMERS</span>.
