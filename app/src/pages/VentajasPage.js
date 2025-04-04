@@ -7,6 +7,7 @@ import TablaVentajas from "@components/ComponentesVentajas/VentajasTablaComponen
 import VentajasNormales from "@components/componentesInicio/VentajasNormalesComponents";
 import VentajasPremium from "@components/componentesInicio/VentajasPremiumComponent";
 
+
 const Ventajas = () => {
   
     return (
