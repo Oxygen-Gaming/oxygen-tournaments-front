@@ -35,26 +35,28 @@ const CardsComponent = ({ handleCardClick, selectedGame, filter, inscriptionStat
 
     return (
         <>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"> {/* Aumentamos el gap entre tarjetas */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {filteredCards.map(card => (
                     <div
                         key={card[0]}
-                        className={`card relative overflow-hidden rounded-lg shadow-lg ${
-                            selectedCard && selectedCard[0] === card[0] ? 'ring-4 ring-blue-500' : 'hover:scale-105 transition-transform'
-                        }`} // Efecto de zoom solo al pasar el mouse
+                        className={`card relative overflow-hidden rounded-lg shadow-lg bg-gradient-to-br from-[#1e293b] via-[#2d3748] to-[#4a5568] text-white transition-transform transform hover:scale-105 hover:shadow-2xl ${
+                            selectedCard && selectedCard[0] === card[0] ? 'ring-4 ring-blue-500' : ''
+                        }`} // Elegant gradient and hover effects
                         onClick={() => handleCardSelection(card)}
                     >
-                        <div className="relative bg-gradient-to-r from-[#0074D9] to-[#003f7f] p-5 flex flex-col justify-between h-[450px]">
-                            <img src={card[6]} alt={card[1]} className="w-full h-[220px] object-cover rounded-lg mb-4" />
+                        <div className="relative p-6 flex flex-col justify-between h-[450px]">
+                            <img src={card[6]} alt={card[1]} className="w-full h-[220px] object-cover rounded-lg mb-4 shadow-md" />
                             <h2 className="text-white text-2xl font-bold mb-2">{card[2]}</h2>
-                            <p className="text-sm mb-2">Fecha de Inicio: {card[3]}</p>
+                            <p className="text-sm mb-2 text-gray-300">Fecha de Inicio: {card[3]}</p>
                             <div className="flex items-center mb-2">
                                 <img src={Logo} alt="Trophy" className="w-6 h-6 mr-2" />
-                                <span className={card[4] === 'finished' ? 'text-red-500' : card[4] === 'ongoing' ? 'text-yellow-400' : 'text-green-500'}>
+                                <span className={`text-sm font-bold ${
+                                    card[4] === 'finished' ? 'text-red-500' : card[4] === 'ongoing' ? 'text-yellow-400' : 'text-green-500'
+                                }`}>
                                     {card[4] === 'upcoming' ? 'Inscripciones Abiertas' : card[4] === 'ongoing' ? 'En Curso' : 'Finalizado'}
                                 </span>
                             </div>
-                            <div className="flex justify-between text-sm">
+                            <div className="flex justify-between text-sm text-gray-300">
                                 <span>Jugadores Inscritos: {card[5]}</span>
                             </div>
                             <div className="flex justify-between text-sm mt-2">
