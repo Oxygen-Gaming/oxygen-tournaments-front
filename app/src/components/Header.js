@@ -16,6 +16,7 @@ const Header = () => {
         <a href="/content" className={`text-white no-underline px-2 py-2 rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10 font-['Roboto_Condensed',sans-serif] ${location.pathname === '/content' ? 'bg-blue-600' : ''}`}>Contenido</a>
         <a href="/missions" className={`text-white no-underline px-2 py-2 rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10 font-['Roboto_Condensed',sans-serif] ${location.pathname === '/missions' ? 'bg-blue-600' : ''}`}>Misiones</a>
         <a href="/rewards" className={`text-white no-underline px-2 py-2 rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10 font-['Roboto_Condensed',sans-serif] ${location.pathname === '/rewards' ? 'bg-blue-600' : ''}`}>Recompensas</a>
+        <a href="/ventajas" className={`text-white no-underline px-2 py-2 rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10 font-['Roboto_Condensed',sans-serif] ${location.pathname === '/ventajas' ? 'bg-blue-600' : ''}`}>Ventajas</a>
       </nav>
       <div className="flex items-center gap-2 ml-auto">
         <a href="/register" className="text-white no-underline px-2 py-2 rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md border-2 border-white bg-transparent">Registrarse</a>

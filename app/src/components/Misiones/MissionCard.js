@@ -1,21 +1,26 @@
-import React, { useState } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
-const MissionCard = ({ id, title, image, points }) => {
-  const [flipped, setFlipped] = useState(false);
-
+const Card = ({ image, title, points }) => {
   return (
-    <div
-      id={`mission-card-${id}`}
-      className={`w-full sm:w-1/2 md:w-2/3 lg:w-1/2 xl:w-1/4 h-auto md:h-[28rem] bg-gradient-to-t from-[#18538a] to-[#1e90ff] rounded-lg shadow-lg transform transition duration-310 hover:scale-105 relative perspective-1000 ${flipped ? 'rotate-y-180' : ''}`}
-    >
-      <div className="w-full h-full relative transform-style-preserve-3d transition-transform duration-800">
-        <div className="absolute w-full h-full flex flex-col items-center justify-center bg-gradient-to-t from-[#18538a] to-[#1e90ff] text-black transform rotate-y-180 backface-hidden rounded-lg">
-          <img src={image} alt={title} className="w-full h-full object-cover rounded-lg" />
-          <p className="text-lg text-white absolute bottom-2 right-2">{points}</p>
-        </div>
+    <div className="card w-84 h-96 bg-gradient-to-b from-[#1e3a8a] to-[#2563eb] rounded-xl shadow-md overflow-hidden transform transition duration-300 hover:scale-105">
+      <div className="relative w-full h-full">
+        <img src={image} alt={title} className="w-full h-full object-cover" />
+        <p className="absolute bottom-2 right-2 text-white text-sm bg-black bg-opacity-50 px-2 py-1 rounded no-underline">
+          Puntos: {points}
+        </p>
       </div>
-    </div>  
+      <div className="p-4 text-white">
+        <h3 className="text-lg font-bold">{title}</h3>
+      </div>
+    </div>
   );
 };
 
-export default MissionCard;
+Card.propTypes = {
+  image: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  points: PropTypes.number.isRequired,
+};
+
+export default Card;

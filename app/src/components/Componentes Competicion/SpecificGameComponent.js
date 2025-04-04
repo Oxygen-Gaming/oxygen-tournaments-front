@@ -9,7 +9,7 @@ const SpecificGameComponent = ({ handleCardClick }) => {
     };
 
     return (
-        <div className="container mx-auto p-5">
+        <div className="container mx-auto p-5 sm:p-3 md:p-4 lg:p-5">
             {!selectedGame ? (
                 <ViewAllComponent 
                     handleCardClick={handleCardClick} 
@@ -24,5 +24,4 @@ const SpecificGameComponent = ({ handleCardClick }) => {
         </div>
     );
 };
-
 export default SpecificGameComponent;
