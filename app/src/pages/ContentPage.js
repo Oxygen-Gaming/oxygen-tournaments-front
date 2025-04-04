@@ -67,8 +67,8 @@ const Contenido = () => {
       <Header />
       <MenuHamburguesaNormal />
 
-      <div className="container p-5 flex justify-center items-center mt-16 text-center">
-        <h1 className="text-white text-4xl font-bold md:ml-0">Contenido</h1>
+      <div className="w-11/12 mx-auto mt-8">
+        <h1 className="text-5xl text-white font-extrabold text-center">Contenido</h1>
       </div>
       <div className="flex-grow flex justify-between mt-12 flex-col md:flex-row items-center md:items-start text-left">
         <div className="info-card w-full md:w-2/5 ml-10 m-5 p-5 bg-gradient-to-t from-blue-900 to-blue-500 text-white rounded-lg shadow-lg md:w-2/5 w-11/12">

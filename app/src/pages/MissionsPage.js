@@ -7,24 +7,23 @@ import MenuHamburguesaNormal from "@components/ComponentesMenuHamburguesa/MenuHa
 
 const Missions = () => {
   return (
-    <div className="bg-[#18538a] text-[18px] font-['Roboto_Condensed'] min-h-screen">
+    <div className="bg-blue-900 text-[18px] font-['Roboto_Condensed'] min-h-screen">
       <Header />
-      <MenuHamburguesaNormal />
-      <div className="container p-6 flex justify-center items-center mt-10 md:mt-16 lg:mt-24">
-        <h1 className="text-white text-4xl md:text-5xl font-bold text-center">Misiones</h1>
-        <br></br>
+     
+      <div className="w-11/12 mx-auto mt-8">
+        <h1 className="text-5xl text-white font-extrabold text-center">Misiones</h1>
       </div>
-      <section className="hidden md:flex flex-wrap justify-center gap-x-12 gap-y-16 md:gap-x-24 md:gap-y-32 pt-60 pb-24 px-4 md:px-28 mb-24 lg:flex">
+      <section className="hidden md:flex flex-wrap justify-center gap-x-16 gap-y-20 pt-40 pb-24 px-4 md:px-16 mb-24 lg:flex">
         {missions.map((mission) => (
           <MissionCard key={mission.id} {...mission} />
         ))}
       </section>
       <br></br>
       <div className="md:hidden px-4 mb-16">
-        <div className="grid grid-cols-2 gap-2 gap-y-4">
+        <div className="grid grid-cols-2 gap-8 gap-y-10">
           {missions.map((mission) => (
-            <div key={mission.id} className="p-1">
-              <div className="bg-gradient-to-t from-[#18538a] to-[#1e90ff] rounded-lg shadow-lg p-1 relative">
+            <div key={mission.id} className="p-4">
+              <div className="bg-gradient-to-t from-[#1e3a8a] to-[#2563eb] rounded-lg shadow-lg p-1 relative">
                 <img src={mission.image} alt={mission.title} className="w-full h-auto object-contain rounded-lg" />
                 <p className="text-white text-xs absolute bottom-1 right-1">{mission.points}</p>
               </div>
