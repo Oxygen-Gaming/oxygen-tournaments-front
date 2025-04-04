@@ -1,16 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Card = ({ image, title, points, description, footer }) => {
+const Card = ({ image, title, points }) => {
   return (
-    <div className="card-container w-60 h-80 relative bg-gray-800 rounded-lg shadow-lg overflow-hidden">
-      <img src={image} alt={title} className="card-image w-full h-2/3 object-cover" />
-      <div className="card-content p-4 text-white">
-        <h3 className="card-title text-lg font-bold">{title}</h3>
-        {description && <p className="card-description text-sm mt-2">{description}</p>}
-        <p className="card-points text-sm mt-4">Puntos: {points}</p>
+    <div className="card w-84 h-96 bg-gradient-to-b from-blue-900 to-blue-600 rounded-xl shadow-md overflow-hidden transform transition duration-300 hover:scale-105">
+      <div className="relative w-full h-full">
+        <img src={image} alt={title} className="w-full h-full object-cover" />
+        <p className="absolute bottom-2 right-2 text-white text-sm bg-black bg-opacity-50 px-2 py-1 rounded no-underline">
+          Puntos: {points}
+        </p>
       </div>
-      {footer && <div className="card-footer p-2 bg-gray-900 text-xs text-center">{footer}</div>}
+      <div className="p-4 text-white">
+        <h3 className="text-lg font-bold">{title}</h3>
+      </div>
     </div>
   );
 };
@@ -19,8 +21,6 @@ Card.propTypes = {
   image: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   points: PropTypes.number.isRequired,
-  description: PropTypes.string, // Nueva propiedad opcional
-  footer: PropTypes.string, // Nueva propiedad opcional
 };
 
 export default Card;
