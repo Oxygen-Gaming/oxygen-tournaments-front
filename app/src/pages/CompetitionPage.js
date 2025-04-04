@@ -136,8 +136,6 @@ const Competition = () => {
                 inscriptionStatus={inscriptionStatus}
                 selectedCard={selectedCard}
             />
-
-<<<<<<< HEAD
             <div className="flex justify-center mt-8">
               <button
                 className="px-4 py-2 bg-blue-500 text-white rounded-lg transition-all duration-300 transform hover:scale-110"
@@ -151,9 +149,6 @@ const Competition = () => {
                 Volver
               </button>
             </div>
-=======
-            
->>>>>>> main
           </>
         )}
 
