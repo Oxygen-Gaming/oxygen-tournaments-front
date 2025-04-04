@@ -10,8 +10,10 @@ const OxygenGaming = () => {
     <div className="bg-blue-900 text-white overflow-x-hidden font-['Roboto_Condensed',sans-serif] lg:p-0 pt-[30px] flex flex-col gap-0 px-[20px]">
       <Header />
       <MenuHamburguesaNormal />
-      <Banner />
-      <VentajasMixtas />
+      <div className="flex flex-col justify-center items-center ">
+        <Banner />
+        <VentajasMixtas />
+      </div>
       <Footer />
     </div>
   );

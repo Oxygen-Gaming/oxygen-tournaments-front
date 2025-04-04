@@ -1,9 +1,9 @@
 import React from "react";
 
-const VentajaGrande = ({ link, text, shadow, background }) => {
+const VentajaGrande = ({ link, text, shadow, background, color }) => {
   const cardContainer = {
-    width: "85vh",
-    height: "40vh",
+    width: "55vh",
+    height: "30vh",
     perspective: "1000px",
     display: "flex",
     alignItems: "center",
@@ -58,7 +58,7 @@ const VentajaGrande = ({ link, text, shadow, background }) => {
 
         {/* Cara trasera con el color de fondo directo */}
         <div style={backFaceStyle}>
-          <p style={{ color: "black", fontWeight: "bold", fontSize: "3rem", textAlign: "center", padding: "10px" }}>
+          <p style={{ fontWeight: "bold", fontSize: "3rem", textAlign: "center", padding: "10px" }} className={`text-${color}`}>
             {text}
           </p>
         </div>
