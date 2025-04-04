@@ -3,16 +3,15 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import missions from '../components/Misiones/missions';
 import MissionCard from '../components/Misiones/MissionCard';
-import { useState } from 'react';
+import MenuHamburguesaNormal from "@components/ComponentesMenuHamburguesa/MenuHamburguesaNormalComponent";
 
 const Missions = () => {
-  const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="bg-blue-900 text-[18px] font-['Roboto_Condensed'] min-h-screen">
       <Header />
      
-      <div className="container p-6 flex justify-center items-center mt-10 md:mt-12 lg:mt-16">
-        <h1 className="text-white text-4xl font-bold text-center md:mx-auto">Misiones</h1>
+      <div className="w-11/12 mx-auto mt-8">
+        <h1 className="text-5xl text-white font-extrabold text-center">Misiones</h1>
       </div>
       <section className="hidden md:flex flex-wrap justify-center gap-x-16 gap-y-20 pt-40 pb-24 px-4 md:px-16 mb-24 lg:flex">
         {missions.map((mission) => (
