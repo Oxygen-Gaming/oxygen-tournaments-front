@@ -56,7 +56,7 @@ const OxygenGaming = () => {
   }, [premiumCards.length]);
 
   return (
-    <div className="bg-blue-900 text-white overflow-x-hidden font-['Roboto_Condensed',sans-serif] lg:p-0 pt-[30px] flex flex-col gap-0">
+    <div className="bg-[#1AA9FF] text-white overflow-x-hidden font-['Roboto_Condensed',sans-serif] lg:p-0 pt-[30px] flex flex-col gap-0">
       <Header />
       <button className="lg:hidden w-full mt-4 flex flex-col items-center justify-center" onClick={() => setIsOpen(!isOpen)}>
         <div className="w-6 h-0.5 bg-white mb-1"></div>
@@ -70,27 +70,26 @@ const OxygenGaming = () => {
         <a href="/missions" className="text-white no-underline rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10" onClick={() => setIsOpen(!isOpen)}>Misiones</a>
         <a href="/rewards" className="text-white no-underline rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10" onClick={() => setIsOpen(!isOpen)}>Recompensas</a>        
       </div>
-      <main 
+      <main
         className="flex items-center h-[calc(100vh-80px)] px-16 relative overflow-hidden md:mt-0 mt-0 pt-7"
         style={{
-          backgroundImage: `url(${PortadaDeHome})`, // Set the background image
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
+          backgroundImage: `url(${PortadaDeHome})`, // Keep the original image
+          backgroundSize: "cover",
+          backgroundPosition: "center",
         }}
       >
-        <div className="absolute inset-0 bg-black bg-opacity-50 z-0"></div> {/* Add a dark overlay */}
-        {/* Gradient at the bottom */}
-        <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-b from-transparent to-blue-900 z-10"></div>
+        <div className="absolute inset-0 bg-black bg-opacity-50 z-0"></div> {/* Restore the black overlay */}
+        <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-b from-transparent to-[#1AA9FF] z-10"></div>
         <div className="max-w-[600px] z-20 relative">
           <h1 className="text-3xl mb-4 leading-[1.2]">
-            VENTAJAS EXCLUSIVAS PARA{' '}
-            <span className="text-blue-600">GAMERS</span>.
+            VENTAJAS EXCLUSIVAS PARA{" "}
+            <span className="text-white">GAMERS</span>.
           </h1>
           <h1 className="text-3xl mb-4 leading-[1.2]">
-            VIVE LA MEJOR EXPERIENCIA GAMER CON{' '}
-            <span className="text-blue-600">OXYCLUB</span>.
+            VIVE LA MEJOR EXPERIENCIA GAMER CON{" "}
+            <span className="text-white">OXYCLUB</span>.
           </h1>
-          <p className="mb-8 text-gray-300">
+          <p className="mb-8 text-white">
             ¡Bienvenido a OxyClub! La plataforma que te da más: más acceso a
             competiciones, más contenido exclusivo, más premios y más
             oportunidades para demostrar tu talento y vivir el gaming al máximo.
@@ -98,22 +97,19 @@ const OxygenGaming = () => {
           <div className="flex gap-4 mt-[-20px]">
             <a
               href="/register"
-              className="inline-block px-4 py-3 rounded font-bold transition transform hover:-translate-y-1 hover:shadow-md bg-blue-600 text-white"
+              className="inline-block px-4 py-3 rounded font-bold transition transform hover:-translate-y-1 hover:shadow-md bg-[#005f99] text-white"
             >
               Únete a Oxyclub
             </a>
           </div>
         </div>
       </main>
-      <section className="w-11/12 max-w-7xl mx-auto mt-16 p-10 bg-blue-800 rounded-lg shadow-lg flex flex-col md:flex-row gap-10">
-        <div className="w-full md:w-1/2 flex justify-start items-center order-1 md:order-none pl-10"> {/* Aligned to the left */}
+      <section className="w-11/12 max-w-7xl mx-auto mt-16 p-10 bg-[#005f99] rounded-lg shadow-lg flex flex-col md:flex-row gap-10">
+        <div className="w-full md:w-1/2 flex justify-start items-center order-1 md:order-none pl-10">
           {/* Removed the image container */}
         </div>
-        <div className="w-full md:w-1/2 flex flex-col justify-center text-white order-2 md:order-none"> {/* Text on the right */}
-          <h2 
-            className="text-5xl md:text-6xl font-extrabold mb-6"
-            style={{ textShadow: '0 0 10px rgba(0, 0, 0, 0.8)' }}
-          >
+        <div className="w-full md:w-1/2 flex flex-col justify-center text-white order-2 md:order-none">
+          <h2 className="text-5xl md:text-6xl font-extrabold mb-6">
             Ventajas de unirte a OxyClub
           </h2>
           <p className="text-xl leading-relaxed">
@@ -121,36 +117,13 @@ const OxygenGaming = () => {
             Participa en competiciones emocionantes, accede a contenido único y gana premios increíbles. 
             ¡Es tu momento de brillar y demostrar tu talento en el mundo del gaming!
           </p>
-          <div className="relative w-full h-[300px] overflow-hidden rounded-lg mt-6">
-            {showAllNormal ? (
-              <div className="grid grid-cols-3 gap-4">
-                {/* Removed rendering of normalCards */}
-              </div>
-            ) : (
-              <div className="flex justify-center items-center h-full text-gray-400">
-                No hay ventajas normales disponibles.
-              </div>
-            )}
-          </div>
-          <button
-            className="mt-6 bg-white text-blue-800 font-bold px-4 py-2 rounded-lg shadow-lg transition-transform transform hover:scale-110 self-start md:self-center"
-            onClick={() => setShowAllNormal(!showAllNormal)}
-          >
-            {showAllNormal ? "Ocultar" : "Ver Todas"}
-          </button>
         </div>
       </section>
       <section 
-        className="w-11/12 max-w-7xl mx-auto mt-20 p-10 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-lg shadow-lg flex flex-col md:flex-row gap-10"
-        style={{
-          boxShadow: '0 0 30px 10px rgba(255, 215, 0, 0.8)', // Removed border
-        }}
+        className="w-11/12 max-w-7xl mx-auto mt-20 p-10 bg-gradient-to-r from-[#005f99] to-[#1AA9FF] rounded-lg shadow-lg flex flex-col md:flex-row gap-10"
       >
-        <div className="w-full md:w-1/2 flex flex-col justify-center text-black order-1 md:order-none pr-10"> {/* Text on the left */}
-          <h2 
-            className="text-6xl md:text-7xl font-extrabold mb-6"
-            style={{ textShadow: '0 0 15px rgba(255, 215, 0, 0.9)' }}
-          >
+        <div className="w-full md:w-1/2 flex flex-col justify-center text-white order-1 md:order-none pr-10">
+          <h2 className="text-6xl md:text-7xl font-extrabold mb-6">
             Ventajas Premium
           </h2>
           <p className="text-xl leading-relaxed">
@@ -159,9 +132,8 @@ const OxygenGaming = () => {
             ¡Haz que cada partida cuente y alcanza la cima con OxyClub Premium!
           </p>
         </div>
-        <div
-          className="w-full md:w-1/2 flex justify-center items-center order-2 md:order-none"> {/* Image on the right */}
-          <div className="relative w-full h-[400px] md:h-[500px] overflow-hidden rounded-lg flex items-center"> {/* Added flex and items-center */}
+        <div className="w-full md:w-1/2 flex justify-center items-center order-2 md:order-none">
+          <div className="relative w-full h-[400px] md:h-[500px] overflow-hidden rounded-lg flex items-center">
             {showAllPremium ? (
               <div className="grid grid-cols-3 gap-4">
                 {premiumCards.map((card, index) => (
@@ -169,7 +141,7 @@ const OxygenGaming = () => {
                     key={index}
                     src={card.image}
                     alt={`Ventaja Premium ${index + 1}`}
-                    className="w-full h-[155px] object-cover rounded-lg" // Added fixed height and rounded borders
+                    className="w-full h-[155px] object-cover rounded-lg"
                   />
                 ))}
               </div>
@@ -181,18 +153,12 @@ const OxygenGaming = () => {
                   alt={`Ventaja Premium ${index + 1}`}
                   className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
                     index === randomIndexPremium ? "opacity-100" : "opacity-0"
-                  } rounded-lg`} // Added rounded borders
+                  } rounded-lg`}
                 />
               ))
             )}
           </div>
         </div>
-        <button
-          className="mt-6 bg-white text-orange-500 font-bold px-4 py-2 rounded-lg shadow-lg transition-transform transform hover:scale-110"
-          onClick={() => setShowAllPremium(!showAllPremium)}
-        >
-          {showAllPremium ? "Ocultar" : "Ver Todas"}
-        </button>
       </section>
       <Footer></Footer>
     </div>

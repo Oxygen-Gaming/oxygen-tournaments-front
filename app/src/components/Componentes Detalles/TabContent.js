@@ -19,20 +19,20 @@ const TabContent = ({ activeTab, selectedCard, setShowMatchModal, setSelectedMat
           <h2 className="text-3xl font-bold mb-6">Resumen</h2>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             {/* Formato */}
-            <div className="bg-[#003f7f] text-white p-4 rounded-lg shadow-lg">
+            <div className="bg-[#1c1c1c] text-white p-4 rounded-lg shadow-lg">
               <h3 className="text-xl font-bold mb-2">Formato</h3>
               <p className="text-sm">Eliminación directa</p>
               <p className="text-sm">Partidas al mejor de 3</p>
             </div>
             {/* Jugadores */}
-            <div className="bg-[#003f7f] text-white p-4 rounded-lg shadow-lg">
+            <div className="bg-[#1c1c1c] text-white p-4 rounded-lg shadow-lg">
               <h3 className="text-xl font-bold mb-2">Jugadores</h3>
               <p className="text-sm">Registrados: 78</p>
               <p className="text-sm">Listos: 0</p>
               <p className="text-sm">Espacios: 32</p>
             </div>
             {/* Ajustes de partida */}
-            <div className="bg-[#003f7f] text-white p-4 rounded-lg shadow-lg">
+            <div className="bg-[#1c1c1c] text-white p-4 rounded-lg shadow-lg">
               <h3 className="text-xl font-bold mb-2">Ajustes de partida</h3>
               <p className="text-sm">Mapa: Howling Abyss</p>
               <p className="text-sm">Modo de juego: Destroy Nexus</p>
@@ -43,7 +43,7 @@ const TabContent = ({ activeTab, selectedCard, setShowMatchModal, setSelectedMat
           {/* Additional Information */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6">
             {/* Información */}
-            <div className="bg-[#003f7f] text-white p-4 rounded-lg shadow-lg">
+            <div className="bg-[#1c1c1c] text-white p-4 rounded-lg shadow-lg">
               <h3 className="text-xl font-bold mb-2">Información</h3>
               <p className="text-sm">
                 <strong>Reglas:</strong> Comenzar el juego sin tu oponente resultará en una pérdida.
@@ -55,7 +55,7 @@ const TabContent = ({ activeTab, selectedCard, setShowMatchModal, setSelectedMat
               <a href="#" className="text-blue-400 underline text-sm">Reportar jugador</a>
             </div>
             {/* Organizado por */}
-            <div className="bg-[#003f7f] text-white p-4 rounded-lg shadow-lg">
+            <div className="bg-[#1c1c1c] text-white p-4 rounded-lg shadow-lg">
               <h3 className="text-xl font-bold mb-2">Organizado por</h3>
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 bg-gray-500 rounded-full"></div>
@@ -82,7 +82,7 @@ const TabContent = ({ activeTab, selectedCard, setShowMatchModal, setSelectedMat
           <h2 className="text-3xl font-bold mb-4">Partidas</h2>
           <div className="grid grid-cols-1 gap-4">
             {/* Match 1 */}
-            <div className="bg-[#003f7f] text-white p-4 rounded-lg shadow-lg flex justify-between items-center">
+            <div className="bg-[#1c1c1c] text-white p-3 rounded-lg shadow-lg flex justify-between items-center h-[120px]"> {/* Reduced height */}
               <div>
                 <h3 className="text-xl font-bold">Partida 1</h3>
                 <p className="text-sm text-gray-300">Sin cronograma</p>
@@ -99,7 +99,7 @@ const TabContent = ({ activeTab, selectedCard, setShowMatchModal, setSelectedMat
                 </div>
               </div>
               <button
-                className="px-4 py-2 bg-[#005f99] text-white rounded-lg transition-all duration-300 transform hover:scale-105 hover:bg-[#0077b6]"
+                className="px-4 py-2 bg-gray-700 text-white rounded-lg transition-all duration-300 transform hover:scale-105 hover:bg-gray-600"
                 onClick={() =>
                   handleViewMoreClick({
                     matchNumber: 1,
@@ -131,7 +131,7 @@ const TabContent = ({ activeTab, selectedCard, setShowMatchModal, setSelectedMat
               </button>
             </div>
             {/* Match 2 */}
-            <div className="bg-[#003f7f] text-white p-4 rounded-lg shadow-lg flex justify-between items-center">
+            <div className="bg-[#1c1c1c] text-white p-3 rounded-lg shadow-lg flex justify-between items-center h-[120px]"> {/* Reduced height */}
               <div>
                 <h3 className="text-xl font-bold">Partida 2</h3>
                 <p className="text-sm text-gray-300">Sin cronograma</p>
@@ -148,7 +148,7 @@ const TabContent = ({ activeTab, selectedCard, setShowMatchModal, setSelectedMat
                 </div>
               </div>
               <button
-                className="px-4 py-2 bg-[#005f99] text-white rounded-lg transition-all duration-300 transform hover:scale-105 hover:bg-[#0077b6]"
+                className="px-4 py-2 bg-gray-700 text-white rounded-lg transition-all duration-300 transform hover:scale-105 hover:bg-gray-600"
                 onClick={() =>
                   handleViewMoreClick({
                     matchNumber: 2,
@@ -179,7 +179,7 @@ const TabContent = ({ activeTab, selectedCard, setShowMatchModal, setSelectedMat
               </button>
             </div>
             {/* Match 3 */}
-            <div className="bg-[#003f7f] text-white p-4 rounded-lg shadow-lg flex justify-between items-center">
+            <div className="bg-[#1c1c1c] text-white p-3 rounded-lg shadow-lg flex justify-between items-center h-[120px]"> {/* Reduced height */}
               <div>
                 <h3 className="text-xl font-bold">Partida 3</h3>
                 <p className="text-sm text-gray-300">Sin cronograma</p>
@@ -196,7 +196,7 @@ const TabContent = ({ activeTab, selectedCard, setShowMatchModal, setSelectedMat
                 </div>
               </div>
               <button
-                className="px-4 py-2 bg-[#005f99] text-white rounded-lg transition-all duration-300 transform hover:scale-105 hover:bg-[#0077b6]"
+                className="px-4 py-2 bg-gray-700 text-white rounded-lg transition-all duration-300 transform hover:scale-105 hover:bg-gray-600"
                 onClick={() =>
                   handleViewMoreClick({
                     matchNumber: 3,

@@ -24,19 +24,19 @@ const TournamentDetailsPage = () => {
 
   if (!selectedCard) {
     return (
-      <div className="bg-[#003366] text-white h-screen flex items-center justify-center">
+      <div className="bg-[#1AA9FF] text-white h-screen flex items-center justify-center">
         <h1 className="text-3xl font-bold">No se encontró información del torneo.</h1>
       </div>
     );
   }
 
   return (
-    <div className="bg-[#002f5f] text-white w-full min-h-screen font-['Roboto_Condensed',sans-serif]">
+    <div className="bg-[#1AA9FF] text-white w-full min-h-screen font-['Roboto_Condensed',sans-serif]">
       <Header />
       <div className="relative w-full">
         {/* Volver Button */}
         <button
-          className="absolute top-4 left-4 px-4 py-2 bg-gray-700 text-white rounded-lg hover:bg-gray-600 transition z-10"
+          className="absolute top-4 left-4 px-4 py-2 bg-[#005f99] text-white rounded-lg hover:bg-[#0077b6] transition z-10"
           onClick={() => navigate("/competition")} // Navigate back to CompetitionPage
         >
           Volver

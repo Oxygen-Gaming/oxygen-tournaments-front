@@ -12,12 +12,14 @@ const Tabs = ({ activeTab, setActiveTab }) => {
   ];
 
   return (
-    <div className="flex justify-center mt-6 border-b border-gray-600 max-w-[1200px] mx-auto">
+    <div className="flex justify-center mt-6 border-b-4 border-[#005f99] max-w-[1200px] mx-auto">
       {tabs.map((tab) => (
         <button
           key={tab.id}
-          className={`px-4 py-2 ${
-            activeTab === tab.id ? "border-b-4 border-blue-500 text-blue-500" : "text-gray-300"
+          className={`px-6 py-3 text-lg font-bold transition-all duration-300 ${
+            activeTab === tab.id
+              ? "border-b-4 border-white text-white"
+              : "text-gray-200 hover:text-white"
           }`}
           onClick={() => setActiveTab(tab.id)}
         >
