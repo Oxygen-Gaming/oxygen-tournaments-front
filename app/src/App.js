@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Register from '@components/RegisterComponent';
 import Login from '@components/LoginComponent';
 import Rewards from './pages/RewardsPage';
@@ -11,11 +11,11 @@ import SpecificGameComponent from './components/Componentes Competicion/Specific
 import TournamentDetailsPage from "./pages/TournamentDetailsPage";
 import Perfil from './pages/PerfilPage';
 import Ventajas from './pages/VentajasPage';
-
+import ReportPlayerPage from "./pages/ReportPlayerPage";
 
 function App() {
   return (
-    <BrowserRouter>
+    <Router>
       <Routes>
         <Route path="/" element={<Welcome />} />
         <Route path="/register" element={<Register />} />
@@ -28,8 +28,9 @@ function App() {
         <Route path="/game" element={<SpecificGameComponent />} />
         <Route path="/tournament-details" element={<TournamentDetailsPage />} />
         <Route path="/ventajas" element={<Ventajas />} />
+        <Route path="/report-player" element={<ReportPlayerPage />} />
       </Routes>
-    </BrowserRouter>
+    </Router>
   );
 }
 

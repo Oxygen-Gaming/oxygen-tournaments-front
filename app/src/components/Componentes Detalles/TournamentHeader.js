@@ -3,7 +3,7 @@ import LeagueOfLegends from "@imgs/League.jpg";
 import Valorant from "@imgs/valorant.jpg";
 import RocketLeague from "@imgs/rocketleague.jpg";
 
-const TournamentHeader = ({ selectedCard }) => {
+const TournamentHeader = ({ selectedCard, scrollToInscription }) => {
   const getImageForGame = (gameName) => {
     if (gameName === "League of Legends") return LeagueOfLegends;
     if (gameName === "Valorant") return Valorant;
@@ -25,9 +25,12 @@ const TournamentHeader = ({ selectedCard }) => {
       {/* Gradient at the bottom */}
       <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-b from-transparent to-[#1AA9FF] z-10"></div>
       <div className="relative z-20 text-center">
-        <h1 className="text-5xl font-extrabold text-white">{selectedCard[2]}</h1>
+        <h1 className="text-5xl font-extrabold text-white text-center">{selectedCard[2]}</h1> {/* Centrado */}
         <p className="text-lg mt-2 text-white">En alrededor de 2 horas • {selectedCard[3]}</p>
-        <button className="mt-4 px-6 py-2 bg-[#005f99] text-white rounded-lg hover:bg-[#0077b6] transition">
+        <button
+          className="mt-4 px-6 py-2 bg-[#005f99] text-white rounded-lg hover:bg-[#0077b6] transition"
+          onClick={scrollToInscription} // Llamada a la función pasada como prop
+        >
           Unirse al torneo
         </button>
       </div>

@@ -13,27 +13,27 @@ const RankingTable = () => {
       <tbody>
         <tr className="bg-blue-900 even:bg-blue-800 hover:bg-gray-300">
           <td className="p-2.5 border-b border-white text-center">1</td>
-          <td className="p-2.5 border-b border-white text-center">Juan Pérez</td>
+          <td className="p-2.5 border-b border-white text-center">Alex Thunder</td>
           <td className="p-2.5 border-b border-white text-center">1500</td>
         </tr>
         <tr className="bg-blue-900 even:bg-blue-800 hover:bg-gray-300">
           <td className="p-2.5 border-b border-white text-center">2</td>
-          <td className="p-2.5 border-b border-white text-center">María López</td>
+          <td className="p-2.5 border-b border-white text-center">Sophia Blaze</td>
           <td className="p-2.5 border-b border-white text-center">1400</td>
         </tr>
         <tr className="bg-blue-900 even:bg-blue-800 hover:bg-gray-300">
           <td className="p-2.5 border-b border-white text-center">3</td>
-          <td className="p-2.5 border-b border-white text-center">Carlos García</td>
+          <td className="p-2.5 border-b border-white text-center">Liam Shadow</td>
           <td className="p-2.5 border-b border-white text-center">1300</td>
         </tr>
         <tr className="bg-blue-900 even:bg-blue-800 hover:bg-gray-300">
           <td className="p-2.5 border-b border-white text-center">4</td>
-          <td className="p-2.5 border-b border-white text-center">Ana Martínez</td>
+          <td className="p-2.5 border-b border-white text-center">Emma Frost</td>
           <td className="p-2.5 border-b border-white text-center">1200</td>
         </tr>
         <tr className="bg-blue-900 even:bg-blue-800 hover:bg-gray-300">
           <td className="p-2.5 border-b border-white text-center">5</td>
-          <td className="p-2.5 border-b border-white text-center">Jose Juan</td>
+          <td className="p-2.5 border-b border-white text-center">Noah Phoenix</td>
           <td className="p-2.5 border-b border-white text-center">1100</td>
         </tr>
       </tbody>

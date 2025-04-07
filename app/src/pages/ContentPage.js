@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import VideoSection from '../components/Contenido/VideoSection';
-import RankingTable from '../components/Contenido/RankingTable';
 import MenuHamburguesaNormal from "@components/ComponentesMenuHamburguesa/MenuHamburguesaNormalComponent";
 
 
@@ -62,8 +61,8 @@ const Contenido = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
 
-    <div className="font-['Roboto_Condensed',sans-serif] bg-blue-900 text-black m-0 p-0 min-h-screen flex flex-col items-center md:items-stretch">
-
+    <div className="font-['Roboto_Condensed',sans-serif] bg-[#1AA9FF] text-black m-0 p-0 min-h-screen flex flex-col items-center md:items-stretch">
+      {/* Cambiado el color de fondo a #1AA9FF para que coincida con la página de Competiciones */}
       <Header />
       <MenuHamburguesaNormal />
 
@@ -71,8 +70,8 @@ const Contenido = () => {
         <h1 className="text-5xl text-white font-extrabold text-center">Contenido</h1>
       </div>
       <div className="flex-grow flex justify-between mt-12 flex-col md:flex-row items-center md:items-start text-left">
-        <div className="info-card w-full md:w-2/5 ml-10 m-5 p-5 bg-gradient-to-t from-blue-900 to-blue-500 text-white rounded-lg shadow-lg md:w-2/5 w-11/12">
-
+        <div className="info-card w-full md:w-2/5 ml-10 m-5 p-5 bg-[#1c1c1c] text-white rounded-lg shadow-lg md:w-2/5 w-11/12">
+          {/* Cambiado el color de fondo a #1c1c1c */}
           <h2 className="text-2xl">Sobre Oxygen Gaming</h2>
           <p>Oxygen Gaming es una plataforma dedicada a la organización de torneos de videojuegos. Ofrecemos una amplia variedad de contenido para los entusiastas de los videojuegos, incluyendo:</p>
           <ul className="list-disc list-inside">
@@ -86,7 +85,46 @@ const Contenido = () => {
           <br></br>
           <p>Únete a nuestra comunidad y participa en nuestros torneos para ganar premios y reconocimiento. ¡Mantente conectado y sigue mejorando con Oxygen Gaming!</p>
         </div>
-        <RankingTable />
+        <div className="ranking-table w-full md:w-2/5 ml-5 m-5 p-5 bg-[#1c1c1c] text-white rounded-lg shadow-lg">
+          {/* Aumentado ligeramente el tamaño de la tabla de clasificación */}
+          <h2 className="text-2xl font-bold mb-4">Clasificación</h2>
+          <table className="w-full text-left border-collapse">
+            <thead>
+              <tr className="border-b border-gray-700">
+                <th className="py-2 px-4">Posición</th>
+                <th className="py-2 px-4">Jugador</th>
+                <th className="py-2 px-4">Puntos</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="bg-[#1c1c1c] border-b border-gray-700">
+                <td className="py-2 px-4">1</td>
+                <td className="py-2 px-4">Alex Thunder</td>
+                <td className="py-2 px-4">1500</td>
+              </tr>
+              <tr className="bg-gray-800 border-b border-gray-700">
+                <td className="py-2 px-4">2</td>
+                <td className="py-2 px-4">Sophia Blaze</td>
+                <td className="py-2 px-4">1400</td>
+              </tr>
+              <tr className="bg-[#1c1c1c] border-b border-gray-700">
+                <td className="py-2 px-4">3</td>
+                <td className="py-2 px-4">Liam Shadow</td>
+                <td className="py-2 px-4">1300</td>
+              </tr>
+              <tr className="bg-gray-800 border-b border-gray-700">
+                <td className="py-2 px-4">4</td>
+                <td className="py-2 px-4">Emma Frost</td>
+                <td className="py-2 px-4">1200</td>
+              </tr>
+              <tr className="bg-[#1c1c1c]">
+                <td className="py-2 px-4">5</td>
+                <td className="py-2 px-4">Noah Phoenix</td>
+                <td className="py-2 px-4">1100</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
       <VideoSection openModal={openModal} />
       {modalVisible && (

@@ -18,12 +18,12 @@ const View = ({ handleCardClick, handleViewAll, inscriptionStatus, selectedGame 
         {games.map(game => (
           <div
             key={game.name}
-            className={`relative card overflow-hidden rounded-lg shadow-lg ${
+            className={`relative card overflow-hidden rounded-lg shadow-lg bg-[#1c1c1c] ${
               selectedGame === game.name ? 'ring-4 ring-blue-500' : 'hover:scale-105 transition-transform'
-            }`} // Aplicamos el borde azul cuando es seleccionado
+            }`} // Updated background color
             onClick={() => handleCardClick([game.name, game.name, `${game.name} Championship`, '30/03/2025', 'upcoming'])}
           >
-            <div className="relative bg-gradient-to-r from-[#1e3a8a] to-[#2563eb] p-6 flex flex-col justify-between h-[600px]">
+            <div className="relative p-6 flex flex-col justify-between h-[600px]">
               <img src={game.image} alt={game.name} className="w-full h-[250px] object-cover rounded-lg mb-4 shadow-lg" />
               <h2 className="text-white text-3xl font-extrabold mb-4">{game.name} Championship</h2>
               <button
