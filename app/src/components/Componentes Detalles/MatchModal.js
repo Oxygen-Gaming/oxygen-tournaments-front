@@ -18,8 +18,12 @@ const MatchModal = ({ selectedMatch, closeMatchModal }) => {
         </button>
         <h2 className="text-3xl font-bold mb-2 text-center">Partida {selectedMatch.matchNumber}</h2> {/* Centrado */}
         <div className="flex justify-center mb-4">
-          <p className="text-white border border-blue-400 px-4 py-1 rounded-full text-center bg-blue-400 text-sm">
-            Esperando
+          <p className={`text-white border px-4 py-1 rounded-full text-center text-sm ${
+            selectedMatch.matchNumber === 3
+              ? "border-blue-400 bg-blue-400" // Esperando para Partida 3
+              : "border-red-500 bg-red-500"   // Finalizado para Partidas 1 y 2
+          }`}>
+            {selectedMatch.matchNumber === 3 ? "Esperando" : "Finalizado"}
           </p>
         </div>
         <div className="flex justify-center items-center gap-4 mb-4"> {/* Reduced gap */}
@@ -137,30 +141,30 @@ const MatchModal = ({ selectedMatch, closeMatchModal }) => {
                   {/* Team 1 */}
                   <div>
                     <h4 className="text-white text-lg font-bold mb-4">Equipo 1</h4>
-                    {Array.from({ length: 5 }).map((_, index) => (
+                    {["ShadowHunter", "BlazeFury", "NightWolf", "IronClaw", "StormBreaker"].map((nick, index) => (
                       <div
                         key={`team1-player-${index}`}
-                        className="flex items-center text-white p-4 rounded-lg mb-2 shadow-lg"
+                        className="flex items-center text-white p-4 rounded-lg mb-2 shadow-lg bg-[#1c1c1c]" // Updated background color
                       >
                         <div className="w-8 h-8 bg-gray-500 rounded-full flex items-center justify-center"> {/* Reduced size */}
                           <i className="fas fa-user text-white"></i>
                         </div>
-                        <p className="text-sm font-bold ml-4">Por definir</p>
+                        <p className="text-sm font-bold ml-4">{nick}</p>
                       </div>
                     ))}
                   </div>
                   {/* Team 2 */}
                   <div>
                     <h4 className="text-white text-lg font-bold mb-4">Equipo 2</h4>
-                    {Array.from({ length: 5 }).map((_, index) => (
+                    {["PhoenixRider", "ThunderStrike", "FrostBlade", "DarkViper", "SteelFang"].map((nick, index) => (
                       <div
                         key={`team2-player-${index}`}
-                        className="flex items-center text-white p-4 rounded-lg mb-2 shadow-lg"
+                        className="flex items-center text-white p-4 rounded-lg mb-2 shadow-lg bg-[#1c1c1c]" // Updated background color
                       >
                         <div className="w-8 h-8 bg-gray-500 rounded-full flex items-center justify-center"> {/* Reduced size */}
                           <i className="fas fa-user text-white"></i>
                         </div>
-                        <p className="text-sm font-bold ml-4">Por definir</p>
+                        <p className="text-sm font-bold ml-4">{nick}</p>
                       </div>
                     ))}
                   </div>

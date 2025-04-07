@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 import Bracket from "@components/Componentes Competicion/BracketComponent";
 import BracketDetalladoComponente from "@components/Componentes Detalles/BracketDetalladoComponente";
 import Inscripciones from "@components/Componentes Detalles/Inscripciones";
@@ -6,6 +7,7 @@ import Premios from "@components/Componentes Detalles/Premios";
 import Reglas from "@components/Componentes Detalles/Reglas";
 
 const TabContent = ({ activeTab, selectedCard, setShowMatchModal, setSelectedMatch }) => {
+  const navigate = useNavigate(); // Initialize useNavigate
   const [registeredPlayers, setRegisteredPlayers] = useState(() => {
     // Retrieve registered players from localStorage
     const savedRegisteredPlayers = localStorage.getItem("registeredPlayers");
@@ -64,14 +66,14 @@ const TabContent = ({ activeTab, selectedCard, setShowMatchModal, setSelectedMat
             <div className="bg-[#1c1c1c] text-white p-4 rounded-lg shadow-lg">
               <h3 className="text-xl font-bold mb-2">Equipos</h3>
               <p className="text-sm">
-                Registrados:{" "}
+                Jugadores Registrados:{" "}
                 <span className="font-bold text-white">{registeredPlayers}</span>
               </p>
               <p className="text-sm">
-                Confirmados:{" "}
+                Jugadores Confirmados:{" "}
                 <span className="font-bold text-white">{confirmedPlayers}</span>
               </p>
-              <p className="text-sm">Limite de Equipos: 128</p>
+              <p className="text-sm">Limite de Equipos: 32</p>
             </div>
             {/* Ajustes de partida */}
             <div className="bg-[#1c1c1c] text-white p-4 rounded-lg shadow-lg">
@@ -94,7 +96,12 @@ const TabContent = ({ activeTab, selectedCard, setShowMatchModal, setSelectedMat
               <p className="text-sm mt-4">
                 <strong>Reportes:</strong> Puedes reportar jugadores por trampas, toxicidad o multi-cuentas.
               </p>
-              <a href="#" className="text-blue-400 underline text-sm">Reportar jugador</a>
+              <button
+                className="mt-4 px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition"
+                onClick={() => navigate("/report-player")} // Navigate to the report player page
+              >
+                Reportar Jugador
+              </button>
             </div>
             {/* Organizado por */}
             <div className="bg-[#1c1c1c] text-white p-4 rounded-lg shadow-lg">
@@ -127,16 +134,19 @@ const TabContent = ({ activeTab, selectedCard, setShowMatchModal, setSelectedMat
             <div className="bg-[#1c1c1c] text-white p-3 rounded-lg shadow-lg flex justify-between items-center h-[120px]"> {/* Reduced height */}
               <div>
                 <h3 className="text-xl font-bold">Partida 1</h3>
-                <p className="text-sm text-gray-300">Sin cronograma</p>
-                <span className="text-blue-400 text-sm">Esperando</span>
+                <p className="text-sm text-gray-300">Fecha: 29/03/2025</p> {/* Fecha pasada */}
+                <span className="text-red-500 text-sm">Finalizado</span> {/* Cambiado a Finalizado */}
               </div>
               <div className="flex items-center gap-4">
                 <div className="text-center">
                   <p className="text-2xl font-bold">2</p>
+                  <hr className="border-gray-500 my-1" /> {/* Línea debajo */}
                   <p className="text-sm text-gray-300">Dragons</p>
                 </div>
+                <div className="w-px h-10 bg-gray-500"></div> {/* Línea en medio */}
                 <div className="text-center">
                   <p className="text-2xl font-bold">0</p>
+                  <hr className="border-gray-500 my-1" /> {/* Línea debajo */}
                   <p className="text-sm text-gray-300">Wolves</p>
                 </div>
               </div>
@@ -176,16 +186,19 @@ const TabContent = ({ activeTab, selectedCard, setShowMatchModal, setSelectedMat
             <div className="bg-[#1c1c1c] text-white p-3 rounded-lg shadow-lg flex justify-between items-center h-[120px]"> {/* Reduced height */}
               <div>
                 <h3 className="text-xl font-bold">Partida 2</h3>
-                <p className="text-sm text-gray-300">Sin cronograma</p>
-                <span className="text-blue-400 text-sm">Esperando</span>
+                <p className="text-sm text-gray-300">Fecha: 30/03/2025</p> {/* Fecha pasada */}
+                <span className="text-red-500 text-sm">Finalizado</span> {/* Cambiado a Finalizado */}
               </div>
               <div className="flex items-center gap-4">
                 <div className="text-center">
                   <p className="text-2xl font-bold">1</p>
+                  <hr className="border-gray-500 my-1" /> {/* Línea debajo */}
                   <p className="text-sm text-gray-300">Titans</p>
                 </div>
+                <div className="w-px h-10 bg-gray-500"></div> {/* Línea en medio */}
                 <div className="text-center">
                   <p className="text-2xl font-bold">2</p>
+                  <hr className="border-gray-500 my-1" /> {/* Línea debajo */}
                   <p className="text-sm text-gray-300">Warriors</p>
                 </div>
               </div>
@@ -224,16 +237,19 @@ const TabContent = ({ activeTab, selectedCard, setShowMatchModal, setSelectedMat
             <div className="bg-[#1c1c1c] text-white p-3 rounded-lg shadow-lg flex justify-between items-center h-[120px]"> {/* Reduced height */}
               <div>
                 <h3 className="text-xl font-bold">Partida 3</h3>
-                <p className="text-sm text-gray-300">Sin cronograma</p>
+                <p className="text-sm text-gray-300">Fecha: 10/04/2025</p> {/* Fecha futura */}
                 <span className="text-blue-400 text-sm">Esperando</span>
               </div>
               <div className="flex items-center gap-4">
                 <div className="text-center">
                   <p className="text-2xl font-bold">0</p>
+                  <hr className="border-gray-500 my-1" /> {/* Línea debajo */}
                   <p className="text-sm text-gray-300">Sharks</p>
                 </div>
+                <div className="w-px h-10 bg-gray-500"></div> {/* Línea en medio */}
                 <div className="text-center">
                   <p className="text-2xl font-bold">0</p>
+                  <hr className="border-gray-500 my-1" /> {/* Línea debajo */}
                   <p className="text-sm text-gray-300">Eagles</p>
                 </div>
               </div>

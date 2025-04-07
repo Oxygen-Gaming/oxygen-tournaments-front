@@ -12,6 +12,18 @@ const CardsComponent = ({ handleCardClick, selectedGame, filter }) => {
         return savedStatus ? JSON.parse(savedStatus) : {};
     });
 
+    const resetInscriptions = () => {
+        setInscriptionStatus({});
+        localStorage.removeItem("inscriptionStatus");
+    };
+
+    const cancelInscription = (cardId) => {
+        const updatedStatus = { ...inscriptionStatus };
+        delete updatedStatus[cardId]; // Remove the inscription for the specific tournament
+        setInscriptionStatus(updatedStatus);
+        localStorage.setItem("inscriptionStatus", JSON.stringify(updatedStatus));
+    };
+
     const allCards = [
         ['1', 'League of Legends', 'LoL Championship Series', '30/03/2025', 'upcoming', 78, LeagueOfLegends],
         ['2', 'League of Legends', 'LoL Winter Cup', '26/03/2025', 'ongoing', 150, LeagueOfLegends],
@@ -59,13 +71,13 @@ const CardsComponent = ({ handleCardClick, selectedGame, filter }) => {
         <>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {filteredCards.map(card => {
-                    const { text, style } = getInscriptionStatus(card[0]);
+                    const { text, style } = getInscriptionStatus(card[0]); // Use card[0] as the unique ID
                     return (
                         <div
                             key={card[0]}
-                            className={`card relative overflow-hidden rounded-lg shadow-lg bg-gradient-to-br from-[#1e293b] via-[#2d3748] to-[#4a5568] text-white transition-transform transform hover:scale-105 hover:shadow-2xl ${
+                            className={`card relative overflow-hidden rounded-lg shadow-lg bg-[#1c1c1c] text-white transition-transform transform hover:scale-105 hover:shadow-2xl ${
                                 selectedCard && selectedCard[0] === card[0] ? 'ring-4 ring-blue-500' : ''
-                            }`} // Elegant gradient and hover effects
+                            }`} // Updated background color to #1c1c1c
                             onClick={() => handleCardSelection(card)}
                         >
                             <div className="relative p-6 flex flex-col justify-between h-[450px]">
@@ -88,6 +100,17 @@ const CardsComponent = ({ handleCardClick, selectedGame, filter }) => {
                                         {text}
                                     </span>
                                 </div>
+                                {inscriptionStatus[card[0]] && (
+                                    <button
+                                        onClick={(e) => {
+                                            e.stopPropagation(); // Prevent triggering card selection
+                                            cancelInscription(card[0]);
+                                        }}
+                                        className="mt-4 px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition"
+                                    >
+                                        Cancelar Inscripción
+                                    </button>
+                                )}
                             </div>
                         </div>
                     );

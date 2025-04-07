@@ -9,7 +9,8 @@ import MenuHamburguesaNormal from "@components/ComponentesMenuHamburguesa/MenuHa
 const Rewards = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <div className="bg-blue-900 text-[18px] font-['Roboto_Condensed'] min-h-screen">
+    <div className="bg-[#1AA9FF] text-[18px] font-['Roboto_Condensed'] min-h-screen">
+      {/* Cambiado el color de fondo a #1AA9FF para que coincida con la página de Competiciones */}
       <Header />
       
       <div className="w-11/12 mx-auto mt-8">

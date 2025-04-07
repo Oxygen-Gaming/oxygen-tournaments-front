@@ -7,7 +7,7 @@ const Card = ({ image, title, points }) => {
       <div className="relative w-full h-full">
         <img src={image} alt={title} className="w-full h-full object-cover" />
         <p className="absolute bottom-2 right-2 text-white text-sm bg-black bg-opacity-50 px-2 py-1 rounded no-underline">
-          Puntos: {points}
+          {points}
         </p>
       </div>
       <div className="p-4 text-white">

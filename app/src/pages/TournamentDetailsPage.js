@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom"; // Import useNavigate
 import Header from "@components/Header";
 import Footer from "@components/Footer";
@@ -16,6 +16,19 @@ const TournamentDetailsPage = () => {
   const [showMatchModal, setShowMatchModal] = useState(false);
   const [selectedMatch, setSelectedMatch] = useState(null);
 
+  useEffect(() => {
+    // Reset scroll position to the top when the page loads
+    window.scrollTo({ top: 0 });
+  }, []);
+
+  useEffect(() => {
+    // Add fade-in animation class to the body
+    document.body.classList.add("fade-in");
+    return () => {
+      document.body.classList.remove("fade-in");
+    };
+  }, []);
+
   const closeMatchModal = () => {
     setShowMatchModal(false);
     setSelectedMatch(null);
@@ -32,9 +45,7 @@ const TournamentDetailsPage = () => {
         setActiveTab("inscritos"); // Cambiar automáticamente a la pestaña de inscripciones
         const inscriptionSection = document.getElementById("inscription-section");
         if (inscriptionSection) {
-          const offset = 100; // Ajustar para que el menú de navegación sea visible
-          const topPosition = inscriptionSection.getBoundingClientRect().top + window.scrollY - offset;
-          window.scrollTo({ top: topPosition, behavior: "smooth" }); // Animación suave después de redirigir
+          inscriptionSection.scrollIntoView({ behavior: "smooth" }); // Smooth scroll to the section
         }
       }, 500); // Esperar un breve momento para garantizar que la página cargue
       return;
@@ -45,9 +56,7 @@ const TournamentDetailsPage = () => {
     setTimeout(() => {
       const inscriptionSection = document.getElementById("inscription-section");
       if (inscriptionSection) {
-        const offset = 100; // Ajustar para que el menú de navegación sea visible
-        const topPosition = inscriptionSection.getBoundingClientRect().top + window.scrollY - offset;
-        window.scrollTo({ top: topPosition, behavior: "smooth" }); // Animación suave
+        inscriptionSection.scrollIntoView({ behavior: "smooth" }); // Smooth scroll to the section
       } else {
         console.error("No se encontró la sección de inscripción. Asegúrate de que el identificador sea correcto.");
       }

@@ -14,7 +14,9 @@ const Inscripciones = ({ registeredPlayers, onUpdateRegisteredPlayers, onUpdateC
   const [isRepresentative, setIsRepresentative] = useState(false);
   const [isMember, setIsMember] = useState(false);
   const [errors, setErrors] = useState({});
-  const [animateCounter, setAnimateCounter] = useState(false);
+  const [animateRegistered, setAnimateRegistered] = useState(false);
+  const [animateConfirmed, setAnimateConfirmed] = useState(false);
+  const [counterColor, setCounterColor] = useState("text-green-400"); // Default animation color
   const [confirmedPlayers, setConfirmedPlayers] = useState(() => {
     // Retrieve confirmed players from localStorage
     const savedConfirmedPlayers = localStorage.getItem("confirmedPlayers");
@@ -79,7 +81,8 @@ const Inscripciones = ({ registeredPlayers, onUpdateRegisteredPlayers, onUpdateC
       setTimeout(() => setShowModal(false), 3000); // Automatically close modal after 3 seconds
     }
 
-    setAnimateCounter(true);
+    setCounterColor("text-green-400"); // Set animation color to green
+    setAnimateRegistered(true);
     onUpdateRegisteredPlayers(registeredPlayers + 1); // Notify parent component
     setShowConfirmButton(true); // Show confirm button after registration
     localStorage.setItem("showConfirmButton", "true"); // Save confirm button visibility to localStorage
@@ -99,6 +102,25 @@ const Inscripciones = ({ registeredPlayers, onUpdateRegisteredPlayers, onUpdateC
     setErrors({});
   };
 
+  const handleCancelInscription = () => {
+    const updatedStatus = { ...inscriptionStatus };
+    const wasConfirmed = updatedStatus[tournamentId] === "confirmed"; // Check if the user was confirmed
+    delete updatedStatus[tournamentId]; // Remove the inscription for the specific tournament
+    setInscriptionStatus(updatedStatus);
+    localStorage.setItem("inscriptionStatus", JSON.stringify(updatedStatus));
+
+    // Decrement registered players count
+    setCounterColor("text-red-400");
+    setAnimateRegistered(true);
+    onUpdateRegisteredPlayers(registeredPlayers - 1);
+
+    // Decrement confirmed players count if the user was confirmed
+    if (wasConfirmed) {
+      setAnimateConfirmed(true);
+      onUpdateConfirmedPlayers(confirmedPlayers - 1);
+    }
+  };
+
   const handleConfirmAttendance = () => {
     setConfirmationModal(true); // Show confirmation modal
   };
@@ -108,6 +130,8 @@ const Inscripciones = ({ registeredPlayers, onUpdateRegisteredPlayers, onUpdateC
     setConfirmedPlayers(newConfirmedPlayers); // Increment confirmed players
     localStorage.setItem("confirmedPlayers", newConfirmedPlayers); // Save to localStorage
     onUpdateConfirmedPlayers(newConfirmedPlayers); // Notify parent component
+    setCounterColor("text-blue-400"); // Set animation color to blue
+    setAnimateConfirmed(true); // Trigger animation only for confirmed players
     setShowConfirmButton(false); // Hide confirm button after confirmation
     localStorage.setItem("showConfirmButton", "false"); // Save confirm button visibility to localStorage
     setConfirmationModal(false); // Close confirmation modal
@@ -120,11 +144,18 @@ const Inscripciones = ({ registeredPlayers, onUpdateRegisteredPlayers, onUpdateC
   };
 
   useEffect(() => {
-    if (animateCounter) {
-      const timer = setTimeout(() => setAnimateCounter(false), 500);
+    if (animateRegistered) {
+      const timer = setTimeout(() => setAnimateRegistered(false), 500);
       return () => clearTimeout(timer);
     }
-  }, [animateCounter]);
+  }, [animateRegistered]);
+
+  useEffect(() => {
+    if (animateConfirmed) {
+      const timer = setTimeout(() => setAnimateConfirmed(false), 500);
+      return () => clearTimeout(timer);
+    }
+  }, [animateConfirmed]);
 
   return (
     <div id="inscription-section">
@@ -134,7 +165,7 @@ const Inscripciones = ({ registeredPlayers, onUpdateRegisteredPlayers, onUpdateC
           <h3 className="text-xl font-bold mb-2">Jugadores Inscritos</h3>
           <p
             className={`text-4xl font-extrabold ${
-              animateCounter ? "text-green-400 scale-110 transition-transform duration-500" : "text-white"
+              animateRegistered ? `${counterColor} scale-110 transition-transform duration-500` : "text-white"
             }`}
           >
             {registeredPlayers}
@@ -142,13 +173,29 @@ const Inscripciones = ({ registeredPlayers, onUpdateRegisteredPlayers, onUpdateC
         </div>
         <div className="bg-[#1c1c1c] text-white p-4 rounded-lg shadow-lg text-center">
           <h3 className="text-xl font-bold mb-2">Jugadores Confirmados</h3>
-          <p className="text-4xl font-extrabold text-blue-400">{confirmedPlayers}</p>
+          <p
+            className={`text-4xl font-extrabold ${
+              animateConfirmed ? "text-blue-400 scale-110 transition-transform duration-500" : "text-blue-400"
+            }`}
+          >
+            {confirmedPlayers}
+          </p>
         </div>
       </div>
+      {(isRegistered || isConfirmed) && (
+        <div className="text-center mb-6">
+          <button
+            onClick={handleCancelInscription}
+            className="px-6 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition"
+          >
+            Cancelar Inscripción
+          </button>
+        </div>
+      )}
       <form
         onSubmit={handleSubmit}
         className={`bg-gray-800 p-4 rounded-lg ${
-          isConfirmed ? "opacity-50 pointer-events-none" : isRegistered ? "opacity-75" : ""
+          isRegistered || isConfirmed ? "opacity-50 pointer-events-none" : ""
         }`}
       >
         <div className="mb-4">
