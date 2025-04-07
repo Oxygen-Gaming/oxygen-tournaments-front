@@ -4,10 +4,14 @@ import CuadrosBracket from "./CuadrosBracket";
 const Bracket = ({ tournamentName }) => {
   const positions = {
     dieciseisavos: [
-      { top: '0rem' }, { top: '4rem' }, { top: '8rem' }, { top: '12rem' },
-      { top: '16rem' }, { top: '20rem' }, { top: '24rem' }, { top: '28rem' },
-      { top: '32rem' }, { top: '36rem' }, { top: '40rem' }, { top: '44rem' },
-      { top: '48rem' }, { top: '52rem' }, { top: '56rem' }, { top: '60rem' }
+      { top: '0rem', left: '0rem' }, { top: '4rem', left: '0rem' },
+      { top: '8rem', left: '0rem' }, { top: '12rem', left: '0rem' },
+      { top: '16rem', left: '0rem' }, { top: '20rem', left: '0rem' },
+      { top: '24rem', left: '0rem' }, { top: '28rem', left: '0rem' },
+      { top: '32rem', left: '50rem' }, { top: '36rem', left: '50rem' },
+      { top: '40rem', left: '50rem' }, { top: '44rem', left: '50rem' },
+      { top: '48rem', left: '50rem' }, { top: '52rem', left: '50rem' },
+      { top: '56rem', left: '50rem' }, { top: '60rem', left: '50rem' }
     ],
     octavos: [
       { top: '6.5rem' }, { top: '22.5rem' }, { top: '39rem' }, { top: '55.3rem' },
