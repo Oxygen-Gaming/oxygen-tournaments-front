@@ -71,7 +71,7 @@ const Competition = () => {
   };
 
   return (
-    <div className="bg-[#003366] text-white overflow-x-hidden font-['Roboto_Condensed',sans-serif]">
+    <div className="bg-[#1AA9FF] text-white overflow-x-hidden font-['Roboto_Condensed',sans-serif]"> {/* Updated background color */}
       <Header />
       <MenuHamburguesaNormal />
       {/* BANNER */}
@@ -92,34 +92,63 @@ const Competition = () => {
 
         {selectedGame && showAllTournaments && (
           <>
-            <h2 className="text-3xl font-bold mb-4">Próximos torneos</h2>
+            <div className="relative mb-12">
+              <h2 className="text-4xl font-extrabold text-center relative z-10 text-white">
+                Próximos Torneos
+              </h2>
+              <div className="absolute top-1/2 left-0 w-full h-1 bg-gradient-to-r from-transparent via-blue-500 to-transparent z-0"></div>
+              <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-16 h-1 bg-blue-500 rounded-full mt-2"></div>
+            </div>
             <CardsComponent
                 handleCardClick={handleCardClick}
                 selectedGame={selectedGame}
                 filter="upcoming"
                 inscriptionStatus={inscriptionStatus}
-                selectedCard={selectedCard} // Pasamos la tarjeta seleccionada
+                selectedCard={selectedCard}
             />
             
-            <h2 className="text-3xl font-bold mb-4 mt-8">Torneos en curso</h2>
+            <div className="relative mb-12 mt-16">
+              <h2 className="text-4xl font-extrabold text-center relative z-10 text-white">
+                Torneos en curso
+              </h2>
+              <div className="absolute top-1/2 left-0 w-full h-1 bg-gradient-to-r from-transparent via-yellow-400 to-transparent z-0"></div>
+              <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-16 h-1 bg-yellow-400 rounded-full mt-2"></div>
+            </div>
             <CardsComponent
                 handleCardClick={handleCardClick}
                 selectedGame={selectedGame}
                 filter="ongoing"
                 inscriptionStatus={inscriptionStatus}
-                selectedCard={selectedCard} // Pasamos la tarjeta seleccionada
+                selectedCard={selectedCard}
             />
             
-            <h2 className="text-3xl font-bold mb-4 mt-8">Torneos Finalizados</h2>
+            <div className="relative mb-12 mt-16">
+              <h2 className="text-4xl font-extrabold text-center relative z-10 text-white">
+                Torneos Finalizados
+              </h2>
+              <div className="absolute top-1/2 left-0 w-full h-1 bg-gradient-to-r from-transparent via-red-500 to-transparent z-0"></div>
+              <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-16 h-1 bg-red-500 rounded-full mt-2"></div>
+            </div>
             <CardsComponent
                 handleCardClick={handleCardClick}
                 selectedGame={selectedGame}
                 filter="finished"
                 inscriptionStatus={inscriptionStatus}
-                selectedCard={selectedCard} // Pasamos la tarjeta seleccionada
+                selectedCard={selectedCard}
             />
-
-            
+            <div className="flex justify-center mt-8">
+              <button
+                className="px-4 py-2 bg-blue-500 text-white rounded-lg transition-all duration-300 transform hover:scale-110"
+                onClick={() => {
+                  setShowGeneralView(true);
+                  setSelectedGame(null);
+                  setShowAllTournaments(false);
+                  setSelectedCard(null);
+                }}
+              >
+                Volver
+              </button>
+            </div>
           </>
         )}
 
