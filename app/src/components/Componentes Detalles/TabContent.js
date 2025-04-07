@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Bracket from "@components/Componentes Competicion/BracketComponent";
 import BracketDetalladoComponente from "@components/Componentes Detalles/BracketDetalladoComponente";
 import Inscripciones from "@components/Componentes Detalles/Inscripciones";
@@ -6,6 +6,42 @@ import Premios from "@components/Componentes Detalles/Premios";
 import Reglas from "@components/Componentes Detalles/Reglas";
 
 const TabContent = ({ activeTab, selectedCard, setShowMatchModal, setSelectedMatch }) => {
+  const [registeredPlayers, setRegisteredPlayers] = useState(() => {
+    // Retrieve registered players from localStorage
+    const savedRegisteredPlayers = localStorage.getItem("registeredPlayers");
+    return savedRegisteredPlayers ? parseInt(savedRegisteredPlayers, 10) : 126; // Default to 126
+  });
+
+  const [confirmedPlayers, setConfirmedPlayers] = useState(() => {
+    // Retrieve confirmed players from localStorage
+    const savedConfirmedPlayers = localStorage.getItem("confirmedPlayers");
+    return savedConfirmedPlayers ? parseInt(savedConfirmedPlayers, 10) : 0;
+  });
+
+  const handleUpdateRegisteredPlayers = (newCount) => {
+    setRegisteredPlayers(newCount); // Update state
+    localStorage.setItem("registeredPlayers", newCount); // Save to localStorage
+  };
+
+  const handleUpdateConfirmedPlayers = (newCount) => {
+    setConfirmedPlayers(newCount); // Update state
+    localStorage.setItem("confirmedPlayers", newCount); // Save to localStorage
+  };
+
+  useEffect(() => {
+    // Ensure registered players are updated from localStorage on mount
+    const savedRegisteredPlayers = localStorage.getItem("registeredPlayers");
+    if (savedRegisteredPlayers) {
+      setRegisteredPlayers(parseInt(savedRegisteredPlayers, 10));
+    }
+
+    // Ensure confirmed players are updated from localStorage on mount
+    const savedConfirmedPlayers = localStorage.getItem("confirmedPlayers");
+    if (savedConfirmedPlayers) {
+      setConfirmedPlayers(parseInt(savedConfirmedPlayers, 10));
+    }
+  }, []);
+
   const handleViewMoreClick = (match) => {
     setSelectedMatch(match);
     setShowMatchModal(true);
@@ -16,7 +52,7 @@ const TabContent = ({ activeTab, selectedCard, setShowMatchModal, setSelectedMat
     <div className="p-6 max-w-[1200px] mx-auto">
       {activeTab === "resumen" && (
         <div>
-          <h2 className="text-3xl font-bold mb-6">Resumen</h2>
+          <h2 className="text-3xl font-bold mb-6 text-center">Resumen</h2>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             {/* Formato */}
             <div className="bg-[#1c1c1c] text-white p-4 rounded-lg shadow-lg">
@@ -26,10 +62,16 @@ const TabContent = ({ activeTab, selectedCard, setShowMatchModal, setSelectedMat
             </div>
             {/* Jugadores */}
             <div className="bg-[#1c1c1c] text-white p-4 rounded-lg shadow-lg">
-              <h3 className="text-xl font-bold mb-2">Jugadores</h3>
-              <p className="text-sm">Registrados: 78</p>
-              <p className="text-sm">Listos: 0</p>
-              <p className="text-sm">Espacios: 32</p>
+              <h3 className="text-xl font-bold mb-2">Equipos</h3>
+              <p className="text-sm">
+                Registrados:{" "}
+                <span className="font-bold text-white">{registeredPlayers}</span>
+              </p>
+              <p className="text-sm">
+                Confirmados:{" "}
+                <span className="font-bold text-white">{confirmedPlayers}</span>
+              </p>
+              <p className="text-sm">Limite de Equipos: 128</p>
             </div>
             {/* Ajustes de partida */}
             <div className="bg-[#1c1c1c] text-white p-4 rounded-lg shadow-lg">
@@ -73,13 +115,13 @@ const TabContent = ({ activeTab, selectedCard, setShowMatchModal, setSelectedMat
       )}
       {activeTab === "bracket" && (
         <div>
-          <h2 className="text-3xl font-bold mb-4">Bracket</h2>
+          <h2 className="text-3xl font-bold mb-4 text-center">Bracket</h2>
           <Bracket tournamentName={selectedCard[2]} />
         </div>
       )}
       {activeTab === "partidas" && (
         <div>
-          <h2 className="text-3xl font-bold mb-4">Partidas</h2>
+          <h2 className="text-3xl font-bold mb-4 text-center">Partidas</h2>
           <div className="grid grid-cols-1 gap-4">
             {/* Match 1 */}
             <div className="bg-[#1c1c1c] text-white p-3 rounded-lg shadow-lg flex justify-between items-center h-[120px]"> {/* Reduced height */}
@@ -232,7 +274,13 @@ const TabContent = ({ activeTab, selectedCard, setShowMatchModal, setSelectedMat
           </div>
         </div>
       )}
-      {activeTab === "inscritos" && <Inscripciones />}
+      {activeTab === "inscritos" && (
+        <Inscripciones
+          registeredPlayers={registeredPlayers} // Pass the current count
+          onUpdateRegisteredPlayers={handleUpdateRegisteredPlayers}
+          onUpdateConfirmedPlayers={handleUpdateConfirmedPlayers} // Pass handler for confirmed players
+        />
+      )}
       {activeTab === "premios" && <Premios />}
       {activeTab === "reglas" && <Reglas />}
       {activeTab === "bracket-detallado" && (

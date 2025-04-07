@@ -16,7 +16,7 @@ const MatchModal = ({ selectedMatch, closeMatchModal }) => {
         >
           X
         </button>
-        <h2 className="text-3xl font-bold mb-2 text-center">Partida {selectedMatch.matchNumber}</h2>
+        <h2 className="text-3xl font-bold mb-2 text-center">Partida {selectedMatch.matchNumber}</h2> {/* Centrado */}
         <div className="flex justify-center mb-4">
           <p className="text-white border border-blue-400 px-4 py-1 rounded-full text-center bg-blue-400 text-sm">
             Esperando

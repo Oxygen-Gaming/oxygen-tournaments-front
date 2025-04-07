@@ -18,7 +18,7 @@ const BracketDetalladoComponente = () => {
                 {/* Left Side */}
                 {rounds.map((round, roundIndex) => (
                     <div key={roundIndex} className="flex flex-col items-center mx-4">
-                        <h3 className="text-lg font-bold mb-4">{round.title}</h3>
+                        <h3 className="text-lg font-bold mb-4 text-center">{round.title}</h3> {/* Centrado */}
                         {Array.from({ length: Math.ceil(round.matches / 2) }).map((_, matchIndex) => (
                             <div
                                 key={matchIndex}
@@ -45,7 +45,7 @@ const BracketDetalladoComponente = () => {
                 {/* Right Side (Mirrored) */}
                 {rounds.map((round, roundIndex) => (
                     <div key={roundIndex} className="flex flex-col items-center mx-4">
-                        <h3 className="text-lg font-bold mb-4">{round.title}</h3>
+                        <h3 className="text-lg font-bold mb-4 text-center">{round.title}</h3> {/* Centrado */}
                         {Array.from({ length: Math.ceil(round.matches / 2) }).map((_, matchIndex) => (
                             <div
                                 key={matchIndex}

@@ -22,10 +22,42 @@ const TournamentDetailsPage = () => {
     document.body.style.overflow = "auto"; // Restore scrolling
   };
 
+  const scrollToInscription = () => {
+    const currentPath = location.pathname;
+
+    // Redirigir a la página de detalles del torneo si no estamos en ella
+    if (!currentPath.includes("/tournament-details")) {
+      navigate("/tournament-details", { state: { selectedCard } }); // Redirigir a la página de detalles
+      setTimeout(() => {
+        setActiveTab("inscritos"); // Cambiar automáticamente a la pestaña de inscripciones
+        const inscriptionSection = document.getElementById("inscription-section");
+        if (inscriptionSection) {
+          const offset = 100; // Ajustar para que el menú de navegación sea visible
+          const topPosition = inscriptionSection.getBoundingClientRect().top + window.scrollY - offset;
+          window.scrollTo({ top: topPosition, behavior: "smooth" }); // Animación suave después de redirigir
+        }
+      }, 500); // Esperar un breve momento para garantizar que la página cargue
+      return;
+    }
+
+    // Si ya estamos en la página, cambiar la pestaña y desplazarse directamente
+    setActiveTab("inscritos"); // Cambiar automáticamente a la pestaña de inscripciones
+    setTimeout(() => {
+      const inscriptionSection = document.getElementById("inscription-section");
+      if (inscriptionSection) {
+        const offset = 100; // Ajustar para que el menú de navegación sea visible
+        const topPosition = inscriptionSection.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top: topPosition, behavior: "smooth" }); // Animación suave
+      } else {
+        console.error("No se encontró la sección de inscripción. Asegúrate de que el identificador sea correcto.");
+      }
+    }, 100); // Esperar un breve momento para garantizar que el DOM esté cargado
+  };
+
   if (!selectedCard) {
     return (
       <div className="bg-[#1AA9FF] text-white h-screen flex items-center justify-center">
-        <h1 className="text-3xl font-bold">No se encontró información del torneo.</h1>
+        <h1 className="text-3xl font-bold text-center">No se encontró información del torneo.</h1> {/* Centrado */}
       </div>
     );
   }
@@ -41,7 +73,7 @@ const TournamentDetailsPage = () => {
         >
           Volver
         </button>
-        <TournamentHeader selectedCard={selectedCard} />
+        <TournamentHeader selectedCard={selectedCard} scrollToInscription={scrollToInscription} />
       </div>
       <div className="w-full p-4">
         <Tabs activeTab={activeTab} setActiveTab={setActiveTab} />
