@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import LeagueOfLegends from "@imgs/League.jpg";
 import Valorant from "@imgs/valorant.jpg";
 import RocketLeague from "@imgs/rocketleague.jpg";
@@ -49,6 +49,14 @@ const Inscription = ({
   const closeCancelPopup = () => {
     setShowCancelPopup(false); // Close the pop-up
   };
+
+  useEffect(() => {
+    if (showCancelPopup) {
+      document.body.style.overflow = "hidden"; // Disable scrolling
+    } else {
+      document.body.style.overflow = "auto"; // Enable scrolling
+    }
+  }, [showCancelPopup]);
 
   return (
     <div className="bg-[#002f5f] text-white p-5 rounded-lg w-full max-w-[1300px] mx-auto mt-8">

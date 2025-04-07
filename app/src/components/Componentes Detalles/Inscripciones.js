@@ -157,6 +157,14 @@ const Inscripciones = ({ registeredPlayers, onUpdateRegisteredPlayers, onUpdateC
     }
   }, [animateConfirmed]);
 
+  useEffect(() => {
+    if (showModal || warningModal || confirmationModal || successConfirmationModal) {
+      document.body.style.overflow = "hidden"; // Disable scrolling
+    } else {
+      document.body.style.overflow = "auto"; // Enable scrolling
+    }
+  }, [showModal, warningModal, confirmationModal, successConfirmationModal]);
+
   return (
     <div id="inscription-section">
       <h2 className="text-3xl font-bold mb-4 text-center">Inscripciones</h2>

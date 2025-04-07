@@ -29,6 +29,9 @@ const ReportPlayerPage = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    // Disable scrolling
+    document.body.style.overflow = "hidden";
+
     // Create a blur overlay
     const blurOverlay = document.createElement("div");
     blurOverlay.style.position = "fixed";
@@ -63,10 +66,11 @@ const ReportPlayerPage = () => {
       successMessage.textContent = "Redirigiendo...";
     }, 2000);
 
-    // After 3 more seconds, remove the message, reset blur, and redirect
+    // After 3 more seconds, remove the message, reset blur, and enable scrolling
     setTimeout(() => {
       document.body.removeChild(successMessage);
       document.body.removeChild(blurOverlay);
+      document.body.style.overflow = "auto";
       setFormData({
         playerName: "",
         reason: "",
