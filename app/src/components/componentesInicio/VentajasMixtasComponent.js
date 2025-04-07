@@ -4,6 +4,7 @@ import VentajaPequeño from "@components/ComponentesVentajas/VentajasPequeñoCom
 import VentajaMovil from "@components/ComponentesVentajas/VentajasMovil";
 import poster1 from "@imgs/poster1.webp"
 import poster2 from "@imgs/poster2.webp"
+
 const VentajasMixtas = () => {
     return (
         <section className="flex flex-col justify-center items-center mb-[5rem] gap-[20px]">

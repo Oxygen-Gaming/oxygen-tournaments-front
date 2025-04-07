@@ -8,6 +8,7 @@ import poster2 from "@imgs/poster2.webp"
 import posterpremium1 from "@imgs/Recompensas_Premium1.jpg"
 import posterpremium2 from "@imgs/Recompensas_Premium2.jpg"
 import posterpremium3 from "@imgs/Recompensas_Premium3.jpg"
+import posterpremium4 from "@imgs/Recompensas_Premium4.jpg"
 const VentajasPremium = () => {
     return (
         <section className=" p-[15px] flex flex-col justify-center items-center mt-[5vh] gap-[40px]">
@@ -18,7 +19,7 @@ const VentajasPremium = () => {
             <div className="hidden lg:flex flex-col items-center justify-center gap-[2rem]">
                 <div className="hidden lg:flex gap-[40px]">
                     <VentajaGrande link={posterpremium1} text={"Ventajas Premium"} shadow={"0_0_10px_10px_rgba(255,215,0,0.8)"} background={"gold"} color="black"/>
-                    <VentajaPequeño link={poster2} shadow={"0_0_10px_10px_rgba(255,215,0,0.8)"} text={"Ventajas Premium"} background={"gold"} color="black"  />
+                    <VentajaPequeño link={posterpremium4} shadow={"0_0_10px_10px_rgba(255,215,0,0.8)"} text={"Ventajas Premium"} background={"gold"} color="black"  />
                     <VentajaPequeño link={poster2} shadow={"0_0_10px_10px_rgba(255,215,0,0.8)"} text={"Ventajas Premium"} background={"gold"} color="black"  />
                 </div>
 
