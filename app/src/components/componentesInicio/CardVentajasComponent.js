@@ -1,5 +1,5 @@
 import React from "react";
-
+import posterpremium4 from "@imgs/Recompensas_Premium4.jpg"
 const CardVentajas = () => {
     return (
         <div className="w-full flex items-center justify-center">
@@ -17,7 +17,7 @@ const CardVentajas = () => {
                     </div>
                 </div>
                 <div className="sm:w-[50%] sm:h-[70%] lg:h-full lg:w-[40%] p-[2rem] hidden sm:flex">
-                    <img className="w-full h-full border-[5px] rounded-[33px] bg-[black] border-[black]"/>
+                    <img className="w-full h-full rounded-[33px]" src={posterpremium4}/>
                 </div> 
             </section>
         </div>  
