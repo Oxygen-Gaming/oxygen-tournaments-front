@@ -96,8 +96,8 @@ const Competition = () => {
               <h2 className="text-4xl font-extrabold text-center relative z-10 text-white">
                 Próximos Torneos
               </h2>
-              <div className="absolute top-1/2 left-0 w-full h-1 bg-gradient-to-r from-transparent via-blue-500 to-transparent z-0"></div>
-              <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-16 h-1 bg-blue-500 rounded-full mt-2"></div>
+              <div className="absolute top-full left-0 w-full h-1 bg-gradient-to-r from-transparent via-blue-500 to-transparent z-0 mt-2"></div> {/* Moved below the title */}
+              <div className="absolute top-[calc(100%+0.5rem)] left-1/2 transform -translate-x-1/2 w-16 h-1 bg-blue-500 rounded-full"></div>
             </div>
             <CardsComponent
                 handleCardClick={handleCardClick}
@@ -111,8 +111,8 @@ const Competition = () => {
               <h2 className="text-4xl font-extrabold text-center relative z-10 text-white">
                 Torneos en curso
               </h2>
-              <div className="absolute top-1/2 left-0 w-full h-1 bg-gradient-to-r from-transparent via-yellow-400 to-transparent z-0"></div>
-              <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-16 h-1 bg-yellow-400 rounded-full mt-2"></div>
+              <div className="absolute top-full left-0 w-full h-1 bg-gradient-to-r from-transparent via-yellow-400 to-transparent z-0 mt-2"></div> {/* Moved below the title */}
+              <div className="absolute top-[calc(100%+0.5rem)] left-1/2 transform -translate-x-1/2 w-16 h-1 bg-yellow-400 rounded-full"></div>
             </div>
             <CardsComponent
                 handleCardClick={handleCardClick}
@@ -126,8 +126,8 @@ const Competition = () => {
               <h2 className="text-4xl font-extrabold text-center relative z-10 text-white">
                 Torneos Finalizados
               </h2>
-              <div className="absolute top-1/2 left-0 w-full h-1 bg-gradient-to-r from-transparent via-red-500 to-transparent z-0"></div>
-              <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-16 h-1 bg-red-500 rounded-full mt-2"></div>
+              <div className="absolute top-full left-0 w-full h-1 bg-gradient-to-r from-transparent via-red-500 to-transparent z-0 mt-2"></div> {/* Moved below the title */}
+              <div className="absolute top-[calc(100%+0.5rem)] left-1/2 transform -translate-x-1/2 w-16 h-1 bg-red-500 rounded-full"></div>
             </div>
             <CardsComponent
                 handleCardClick={handleCardClick}

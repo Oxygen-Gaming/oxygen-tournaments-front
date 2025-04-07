@@ -3,7 +3,7 @@ import React from "react";
 const Premios = () => {
   return (
     <div>
-      <h2 className="text-3xl font-bold mb-4">Premios</h2>
+      <h2 className="text-3xl font-bold mb-4 text-center">Premios</h2> {/* Centrado */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <div className="bg-[#1c1c1c] text-white p-4 rounded-lg shadow-lg flex flex-col items-center">
           <span className="text-5xl text-yellow-400">🥇</span>
