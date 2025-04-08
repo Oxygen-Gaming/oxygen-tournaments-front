@@ -12,6 +12,8 @@ import TournamentDetailsPage from "./pages/TournamentDetailsPage";
 import Perfil from './pages/PerfilPage';
 import Ventajas from './pages/VentajasPage';
 import ReportPlayerPage from "./pages/ReportPlayerPage";
+import MissionDetailsPage from "./pages/MissionDetailsPage";
+import RewardDetailsPage from "./pages/RewardDetailsPage";
 
 function App() {
   return (
@@ -29,6 +31,8 @@ function App() {
         <Route path="/tournament-details" element={<TournamentDetailsPage />} />
         <Route path="/ventajas" element={<Ventajas />} />
         <Route path="/report-player" element={<ReportPlayerPage />} />
+        <Route path="/mission-details" element={<MissionDetailsPage />} />
+        <Route path="/reward-details" element={<RewardDetailsPage />} />
       </Routes>
     </Router>
   );
