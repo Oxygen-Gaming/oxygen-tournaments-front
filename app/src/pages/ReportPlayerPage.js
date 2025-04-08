@@ -43,24 +43,47 @@ const ReportPlayerPage = () => {
 
     // Display a styled success message
     const successMessage = document.createElement("div");
-    successMessage.textContent = "Reporte enviado con éxito.";
     successMessage.style.position = "fixed";
     successMessage.style.top = "50%";
     successMessage.style.left = "50%";
     successMessage.style.transform = "translate(-50%, -50%)";
-    successMessage.style.backgroundColor = "#1c1c1c"; // Updated background color
+    successMessage.style.backgroundColor = "#1c1c1c";
     successMessage.style.color = "white";
-    successMessage.style.padding = "40px"; // Increased padding
-    successMessage.style.borderRadius = "15px";
+    successMessage.style.padding = "20px";
+    successMessage.style.borderRadius = "10px";
     successMessage.style.boxShadow = "0 4px 6px rgba(0, 0, 0, 0.1)";
-    successMessage.style.zIndex = "1001"; // Ensure it is above the blur overlay
-    successMessage.style.fontSize = "24px";
+    successMessage.style.zIndex = "1001";
+    successMessage.style.fontSize = "18px";
     successMessage.style.textAlign = "center";
+    successMessage.style.width = "300px";
+    successMessage.style.height = "300px";
+    successMessage.style.display = "flex";
+    successMessage.style.flexDirection = "column";
+    successMessage.style.justifyContent = "center";
+    successMessage.style.alignItems = "center";
+
+    // Add name next to the message
+    const nameElement = document.createElement("p");
+    nameElement.textContent = "Oxygen Gaming";
+    nameElement.style.marginTop = "10px";
+    nameElement.style.fontSize = "14px";
+    nameElement.style.color = "#ccc";
+    successMessage.appendChild(nameElement);
+
+    // Add tournament information dynamically
+    const tournamentInfo = document.createElement("p");
+    tournamentInfo.textContent = "Torneo: League of Legends Championship - Fecha: 30/03/2025";
+    tournamentInfo.style.marginTop = "10px";
+    tournamentInfo.style.fontSize = "14px";
+    tournamentInfo.style.color = "#aaa";
+    successMessage.appendChild(tournamentInfo);
+
     document.body.appendChild(successMessage);
 
     // After 2 seconds, show "Redirigiendo..." message
     setTimeout(() => {
       successMessage.textContent = "Redirigiendo...";
+      successMessage.appendChild(nameElement); // Re-add name after text change
     }, 2000);
 
     // After 3 more seconds, remove the message, reset blur, and redirect

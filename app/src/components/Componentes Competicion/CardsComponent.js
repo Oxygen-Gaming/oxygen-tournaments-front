@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import LeagueOfLegends from "@imgs/League.jpg";
+import LeagueOfLegends from "@imgs/lol.jpg";
 import Valorant from "@imgs/valorant.jpg";
 import RocketLeague from "@imgs/rocketleague.jpg";
 import Logo from "@imgs/Logo_Blue.png";
@@ -68,55 +68,58 @@ const CardsComponent = ({ handleCardClick, selectedGame, filter }) => {
     }, [inscriptionStatus]);
 
     return (
-        <>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {filteredCards.map(card => {
-                    const { text, style } = getInscriptionStatus(card[0]); // Use card[0] as the unique ID
-                    return (
-                        <div
-                            key={card[0]}
-                            className={`card relative overflow-hidden rounded-lg shadow-lg bg-[#1c1c1c] text-white transition-transform transform hover:scale-105 hover:shadow-2xl ${
-                                selectedCard && selectedCard[0] === card[0] ? 'ring-4 ring-blue-500' : ''
-                            }`} // Updated background color to #1c1c1c
-                            onClick={() => handleCardSelection(card)}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {filteredCards.slice(0, 3).map((card, index) => ( // Limit to 3 cards
+                <div
+                    key={card[0]}
+                    className={`card relative overflow-hidden rounded-lg shadow-lg bg-[#1c1c1c] text-white p-6 flex flex-col justify-between h-[600px] cursor-pointer transition-transform transform hover:scale-105`}
+                    onClick={() => handleCardClick(card)}
+                >
+                    <img src={card[6]} alt={card[1]} className="w-full h-[300px] object-cover rounded-lg mb-4 shadow-md" /> {/* Increased image height */}
+                    <h2 className="text-white text-3xl font-bold mb-2">{card[2]}</h2>
+                    <p className="text-lg mb-2 text-gray-300">
+                        Fecha de Inicio: {card[3]} • 18:00
+                    </p>
+                    <p className="text-lg mb-2 text-gray-300">
+                        Formato: {card[1] === "Valorant" || card[1] === "League of Legends"
+                            ? "5vs5"
+                            : card[1] === "Rocket League" && index % 2 === 0
+                            ? "1vs1"
+                            : "3vs3"}
+                    </p> {/* Updated format */}
+                    <p className="text-lg mb-2 text-gray-300">
+                        Premio Total: $500
+                    </p>
+                    <div className="flex items-center mb-2">
+                        <img src={Logo} alt="Trophy" className="w-8 h-8 mr-2" />
+                        <span className={`text-lg font-bold ${
+                            card[4] === 'finished' ? 'text-red-500' : card[4] === 'ongoing' ? 'text-yellow-400' : 'text-green-500'
+                        }`}>
+                            {card[4] === 'upcoming' ? 'Inscripciones Abiertas' : card[4] === 'ongoing' ? 'En Curso' : 'Finalizado'}
+                        </span>
+                    </div>
+                    <div className="flex justify-between text-lg text-gray-300">
+                        <span>Jugadores Inscritos: {card[5]}</span>
+                    </div>
+                    <div className="flex justify-between text-lg mt-2">
+                        <span className={`text-lg font-bold px-4 py-2 rounded w-fit ${getInscriptionStatus(card[0]).style}`}>
+                            {getInscriptionStatus(card[0]).text}
+                        </span>
+                    </div>
+                    {inscriptionStatus[card[0]] && (
+                        <button
+                            onClick={(e) => {
+                                e.stopPropagation(); // Prevent triggering card selection
+                                cancelInscription(card[0]);
+                            }}
+                            className="mt-4 px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition"
                         >
-                            <div className="relative p-6 flex flex-col justify-between h-[450px]">
-                                <img src={card[6]} alt={card[1]} className="w-full h-[220px] object-cover rounded-lg mb-4 shadow-md" />
-                                <h2 className="text-white text-2xl font-bold mb-2">{card[2]}</h2>
-                                <p className="text-sm mb-2 text-gray-300">Fecha de Inicio: {card[3]}</p>
-                                <div className="flex items-center mb-2">
-                                    <img src={Logo} alt="Trophy" className="w-6 h-6 mr-2" />
-                                    <span className={`text-sm font-bold ${
-                                        card[4] === 'finished' ? 'text-red-500' : card[4] === 'ongoing' ? 'text-yellow-400' : 'text-green-500'
-                                    }`}>
-                                        {card[4] === 'upcoming' ? 'Inscripciones Abiertas' : card[4] === 'ongoing' ? 'En Curso' : 'Finalizado'}
-                                    </span>
-                                </div>
-                                <div className="flex justify-between text-sm text-gray-300">
-                                    <span>Jugadores Inscritos: {card[5]}</span>
-                                </div>
-                                <div className="flex justify-between text-sm mt-2">
-                                    <span className={`text-lg font-bold px-4 py-2 rounded w-fit ${style}`}>
-                                        {text}
-                                    </span>
-                                </div>
-                                {inscriptionStatus[card[0]] && (
-                                    <button
-                                        onClick={(e) => {
-                                            e.stopPropagation(); // Prevent triggering card selection
-                                            cancelInscription(card[0]);
-                                        }}
-                                        className="mt-4 px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition"
-                                    >
-                                        Cancelar Inscripción
-                                    </button>
-                                )}
-                            </div>
-                        </div>
-                    );
-                })}
-            </div>
-        </>
+                            Cancelar Inscripción
+                        </button>
+                    )}
+                </div>
+            ))}
+        </div>
     );
 };
 

@@ -1,14 +1,37 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import MatchModal from "@components/Componentes Detalles/MatchModal"; // Import MatchModal component
 
 const CuadrosBracket = ({ positions }) => {
   const [highlightedTeam, setHighlightedTeam] = useState(null); // State to track highlighted team
   const [modalTeam, setModalTeam] = useState(null); // State to track the team for the modal
+  const bracketRef = useRef(null); // Reference for the bracket container
+  const [isDragging, setIsDragging] = useState(false); // State to track dragging
+  const [dragStart, setDragStart] = useState({ x: 0, y: 0 }); // Initial drag position
+  const [scrollStart, setScrollStart] = useState({ x: 0, y: 0 }); // Initial scroll position
 
   const handleMouseEnter = (team) => setHighlightedTeam(team); // Highlight team on hover
   const handleMouseLeave = () => setHighlightedTeam(null); // Remove highlight on mouse leave
   const handleTeamClick = (team) => setModalTeam(team); // Open modal with team details
   const closeModal = () => setModalTeam(null); // Close modal
+
+  const handleMouseDown = (e) => {
+    setIsDragging(true);
+    setDragStart({ x: e.clientX, y: e.clientY });
+    setScrollStart({
+      x: bracketRef.current.scrollLeft,
+      y: bracketRef.current.scrollTop,
+    });
+  };
+
+  const handleMouseMove = (e) => {
+    if (!isDragging) return;
+    const dx = e.clientX - dragStart.x;
+    const dy = e.clientY - dragStart.y;
+    bracketRef.current.scrollLeft = scrollStart.x - dx;
+    bracketRef.current.scrollTop = scrollStart.y - dy;
+  };
+
+  const handleMouseUp = () => setIsDragging(false);
 
   const getTeamStyle = (team) => {
     if (team === finalWinner) return "bg-yellow-500 text-black font-bold"; // Always highlight winner
@@ -69,8 +92,15 @@ const CuadrosBracket = ({ positions }) => {
         ))}
       </div>
 
-      <div className="flex relative z-10 justify-center">
-        <div className="absolute inset-0 bg-gray-900 w-[10%] h-[120%] -z-10"> {/* Increased width and height to 120% */}
+      <div
+        ref={bracketRef}
+        className="flex relative z-10 justify-center overflow-hidden cursor-grab"
+        onMouseDown={handleMouseDown}
+        onMouseMove={handleMouseMove}
+        onMouseUp={handleMouseUp}
+        onMouseLeave={handleMouseUp}
+      >
+        <div className="absolute inset-0 bg-gray-900 w-[200%] h-[150%] -z-10">
         </div>
         <div className="w-1/4 pr-2"> {/* Dieciseisavos */}
           {Array.from({ length: 16 }).map((_, i) => (
@@ -367,19 +397,14 @@ const CuadrosBracket = ({ positions }) => {
 
       {/* Modal */}
       {modalTeam && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 overflow-hidden"> {/* Added overflow-hidden */}
-          <div className="bg-black text-white rounded-lg p-6 w-1/3 h-[85%] flex flex-col justify-center items-center relative"> {/* Increased height to h-[85%] */}
-            <h2 className="text-3xl font-bold mb-14 text-center">{modalTeam}</h2> {/* Increased margin above the title */}
-            <div className="relative mb-8 w-full"> {/* Adjusted margin to move the line higher */}
-              <div className="absolute inset-0 flex items-center">
-                <div className="w-full h-[2px] bg-gradient-to-r from-transparent via-gray-500 to-transparent"></div>
-              </div>
-            </div>
-            <div className="grid grid-cols-1 gap-1 w-3/4 h-full items-center justify-center mb-6"> {/* Added mb-4 for spacing */}
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 overflow-hidden">
+          <div className="bg-black text-white rounded-lg p-6 w-1/3 h-[85%] flex flex-col justify-center items-center relative">
+            <h2 className="text-3xl font-bold mb-14 text-center">{modalTeam}</h2>
+            <div className="grid grid-cols-1 gap-1 w-3/4 h-full items-center justify-center mb-6">
               {["ShadowHunter", "BlazeFury", "NightWolf", "IronClaw", "StormBreaker"].map((nick, index) => (
                 <div
                   key={`team1-player-${index}`}
-                  className="flex items-center text-white p-4 rounded-lg shadow-lg bg-[#1c1c1c]" // Updated background color
+                  className="flex items-center text-white p-4 rounded-lg shadow-lg bg-[#1c1c1c]"
                 >
                   <div className="w-8 h-8 bg-gray-500 rounded-full flex items-center justify-center">
                     <i className="fas fa-user text-white"></i>
@@ -389,7 +414,7 @@ const CuadrosBracket = ({ positions }) => {
               ))}
             </div>
             <button
-              className="absolute bottom-4 bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600" // Centered close button
+              className="absolute bottom-4 bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600"
               onClick={closeModal}
             >
               Cerrar
