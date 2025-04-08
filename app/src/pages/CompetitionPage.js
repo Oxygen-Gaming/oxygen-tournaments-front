@@ -3,12 +3,14 @@ import Header from "@components/Header";
 import Footer from "@components/Footer";
 import View from "@components/Componentes Competicion/ViewComponent";
 import CardsComponent from '@components/Componentes Competicion/CardsComponent';
-import LeagueOfLegends from "@imgs/League.jpg";
+import LeagueOfLegends from "@imgs/lol.jpg";
 import Valorant from "@imgs/valorant.jpg";
 import RocketLeague from "@imgs/rocketleague.jpg";
 import MenuHamburguesaNormal from "@components/ComponentesMenuHamburguesa/MenuHamburguesaNormalComponent";
 import { useNavigate } from "react-router-dom"; 
-
+import ValorantLogo from "@imgs/Valorant_logo.png";
+import RocketLeagueLogo from "@imgs/rocket-league.png";
+import LeagueOfLegendsLogo from "@imgs/lol-logo.png";
 const Competition = () => {
   const [currentImage, setCurrentImage] = useState(0);
   const [showGeneralView, setShowGeneralView] = useState(true); 
@@ -70,21 +72,48 @@ const Competition = () => {
     return null;
   };
 
+  const games = [
+    { name: "League of Legends", image: LeagueOfLegendsLogo },
+    { name: "Valorant", image: ValorantLogo },
+    { name: "Rocket League", image: RocketLeagueLogo },
+  ];
+
   return (
-    <div className="bg-[#1AA9FF] text-white overflow-x-hidden font-['Roboto_Condensed',sans-serif]"> {/* Updated background color */}
+    <div className="bg-[#1AA9FF] text-white overflow-x-hidden font-['Roboto_Condensed',sans-serif]">
       <Header />
       <MenuHamburguesaNormal />
       {/* BANNER */}
-      <div className="w-11/12 mx-auto h-80 bg-cover bg-center rounded-lg transition-all duration-1000 mt-8" style={{ backgroundImage: `url(${images[currentImage].src})` }}>
-        <div className="w-full h-full flex items-center justify-center bg-black bg-opacity-50 rounded-lg">
+      <div className="w-11/12 mx-auto h-80 bg-cover bg-center rounded-lg transition-all duration-1000 mt-8 relative">
+        <img
+          src={images[currentImage].src}
+          alt={images[currentImage].alt}
+          className="w-full h-full object-cover rounded-lg transition-opacity duration-500"
+        />
+        <div className="absolute inset-0 bg-black bg-opacity-50 rounded-lg flex items-center justify-center">
+          <h1 className="text-5xl font-extrabold text-white">Competiciones</h1>
         </div>
       </div>
-      {/* TITLE */}
-      <div className="w-11/12 mx-auto mt-8">
-        <h1 className="text-5xl font-extrabold text-center">Competiciones</h1>
+
+ {/* LOGOS MENU */}
+ <div className="flex justify-center gap-8 mt-8">
+        {games.map((game) => (
+          <div
+            key={game.name}
+            className={`flex flex-col items-center gap-2 cursor-pointer transition-transform hover:scale-110 ${
+              selectedGame === game.name ? "opacity-100" : "opacity-50 hover:opacity-100"
+            }`}
+            onClick={() => handleViewAll(game.name)}
+          >
+            <img
+              src={game.image}
+              alt={game.name}
+              className="w-20 h-20 object-cover rounded-lg"
+            />
+            <span className="text-white font-bold text-lg">{game.name}</span>
+          </div>
+        ))}
       </div>
       
-
       <div className="container mx-auto p-5">
         {showGeneralView && !selectedGame && (
           <View handleCardClick={handleCardClick} handleViewAll={handleViewAll} inscriptionStatus={inscriptionStatus} />

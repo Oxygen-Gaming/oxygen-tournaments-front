@@ -6,9 +6,6 @@ const Tabs = ({ activeTab, setActiveTab }) => {
     { id: "bracket", label: "Bracket" },
     { id: "partidas", label: "Partidas" },
     { id: "inscritos", label: "Inscripciones" },
-    { id: "premios", label: "Premios" },
-    { id: "reglas", label: "Reglas" },
-    { id: "bracket-detallado", label: "Bracket Detallado" },
   ];
 
   return (

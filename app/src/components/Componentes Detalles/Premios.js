@@ -4,22 +4,28 @@ const Premios = () => {
   return (
     <div>
       <h2 className="text-3xl font-bold mb-4 text-center">Premios</h2> {/* Centrado */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div className="bg-[#1c1c1c] text-white p-4 rounded-lg shadow-lg flex flex-col items-center">
-          <span className="text-5xl text-yellow-400">🥇</span>
-          <h3 className="text-xl font-bold mt-2">1er Lugar</h3>
-          <p className="text-lg font-bold mt-2">Premio: $100</p>
-        </div>
-        <div className="bg-[#1c1c1c] text-white p-4 rounded-lg shadow-lg flex flex-col items-center">
-          <span className="text-5xl text-gray-400">🥈</span>
-          <h3 className="text-xl font-bold mt-2">2do Lugar</h3>
-          <p className="text-lg font-bold mt-2">Premio: $50</p>
-        </div>
-        <div className="bg-[#1c1c1c] text-white p-4 rounded-lg shadow-lg flex flex-col items-center">
-          <span className="text-5xl text-orange-400">🥉</span>
-          <h3 className="text-xl font-bold mt-2">3er Lugar</h3>
-          <p className="text-lg font-bold mt-2">Premio: $25</p>
-        </div>
+      <div className="bg-[#1c1c1c] text-white p-4 rounded-lg shadow-lg">
+        <table className="w-full text-left border-collapse">
+          <thead>
+            <tr className="border-b border-gray-700">
+              <th className="py-2 px-4 text-yellow-400 text-lg font-bold">🏆 1</th>
+              <th className="py-2 px-4 text-gray-300">Por decidir</th>
+              <th className="py-2 px-4 text-yellow-400 text-right">€10.90</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr className="border-b border-gray-700">
+              <td className="py-2 px-4 text-gray-400 text-lg font-bold">🥈 2</td>
+              <td className="py-2 px-4 text-gray-300">Por decidir</td>
+              <td className="py-2 px-4 text-gray-400 text-right">€5.50</td>
+            </tr>
+            <tr>
+              <td className="py-2 px-4 text-orange-400 text-lg font-bold">🥉 E3</td>
+              <td className="py-2 px-4 text-gray-300">Por decidir</td>
+              <td className="py-2 px-4 text-orange-400 text-right">€2.00</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   );
