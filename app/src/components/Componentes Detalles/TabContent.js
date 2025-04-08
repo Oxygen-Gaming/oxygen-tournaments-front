@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom"; // Import useNavigate
 import Bracket from "@components/Componentes Competicion/BracketComponent";
-import BracketDetalladoComponente from "@components/Componentes Detalles/BracketDetalladoComponente";
+
 import Inscripciones from "@components/Componentes Detalles/Inscripciones";
 import Premios from "@components/Componentes Detalles/Premios";
 import Reglas from "@components/Componentes Detalles/Reglas";
@@ -302,7 +302,7 @@ const TabContent = ({ activeTab, selectedCard, setShowMatchModal, setSelectedMat
       {activeTab === "bracket-detallado" && (
         <div className="w-full">
           <h2 className="text-3xl font-bold mb-4 text-center">Bracket Detallado</h2>
-          <BracketDetalladoComponente />
+         
         </div>
       )}
     </div>

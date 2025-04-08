@@ -3,28 +3,32 @@ import CuadrosBracket from "./CuadrosBracket";
 
 const Bracket = ({ tournamentName, mirrored = false }) => {
   const positions = {
+
     dieciseisavos: [
-      { top: '0rem', left: '0rem' }, { top: '4rem', left: '0rem' },
-      { top: '8rem', left: '0rem' }, { top: '12rem', left: '0rem' },
-      { top: '16rem', left: '0rem' }, { top: '20rem', left: '0rem' },
-      { top: '24rem', left: '0rem' }, { top: '28rem', left: '0rem' },
-      { top: '32rem', left: '50rem' }, { top: '36rem', left: '50rem' },
-      { top: '40rem', left: '50rem' }, { top: '44rem', left: '50rem' },
-      { top: '48rem', left: '50rem' }, { top: '52rem', left: '50rem' },
-      { top: '56rem', left: '50rem' }, { top: '60rem', left: '50rem' }
+      { top: '2rem', left: '10rem' }, { top: '4rem', left: '10rem' },
+      { top: '8rem', left: '10rem' }, { top: '12rem', left: '10rem' },
+      { top: '16rem', left: '10rem' }, { top: '20rem', left: '10rem' },
+      { top: '24rem', left: '10rem' }, { top: '28rem', left: '10rem' },
+      { top: '32rem', left: '60rem' }, { top: '36rem', left: '60rem' },
+      { top: '40rem', left: '60rem' }, { top: '44rem', left: '60rem' },
+      { top: '48rem', left: '60rem' }, { top: '52rem', left: '60rem' },
+      { top: '56rem', left: '60rem' }, { top: '60rem', left: '60rem' }
     ],
     octavos: [
-      { top: '6.5rem' }, { top: '22.5rem' }, { top: '39rem' }, { top: '55.3rem' },
-      { top: '72rem' }, { top: '88.5rem' }, { top: '105rem' }, { top: '121rem' }
+      { top: '6.5rem', left: '20rem' }, { top: '22.5rem', left: '20rem' },
+      { top: '39rem', left: '20rem' }, { top: '55.3rem', left: '20rem' },
+      { top: '72rem', left: '70rem' }, { top: '88.5rem', left: '70rem' },
+      { top: '105rem', left: '70rem' }, { top: '121rem', left: '70rem' }
     ],
     cuartos: [
-      { top: '18rem' }, { top: '58rem' }, { top: '96rem' }, { top: '136rem' }
+      { top: '18rem', left: '30rem' }, { top: '58rem', left: '30rem' },
+      { top: '96rem', left: '80rem' }, { top: '136rem', left: '80rem' }
     ],
     semifinales: [
-      { top: '35rem' }, { top: '115rem' }
+      { top: '35rem', left: '40rem' }, { top: '115rem', left: '90rem' }
     ],
-    final: { top: '78rem' },
-    tercerPuesto: { top: '85rem' }
+    final: { top: '78rem', left: '50rem' },
+    tercerPuesto: { top: '85rem', left: '50rem' }
   };
 
   return (
