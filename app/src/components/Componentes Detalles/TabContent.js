@@ -354,9 +354,7 @@ const TabContent = ({ activeTab, selectedCard, setShowMatchModal, setSelectedMat
           </div>
         </div>
       )}
-      {showReportForm && (
-        <ReportPlayerForm closeForm={closeReportForm} />
-      )}
+      {showReportForm && <ReportPlayerForm closeForm={closeReportForm} />}
       {activeTab === "inscritos" && (
         <Inscripciones
           confirmedPlayersList={confirmedPlayersList}
