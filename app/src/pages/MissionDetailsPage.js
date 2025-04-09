@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import Header from "@components/Header";
 import Footer from "@components/Footer";
@@ -18,26 +18,37 @@ const MissionDetailsPage = () => {
   const navigate = useNavigate();
   const mission = location.state?.mission;
 
+  useEffect(() => {
+    // Animación para desplazarse al principio de la página
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, []);
+
   const allMissions = [
-    { id: "mission1", image: Amigo, title: "Invita a un Amigo", points: 100 },
-    { id: "mission2", image: Clip, title: "Sube un Clip", points: 150 },
-    { id: "mission3", image: Discord, title: "Únete a Discord", points: 200 },
-    { id: "mission4", image: Instagram, title: "Publica en Instagram", points: 250 },
-    { id: "mission5", image: Quiz, title: "Completa el Quiz", points: 300 },
-    { id: "mission6", image: TikTok, title: "Crea un TikTok", points: 350 },
-    { id: "mission7", image: Twitter, title: "Publica en Twitter", points: 400 },
-    { id: "mission8", image: Camiseta, title: "Diseña una Camiseta", points: 450 },
-    { id: "mission9", image: Meme, title: "Crea un Meme", points: 500 },
-    { id: "mission10", image: Caca, title: "Completa la Misión Caca", points: 550 },
+    { id: 1, image: Amigo, title: "Completa la Misión: Invita a un Amigo", points: 250, description: "Comparte la diversión con tus amigos. Invítalos a unirse a nuestra comunidad y juntos podrán disfrutar de más momentos increíbles. ¿Quién será tu próximo compañero de aventuras?" },
+    { id: 2, image: Clip, title: "Completa la Misión: Mejor Clip Creadores Oxygen", points: 220, description: "Muestra tu talento como fan. Envía tus mejores clips de nuestros creadores de contenido y destaca." },
+    { id: 3, image: Discord, title: "Completa la Misión: Únete a Discord", points: 200, description: "Dale click, sigue a Oxygen y disfruta de tus puntos." },
+    { id: 4, image: Instagram, title: "Completa la Misión: Síguenos en Instagram", points: 100, description: "Dale click, sigue a Oxygen y disfruta de tus puntos." },
+    { id: 5, image: Quiz, title: "Completa la Misión: Quiz Semanal", points: 250, description: "Vamos a medir tu ingenio, esperamos mucho de ti. Responde las preguntas de forma correcta y lo más rápido posible para llevarte el mayor número de puntos. ¿Te atreves?" },
+    { id: 6, image: TikTok, title: "Completa la Misión: Síguenos en TikTok", points: 110, description: "Dale click, sigue a Oxygen y disfruta de tus puntos." },
+    { id: 7, image: Twitter, title: "Completa la Misión: Síguenos en X", points: 120, description: "Dale click, sigue a Oxygen y disfruta de tus puntos." },
+    { id: 8, image: Camiseta, title: "Completa la Misión: Hazte con la Camiseta", points: 400, description: "Demuestra tu lealtad y estilo. No es solo una prenda, es un símbolo de tu compromiso. ¿Estás listo para lucirla?" },
+    { id: 9, image: Meme, title: "Completa la Misión: Meme del Mes", points: 190, description: "Demuestra tu sentido del humor. Crea o elige el meme que hará reír a todos. ¿Tienes lo que se necesita para ser el rey del meme?" },
+    { id: 10, image: Caca, title: "Completa la Misión: Clip de la Cagada de la Semana", points: 170, description: "Todos tenemos esos momentos. Comparte tu clip más divertido o embarazoso de la semana. ¿Te atreves a mostrar tu lado más torpe?" },
   ];
+
+  // Buscar la misión en caso de que no se pase la descripción
+  const currentMission = mission || allMissions.find((m) => m.id === mission?.id);
 
   // Filter out the current mission and select random recommended missions
   const recommendedMissions = allMissions
-    .filter((m) => m.id !== mission?.id)
+    .filter((m) => m.id !== currentMission?.id) // Cambiar `mission` a `currentMission`
     .sort(() => 0.5 - Math.random())
     .slice(0, 3);
 
-  if (!mission) {
+  if (!currentMission) {
     return (
       <div className="bg-[#1AA9FF] text-white h-screen flex items-center justify-center">
         <h1 className="text-3xl font-bold text-center">No se encontró información de la misión.</h1>
@@ -60,22 +71,21 @@ const MissionDetailsPage = () => {
         {/* Mission Details */}
         <div className="flex flex-col lg:flex-row gap-8 bg-[#1c1c1c] p-6 rounded-lg shadow-lg">
           <img
-            src={mission.image}
-            alt={mission.title}
+            src={currentMission.image}
+            alt={currentMission.title}
             className="w-full lg:w-1/2 h-auto object-cover rounded-lg"
           />
           <div className="flex flex-col justify-between w-full">
             <div>
-              <h1 className="text-4xl font-bold mb-4">{mission.title}</h1>
+              <h1 className="text-4xl font-bold mb-4 text-center">{currentMission.title}</h1>
+              <h2 className="text-2xl font-semibold mb-2 text-gray-300">Descripción</h2>
               <div className="bg-[#2a2a2a] p-4 rounded-lg shadow-md mb-4">
-                <p className="text-lg text-gray-300">
-                  Completa esta misión para ganar puntos y mejorar tu posición en la clasificación.
-                </p>
+                <p className="text-lg text-gray-300">{currentMission.description}</p>
               </div>
             </div>
             <div className="text-right">
               <h2 className="text-2xl font-bold mb-2">Recompensa</h2>
-              <p className="text-lg">{mission.points} puntos</p>
+              <p className="text-lg">{currentMission.points} puntos</p>
             </div>
           </div>
         </div>
@@ -88,7 +98,10 @@ const MissionDetailsPage = () => {
               <div
                 key={recommendedMission.id}
                 className="bg-[#1c1c1c] rounded-lg shadow-lg overflow-hidden cursor-pointer transition-transform transform hover:scale-105"
-                onClick={() => navigate("/mission-details", { state: { mission: recommendedMission } })}
+                onClick={() => {
+                  window.scrollTo({ top: 0, behavior: "smooth" }); // Animación de scroll al principio
+                  navigate("/mission-details", { state: { mission: recommendedMission } });
+                }}
               >
                 <img
                   src={recommendedMission.image}
