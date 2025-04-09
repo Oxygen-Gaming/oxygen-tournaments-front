@@ -6,9 +6,6 @@ const Tabs = ({ activeTab, setActiveTab }) => {
     { id: "bracket", label: "Bracket" },
     { id: "partidas", label: "Partidas" },
     { id: "inscritos", label: "Inscripciones" },
-    { id: "premios", label: "Premios" },
-    { id: "reglas", label: "Reglas" },
-    { id: "bracket-detallado", label: "Bracket Detallado" },
   ];
 
   return (
@@ -21,7 +18,7 @@ const Tabs = ({ activeTab, setActiveTab }) => {
               ? "border-b-4 border-white text-white"
               : "text-gray-200 hover:text-white"
           }`}
-          onClick={() => setActiveTab(tab.id)}
+          onClick={() => setActiveTab(tab.id)} // Cambiar la pestaña activa
         >
           {tab.label}
         </button>

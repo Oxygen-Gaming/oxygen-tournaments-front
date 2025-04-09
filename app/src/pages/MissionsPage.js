@@ -4,29 +4,45 @@ import Footer from '../components/Footer';
 import missions from '../components/Misiones/missions';
 import MissionCard from '../components/Misiones/MissionCard';
 import MenuHamburguesaNormal from "@components/ComponentesMenuHamburguesa/MenuHamburguesaNormalComponent";
+import { useNavigate } from "react-router-dom";
 
 const Missions = () => {
+  const navigate = useNavigate();
+
+  const handleCardClick = (mission) => {
+    navigate("/mission-details", { state: { mission } });
+  };
+
   return (
-    <div className="bg-blue-900 text-[18px] font-['Roboto_Condensed'] min-h-screen">
+    <div className="bg-[#1AA9FF] text-[18px] font-['Roboto_Condensed'] min-h-screen">
+      {/* Cambiado el color de fondo a #1AA9FF para que coincida con la página de Competiciones */}
       <Header />
-     
-      <div className="w-11/12 mx-auto mt-8">
-        <h1 className="text-5xl text-white font-extrabold text-center">Misiones</h1>
+
+      {/* Banner */}
+      <div className="w-11/12 mx-auto h-80 bg-cover bg-center rounded-lg transition-all duration-1000 mt-8 relative">
+        <img
+          src="https://via.placeholder.com/1920x1080" // Replace with an appropriate image URL
+          alt="Misiones Banner"
+          className="w-full h-full object-cover rounded-lg transition-opacity duration-500"
+        />
+        <div className="absolute inset-0 bg-black bg-opacity-50 rounded-lg flex items-center justify-center">
+          <h1 className="text-5xl font-extrabold text-white">Misiones</h1>
+        </div>
       </div>
+
       <section className="hidden md:flex flex-wrap justify-center gap-x-16 gap-y-20 pt-40 pb-24 px-4 md:px-16 mb-24 lg:flex">
         {missions.map((mission) => (
-          <MissionCard key={mission.id} {...mission} />
+          <div key={mission.id} onClick={() => handleCardClick(mission)}>
+            <MissionCard {...mission} />
+          </div>
         ))}
       </section>
       <br></br>
       <div className="md:hidden px-4 mb-16">
         <div className="grid grid-cols-2 gap-8 gap-y-10">
           {missions.map((mission) => (
-            <div key={mission.id} className="p-4">
-              <div className="bg-gradient-to-t from-[#1e3a8a] to-[#2563eb] rounded-lg shadow-lg p-1 relative">
-                <img src={mission.image} alt={mission.title} className="w-full h-auto object-contain rounded-lg" />
-                <p className="text-white text-xs absolute bottom-1 right-1">{mission.points}</p>
-              </div>
+            <div key={mission.id} onClick={() => handleCardClick(mission)}>
+              <MissionCard {...mission} />
             </div>
           ))}
         </div>

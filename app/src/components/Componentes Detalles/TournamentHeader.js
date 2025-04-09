@@ -1,14 +1,25 @@
-import React from "react";
-import LeagueOfLegends from "@imgs/League.jpg";
+import React, { useState } from "react";
+import LeagueOfLegends from "@imgs/lol.jpg";
 import Valorant from "@imgs/valorant.jpg";
 import RocketLeague from "@imgs/rocketleague.jpg";
+import InscriptionForm from "@components/Componentes Detalles/InscriptionForm"; // Import the form as a pop-up
 
 const TournamentHeader = ({ selectedCard }) => {
+  const [showInscriptionForm, setShowInscriptionForm] = useState(false); // State to control the pop-up
+
   const getImageForGame = (gameName) => {
     if (gameName === "League of Legends") return LeagueOfLegends;
     if (gameName === "Valorant") return Valorant;
     if (gameName === "Rocket League") return RocketLeague;
     return null;
+  };
+
+  const handleJoinTournament = () => {
+    setShowInscriptionForm(true); // Show the pop-up
+  };
+
+  const closeInscriptionForm = () => {
+    setShowInscriptionForm(false); // Close the pop-up
   };
 
   return (
@@ -25,12 +36,20 @@ const TournamentHeader = ({ selectedCard }) => {
       {/* Gradient at the bottom */}
       <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-b from-transparent to-[#1AA9FF] z-10"></div>
       <div className="relative z-20 text-center">
-        <h1 className="text-5xl font-extrabold text-white">{selectedCard[2]}</h1>
+        <h1 className="text-5xl font-extrabold text-white text-center">{selectedCard[2]}</h1> {/* Centered */}
         <p className="text-lg mt-2 text-white">En alrededor de 2 horas • {selectedCard[3]}</p>
-        <button className="mt-4 px-6 py-2 bg-[#005f99] text-white rounded-lg hover:bg-[#0077b6] transition">
+        <button
+          className="mt-4 px-6 py-2 bg-[#005f99] text-white rounded-lg hover:bg-[#0077b6] transition"
+          onClick={handleJoinTournament} // Trigger the pop-up
+        >
           Unirse al torneo
         </button>
       </div>
+      {showInscriptionForm && (
+        <InscriptionForm
+          closeForm={closeInscriptionForm} // Pass the close function
+        />
+      )}
     </div>
   );
 };
