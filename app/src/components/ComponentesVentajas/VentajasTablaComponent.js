@@ -8,7 +8,7 @@ const TablaVentajas = () => {
                 <table className="min-w-full divide-y divide-gray-700">
                     <thead className="bg-gray-800/50 backdrop-blur-sm">
                     <tr>
-                        <th scope="col" className="px-6 py-4 text-centerb text-[15px] font-semibold text-gray-300 uppercase tracking-wider"></th>
+                        <th scope="col" className="px-6 py-4 text-centerb text-[15px] font-semibold text-gray-300 uppercase tracking-wider">Ventajilla</th>
                         <th scope="col" className="px-6 py-4 text-center text-[15px] font-semibold text-gray-300 uppercase tracking-wider]">Normal</th>
                         <th scope="col" className="px-6 py-4 text-center text-[15px] font-semibold text-amber-300 uppercase tracking-wider bg-gradient-to-br from-amber-800 to-amber-600">Premium Exclusivo</th>
                     </tr>
