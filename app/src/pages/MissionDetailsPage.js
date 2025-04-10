@@ -62,7 +62,7 @@ const MissionDetailsPage = () => {
           <img
             src={mission.image}
             alt={mission.title}
-            className="w-full lg:w-1/2 h-auto object-cover rounded-lg"
+            className="w-full lg:w-1/3 h-auto object-cover rounded-lg"
           />
           <div className="flex flex-col justify-between w-full">
             <div>
