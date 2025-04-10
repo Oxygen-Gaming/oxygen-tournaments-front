@@ -38,7 +38,7 @@ const Footer = () => {
                 <a href="https://instagram.com/GamingOxygen" target="_blank" rel="noreferrer noopener" className="flex justify-center items-center text-white bg-[#222] border-2 border-[#1AA9FF] w-10 h-10 rounded-full transition-all duration-300 hover:text-[#e4405f] text-[20px] md:w-[70px] md:h-[70px] md:text-[30px] lg:w-[50px] lg:h-[50px] lg:text-[20px]">
                     <i className="fab fa-instagram"></i>
                 </a>
-                <a href="https://www.tiktok.com/@oxg_esports?lang=es" target="_blank" rel="noreferrer noopener" className="flex justify-center items-center text-white bg-[#222] border-2 border-[#1AA9FF] w-10 h-10 rounded-full transition-all duration-300 hover:text-[#69c9d0] text-[20px] md:w-[70px] md:h-[70px] md:text-[30px] lg:w-[50px] lg:h-[50px] lg:text-[20px]">
+                <a href="https://www.tiktok.com/@oxygengaming.tv?lang=es" target="_blank" rel="noreferrer noopener" className="flex justify-center items-center text-white bg-[#222] border-2 border-[#1AA9FF] w-10 h-10 rounded-full transition-all duration-300 hover:text-[#69c9d0] text-[20px] md:w-[70px] md:h-[70px] md:text-[30px] lg:w-[50px] lg:h-[50px] lg:text-[20px]">
                     <i className="fab fa-tiktok"></i>
                 </a>
                 <a href="https://discord.gg/Udsstfpeze" target="_blank" rel="noreferrer noopener" className="flex justify-center items-center text-white bg-[#222] border-2 border-[#1AA9FF] w-10 h-10 rounded-full transition-all duration-300 hover:text-[#7289da] text-[20px] md:w-[70px] md:h-[70px] md:text-[30px] lg:w-[50px] lg:h-[50px] lg:text-[20px]">

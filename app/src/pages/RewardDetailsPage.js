@@ -130,11 +130,12 @@ const RewardDetailsPage = () => {
       <div className="container mx-auto p-6">
         {/* Back Button */}
         <button
-          className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition mb-6"
+          className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-transform transform hover:scale-105 mb-6" // Added margin-bottom
           onClick={() => navigate("/rewards")}
         >
           Volver
         </button>
+        <br></br>
 
         {/* Reward Details */}
         <div className="flex flex-col lg:flex-row gap-8 bg-[#1c1c1c] p-6 rounded-lg shadow-lg">

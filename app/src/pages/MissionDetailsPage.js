@@ -32,7 +32,7 @@ const MissionDetailsPage = () => {
     { id: 3, image: Discord, title: "Completa la Misión: Únete a Discord", points: 200, description: "Dale click, sigue a Oxygen y disfruta de tus puntos.", link: "https://discord.com/invite/Udsstfpeze" },
     { id: 4, image: Instagram, title: "Completa la Misión: Síguenos en Instagram", points: 100, description: "Dale click, sigue a Oxygen y disfruta de tus puntos.", link: "https://www.instagram.com/GamingOxygen/" },
     { id: 5, image: Quiz, title: "Completa la Misión: Quiz Semanal", points: 250, description: "Vamos a medir tu ingenio, esperamos mucho de ti. Responde las preguntas de forma correcta y lo más rápido posible para llevarte el mayor número de puntos. ¿Te atreves?", link: "https://example.com/quiz-semanal" },
-    { id: 6, image: TikTok, title: "Completa la Misión: Síguenos en TikTok", points: 110, description: "Dale click, sigue a Oxygen y disfruta de tus puntos.", link: "https://www.tiktok.com/@oxg_esports?lang=es" },
+    { id: 6, image: TikTok, title: "Completa la Misión: Síguenos en TikTok", points: 110, description: "Dale click, sigue a Oxygen y disfruta de tus puntos.", link: "https://www.tiktok.com/@oxygengaming.tv?lang=es" },
     { id: 7, image: Twitter, title: "Completa la Misión: Síguenos en X", points: 120, description: "Dale click, sigue a Oxygen y disfruta de tus puntos.", link: "https://x.com/GamingOxygen" },
     { id: 8, image: Camiseta, title: "Completa la Misión: Hazte con la Camiseta", points: 400, description: "Demuestra tu lealtad y estilo. No es solo una prenda, es un símbolo de tu compromiso. ¿Estás listo para lucirla?", link: "https://example.com/camiseta" },
     { id: 9, image: Meme, title: "Completa la Misión: Meme del Mes", points: 190, description: "Demuestra tu sentido del humor. Crea o elige el meme que hará reír a todos. ¿Tienes lo que se necesita para ser el rey del meme?", link: "https://example.com/meme-del-mes" },
@@ -62,7 +62,7 @@ const MissionDetailsPage = () => {
       <div className="container mx-auto p-6">
         {/* Back Button */}
         <button
-          className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition mb-6"
+          className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-transform transform hover:scale-105 mb-6" // Added margin-bottom
           onClick={() => navigate("/missions")}
         >
           Volver
@@ -86,7 +86,7 @@ const MissionDetailsPage = () => {
                     href={currentMission.link} // Use the specific link for the current mission
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
+                    className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-transform transform hover:scale-105"
                   >
                     Más Información
                   </a>
