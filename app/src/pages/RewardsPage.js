@@ -17,14 +17,15 @@ const Rewards = () => {
       <Header />
 
       {/* Banner */}
-      <div className="w-11/12 mx-auto h-96 bg-cover bg-center rounded-lg transition-all duration-1000 mt-8 relative">
+      <div className="w-full h-96 bg-cover bg-center relative mt-0"> {/* Increased height to h-96 */}
         <img
           src="https://via.placeholder.com/1920x1080" // Replace with an appropriate image URL
           alt="Rewards Banner"
-          className="w-full h-full object-cover rounded-lg transition-opacity duration-500"
+          className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black bg-opacity-50 rounded-lg flex items-center justify-center">
-          <h1 className="text-6xl font-extrabold text-white">Recompensas</h1>
+        <div className="absolute inset-0 bg-black bg-opacity-60"></div> {/* Dark overlay */}
+        <div className="absolute inset-0 flex items-center justify-center">
+          <h1 className="text-5xl font-extrabold text-white">Recompensas</h1>
         </div>
       </div>
 

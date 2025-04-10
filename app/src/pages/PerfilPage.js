@@ -34,7 +34,7 @@ const Perfil = () => {
         }
     };
     return (
-        <div className="bg-blue-900 min-h-[100vh] text-[white] flex flex-col font-roboto-condensed gap-[35px] w-full pt-[30px] lg:p-0">
+        <div className="bg-[#1AA9FF] text-white min-h-screen font-['Roboto_Condensed',sans-serif]">
             <Header />
             <MenuHamburguesaPerfil />
             <div className="hidden lg:flex items-center text-center w-full justify-center gap-[30px] font-bold">
