@@ -1,4 +1,11 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+
+const Inscripciones = ({ confirmedPlayersList, pendingPlayersList }) => {
+  // Define the missing state variables
+  const [showModal, setShowModal] = useState(false);
+  const [warningModal, setWarningModal] = useState(false);
+  const [confirmationModal, setConfirmationModal] = useState(false);
+  const [successConfirmationModal, setSuccessConfirmationModal] = useState(false);
 
   useEffect(() => {
     if (showModal || warningModal || confirmationModal || successConfirmationModal) {
@@ -70,6 +77,6 @@ import React from "react";
       </div>
     </div>
   );
-
+};
 
 export default Inscripciones;

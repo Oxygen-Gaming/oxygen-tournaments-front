@@ -7,12 +7,12 @@ import poster2 from "@imgs/poster2.webp"
 
 const VentajasMixtas = () => {
     return (
-        <section className="flex flex-col justify-center items-center mb-[5rem] gap-[20px]">
+        <section className="flex flex-col justify-center items-center mb-[5rem] gap-[20px] mt-[50px]">
             <div className="hidden lg:flex flex-col items-center justify-center gap-[2rem]">
                 <div className="flex gap-[40px]">
-                    <VentajaPequeño link={poster2} text={"Ventajas Normales Free"} background={"#1AA9FF"} color="white"/>
-                    <VentajaPequeño link={poster2} text={"Ventajas Normales Free"} background={"#1AA9FF"} color="white"/>
-                    <VentajaGrande link={poster1} text={"Ventajas Normales Free"} background={"#1AA9FF"} color="white"/>
+                    <VentajaPequeño link={poster2} text={"Ventajas Free"} background={"#1796E6"} color="white"/>
+                    <VentajaPequeño link={poster2} text={"Ventajas Free"} background={"#1796E6"} color="white"/>
+                    <VentajaGrande link={poster1} text={"Ventajas Free"} background={"#1796E6"} color="white"/>
                 </div>
 
                 <div className="flex gap-[40px]">
@@ -24,18 +24,20 @@ const VentajasMixtas = () => {
 
             <div className="lg:hidden flex flex-col items-center justify-center gap-[2rem]">
                 <div className="flex flex-col gap-[40px]">
-                    <VentajaMovil link={poster2} background={" #1AA9FF"}/>
-                    <VentajaMovil link={poster2} background={" #1AA9FF"}/>
-                    <VentajaMovil link={poster1} background={" #1AA9FF"}/>
+                    <VentajaMovil link={poster2} background={"#1796E6"}/>
+                    <VentajaMovil link={poster2} background={"#1796E6"}/>
+                    <VentajaMovil link={poster1} background={"#1796E6"}/>
                 </div>
 
                 <div className="flex flex-col gap-[40px]">
-                    <VentajaMovil link={poster2} shadow={"0_0_10px_10px_rgba(255,215,0,0.8)"} background={" #1AA9FF"}/>
-                    <VentajaMovil link={poster2} shadow={"0_0_10px_10px_rgba(255,215,0,0.8)"} background={" #1AA9FF"}/>
-                    <VentajaMovil link={poster1} shadow={"0_0_10px_10px_rgba(255,215,0,0.8)"} background={" #1AA9FF"}/>
+                    <VentajaMovil link={poster2} shadow={"0_0_10px_10px_rgba(255,215,0,0.8)"} background={"#1796E6"}/>
+                    <VentajaMovil link={poster2} shadow={"0_0_10px_10px_rgba(255,215,0,0.8)"} background={"#1796E6"}/>
+                    <VentajaMovil link={poster1} shadow={"0_0_10px_10px_rgba(255,215,0,0.8)"} background={"#1796E6"}/>
                 </div>
             </div>
         </section>
+
+
     )
 }
 
