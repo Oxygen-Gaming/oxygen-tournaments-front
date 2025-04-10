@@ -30,7 +30,7 @@ const Missions = () => {
 
       <section className="hidden md:flex flex-wrap justify-center gap-x-12 gap-y-16 md:gap-x-28 md:gap-y-44 pt-24 pb-32 px-4 md:px-10 mb-32">
         {missions.map((mission) => (
-          <div key={mission.id} onClick={() => handleCardClick(mission)} className="w-[440px] h-[540px] bg-[#1c1c1c] rounded-lg shadow-lg p-4">
+          <div key={mission.id} onClick={() => handleCardClick(mission)} className="w-[360px] h-[320px] rounded-lg shadow-lg">
             <MissionCard {...mission} />
           </div>
         ))}
@@ -38,9 +38,9 @@ const Missions = () => {
       <div className="md:hidden px-4 mb-24">
         <div className="grid grid-cols-1 gap-16 mt-12"> {/* Single column for mobile */}
           {missions.map((mission) => (
-            <div key={mission.id} onClick={() => handleCardClick(mission)} className="p-4 bg-[#1c1c1c] rounded-lg shadow-lg">
+            <div key={mission.id} onClick={() => handleCardClick(mission)} className="w-full h-80 rounded-lg shadow-lg">
               <div className="relative">
-                <img src={mission.image} alt={mission.title} className="w-full h-80 object-cover rounded-lg" />
+                <img src={mission.image} alt={mission.title} className="w-full h-[360px] object-cover rounded-lg" />
                 <p className="text-white text-lg absolute bottom-4 right-4 flex items-center">
                   <span className="mr-1">Puntos:</span> {mission.points}
                 </p>

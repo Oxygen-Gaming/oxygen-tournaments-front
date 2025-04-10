@@ -65,11 +65,11 @@ const RewardDetailsPage = () => {
         </button>
 
         {/* Reward Details */}
-        <div className="flex flex-col lg:flex-row gap-12 bg-[#1c1c1c] p-8 rounded-lg shadow-lg"> {/* Increased gap and padding */}
+        <div className="flex flex-col lg:flex-row gap-8 bg-[#1c1c1c] p-6 rounded-lg shadow-lg">
           <img
             src={currentReward.image}
             alt={currentReward.title}
-            className="w-full lg:w-1/2 h-auto object-cover rounded-lg"
+            className="w-full lg:w-1/3 h-auto object-cover rounded-lg"
           />
           <div className="flex flex-col justify-between w-full">
             <div>
