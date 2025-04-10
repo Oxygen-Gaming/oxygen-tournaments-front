@@ -10,7 +10,7 @@ const Missions = () => {
   const navigate = useNavigate();
 
   const handleCardClick = (mission) => {
-    navigate("/mission-details", { state: { mission } });
+    navigate("/mission-details", { state: { mission } }); // Pass the entire mission object, including the link
   };
 
   return (

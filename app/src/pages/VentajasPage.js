@@ -22,7 +22,7 @@ const Ventajas = () => {
           alt="Ventajas Banner"
           className="w-full h-full object-cover transition-opacity duration-500"
         />
-        <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+        <div className="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center"> {/* Updated opacity */}
           <h1 className="text-5xl font-extrabold text-white">Ventajas</h1>
         </div>
       </div>
