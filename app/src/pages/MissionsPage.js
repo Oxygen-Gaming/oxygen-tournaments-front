@@ -4,6 +4,7 @@ import Footer from '../components/Footer';
 import missions from '../components/Misiones/missions';
 import MissionCard from '../components/Misiones/MissionCard';
 import { useNavigate } from "react-router-dom";
+import MenuHamburguesaNormal from "@components/ComponentesMenuHamburguesa/MenuHamburguesaNormalComponent";
 
 const Missions = () => {
   const navigate = useNavigate();
@@ -15,6 +16,7 @@ const Missions = () => {
   return (
     <div className="bg-[#1AA9FF] text-[18px] font-['Roboto_Condensed'] min-h-screen">
       <Header />
+      <MenuHamburguesaNormal /> {/* Added MenuHamburguesaNormal */}
 
       {/* Banner */}
       <div className="w-full h-96 bg-cover bg-center relative mt-0">
