@@ -16,6 +16,15 @@ const ReportPlayerForm = ({ closeForm }) => {
     }
   }, []);
 
+  useEffect(() => {
+    document.body.style.overflow = "hidden"; // Disable scrolling
+    document.body.style.height = "100%"; // Prevent scrolling on mobile devices
+    return () => {
+      document.body.style.overflow = "auto"; // Enable scrolling when form is closed
+      document.body.style.height = "auto"; // Restore height
+    };
+  }, []);
+
   const handleSubmit = (e) => {
     e.preventDefault();
 

@@ -6,8 +6,10 @@ const MatchModal = ({ selectedMatch, closeMatchModal }) => {
 
   useEffect(() => {
     document.body.style.overflow = "hidden"; // Disable scrolling
+    document.body.style.height = "100%"; // Prevent scrolling on mobile devices
     return () => {
       document.body.style.overflow = "auto"; // Enable scrolling when modal is closed
+      document.body.style.height = "auto"; // Restore height
     };
   }, []);
 
