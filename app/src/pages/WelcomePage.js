@@ -31,7 +31,7 @@ const OxygenGaming = () => {
     <div className="bg-[#1AA9FF] text-white overflow-x-hidden font-['Roboto_Condensed',sans-serif] lg:p-0 pt-[30px] flex flex-col gap-0 px-[20px]">
       <Header />
       <MenuHamburguesaNormal />
-      <Banner /> {/* Usar el componente Banner para manejar la imagen */}
+      <Banner className="w-full h-96 bg-cover bg-center relative mt-0 md:h-96 sm:h-64" /> {/* Added responsive height for mobile */}
       <div className="flex flex-col justify-center items-center bg-[#1AA9FF]">
         <VentajasMixtas />
       </div>
