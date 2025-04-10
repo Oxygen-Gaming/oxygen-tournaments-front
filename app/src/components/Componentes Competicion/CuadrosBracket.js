@@ -37,7 +37,7 @@ const CuadrosBracket = ({ positions }) => {
 
   return (
     <>
-      <div className="flex text-xs font-semibold mb-6 relative z-10 justify-center">
+      <div className="flex text-xs font-semibold mb-6 relative z-10 justify-center overflow-x-auto scrollbar scrollbar-thumb-blue-400 scrollbar-thumb-rounded-full scrollbar-track-gray-700 scrollbar-track-rounded-full">
         {['DIECISEISAVOS DE FINAL', 'OCTAVOS DE FINAL', 'CUARTOS DE FINAL', 'SEMIFINALES', 'FINAL Y 3ER PUESTO', 'CAMPEÓN'].map((round, i) => (
           <div key={`round-header-${i}`} className="w-1/5 px-1"> {/* Changed w-1/6 to w-1/5 */}
             <div className="bg-blue-600 bg-opacity-20 py-2 text-center rounded border-l-2 border-blue-500">
@@ -46,7 +46,7 @@ const CuadrosBracket = ({ positions }) => {
           </div>
         ))}
       </div>
-      <div className="flex relative z-10 justify-center">
+      <div className="flex relative z-10 justify-center overflow-x-auto scrollbar scrollbar-thumb-blue-400 scrollbar-thumb-rounded-full scrollbar-track-gray-700 scrollbar-track-rounded-full">
         <div className="w-1/5 pr-2"> {/* Changed w-1/6 to w-1/5 */}
           {Array.from({ length: 16 }).map((_, i) => (
             <div key={`dieciseisavos-${i}`} className="mb-8 relative ml-8" style={{ top: positions.dieciseisavos[i].top }}> {/* Correctly aligned using positions.dieciseisavos */}
