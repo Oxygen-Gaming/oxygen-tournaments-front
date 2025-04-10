@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -17,6 +17,9 @@ const RewardDetailsPage = () => {
   const navigate = useNavigate();
   const reward = location.state?.reward;
 
+  const [userPoints, setUserPoints] = useState(1000); // Example user points
+  const [showConfirmationPopup, setShowConfirmationPopup] = useState(false); // State for confirmation pop-up
+
   useEffect(() => {
     // Animación para desplazarse al principio de la página
     window.scrollTo({
@@ -24,6 +27,75 @@ const RewardDetailsPage = () => {
       behavior: "smooth",
     });
   }, []);
+
+  const handleRedeemReward = () => setShowConfirmationPopup(true);
+
+  const confirmRedeem = () => {
+    if (userPoints >= currentReward.points) {
+      setUserPoints(userPoints - currentReward.points);
+      setShowConfirmationPopup(false);
+
+      // Create a blur overlay
+      const blurOverlay = document.createElement("div");
+      blurOverlay.style.position = "fixed";
+      blurOverlay.style.top = "0";
+      blurOverlay.style.left = "0";
+      blurOverlay.style.width = "100%";
+      blurOverlay.style.height = "100%";
+      blurOverlay.style.backdropFilter = "blur(5px)"; // Added blur effect
+      blurOverlay.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+      blurOverlay.style.zIndex = "1000";
+      document.body.appendChild(blurOverlay);
+
+      // Display the first message
+      const messageBox = document.createElement("div");
+      messageBox.textContent = "Tu petición ha sido recibida. Se procesará tu pedido lo antes posible.";
+      messageBox.style.position = "fixed";
+      messageBox.style.top = "50%";
+      messageBox.style.left = "50%";
+      messageBox.style.transform = "translate(-50%, -50%)";
+      messageBox.style.backgroundColor = "#1c1c1c";
+      messageBox.style.color = "white";
+      messageBox.style.padding = "20px";
+      messageBox.style.borderRadius = "10px";
+      messageBox.style.boxShadow = "0 4px 6px rgba(0, 0, 0, 0.1)";
+      messageBox.style.zIndex = "1001";
+      messageBox.style.fontSize = "18px";
+      messageBox.style.textAlign = "center";
+      messageBox.style.width = "300px";
+      messageBox.style.height = "200px";
+      messageBox.style.display = "flex";
+      messageBox.style.flexDirection = "column";
+      messageBox.style.justifyContent = "center";
+      messageBox.style.alignItems = "center";
+
+      // Add "Oxygen Gaming" below the message
+      const nameElement = document.createElement("p");
+      nameElement.textContent = "Oxygen Gaming";
+      nameElement.style.marginTop = "10px";
+      nameElement.style.fontSize = "14px";
+      nameElement.style.color = "#ccc";
+      messageBox.appendChild(nameElement);
+
+      document.body.appendChild(messageBox);
+
+      // After 4 seconds, show the second message
+      setTimeout(() => {
+        messageBox.textContent = "Redirigiendo...";
+        messageBox.appendChild(nameElement); // Re-add "Oxygen Gaming" after text change
+      }, 4000);
+
+      // After 3 more seconds, remove the message and overlay
+      setTimeout(() => {
+        document.body.removeChild(messageBox);
+        document.body.removeChild(blurOverlay);
+      }, 7000);
+    } else {
+      alert("No tienes suficientes puntos para canjear esta recompensa.");
+    }
+  };
+
+  const cancelRedeem = () => setShowConfirmationPopup(false);
 
   const allRewards = [
     { id: 1, image: Follow, title: "Follow por parte de Oxygen", points: 100, description: "¿Quieres unirte a la élite? Un follow exclusivo de Oxygen te conectará con una comunidad única. Por 100 puntos, estarás dentro del círculo del circulo de los mejores." },
@@ -85,8 +157,8 @@ const RewardDetailsPage = () => {
                 </p>
                 <div className="flex justify-center">
                   <button
-                    className="px-6 py-3 bg-green-500 text-white rounded-lg hover:bg-green-600 transition"
-                    onClick={() => alert(`Has canjeado la recompensa: ${currentReward.title}`)}
+                    className="px-6 py-3 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-transform transform hover:scale-105 hover:translate-y-[-2px]" // Added animation
+                    onClick={handleRedeemReward} // Trigger the confirmation pop-up
                   >
                     Canjear Recompensa
                   </button>
@@ -99,6 +171,47 @@ const RewardDetailsPage = () => {
             </div>
           </div>
         </div>
+
+        {/* Confirmation Pop-up */}
+        {showConfirmationPopup && (
+          <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+            <div className="bg-gray-800 text-white p-6 rounded-lg shadow-lg text-center">
+              <h2 className="text-2xl font-bold mb-4">Confirmar Canjeo</h2>
+              <p className="mb-4">¿Estás seguro de que deseas canjear esta recompensa?</p>
+              <p className="text-sm mb-2">
+                Puntos actuales: <b>{userPoints}</b> - <b>{currentReward.points}</b>
+              </p>
+              <p className="text-sm mb-4">
+                Puntos restantes: <b>{userPoints - currentReward.points}</b>
+              </p>
+              {userPoints - currentReward.points < 0 && (
+                <p className="text-red-500 text-sm mb-4">
+                  Actualmente no puedes canjear esta recompensa. Necesitas un total de{" "}
+                  <b>{currentReward.points}</b> puntos para poder canjear esta recompensa.
+                </p>
+              )}
+              <div className="flex justify-center gap-4">
+                <button
+                  onClick={confirmRedeem}
+                  className={`px-6 py-3 rounded-lg transition-transform ${
+                    userPoints - currentReward.points < 0
+                      ? "bg-gray-500 text-gray-300 cursor-not-allowed"
+                      : "bg-green-500 text-white hover:bg-green-600 transform hover:scale-105"
+                  }`}
+                  disabled={userPoints - currentReward.points < 0} // Disable if remaining points are negative
+                >
+                  Sí
+                </button>
+                <button
+                  onClick={cancelRedeem}
+                  className="px-6 py-3 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-transform transform hover:scale-105"
+                >
+                  No
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* Recommended Rewards */}
         <div className="mt-8">

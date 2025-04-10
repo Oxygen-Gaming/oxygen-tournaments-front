@@ -6,7 +6,7 @@ const Header = () => {
   const location = useLocation();
 
   return (
-    <header className="lg:flex justify-between hidden items-center px-4 py-4 md:px-6 bg-[#18538a] text-[18px] font-['Roboto_Condensed']">
+    <header className="lg:flex justify-between hidden items-center px-4 py-4 md:px-6 bg-[#000000] text-[18px] font-['Roboto_Condensed']"> {/* Updated background color */}
       <a href="/" className="w-[70px] h-[70px] mr-8">
         <img src={oxygen} alt="OxygenGaming Logo" className="w-full h-full" />
       </a>
@@ -22,7 +22,7 @@ const Header = () => {
         <NavLink
           to="/competition"
           className={`text-white no-underline px-2 py-2 rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10 font-['Roboto_Condensed',sans-serif] ${
-            location.pathname.startsWith("/competition") ? "bg-blue-600" : ""
+            location.pathname.startsWith("/competition") || location.pathname.startsWith("/tournament-details") ? "bg-blue-600" : ""
           }`}
         >
           Competiciones
