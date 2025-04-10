@@ -71,16 +71,16 @@ const MissionDetailsPage = () => {
         {/* Mission Details */}
         <div className="flex flex-col lg:flex-row gap-8 bg-[#1c1c1c] p-6 rounded-lg shadow-lg">
           <img
-            src={currentMission.image}
-            alt={currentMission.title}
-            className="w-full lg:w-1/2 h-auto object-cover rounded-lg"
+            src={mission.image}
+            alt={mission.title}
+            className="w-full lg:w-1/3 h-auto object-cover rounded-lg"
           />
           <div className="flex flex-col justify-between w-full">
             <div>
-              <h1 className="text-4xl font-bold mb-4 text-center">{currentMission.title}</h1>
-              <h2 className="text-2xl font-semibold mb-2 text-gray-300">Descripción</h2>
-              <div className="bg-[#2a2a2a] p-4 rounded-lg shadow-md mb-4">
-                <p className="text-lg text-gray-300">{currentMission.description}</p>
+              <h1 className="text-4xl font-bold mb-8 text-center">{currentMission.title}</h1> {/* Increased margin-bottom */}
+              <div className="mb-12"> {/* Increased margin-bottom */}
+                <h2 className="text-2xl font-semibold text-gray-300 mb-4 text-center">Descripción</h2> {/* Centered title */}
+                <p className="text-lg text-gray-300 text-center">{currentMission.description}</p> {/* Centered text */}
               </div>
             </div>
             <div className="text-right">
