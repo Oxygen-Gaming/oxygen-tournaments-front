@@ -82,10 +82,10 @@ const CuadrosBracket = ({ positions }) => {
 
   return (
     <>
-      <div className="flex text-xs font-semibold mb-6 relative z-10 justify-center">
+      <div className="flex text-xs font-semibold mb-4 relative z-10 justify-center"> {/* Adjust spacing */}
         {['RONDA DE 32', 'OCTAVOS DE FINAL', 'CUARTOS DE FINAL', 'SEMIFINALES', 'FINAL Y 3ER PUESTO'].map((round, i) => (
-          <div key={`round-header-${i}`} className="w-1/5 px-1">
-            <div className="bg-blue-600 bg-opacity-20 py-2 text-center rounded border-l-2 border-blue-500">
+          <div key={`round-header-${i}`} className="w-1/6 px-0.5"> {/* Reduce column width */}
+            <div className="bg-blue-600 bg-opacity-20 py-1 text-center rounded border-l-2 border-blue-500 text-xs"> {/* Adjust padding and font size */}
               {round}
             </div>
           </div>
@@ -94,29 +94,29 @@ const CuadrosBracket = ({ positions }) => {
 
       <div
         ref={bracketRef}
-        className="flex relative z-10 justify-center overflow-hidden cursor-grab"
+        className="flex relative z-10 justify-center overflow-hidden cursor-grab scale-90"
         onMouseDown={handleMouseDown}
         onMouseMove={handleMouseMove}
         onMouseUp={handleMouseUp}
         onMouseLeave={handleMouseUp}
       >
-        <div className="absolute inset-0 bg-gray-900 w-[200%] h-[150%] -z-10">
+        <div className="absolute inset-0 bg-gray-900 w-[150%] h-[120%] -z-10"> {/* Adjust background size */}
         </div>
-        <div className="w-1/4 pr-2"> {/* Dieciseisavos */}
+        <div className="w-1/5 pr-1"> {/* Adjust column width */}
           {Array.from({ length: 16 }).map((_, i) => (
-            <div key={`dieciseisavos-${i}`} className="mb-8 relative ml-8" style={{ top: positions.dieciseisavos[i].top }}>
+            <div key={`dieciseisavos-${i}`} className="mb-6 relative ml-4" style={{ top: positions.dieciseisavos[i].top / 1.2 }}> {/* Adjust spacing */}
               <a
                 href="#"
-                className="absolute top-[-1.5rem] left-0 bg-blue-500 text-white text-xs px-2 py-1 rounded hover:bg-blue-600"
+                className="absolute top-[-1rem] left-0 bg-blue-500 text-white text-[10px] px-1 py-0.5 rounded hover:bg-blue-600" 
                 onClick={(e) => {
                   e.preventDefault();
-                  MatchModal.open(`Partida ${i + 1}`); // Trigger MatchModal popup
+                  MatchModal.open(`Partida ${i + 1}`);
                 }}
               >
                 Partida {i + 1}
               </a>
-              <div className={`bg-gray-800 ${getCardStyle(teamNames[i * 2])} text-sm rounded overflow-hidden shadow-lg w-[12rem]`}>
-                <div className={`border-b border-gray-700 py-2 px-3 flex justify-between items-center hover:bg-gray-700 transition-colors duration-150 ${getTeamStyle(teamNames[i * 2])}`}
+              <div className={`bg-gray-800 ${getCardStyle(teamNames[i * 2])} text-xs rounded overflow-hidden shadow-lg w-[10rem]`}> {/* Adjust card size */}
+                <div className={`border-b border-gray-700 py-1 px-2 flex justify-between items-center hover:bg-gray-700 transition-colors duration-150 ${getTeamStyle(teamNames[i * 2])}`}
                   onMouseEnter={() => handleMouseEnter(teamNames[i * 2])}
                   onMouseLeave={handleMouseLeave}
                 >
@@ -124,14 +124,14 @@ const CuadrosBracket = ({ positions }) => {
                     className="flex items-center font-bold text-white"
                     onClick={() => handleTeamClick(teamNames[i * 2])}
                   >
-                    <div className="w-6 h-6 rounded-full bg-gray-500 mr-2 overflow-hidden flex-shrink-0">
+                    <div className="w-5 h-5 rounded-full bg-gray-500 mr-1 overflow-hidden flex-shrink-0"> {/* Adjust logo size */}
                       <img src={`/logos/${teamNames[i * 2].toLowerCase()}.png`} alt={`${teamNames[i * 2]} logo`} className="w-full h-full object-cover" />
                     </div>
                     {teamNames[i * 2]}
                   </button>
                   <span className={scoreWinnerStyle}>{i % 2 === 0 ? 2 : 1}</span>
                 </div>
-                <div className={`py-2 px-3 flex justify-between items-center hover:bg-gray-700 transition-colors duration-150 ${getTeamStyle(teamNames[i * 2 + 1])}`}
+                <div className={`py-1 px-2 flex justify-between items-center hover:bg-gray-700 transition-colors duration-150 ${getTeamStyle(teamNames[i * 2 + 1])}`}
                   onMouseEnter={() => handleMouseEnter(teamNames[i * 2 + 1])}
                   onMouseLeave={handleMouseLeave}
                 >
@@ -139,7 +139,7 @@ const CuadrosBracket = ({ positions }) => {
                     className="flex items-center font-bold text-white"
                     onClick={() => handleTeamClick(teamNames[i * 2 + 1])}
                   >
-                    <div className="w-6 h-6 rounded-full bg-gray-500 mr-2 overflow-hidden flex-shrink-0">
+                    <div className="w-5 h-5 rounded-full bg-gray-500 mr-1 overflow-hidden flex-shrink-0"> {/* Adjust logo size */}
                       <img src={`/logos/${teamNames[i * 2 + 1].toLowerCase()}.png`} alt={`${teamNames[i * 2 + 1]} logo`} className="w-full h-full object-cover" />
                     </div>
                     {teamNames[i * 2 + 1]}
@@ -150,18 +150,18 @@ const CuadrosBracket = ({ positions }) => {
             </div>
           ))}
         </div>
-        {/* Repeat similar structure for Octavos, Cuartos, Semifinales, and Final */}
-        <div className="w-1/4 pr-2"> {/* Octavos */}
+        {/* Repeat similar adjustments for Octavos, Cuartos, Semifinales, and Final */}
+        <div className="w-1/5 pr-1"> {/* Adjust column width */}
           {Array.from({ length: 8 }).map((_, i) => (
-            <div key={`octavos-${i}`} className="mb-8 relative ml-8" style={{ top: positions.octavos[i].top }}>
+            <div key={`octavos-${i}`} className="mb-6 relative ml-4" style={{ top: positions.octavos[i].top / 1.2 }}> {/* Adjust spacing */}
               <button
-                className="absolute top-[-1.5rem] left-0 bg-blue-500 text-white text-xs px-2 py-1 rounded hover:bg-blue-600"
+                className="absolute top-[-1rem] left-0 bg-blue-500 text-white text-[10px] px-1 py-0.5 rounded hover:bg-blue-600" 
                 onClick={() => alert(`Botón clicado para Partida ${i + 17}`)}
               >
                 Partida {i + 17}
               </button>
-              <div className={`bg-gray-800 ${getCardStyle(dieciseisavosWinners[i * 2])} text-sm rounded overflow-hidden shadow-lg w-[12rem]`}>
-                <div className={`border-b border-gray-700 py-2 px-3 flex justify-between items-center hover:bg-gray-700 transition-colors duration-150 ${getTeamStyle(dieciseisavosWinners[i * 2])}`}
+              <div className={`bg-gray-800 ${getCardStyle(dieciseisavosWinners[i * 2])} text-xs rounded overflow-hidden shadow-lg w-[10rem]`}> {/* Adjust card size */}
+                <div className={`border-b border-gray-700 py-1 px-2 flex justify-between items-center hover:bg-gray-700 transition-colors duration-150 ${getTeamStyle(dieciseisavosWinners[i * 2])}`}
                   onMouseEnter={() => handleMouseEnter(dieciseisavosWinners[i * 2])}
                   onMouseLeave={handleMouseLeave}
                 >
@@ -169,14 +169,14 @@ const CuadrosBracket = ({ positions }) => {
                     className="flex items-center font-bold text-white"
                     onClick={() => handleTeamClick(dieciseisavosWinners[i * 2])}
                   >
-                    <div className="w-6 h-6 rounded-full bg-gray-500 mr-2 overflow-hidden flex-shrink-0">
+                    <div className="w-5 h-5 rounded-full bg-gray-500 mr-1 overflow-hidden flex-shrink-0"> {/* Adjust logo size */}
                       <img src={`/logos/${dieciseisavosWinners[i * 2].toLowerCase()}.png`} alt={`${dieciseisavosWinners[i * 2]} logo`} className="w-full h-full object-cover" />
                     </div>
                     {dieciseisavosWinners[i * 2]}
                   </button>
                   <span className={scoreWinnerStyle}>{i % 2 === 0 ? 2 : 1}</span>
                 </div>
-                <div className={`py-2 px-3 flex justify-between items-center hover:bg-gray-700 transition-colors duration-150 ${getTeamStyle(dieciseisavosWinners[i * 2 + 1])}`}
+                <div className={`py-1 px-2 flex justify-between items-center hover:bg-gray-700 transition-colors duration-150 ${getTeamStyle(dieciseisavosWinners[i * 2 + 1])}`}
                   onMouseEnter={() => handleMouseEnter(dieciseisavosWinners[i * 2 + 1])}
                   onMouseLeave={handleMouseLeave}
                 >
@@ -184,7 +184,7 @@ const CuadrosBracket = ({ positions }) => {
                     className="flex items-center font-bold text-white"
                     onClick={() => handleTeamClick(dieciseisavosWinners[i * 2 + 1])}
                   >
-                    <div className="w-6 h-6 rounded-full bg-gray-500 mr-2 overflow-hidden flex-shrink-0">
+                    <div className="w-5 h-5 rounded-full bg-gray-500 mr-1 overflow-hidden flex-shrink-0"> {/* Adjust logo size */}
                       <img src={`/logos/${dieciseisavosWinners[i * 2 + 1].toLowerCase()}.png`} alt={`${dieciseisavosWinners[i * 2 + 1]} logo`} className="w-full h-full object-cover" />
                     </div>
                     {dieciseisavosWinners[i * 2 + 1]}
@@ -201,17 +201,17 @@ const CuadrosBracket = ({ positions }) => {
             </div>
           ))}
         </div>
-        <div className="w-1/4 pr-2"> {/* Cuartos */}
+        <div className="w-1/5 pr-1"> {/* Adjust column width */}
           {Array.from({ length: 4 }).map((_, i) => (
-            <div key={`cuartos-${i}`} className="mb-16 relative ml-8" style={{ top: positions.cuartos[i].top }}>
+            <div key={`cuartos-${i}`} className="mb-12 relative ml-4" style={{ top: positions.cuartos[i].top / 1.2 }}> {/* Adjust spacing */}
               <button
-                className="absolute top-[-1.5rem] left-0 bg-blue-500 text-white text-xs px-2 py-1 rounded hover:bg-blue-600"
+                className="absolute top-[-1rem] left-0 bg-blue-500 text-white text-[10px] px-1 py-0.5 rounded hover:bg-blue-600" 
                 onClick={() => alert(`Botón clicado para Partida ${i + 25}`)}
               >
                 Partida {i + 25}
               </button>
-              <div className={`bg-gray-800 ${getCardStyle(octavosWinners[i * 2])} text-sm rounded overflow-hidden shadow-lg w-[12rem]`}>
-                <div className={`border-b border-gray-700 py-2 px-3 flex justify-between items-center hover:bg-gray-700 transition-colors duration-150 ${getTeamStyle(octavosWinners[i * 2])}`}
+              <div className={`bg-gray-800 ${getCardStyle(octavosWinners[i * 2])} text-xs rounded overflow-hidden shadow-lg w-[10rem]`}> {/* Adjust card size */}
+                <div className={`border-b border-gray-700 py-1 px-2 flex justify-between items-center hover:bg-gray-700 transition-colors duration-150 ${getTeamStyle(octavosWinners[i * 2])}`}
                   onMouseEnter={() => handleMouseEnter(octavosWinners[i * 2])}
                   onMouseLeave={handleMouseLeave}
                 >
@@ -219,14 +219,14 @@ const CuadrosBracket = ({ positions }) => {
                     className="flex items-center font-bold text-white"
                     onClick={() => handleTeamClick(octavosWinners[i * 2])}
                   >
-                    <div className="w-6 h-6 rounded-full bg-gray-500 mr-2 overflow-hidden flex-shrink-0">
+                    <div className="w-5 h-5 rounded-full bg-gray-500 mr-1 overflow-hidden flex-shrink-0"> {/* Adjust logo size */}
                       <img src={`/logos/${octavosWinners[i * 2].toLowerCase()}.png`} alt={`${octavosWinners[i * 2]} logo`} className="w-full h-full object-cover" />
                     </div>
                     {octavosWinners[i * 2]}
                   </button>
                   <span className={scoreWinnerStyle}>{i % 2 === 0 ? 2 : 1}</span>
                 </div>
-                <div className={`py-2 px-3 flex justify-between items-center hover:bg-gray-700 transition-colors duration-150 ${getTeamStyle(octavosWinners[i * 2 + 1])}`}
+                <div className={`py-1 px-2 flex justify-between items-center hover:bg-gray-700 transition-colors duration-150 ${getTeamStyle(octavosWinners[i * 2 + 1])}`}
                   onMouseEnter={() => handleMouseEnter(octavosWinners[i * 2 + 1])}
                   onMouseLeave={handleMouseLeave}
                 >
@@ -234,7 +234,7 @@ const CuadrosBracket = ({ positions }) => {
                     className="flex items-center font-bold text-white"
                     onClick={() => handleTeamClick(octavosWinners[i * 2 + 1])}
                   >
-                    <div className="w-6 h-6 rounded-full bg-gray-500 mr-2 overflow-hidden flex-shrink-0">
+                    <div className="w-5 h-5 rounded-full bg-gray-500 mr-1 overflow-hidden flex-shrink-0"> {/* Adjust logo size */}
                       <img src={`/logos/${octavosWinners[i * 2 + 1].toLowerCase()}.png`} alt={`${octavosWinners[i * 2 + 1]} logo`} className="w-full h-full object-cover" />
                     </div>
                     {octavosWinners[i * 2 + 1]}
@@ -251,17 +251,17 @@ const CuadrosBracket = ({ positions }) => {
             </div>
           ))}
         </div>
-        <div className="w-1/4 pr-2"> {/* Semifinales */}
+        <div className="w-1/5 pr-1"> {/* Adjust column width */}
           {Array.from({ length: 2 }).map((_, i) => (
-            <div key={`semifinales-${i}`} className="mb-16 relative ml-8" style={{ top: positions.semifinales[i].top }}>
+            <div key={`semifinales-${i}`} className="mb-12 relative ml-4" style={{ top: positions.semifinales[i].top / 1.2 }}> {/* Adjust spacing */}
               <button
-                className="absolute top-[-1.5rem] left-0 bg-blue-500 text-white text-xs px-2 py-1 rounded hover:bg-blue-600"
+                className="absolute top-[-1rem] left-0 bg-blue-500 text-white text-[10px] px-1 py-0.5 rounded hover:bg-blue-600"
                 onClick={() => alert(`Botón clicado para Partida ${i + 29}`)}
               >
                 Partida {i + 29}
               </button>
-              <div className={`bg-gray-800 ${getCardStyle(cuartosWinners[i * 2])} text-sm rounded overflow-hidden shadow-lg w-[12rem]`}>
-                <div className={`border-b border-gray-700 py-2 px-3 flex justify-between items-center hover:bg-gray-700 transition-colors duration-150 ${getTeamStyle(cuartosWinners[i * 2])}`}
+              <div className={`bg-gray-800 ${getCardStyle(cuartosWinners[i * 2])} text-xs rounded overflow-hidden shadow-lg w-[10rem]`}> {/* Adjust card size */}
+                <div className={`border-b border-gray-700 py-1 px-2 flex justify-between items-center hover:bg-gray-700 transition-colors duration-150 ${getTeamStyle(cuartosWinners[i * 2])}`}
                   onMouseEnter={() => handleMouseEnter(cuartosWinners[i * 2])}
                   onMouseLeave={handleMouseLeave}
                 >
@@ -269,14 +269,14 @@ const CuadrosBracket = ({ positions }) => {
                     className="flex items-center font-bold text-white"
                     onClick={() => handleTeamClick(cuartosWinners[i * 2])}
                   >
-                    <div className="w-6 h-6 rounded-full bg-gray-500 mr-2 overflow-hidden flex-shrink-0">
+                    <div className="w-5 h-5 rounded-full bg-gray-500 mr-1 overflow-hidden flex-shrink-0"> {/* Adjust logo size */}
                       <img src={`/logos/${cuartosWinners[i * 2].toLowerCase()}.png`} alt={`${cuartosWinners[i * 2]} logo`} className="w-full h-full object-cover" />
                     </div>
                     {cuartosWinners[i * 2]}
                   </button>
                   <span className={scoreWinnerStyle}>2</span>
                 </div>
-                <div className={`py-2 px-3 flex justify-between items-center hover:bg-gray-700 transition-colors duration-150 ${getTeamStyle(cuartosWinners[i * 2 + 1])}`}
+                <div className={`py-1 px-2 flex justify-between items-center hover:bg-gray-700 transition-colors duration-150 ${getTeamStyle(cuartosWinners[i * 2 + 1])}`}
                   onMouseEnter={() => handleMouseEnter(cuartosWinners[i * 2 + 1])}
                   onMouseLeave={handleMouseLeave}
                 >
@@ -284,7 +284,7 @@ const CuadrosBracket = ({ positions }) => {
                     className="flex items-center font-bold text-white"
                     onClick={() => handleTeamClick(cuartosWinners[i * 2 + 1])}
                   >
-                    <div className="w-6 h-6 rounded-full bg-gray-500 mr-2 overflow-hidden flex-shrink-0">
+                    <div className="w-5 h-5 rounded-full bg-gray-500 mr-1 overflow-hidden flex-shrink-0"> {/* Adjust logo size */}
                       <img src={`/logos/${cuartosWinners[i * 2 + 1].toLowerCase()}.png`} alt={`${cuartosWinners[i * 2 + 1]} logo`} className="w-full h-full object-cover" />
                     </div>
                     {cuartosWinners[i * 2 + 1]}
@@ -301,16 +301,15 @@ const CuadrosBracket = ({ positions }) => {
             </div>
           ))}
         </div>
-        <div className="w-1/4 pr-2"> {/* Final */}
-          <div className="mt-20 mb-16 relative ml-8" style={{ top: positions.final.top }}>
+        <div className="w-1/5 pr-1"> {/* Adjust column width */}
+          <div className="mt-16 mb-12 relative ml-4" style={{ top: positions.final.top / 1.2 }}> {/* Adjust spacing */}
             <button
-              className="absolute top-[-1.5rem] left-0 bg-blue-500 text-white text-xs px-2 py-1 rounded hover:bg-blue-600"
-              onClick={() => alert(`Botón clicado para Partida 31`)}
+              className="absolute top-[-1rem] left-0 bg-blue-500 text-white text-[10px] px-1 py-0.5 rounded hover:bg-blue-600" 
             >
               Partida 31
             </button>
-            <div className="bg-gray-800 border border-blue-600 text-sm rounded overflow-hidden shadow-lg w-[12rem]">
-              <div className={`border-b border-gray-700 py-2 px-3 flex justify-between items-center bg-gray-800 bg-opacity-80 hover:bg-gray-700 transition-colors duration-150 ${winnerStyle} ${getTeamStyle(finalWinner)}`}
+            <div className="bg-gray-800 border border-blue-600 text-xs rounded overflow-hidden shadow-lg w-[10rem]"> {/* Adjust card size */}
+              <div className={`border-b border-gray-700 py-1 px-2 flex justify-between items-center bg-gray-800 bg-opacity-80 hover:bg-gray-700 transition-colors duration-150 ${winnerStyle} ${getTeamStyle(finalWinner)}`}
                 onMouseEnter={() => handleMouseEnter(finalWinner)}
                 onMouseLeave={handleMouseLeave}
               >
@@ -318,14 +317,14 @@ const CuadrosBracket = ({ positions }) => {
                   className="flex items-center font-bold text-white"
                   onClick={() => handleTeamClick(finalWinner)}
                 >
-                  <div className="w-6 h-6 rounded-full bg-gray-500 mr-2 overflow-hidden flex-shrink-0">
+                  <div className="w-5 h-5 rounded-full bg-gray-500 mr-1 overflow-hidden flex-shrink-0"> {/* Adjust logo size */}
                     <img src={`/logos/${finalWinner.toLowerCase()}.png`} alt={`${finalWinner} logo`} className="w-full h-full object-cover" />
                   </div>
                   {finalWinner}
                 </button>
                 <span className={scoreWinnerStyle}>2</span>
               </div>
-              <div className={`py-2 px-3 flex justify-between items-center hover:bg-gray-700 transition-colors duration-150 ${getTeamStyle(secondPlaceWinner)}`}
+              <div className={`py-1 px-2 flex justify-between items-center hover:bg-gray-700 transition-colors duration-150 ${getTeamStyle(secondPlaceWinner)}`}
                 onMouseEnter={() => handleMouseEnter(secondPlaceWinner)}
                 onMouseLeave={handleMouseLeave}
               >
@@ -333,7 +332,7 @@ const CuadrosBracket = ({ positions }) => {
                   className="flex items-center font-bold text-white"
                   onClick={() => handleTeamClick(secondPlaceWinner)}
                 >
-                  <div className="w-6 h-6 rounded-full bg-gray-500 mr-2 overflow-hidden flex-shrink-0">
+                  <div className="w-5 h-5 rounded-full bg-gray-500 mr-1 overflow-hidden flex-shrink-0"> {/* Adjust logo size */}
                     <img src={`/logos/${secondPlaceWinner.toLowerCase()}.png`} alt={`${secondPlaceWinner} logo`} className="w-full h-full object-cover" />
                   </div>
                   {secondPlaceWinner}
@@ -348,15 +347,15 @@ const CuadrosBracket = ({ positions }) => {
             <div className="absolute left-[-2rem] top-[calc(50%+49rem)] w-[1rem] h-[1px] bg-white"></div> {/* New horizontal line */}
             <div className="absolute left-[-2rem] bottom-[calc(50%+52rem)] w-[1rem] h-[1px] bg-white"></div> {/* New horizontal line */}
           </div>
-          <div className="mt-44 mb-16 relative ml-8" style={{ top: positions.tercerPuesto.top }}>
+          <div className="mt-32 mb-12 relative ml-4" style={{ top: positions.tercerPuesto.top / 1.2 }}> {/* Adjust spacing */}
             <button
-              className="absolute top-[-1.5rem] left-0 bg-blue-500 text-white text-xs px-2 py-1 rounded hover:bg-blue-600"
+              className="absolute top-[-1rem] left-0 bg-blue-500 text-white text-[10px] px-1 py-0.5 rounded hover:bg-blue-600" 
               onClick={() => alert(`Botón clicado para Partida 32`)}
             >
               Partida 32
             </button>
-            <div className="bg-gray-800 border border-gray-700 text-sm rounded overflow-hidden shadow-lg w-[12rem]">
-              <div className={`border-b border-gray-700 py-2 px-3 flex justify-between items-center hover:bg-gray-700 transition-colors duration-150 ${getTeamStyle(thirdPlaceWinner)}`}
+            <div className="bg-gray-800 border border-gray-700 text-xs rounded overflow-hidden shadow-lg w-[10rem]"> {/* Adjust card size */}
+              <div className={`border-b border-gray-700 py-1 px-2 flex justify-between items-center hover:bg-gray-700 transition-colors duration-150 ${getTeamStyle(thirdPlaceWinner)}`}
                 onMouseEnter={() => handleMouseEnter(thirdPlaceWinner)}
                 onMouseLeave={handleMouseLeave}
               >
@@ -364,14 +363,14 @@ const CuadrosBracket = ({ positions }) => {
                   className="flex items-center font-bold text-white"
                   onClick={() => handleTeamClick(thirdPlaceWinner)}
                 >
-                  <div className="w-6 h-6 rounded-full bg-gray-500 mr-2 overflow-hidden flex-shrink-0">
+                  <div className="w-5 h-5 rounded-full bg-gray-500 mr-1 overflow-hidden flex-shrink-0"> {/* Adjust logo size */}
                     <img src={`/logos/${thirdPlaceWinner.toLowerCase()}.png`} alt={`${thirdPlaceWinner} logo`} className="w-full h-full object-cover" />
                   </div>
                   {thirdPlaceWinner}
                 </button>
                 <span className={scoreWinnerStyle}>2</span>
               </div>
-              <div className={`py-2 px-3 flex justify-between items-center hover:bg-gray-700 transition-colors duration-150 ${getTeamStyle(cuartosWinners[3])}`}
+              <div className={`py-1 px-2 flex justify-between items-center hover:bg-gray-700 transition-colors duration-150 ${getTeamStyle(cuartosWinners[3])}`}
                 onMouseEnter={() => handleMouseEnter(cuartosWinners[3])}
                 onMouseLeave={handleMouseLeave}
               >
@@ -379,7 +378,7 @@ const CuadrosBracket = ({ positions }) => {
                   className="flex items-center font-bold text-white"
                   onClick={() => handleTeamClick(cuartosWinners[3])}
                 >
-                  <div className="w-6 h-6 rounded-full bg-gray-500 mr-2 overflow-hidden flex-shrink-0">
+                  <div className="w-5 h-5 rounded-full bg-gray-500 mr-1 overflow-hidden flex-shrink-0"> {/* Adjust logo size */}
                     <img src={`/logos/${cuartosWinners[3].toLowerCase()}.png`} alt={`${cuartosWinners[3]} logo`} className="w-full h-full object-cover" />
                   </div>
                   {cuartosWinners[3]}
@@ -398,23 +397,23 @@ const CuadrosBracket = ({ positions }) => {
       {/* Modal */}
       {modalTeam && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 overflow-hidden">
-          <div className="bg-black text-white rounded-lg p-6 w-1/3 h-[85%] flex flex-col justify-center items-center relative">
-            <h2 className="text-3xl font-bold mb-14 text-center">{modalTeam}</h2>
-            <div className="grid grid-cols-1 gap-1 w-3/4 h-full items-center justify-center mb-6">
+          <div className="bg-black text-white rounded-lg p-4 w-1/4 h-[75%] flex flex-col justify-center items-center relative"> {/* Adjust modal size */}
+            <h2 className="text-2xl font-bold mb-10 text-center">{modalTeam}</h2> {/* Adjust font size */}
+            <div className="grid grid-cols-1 gap-1 w-3/4 h-full items-center justify-center mb-4">
               {["ShadowHunter", "BlazeFury", "NightWolf", "IronClaw", "StormBreaker"].map((nick, index) => (
                 <div
                   key={`team1-player-${index}`}
-                  className="flex items-center text-white p-4 rounded-lg shadow-lg bg-[#1c1c1c]"
+                  className="flex items-center text-white p-3 rounded-lg shadow-lg bg-[#1c1c1c]" 
                 >
-                  <div className="w-8 h-8 bg-gray-500 rounded-full flex items-center justify-center">
+                  <div className="w-6 h-6 bg-gray-500 rounded-full flex items-center justify-center"> {/* Adjust icon size */}
                     <i className="fas fa-user text-white"></i>
                   </div>
-                  <p className="text-sm font-bold ml-4">{nick}</p>
+                  <p className="text-xs font-bold ml-3">{nick}</p> {/* Adjust font size */}
                 </div>
               ))}
             </div>
             <button
-              className="absolute bottom-4 bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600"
+              className="absolute bottom-3 bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600" 
               onClick={closeModal}
             >
               Cerrar
