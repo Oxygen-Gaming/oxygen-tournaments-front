@@ -25,13 +25,13 @@ const Contenido = () => {
       <MenuHamburguesaNormal />
 
       {/* Banner */}
-      <div className="w-11/12 mx-auto h-80 bg-cover bg-center rounded-lg transition-all duration-1000 mt-8 relative">
+      <div className="w-full h-96 bg-cover bg-center relative mt-0">
         <img
           src="https://via.placeholder.com/1920x1080" // Replace with an appropriate image URL
           alt="Contenido Banner"
-          className="w-full h-full object-cover rounded-lg transition-opacity duration-500"
+          className="w-full h-full object-cover transition-opacity duration-500"
         />
-        <div className="absolute inset-0 bg-black bg-opacity-50 rounded-lg flex items-center justify-center">
+        <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
           <h1 className="text-5xl font-extrabold text-white">Contenido</h1>
         </div>
       </div>
