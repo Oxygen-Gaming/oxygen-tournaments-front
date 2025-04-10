@@ -58,6 +58,7 @@ const Contenido = () => {
       document.body.style.overflow = 'auto'; // Enable scrolling
     }
   }, [modalVisible]);
+
   const [isOpen, setIsOpen] = useState(false);
   return (
 

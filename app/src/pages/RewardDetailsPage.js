@@ -65,7 +65,7 @@ const RewardDetailsPage = () => {
         </button>
 
         {/* Reward Details */}
-        <div className="flex flex-col lg:flex-row gap-8 bg-[#1c1c1c] p-6 rounded-lg shadow-lg">
+        <div className="flex flex-col lg:flex-row gap-12 bg-[#1c1c1c] p-8 rounded-lg shadow-lg"> {/* Increased gap and padding */}
           <img
             src={currentReward.image}
             alt={currentReward.title}
@@ -73,15 +73,14 @@ const RewardDetailsPage = () => {
           />
           <div className="flex flex-col justify-between w-full">
             <div>
-              <h1 className="text-4xl font-bold mb-4 text-center">{currentReward.title}</h1>
-              <h2 className="text-2xl font-semibold mb-2 text-gray-300">Descripción</h2>
-              <div className="bg-[#2a2a2a] p-4 rounded-lg shadow-md mb-4">
+              <h1 className="text-4xl font-bold mb-8 text-center">{currentReward.title}</h1> {/* Increased margin-bottom */}
+              <div className="mb-12"> {/* Increased margin-bottom */}
+                <h2 className="text-2xl font-semibold text-gray-300 mb-4 text-center">Descripción</h2> {/* Centered title */}
                 <p className="text-lg text-gray-300">{currentReward.description}</p>
               </div>
-              {/* Redeem Section */}
-              <div className="mt-8 bg-[#2a2a2a] p-4 rounded-lg shadow-md">
-                <h2 className="text-3xl font-bold text-center mb-4 text-white">Canjear Recompensa</h2>
-                <p className="text-lg text-gray-300 text-center mb-6">
+              <div className="mt-12"> {/* Increased margin-top */}
+                <h2 className="text-3xl font-bold text-center text-white mb-6">Canjear Recompensa</h2> {/* Increased margin-bottom */}
+                <p className="text-lg text-gray-300 text-center mt-6 mb-8"> {/* Increased margin-top and margin-bottom */}
                   ¿Listo para obtener esta recompensa? Haz clic en el botón de abajo para canjearla.
                 </p>
                 <div className="flex justify-center">
@@ -94,8 +93,8 @@ const RewardDetailsPage = () => {
                 </div>
               </div>
             </div>
-            <div className="text-right">
-              <h2 className="text-2xl font-bold mb-2">Costo</h2>
+            <div className="text-right mt-12"> {/* Added margin-top */}
+              <h2 className="text-2xl font-bold mb-4">Puntos Necesarios:</h2> {/* Increased margin-bottom */}
               <p className="text-lg">{currentReward.points} puntos</p>
             </div>
           </div>

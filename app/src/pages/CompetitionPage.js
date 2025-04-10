@@ -11,6 +11,8 @@ import { useNavigate } from "react-router-dom";
 import ValorantLogo from "@imgs/Valorant_logo.png";
 import RocketLeagueLogo from "@imgs/rocket-league.png";
 import LeagueOfLegendsLogo from "@imgs/lol-logo.png";
+
+
 const Competition = () => {
   const [currentImage, setCurrentImage] = useState(0);
   const [showGeneralView, setShowGeneralView] = useState(true); 

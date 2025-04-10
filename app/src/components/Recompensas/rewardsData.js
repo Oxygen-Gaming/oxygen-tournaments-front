@@ -30,6 +30,7 @@ const rewards = [
     points: 300, 
     description: "¿Listo para mostrar tu pasión? La camiseta del club te hará lucir con orgullo tu espíritu Oxygen. Por 300 puntos, vístete con estilo." 
   },
+
   { 
     id: 4, 
     title: "Ticket a Sorteo", 
@@ -37,6 +38,7 @@ const rewards = [
     points: 500, 
     description: "¿Sueñas con premios épicos? Un ticket a sorteo te da la chance de ganar recompensas increíbles. Por 500 puntos, la suerte está de tu lado." 
   },
+
   { 
     id: 5, 
     title: "1000 V-Bucks Fortnite", 
@@ -44,6 +46,7 @@ const rewards = [
     points: 600, 
     description: "¿Cómo vas a lucir tu victoria magistral? Con 1000 V-Bucks, podrás desbloquear skins exclusivas, bailes originales y otros ítems increíbles para personalizar tu experiencia. Por 600 puntos, estarás más cerca de tu próxima victoria épica." 
   },
+
   { 
     id: 6, 
     title: "Mystery Box", 
