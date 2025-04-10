@@ -1,8 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import CompetitionBackground from "@imgs/Prueba Fondo Competiciones.avif";
 
 const MatchModal = ({ selectedMatch, closeMatchModal }) => {
   const [activeMatchTab, setActiveMatchTab] = useState("juegos");
+
+  useEffect(() => {
+    document.body.style.overflow = "hidden"; // Disable scrolling
+    return () => {
+      document.body.style.overflow = "auto"; // Enable scrolling when modal is closed
+    };
+  }, []);
 
   // Use the games array from the selectedMatch object
   const games = selectedMatch.games || [];

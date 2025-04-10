@@ -2,7 +2,6 @@ import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import rewards from '../components/Recompensas/rewardsData';
-import Card from '../components/Recompensas/Cardrewards';
 import { useNavigate } from 'react-router-dom';
 
 const Rewards = () => {
@@ -17,32 +16,53 @@ const Rewards = () => {
       <Header />
 
       {/* Banner */}
-      <div className="w-11/12 mx-auto h-80 bg-cover bg-center rounded-lg transition-all duration-1000 mt-8 relative">
+      <div className="w-11/12 mx-auto h-96 bg-cover bg-center rounded-lg transition-all duration-1000 mt-8 relative">
         <img
           src="https://via.placeholder.com/1920x1080" // Replace with an appropriate image URL
           alt="Recompensas Banner"
           className="w-full h-full object-cover rounded-lg transition-opacity duration-500"
         />
         <div className="absolute inset-0 bg-black bg-opacity-50 rounded-lg flex items-center justify-center">
-          <h1 className="text-5xl font-extrabold text-white">Recompensas</h1>
+          <h1 className="text-6xl font-extrabold text-white">Recompensas</h1>
         </div>
       </div>
 
-      <section className="hidden md:flex flex-wrap justify-center gap-x-4 gap-y-8 md:gap-x-16 md:gap-y-32 pt-24 pb-24 px-4 md:px-10 mb-24">
+      <section className="hidden md:flex flex-wrap justify-center gap-x-12 gap-y-20 md:gap-x-28 md:gap-y-48 pt-24 pb-40 px-4 md:px-10 mb-40">
         {rewards.map((reward) => (
-          <div key={reward.id} onClick={() => handleCardClick(reward)}>
-            <Card {...reward} />
+          <div
+            key={reward.id}
+            onClick={() => handleCardClick(reward)}
+            className="w-[440px] h-[540px] bg-[#1c1c1c] rounded-lg shadow-lg p-4 flex flex-col items-center"
+          >
+            <img
+              src={reward.image}
+              alt={reward.title}
+              className="w-full h-[300px] object-cover rounded-lg mb-4"
+            />
+            <h3 className="text-white text-xl font-bold mb-6">{reward.title}</h3> {/* Increased margin-bottom */}
+            <p className="text-white text-lg absolute bottom-4 right-4 flex items-center">
+              <span className="mr-1">Puntos:</span> {reward.points}
+            </p>
           </div>
         ))}
       </section>
-      <div className="md:hidden px-4 mb-16">
-        <div className="grid grid-cols-2 gap-2 gap-y-4 mt-4">
+      <div className="md:hidden px-4 mb-32">
+        <div className="grid grid-cols-1 gap-20 mt-16">
           {rewards.map((reward) => (
-            <div key={reward.id} onClick={() => handleCardClick(reward)} className="p-1">
-              <div className="bg-gradient-to-t from-[#18538a] to-[#1e90ff] rounded-lg shadow-lg p-1 relative">
-                <img src={reward.image} alt={reward.title} className="w-full h-36 object-cover rounded-lg" />
-                <p className="text-white text-xs absolute bottom-1 right-1">{reward.points}</p>
-              </div>
+            <div
+              key={reward.id}
+              onClick={() => handleCardClick(reward)}
+              className="p-4 bg-[#1c1c1c] rounded-lg shadow-lg flex flex-col items-center"
+            >
+              <img
+                src={reward.image}
+                alt={reward.title}
+                className="w-full h-[200px] object-cover rounded-lg mb-4"
+              />
+              <h3 className="text-white text-xl font-bold mb-6">{reward.title}</h3> {/* Increased margin-bottom */}
+              <p className="text-white text-lg absolute bottom-4 right-4 flex items-center">
+                <span className="mr-1">Puntos:</span> {reward.points}
+              </p>
             </div>
           ))}
         </div>
