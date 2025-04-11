@@ -192,7 +192,7 @@ const TabContent = ({ activeTab, selectedCard, setShowMatchModal, setSelectedMat
               </div>
               <div className="flex flex-col items-center gap-2">
                 <button
-                  className="px-4 py-2 bg-gray-700 text-white rounded-lg transition-all duration-300 transform hover:scale-105 hover:bg-gray-600"
+                  className="hidden md:block px-4 py-2 bg-gray-700 text-white rounded-lg transition-all duration-300 transform hover:scale-105 hover:bg-gray-600"
                   onClick={() =>
                     handleViewMoreClick({
                       matchNumber: 1,
@@ -223,10 +223,48 @@ const TabContent = ({ activeTab, selectedCard, setShowMatchModal, setSelectedMat
                   Ver más
                 </button>
                 <button
-                  className="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition"
+                  className="hidden md:block px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition"
                   onClick={handleReportPlayer} // Trigger the pop-up
                 >
-                  Reportar Jugador
+                  Reportar
+                </button>
+                {/* Mobile Buttons */}
+                <button
+                  className="md:hidden px-3 py-1 text-sm bg-gray-700 text-white rounded-lg transition-all duration-300 transform hover:scale-105 hover:bg-gray-600"
+                  onClick={() =>
+                    handleViewMoreClick({
+                      matchNumber: 1,
+                      team1: "Dragons",
+                      team2: "Wolves",
+                      globalResult: { team1Wins: 2, team2Wins: 0 },
+                      games: [
+                        {
+                          map: "Split",
+                          team1Score: 13,
+                          team2Score: 11,
+                        },
+                        {
+                          map: "Ascent",
+                          team1Score: 13,
+                          team2Score: 8,
+                        },
+                        {
+                          map: "Haven",
+                          team1Score: 0,
+                          team2Score: 0,
+                          undisputed: true,
+                        },
+                      ],
+                    })
+                  }
+                >
+                  Ver más
+                </button>
+                <button
+                  className="md:hidden px-3 py-1 text-sm bg-red-500 text-white rounded-lg hover:bg-red-600 transition"
+                  onClick={handleReportPlayer} // Trigger the pop-up
+                >
+                  Reportar
                 </button>
               </div>
             </div>
@@ -252,7 +290,7 @@ const TabContent = ({ activeTab, selectedCard, setShowMatchModal, setSelectedMat
               </div>
               <div className="flex flex-col items-center gap-2">
                 <button
-                  className="px-4 py-2 bg-gray-700 text-white rounded-lg transition-all duration-300 transform hover:scale-105 hover:bg-gray-600"
+                  className="hidden md:block px-4 py-2 bg-gray-700 text-white rounded-lg transition-all duration-300 transform hover:scale-105 hover:bg-gray-600"
                   onClick={() =>
                     handleViewMoreClick({
                       matchNumber: 2,
@@ -282,10 +320,47 @@ const TabContent = ({ activeTab, selectedCard, setShowMatchModal, setSelectedMat
                   Ver más
                 </button>
                 <button
-                  className="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition"
+                  className="hidden md:block px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition"
                   onClick={handleReportPlayer} // Trigger the pop-up
                 >
-                  Reportar Jugador
+                  Reportar
+                </button>
+                {/* Mobile Buttons */}
+                <button
+                  className="md:hidden px-3 py-1 text-sm bg-gray-700 text-white rounded-lg transition-all duration-300 transform hover:scale-105 hover:bg-gray-600"
+                  onClick={() =>
+                    handleViewMoreClick({
+                      matchNumber: 2,
+                      team1: "Titans",
+                      team2: "Warriors",
+                      globalResult: { team1Wins: 1, team2Wins: 2 },
+                      games: [
+                        {
+                          map: "Split",
+                          team1Score: 13,
+                          team2Score: 11,
+                        },
+                        {
+                          map: "Ascent",
+                          team1Score: 8,
+                          team2Score: 13,
+                        },
+                        {
+                          map: "Haven",
+                          team1Score: 11,
+                          team2Score: 13,
+                        },
+                      ],
+                    })
+                  }
+                >
+                  Ver más
+                </button>
+                <button
+                  className="md:hidden px-3 py-1 text-sm bg-red-500 text-white rounded-lg hover:bg-red-600 transition"
+                  onClick={handleReportPlayer} // Trigger the pop-up
+                >
+                  Reportar
                 </button>
               </div>
             </div>
@@ -311,7 +386,7 @@ const TabContent = ({ activeTab, selectedCard, setShowMatchModal, setSelectedMat
               </div>
               <div className="flex flex-col items-center gap-2">
                 <button
-                  className="px-4 py-2 bg-gray-700 text-white rounded-lg transition-all duration-300 transform hover:scale-105 hover:bg-gray-600"
+                  className="hidden md:block px-4 py-2 bg-gray-700 text-white rounded-lg transition-all duration-300 transform hover:scale-105 hover:bg-gray-600"
                   onClick={() =>
                     handleViewMoreClick({
                       matchNumber: 3,
@@ -344,10 +419,50 @@ const TabContent = ({ activeTab, selectedCard, setShowMatchModal, setSelectedMat
                   Ver más
                 </button>
                 <button
-                  className="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition"
+                  className="hidden md:block px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition"
                   onClick={handleReportPlayer} // Trigger the pop-up
                 >
-                  Reportar Jugador
+                  Reportar
+                </button>
+                {/* Mobile Buttons */}
+                <button
+                  className="md:hidden px-3 py-1 text-sm bg-gray-700 text-white rounded-lg transition-all duration-300 transform hover:scale-105 hover:bg-gray-600"
+                  onClick={() =>
+                    handleViewMoreClick({
+                      matchNumber: 3,
+                      team1: "Sharks",
+                      team2: "Eagles",
+                      globalResult: { team1Wins: 0, team2Wins: 0 },
+                      games: [
+                        {
+                          map: "Split",
+                          team1Score: 0,
+                          team2Score: 0,
+                          undisputed: true,
+                        },
+                        {
+                          map: "Ascent",
+                          team1Score: 0,
+                          team2Score: 0,
+                          undisputed: true,
+                        },
+                        {
+                          map: "Haven",
+                          team1Score: 0,
+                          team2Score: 0,
+                          undisputed: true,
+                        },
+                      ],
+                    })
+                  }
+                >
+                  Ver más
+                </button>
+                <button
+                  className="md:hidden px-3 py-1 text-sm bg-red-500 text-white rounded-lg hover:bg-red-600 transition"
+                  onClick={handleReportPlayer} // Trigger the pop-up
+                >
+                  Reportar
                 </button>
               </div>
             </div>

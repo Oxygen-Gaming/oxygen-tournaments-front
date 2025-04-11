@@ -85,7 +85,41 @@ const TournamentDetailsPage = () => {
         <TournamentHeader selectedCard={selectedCard} scrollToInscription={scrollToInscription} />
       </div>
       <div className="w-full p-4">
-        <Tabs activeTab={activeTab} setActiveTab={setActiveTab} />
+        {/* Tabs Navigation for Mobile */}
+        <div className="flex justify-center mt-6 border-b-4 border-[#005f99] max-w-[1200px] mx-auto md:hidden">
+          {["resumen", "bracket", "partidas", "inscritos"].map((tab) => (
+            <button
+              key={tab}
+              className={`flex-1 text-center px-4 py-2 text-sm font-bold transition-all duration-300 ${
+                activeTab === tab
+                  ? "border-b-4 border-white text-white"
+                  : "text-gray-200 hover:text-white"
+              }`}
+              onClick={() => setActiveTab(tab)}
+            >
+              {tab.charAt(0).toUpperCase() + tab.slice(1)}
+            </button>
+          ))}
+        </div>
+
+        {/* Tabs Navigation for Tablet and Desktop */}
+        <div className="hidden md:flex justify-center mt-6 border-b-4 border-[#005f99] max-w-[1200px] mx-auto">
+          {["resumen", "bracket", "partidas", "inscritos"].map((tab) => (
+            <button
+              key={tab}
+              className={`px-6 py-3 text-lg font-bold transition-all duration-300 ${
+                activeTab === tab
+                  ? "border-b-4 border-white text-white"
+                  : "text-gray-200 hover:text-white"
+              }`}
+              onClick={() => setActiveTab(tab)}
+            >
+              {tab.charAt(0).toUpperCase() + tab.slice(1)}
+            </button>
+          ))}
+        </div>
+
+        {/* Tabs Content */}
         <TabContent
           activeTab={activeTab}
           selectedCard={selectedCard}
