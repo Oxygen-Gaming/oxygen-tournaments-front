@@ -104,9 +104,9 @@ const Competition = () => {
       </div>
 
       {/* LOGOS MENU */}
-      <div className="flex justify-center gap-8 mt-8">
+      <div className="flex justify-center gap-8 mt-8 flex-wrap">
         <div
-          className={`flex flex-col items-center gap-2 cursor-pointer transition-transform hover:scale-110 ${
+          className={`flex flex-col items-center gap-2 cursor-pointer transition-transform hover:scale-110 w-1/2 sm:w-auto ${
             selectedGame === "Próximos Torneos" ? "opacity-100" : "opacity-50 hover:opacity-100"
           }`}
           onClick={() => {
@@ -115,27 +115,50 @@ const Competition = () => {
             setShowAllTournaments(false);
           }}
         >
-          <div className="w-20 h-20 bg-blue-500 rounded-lg flex items-center justify-center">
-            <i className="fas fa-calendar-alt text-white text-3xl"></i>
+          <div className="w-20 h-20 bg-blue-500 rounded-lg flex items-center justify-center md:w-16 md:h-16">
+            <i className="fas fa-calendar-alt text-white text-3xl md:text-2xl"></i>
           </div>
-          <span className="text-white font-bold text-lg">Próximos Torneos</span>
+          <span className="text-white font-bold text-lg md:text-sm text-center">Próximos Torneos</span>
         </div>
-        {games.map((game) => (
-          <div
-            key={game.name}
-            className={`flex flex-col items-center gap-2 cursor-pointer transition-transform hover:scale-110 ${
-              selectedGame === game.name ? "opacity-100" : "opacity-50 hover:opacity-100"
-            }`}
-            onClick={() => handleViewAll(game.name)}
-          >
-            <img
-              src={game.image}
-              alt={game.name}
-              className="w-20 h-20 object-cover rounded-lg"
-            />
-            <span className="text-white font-bold text-lg">{game.name}</span>
-          </div>
-        ))}
+        <div
+          className={`flex flex-col items-center gap-2 cursor-pointer transition-transform hover:scale-110 w-1/2 sm:w-auto ${
+            selectedGame === "League of Legends" ? "opacity-100" : "opacity-50 hover:opacity-100"
+          }`}
+          onClick={() => handleViewAll("League of Legends")}
+        >
+          <img
+            src={LeagueOfLegendsLogo}
+            alt="League of Legends"
+            className="w-20 h-20 object-cover rounded-lg md:w-16 md:h-16"
+          />
+          <span className="text-white font-bold text-lg md:text-sm text-center">League of Legends</span>
+        </div>
+        <div
+          className={`flex flex-col items-center gap-2 cursor-pointer transition-transform hover:scale-110 w-1/2 sm:w-auto ${
+            selectedGame === "Valorant" ? "opacity-100" : "opacity-50 hover:opacity-100"
+          }`}
+          onClick={() => handleViewAll("Valorant")}
+        >
+          <img
+            src={ValorantLogo}
+            alt="Valorant"
+            className="w-20 h-20 object-cover rounded-lg md:w-16 md:h-16"
+          />
+          <span className="text-white font-bold text-lg md:text-sm text-center">Valorant</span>
+        </div>
+        <div
+          className={`flex flex-col items-center gap-2 cursor-pointer transition-transform hover:scale-110 w-1/2 sm:w-auto ${
+            selectedGame === "Rocket League" ? "opacity-100" : "opacity-50 hover:opacity-100"
+          }`}
+          onClick={() => handleViewAll("Rocket League")}
+        >
+          <img
+            src={RocketLeagueLogo}
+            alt="Rocket League"
+            className="w-20 h-20 object-cover rounded-lg md:w-16 md:h-16"
+          />
+          <span className="text-white font-bold text-lg md:text-sm text-center">Rocket League</span>
+        </div>
       </div>
 
       <div className="container mx-auto p-5">
