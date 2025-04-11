@@ -5,14 +5,14 @@ const Bracket = ({ tournamentName, mirrored = false }) => {
   const positions = {
 
     dieciseisavos: [
-      { top: '2rem', left: '10rem' }, { top: '4rem', left: '10rem' },
-      { top: '8rem', left: '10rem' }, { top: '12rem', left: '10rem' },
-      { top: '16rem', left: '10rem' }, { top: '20rem', left: '10rem' },
-      { top: '24rem', left: '10rem' }, { top: '28rem', left: '10rem' },
-      { top: '32rem', left: '60rem' }, { top: '36rem', left: '60rem' },
-      { top: '40rem', left: '60rem' }, { top: '44rem', left: '60rem' },
-      { top: '48rem', left: '60rem' }, { top: '52rem', left: '60rem' },
-      { top: '56rem', left: '60rem' }, { top: '60rem', left: '60rem' }
+      { top: '2rem', left: '10rem' }, { top: '5rem', left: '10rem' },
+      { top: '10rem', left: '10rem' }, { top: '13rem', left: '10rem' },
+      { top: '19rem', left: '10rem' }, { top: '23rem', left: '10rem' },
+      { top: '27rem', left: '10rem' }, { top: '31rem', left: '10rem' },
+      { top: '37rem', left: '60rem' }, { top: '40rem', left: '60rem' },
+      { top: '46rem', left: '60rem' }, { top: '49rem', left: '60rem' },
+      { top: '54rem', left: '60rem' }, { top: '58rem', left: '60rem' },
+      { top: '63rem', left: '60rem' }, { top: '67rem', left: '60rem' }
     ],
     octavos: [
       { top: '6.5rem', left: '20rem' }, { top: '22.5rem', left: '20rem' },
@@ -21,14 +21,14 @@ const Bracket = ({ tournamentName, mirrored = false }) => {
       { top: '105rem', left: '70rem' }, { top: '121rem', left: '70rem' }
     ],
     cuartos: [
-      { top: '18rem', left: '30rem' }, { top: '58rem', left: '30rem' },
-      { top: '96rem', left: '80rem' }, { top: '136rem', left: '80rem' }
+      { top: '20rem', left: '30rem' }, { top: '58rem', left: '30rem' },
+      { top: '97rem', left: '80rem' }, { top: '135rem', left: '80rem' }
     ],
     semifinales: [
-      { top: '35rem', left: '40rem' }, { top: '115rem', left: '90rem' }
+      { top: '43rem', left: '40rem' }, { top: '130rem', left: '90rem' }
     ],
-    final: { top: '78rem', left: '50rem' },
-    tercerPuesto: { top: '85rem', left: '50rem' }
+    final: { top: '86rem', left: '50rem' },
+    tercerPuesto: { top: '90rem', left: '50rem' }
   };
 
   return (
