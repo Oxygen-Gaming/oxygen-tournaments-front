@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import LeagueOfLegends from "@imgs/League.jpg";
 import Valorant from "@imgs/valorant.jpg";
 import RocketLeague from "@imgs/rocketleague.jpg";
@@ -23,16 +23,26 @@ const Inscription = ({
 
   const gameImage = selectedCard && selectedCard[1] ? getImageForGame(selectedCard[1]) : null;
 
+  const [showCancelPopup, setShowCancelPopup] = useState(false); // State for cancel confirmation pop-up
+  const [showSuccessPopup, setShowSuccessPopup] = useState(false); // State for success pop-up
+  const [showRedirectPopup, setShowRedirectPopup] = useState(false); // State for redirect pop-up
+
   const handleFormSubmit = (e) => {
     e.preventDefault();
     setInscriptionStatus((prevStatus) => ({
       ...prevStatus,
       [selectedCard[0]]: true, // Actualizar el estado de inscripción
     }));
-    handleSubmit(e); // Llamar a la función de envío original
+    setShowSuccessPopup(true); // Show success pop-up
+    setTimeout(() => {
+      setShowSuccessPopup(false);
+      setShowRedirectPopup(true); // Show redirect pop-up
+      setTimeout(() => {
+        setShowRedirectPopup(false);
+        handleSubmit(e); // Call the original submit function
+      }, 2000); // Delay for redirect pop-up
+    }, 2000); // Delay for success pop-up
   };
-
-  const [showCancelPopup, setShowCancelPopup] = useState(false); // State for cancel confirmation pop-up
 
   const handleCancelClick = () => {
     setShowCancelPopup(true); // Show the confirmation pop-up
@@ -49,6 +59,14 @@ const Inscription = ({
   const closeCancelPopup = () => {
     setShowCancelPopup(false); // Close the pop-up
   };
+
+  useEffect(() => {
+    if (showCancelPopup || showSuccessPopup || showRedirectPopup) {
+      document.body.style.overflow = "hidden"; // Disable scrolling
+    } else {
+      document.body.style.overflow = "auto"; // Enable scrolling
+    }
+  }, [showCancelPopup, showSuccessPopup, showRedirectPopup]);
 
   return (
     <div className="bg-[#002f5f] text-white p-5 rounded-lg w-full max-w-[1300px] mx-auto mt-8">
@@ -142,6 +160,26 @@ const Inscription = ({
           Enviar
         </button>
       </form>
+
+      {/* Success Pop-up */}
+      {showSuccessPopup && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+          <div className="bg-gray-800 text-white p-10 rounded-lg shadow-lg text-center">
+            <h2 className="text-3xl font-bold mb-4">¡Inscripción Realizada con Éxito!</h2>
+            <p className="text-lg">Gracias por inscribirte en el torneo.</p>
+          </div>
+        </div>
+      )}
+
+      {/* Redirect Pop-up */}
+      {showRedirectPopup && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+          <div className="bg-gray-800 text-white p-10 rounded-lg shadow-lg text-center">
+            <h2 className="text-3xl font-bold mb-4">Redirigiendo...</h2>
+            <p className="text-lg">Por favor, espera un momento.</p>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

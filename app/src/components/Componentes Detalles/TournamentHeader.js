@@ -39,7 +39,7 @@ const TournamentHeader = ({ selectedCard }) => {
         <h1 className="text-5xl font-extrabold text-white text-center">{selectedCard[2]}</h1> {/* Centered */}
         <p className="text-lg mt-2 text-white">En alrededor de 2 horas • {selectedCard[3]}</p>
         <button
-          className="mt-4 px-6 py-2 bg-[#005f99] text-white rounded-lg hover:bg-[#0077b6] transition"
+          className="mt-4 px-6 py-2 bg-[#005f99] text-white rounded-lg hover:bg-[#0077b6] transition-transform transform hover:scale-105 hover:translate-y-[-2px]" // Added animation
           onClick={handleJoinTournament} // Trigger the pop-up
         >
           Unirse al torneo

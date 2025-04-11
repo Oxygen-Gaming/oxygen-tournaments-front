@@ -43,6 +43,16 @@ const ViewAllComponent = ({ selectedGame, handleViewAll }) => {
     navigate("/tournament-details", { state: { selectedCard: tournament } });
   };
 
+  const handleUpcomingTournamentsClick = () => {
+    const upcomingTournaments = [
+      tournaments['League of Legends'][0],
+      tournaments['Valorant'][0],
+      tournaments['Rocket League'][0],
+    ];
+    setSelectedGameState('Próximos Torneos');
+    return upcomingTournaments;
+  };
+
   return (
     <div className="container mx-auto p-5">
       {!selectedGameState && (
@@ -51,7 +61,22 @@ const ViewAllComponent = ({ selectedGame, handleViewAll }) => {
             <div key={game}>
               <div className="flex justify-between items-center mb-4">
                 <h2 className="text-2xl">{game}</h2>
-                <button onClick={() => handleViewAllClick(game)} className="text-blue-500">Ver Todo</button>
+                <div className="flex gap-4">
+                  {game === 'League of Legends' && (
+                    <button
+                      onClick={handleUpcomingTournamentsClick}
+                      className="text-blue-500"
+                    >
+                      Próximos Torneos
+                    </button>
+                  )}
+                  <button
+                    onClick={() => handleViewAllClick(game)}
+                    className="text-blue-500"
+                  >
+                    Ver Todo
+                  </button>
+                </div>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-10">
                 {tournaments[game].slice(0, 3).map((tournament, index) => (
@@ -80,7 +105,35 @@ const ViewAllComponent = ({ selectedGame, handleViewAll }) => {
         </>
       )}
 
-      {selectedGameState && (
+      {selectedGameState === 'Próximos Torneos' && (
+        <>
+          <h2 className="text-3xl font-bold mb-4">Próximos Torneos</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            {handleUpcomingTournamentsClick().map((tournament, index) => (
+              <div
+                key={index}
+                className="bg-[#003f7f] rounded-lg p-5 transition-transform transform hover:scale-105 shadow-lg flex flex-col justify-between h-[500px] cursor-pointer"
+                onClick={() => handleCardClick(tournament)}
+              >
+                <img src={tournament.img} alt={tournament.name} className="w-full h-[220px] object-cover rounded-lg mb-4" />
+                <h2 className="text-white text-2xl font-bold mb-2">{tournament.name}</h2>
+                <p className="text-sm mb-2">Fecha de Inicio: {tournament.date}</p>
+                <div className="flex items-center mb-2">
+                  <img src={Logo} alt="Trophy" className="w-6 h-6 mr-2" />
+                  <span className={`text-sm font-bold ${
+                    tournament.status === 'Inscripciones abiertas' ? 'text-green-500' : tournament.status === 'Activo' ? 'text-yellow-400' : 'text-red-500'
+                  }`}>{tournament.status}</span>
+                </div>
+                <div className="flex justify-between text-sm">
+                  <span>Jugadores Inscritos: {tournament.players}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </>
+      )}
+
+      {selectedGameState && selectedGameState !== 'Próximos Torneos' && (
         <>
           <h2 className="text-3xl font-bold mb-4">{selectedGameState}</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">

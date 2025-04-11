@@ -1,28 +1,42 @@
 import React from 'react';
 
-const videos = [
-  { id: 'Minimalist Rotativo Dang3r 2025', thumbnail: 'Minimalist Rotativo Dang3r 2025.webm', title: 'Video 1', points: 150 },
-  { id: 'video2', thumbnail: 'thumbnail2.jpg', title: 'Video 2', points: 150 },
-  { id: 'video3', thumbnail: 'thumbnail3.jpg', title: 'Video 3', points: 150 },
-  { id: 'video4', thumbnail: 'thumbnail4.jpg', title: 'Video 4', points: 150 },
-];
-
-const VideoSection = ({ openModal }) => {
+const VideoSection = ({ mainVideoSrc, handleVideoClick, animate }) => {
   return (
-    <div className="video-row grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-24 mb-24 px-10">
-      {videos.map((video) => (
-        <div
-          key={video.id}
-          className="video-card bg-[#1c1c1c] rounded-lg p-4 shadow-lg transition-transform duration-300 relative hover:scale-105"
-          onClick={() => openModal(video.id)}
-        >
-          <img src={video.thumbnail} alt={video.title} className="video-thumbnail w-full h-[150px] object-cover rounded-lg mb-4" />
-          <div className="video-info">
-            <h3 className="video-title text-lg font-bold text-white">{video.title}</h3>
-            <p className="video-points text-white mt-2">Puntos: {video.points}</p>
-          </div>
-        </div>
-      ))}
+    <div className="video-section w-11/12 mx-auto mt-12">
+      {/* Main large video */}
+      <div
+        className={`main-video w-full md:w-3/4 mx-auto mb-10 transition-transform duration-300 ${
+          animate ? "scale-90 opacity-50" : "scale-100 opacity-100"
+        }`}
+      >
+        <video
+          src={mainVideoSrc}
+          controls
+          className="w-full h-auto rounded-lg shadow-lg"
+        />
+      </div>
+
+      {/* Row of smaller videos */}
+      <div className="small-videos grid grid-cols-1 md:grid-cols-3 gap-4">
+        <video
+          src="video1.webm"
+          controls
+          className="w-full h-auto rounded-lg shadow-lg cursor-pointer"
+          onClick={() => handleVideoClick("video1.webm")}
+        />
+        <video
+          src="video2.webm"
+          controls
+          className="w-full h-auto rounded-lg shadow-lg cursor-pointer"
+          onClick={() => handleVideoClick("video2.webm")}
+        />
+        <video
+          src="video3.webm"
+          controls
+          className="w-full h-auto rounded-lg shadow-lg cursor-pointer"
+          onClick={() => handleVideoClick("video3.webm")}
+        />
+      </div>
     </div>
   );
 };

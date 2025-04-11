@@ -1,9 +1,10 @@
 import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import rewards from '../components/Recompensas/rewardsData';
-import Card from '../components/Recompensas/Cardrewards';
-import { useNavigate } from 'react-router-dom';
+import rewards from '../components/Recompensas/rewardsData'; 
+import RewardCard from '../components/Recompensas/Cardrewards'; 
+import { useNavigate } from "react-router-dom";
+import MenuHamburguesaNormal from "@components/ComponentesMenuHamburguesa/MenuHamburguesaNormalComponent";
 
 const Rewards = () => {
   const navigate = useNavigate();
@@ -15,33 +16,37 @@ const Rewards = () => {
   return (
     <div className="bg-[#1AA9FF] text-[18px] font-['Roboto_Condensed'] min-h-screen">
       <Header />
+      <MenuHamburguesaNormal /> {/* Added MenuHamburguesaNormal */}
 
       {/* Banner */}
-      <div className="w-11/12 mx-auto h-80 bg-cover bg-center rounded-lg transition-all duration-1000 mt-8 relative">
+      <div className="w-full h-96 bg-cover bg-center relative mt-0"> {/* Increased height to h-96 */}
         <img
           src="https://via.placeholder.com/1920x1080" // Replace with an appropriate image URL
-          alt="Recompensas Banner"
-          className="w-full h-full object-cover rounded-lg transition-opacity duration-500"
+          alt="Rewards Banner"
+          className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black bg-opacity-50 rounded-lg flex items-center justify-center">
+        <div className="absolute inset-0 bg-black bg-opacity-60"></div> {/* Dark overlay */}
+        <div className="absolute inset-0 flex items-center justify-center">
           <h1 className="text-5xl font-extrabold text-white">Recompensas</h1>
         </div>
       </div>
 
-      <section className="hidden md:flex flex-wrap justify-center gap-x-4 gap-y-8 md:gap-x-16 md:gap-y-32 pt-24 pb-24 px-4 md:px-10 mb-24">
+      <section className="hidden md:flex flex-wrap justify-center gap-x-12 gap-y-16 md:gap-x-28 md:gap-y-44 pt-24 pb-32 px-4 md:px-10 mb-32">
         {rewards.map((reward) => (
-          <div key={reward.id} onClick={() => handleCardClick(reward)}>
-            <Card {...reward} />
+          <div key={reward.id} onClick={() => handleCardClick(reward)} className="w-[360px] h-[320px] rounded-lg shadow-lg">
+            <RewardCard {...reward} />
           </div>
         ))}
       </section>
-      <div className="md:hidden px-4 mb-16">
-        <div className="grid grid-cols-2 gap-2 gap-y-4 mt-4">
+      <div className="md:hidden px-4 mb-24">
+        <div className="grid grid-cols-1 gap-16 mt-12"> {/* Single column for mobile */}
           {rewards.map((reward) => (
-            <div key={reward.id} onClick={() => handleCardClick(reward)} className="p-1">
-              <div className="bg-gradient-to-t from-[#18538a] to-[#1e90ff] rounded-lg shadow-lg p-1 relative">
-                <img src={reward.image} alt={reward.title} className="w-full h-36 object-cover rounded-lg" />
-                <p className="text-white text-xs absolute bottom-1 right-1">{reward.points}</p>
+            <div key={reward.id} onClick={() => handleCardClick(reward)} className="w-full h-80 rounded-lg shadow-lg">
+              <div className="relative">
+                <img src={reward.image} alt={reward.title} className="w-full h-[360px] object-cover rounded-lg" />
+                <p className="text-white text-lg absolute bottom-4 right-4 flex items-center">
+                  <span className="mr-1">Puntos:</span> {reward.points}
+                </p>
               </div>
             </div>
           ))}

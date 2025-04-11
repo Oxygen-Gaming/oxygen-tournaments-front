@@ -20,43 +20,43 @@ const VentajasNormales = () => {
             </div>
             <div className="hidden lg:flex flex-col items-center justify-center gap-[2rem]">
                 <div className="flex gap-[40px]">
-                    <VentajaPequeño link={posternormal1} text={"Ventajas Free"} background={"#1AA9FF"} color="white"/>
-                    <VentajaPequeño link={posternormal2} text={"Ventajas Free"} background={"#1AA9FF"} color="white"/>
-                    <VentajaGrande link={poster1} text={"Ventajas Free"} background={" #1AA9FF"} color="white"/>
+                    <VentajaPequeño link={posternormal1} text={"Ventajas Free"} background={"#1796E6"} color="white"/>
+                    <VentajaPequeño link={posternormal2} text={"Ventajas Free"} background={"#1796E6"} color="white"/>
+                    <VentajaGrande link={poster1} text={"Ventajas Free"} background={" #1796E6"} color="white"/>
                 </div>
 
                 <div className="flex gap-[40px]">
-                    <VentajaGrande link={poster1} text={"Ventajas Free"} background={"#1AA9FF"} color="white"/>
-                    <VentajaPequeño link={posternormal3} text={"Ventajas Free"} background={"#1AA9FF"} color="white"/>
-                    <VentajaPequeño link={posternormal4} text={"Ventajas Free"} background={"#1AA9FF"} color="white"/>
+                    <VentajaGrande link={poster1} text={"Ventajas Free"} background={"#1796E6"} color="white"/>
+                    <VentajaPequeño link={posternormal3} text={"Ventajas Free"} background={"#1796E6"} color="white"/>
+                    <VentajaPequeño link={posternormal4} text={"Ventajas Free"} background={"#1796E6"} color="white"/>
                     
                 </div>
 
                 <div className="flex gap-[40px]">
-                    <VentajaPequeño link={posternormal5} text={"Ventajas Free"} background={"#1AA9FF"} color="white"/>
-                    <VentajaPequeño link={posternormal6} text={"Ventajas Free"} background={"#1AA9FF"} color="white"/>
-                    <VentajaGrande link={poster1} text={"Ventajas Free"} background={"#1AA9FF"} color="white"/>
+                    <VentajaPequeño link={posternormal5} text={"Ventajas Free"} background={"#1796E6"} color="white"/>
+                    <VentajaPequeño link={posternormal6} text={"Ventajas Free"} background={"#1796E6"} color="white"/>
+                    <VentajaGrande link={poster1} text={"Ventajas Free"} background={"#1796E6"} color="white"/>
                 </div>
             </div>
 
             <div className="lg:hidden flex flex-col items-center justify-center gap-[2rem]">
                 <div className="flex flex-col gap-[40px]">
-                    <VentajaMovil link={posternormal1} text={"Ventajas Free"} background={"#1AA9FF"}/>
-                    <VentajaMovil link={posternormal2} text={"Ventajas Free"} background={"#1AA9FF"}/>
-                    <VentajaMovil link={poster1} text={"Ventajas Free"} background={"#1AA9FF"}/>
+                    <VentajaMovil link={posternormal1} text={"Ventajas Free"} background={"#1796E6"}/>
+                    <VentajaMovil link={posternormal2} text={"Ventajas Free"} background={"#1796E6"}/>
+                    <VentajaMovil link={poster1} text={"Ventajas Free"} background={"#1796E6"}/>
                 </div>
 
                 <div className="flex flex-col gap-[40px]">
-                    <VentajaMovil link={poster1} text={"Ventajas Free"} background={"#1AA9FF"}/>
-                    <VentajaMovil link={posternormal3} text={"Ventajas Free"} background={"#1AA9FF"}/>
-                    <VentajaMovil link={posternormal4} text={"Ventajas Free"} background={"#1AA9FF"}/>
+                    <VentajaMovil link={poster1} text={"Ventajas Free"} background={"#1796E6"}/>
+                    <VentajaMovil link={posternormal3} text={"Ventajas Free"} background={"#1796E6"}/>
+                    <VentajaMovil link={posternormal4} text={"Ventajas Free"} background={"#1796E6"}/>
                     
                 </div>
 
                 <div className="flex flex-col gap-[40px]">
-                    <VentajaMovil link={posternormal5} text={"Ventajas Free"} background={"#1AA9FF"}/>
-                    <VentajaMovil link={posternormal6} text={"Ventajas Free"} background={"#1AA9FF"}/>
-                    <VentajaMovil link={poster1} text={"Ventajas Free"} background={"#1AA9FF"}/>
+                    <VentajaMovil link={posternormal5} text={"Ventajas Free"} background={"#1796E6"}/>
+                    <VentajaMovil link={posternormal6} text={"Ventajas Free"} background={"#1796E6"}/>
+                    <VentajaMovil link={poster1} text={"Ventajas Free"} background={"#1796E6"}/>
                 </div>
             </div>
 

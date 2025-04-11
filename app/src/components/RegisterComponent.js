@@ -7,7 +7,7 @@ const Register = () => {
   
     return (
       
-      <div className="bg-blue-900 text-[white] font-roboto-condensed">
+      <div className="bg-[#1AA9FF] text-[white] font-roboto-condensed">
         <Header />
         <MenuHamburguesaNormal />
         <div className="flex flex-row items-center justify-center">

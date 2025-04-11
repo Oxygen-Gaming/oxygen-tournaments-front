@@ -1,5 +1,4 @@
-import React, { useState, useRef } from "react";
-import MatchModal from "@components/Componentes Detalles/MatchModal"; // Import MatchModal component
+import React from "react";
 
 const CuadrosBracket = ({ positions }) => {
   const [highlightedTeam, setHighlightedTeam] = useState(null); // State to track highlighted team
@@ -50,12 +49,6 @@ const CuadrosBracket = ({ positions }) => {
     "Vikings", "Samurais", "Ninjas", "Pirates", "Gladiators", "Raiders", "Giants", "Cyclones",
     "Storm", "Thunder", "Lightning", "Blaze", "Inferno", "Tornadoes", "Avalanche", "Quakes"
   ];
-
-  const teamMembers = {
-    Dragons: ["Alice", "Bob", "Charlie"],
-    Warriors: ["David", "Eve", "Frank"],
-    Titans: ["Grace", "Heidi", "Ivan"],
-  };
 
   const dieciseisavosWinners = [
     "Dragons", "Titans", "Sharks", "Eagles", "Bears", "Hawks", "Bulls", "Knights",
@@ -151,11 +144,11 @@ const CuadrosBracket = ({ positions }) => {
                   <span className={scoreWinnerStyle}>{i % 2 === 0 ? 1 : 2}</span>
                 </div>
               </div>
+            
             </div>
           ))}
         </div>
-        {/* Repeat similar structure for Octavos, Cuartos, Semifinales, and Final */}
-        <div className="w-1/4 pr-2"> {/* Octavos */}
+        <div className="w-1/5 pr-2"> {/* Changed w-1/6 to w-1/5 */}
           {Array.from({ length: 8 }).map((_, i) => (
             <div key={`octavos-${i}`} className="mb-8 relative ml-8" style={{ top: positions.octavos[i].top }}>
               <button
@@ -205,7 +198,7 @@ const CuadrosBracket = ({ positions }) => {
             </div>
           ))}
         </div>
-        <div className="w-1/4 pr-2"> {/* Cuartos */}
+        <div className="w-1/5 pr-2"> {/* Changed w-1/6 to w-1/5 */}
           {Array.from({ length: 4 }).map((_, i) => (
             <div key={`cuartos-${i}`} className="mb-16 relative ml-8" style={{ top: positions.cuartos[i].top }}>
               <button
