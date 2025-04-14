@@ -11,8 +11,11 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { getImagenPerfil } from "../components/componentesPerfil/interfazCuentaComponent";
 import MenuHamburguesaPerfil from "@components/ComponentesMenuHamburguesa/MenuHamburguesaPerfilComponent";
+
 const Perfil = () => {
     const [opcionSeleccionada, setOpcionSeleccionada] = useState('perfil');
+    const [isMenuOpen, setIsMenuOpen] = useState(false); // Controla el estado del menú hamburguesa
+
     const renderContent = () => {
         switch(opcionSeleccionada) {
             case 'perfil':
@@ -33,12 +36,22 @@ const Perfil = () => {
                 return <Perfil2 />;
         }
     };
+
     return (
-        <div className="bg-[#1AA9FF] text-white min-h-screen font-['Roboto_Condensed',sans-serif] flex flex-col pt-5 lg:pt-0">
+        <div className="bg-[#1AA9FF] text-white min-h-screen font-['Roboto_Condensed',sans-serif]">
             <Header />
-            <MenuHamburguesaPerfil />
-           
-            <div className="pl-[100px] px-[30px] hidden lg:flex lg:flex-col lg:justify-center items-center mb-[10vh] mt-[10vh]">
+            <MenuHamburguesaPerfil 
+                isOpen={isMenuOpen} 
+                setIsOpen={setIsMenuOpen} 
+                setOpcionSeleccionada={(opcion) => {
+                    setOpcionSeleccionada(opcion);
+                    setIsMenuOpen(false); // Cierra el menú al seleccionar una opción
+                }} 
+            />
+            <div className="hidden lg:flex items-center text-center w-full justify-center gap-[30px] font-bold">
+                <p className="text-[30px]">Tu Perfil</p>
+            </div>
+            <div className="pl-[100px] px-[30px] hidden lg:flex lg:flex-col">
                 <div className="flex text-[10px] gap-[7px] lg:text-[20px] lg:gap-[30px] w-[100%] font-bold">
                     <Enlace opcion={'perfil'} nombre={'Perfil'} setOpcionSeleccionada={setOpcionSeleccionada} />
                     <Enlace opcion={'inventario'} nombre={'Inventario'} setOpcionSeleccionada={setOpcionSeleccionada} />
@@ -50,10 +63,9 @@ const Perfil = () => {
                 </div>
                 <hr className="underline w-full"></hr>
             </div>
-            <div className="hidden lg:flex mb-[10vh]">
+            <div className="hidden lg:flex">
                 {renderContent()}
             </div>
-            
             <Footer />   
         </div>
     );
