@@ -34,13 +34,11 @@ const Perfil = () => {
         }
     };
     return (
-        <div className="bg-[#1AA9FF] text-white min-h-screen font-['Roboto_Condensed',sans-serif]">
+        <div className="bg-[#1AA9FF] text-white min-h-screen font-['Roboto_Condensed',sans-serif] flex flex-col pt-5 lg:pt-0">
             <Header />
             <MenuHamburguesaPerfil />
-            <div className="hidden lg:flex items-center text-center w-full justify-center gap-[30px] font-bold">
-                <p className="text-[30px]">Tu Perfil</p>
-            </div>
-            <div className="pl-[100px] px-[30px] hidden lg:flex lg:flex-col">
+           
+            <div className="pl-[100px] px-[30px] hidden lg:flex lg:flex-col lg:justify-center items-center mb-[10vh] mt-[10vh]">
                 <div className="flex text-[10px] gap-[7px] lg:text-[20px] lg:gap-[30px] w-[100%] font-bold">
                     <Enlace opcion={'perfil'} nombre={'Perfil'} setOpcionSeleccionada={setOpcionSeleccionada} />
                     <Enlace opcion={'inventario'} nombre={'Inventario'} setOpcionSeleccionada={setOpcionSeleccionada} />
@@ -52,7 +50,7 @@ const Perfil = () => {
                 </div>
                 <hr className="underline w-full"></hr>
             </div>
-            <div className="hidden lg:flex">
+            <div className="hidden lg:flex mb-[10vh]">
                 {renderContent()}
             </div>
             
