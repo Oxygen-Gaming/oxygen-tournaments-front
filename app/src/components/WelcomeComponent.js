@@ -86,13 +86,11 @@ const OxygenGaming = () => {
             <span className="text-white">GAMERS</span>.
           </h1>
           <h1 className="text-3xl mb-4 leading-[1.2]">
-            VIVE LA MEJOR EXPERIENCIA GAMER CON{" "}
+            VIV3ioeE LA MEJOR EXPERIENCIA GAMER CON{" "}
             <span className="text-white">OXYCLUB</span>.
           </h1>
           <p className="mb-8 text-white">
             ¡Bienvenido a OxyClub! La plataforma que te da más: más acceso a
-            competiciones, más contenido exclusivo, más premios y más
-            oportunidades para demostrar tu talento y vivir el gaming al máximo.
           </p>
           <div className="flex gap-4 mt-[-20px]">
             <a
