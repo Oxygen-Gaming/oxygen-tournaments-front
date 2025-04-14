@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Enlace from "../componentesPerfil/enlacesPerfilComponent";
 import Perfil2 from "../componentesPerfil/interfazPerfilComponent";
 import Cuenta from "../componentesPerfil/interfazCuentaComponent";
 import Conexiones from "../componentesPerfil/interfazConexionesComponent";
@@ -42,7 +41,7 @@ const MenuHamburguesaPerfil = () => {
             </button>
             <div
                 className={`lg:hidden fixed top-0 left-0 w-full h-full bg-[#1AA9FF] flex flex-col justify-center items-center p-4 gap-4 transition-transform ease-in-out duration-300 ${
-                    isOpen ? 'translate-x-0' : '-translate-x-full'
+                    isOpen ? 'translate-x-0 z-50' : '-translate-x-full'
                 }`}
             >
                 {/* Botón de cerrar */}
@@ -60,15 +59,14 @@ const MenuHamburguesaPerfil = () => {
                 <a href="/missions" className="text-white text-center no-underline rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10" onClick={() => setIsOpen(false)}>Misiones</a>
                 <a href="/rewards" className="text-white text-center no-underline rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10" onClick={() => setIsOpen(false)}>Recompensas</a>
                 <a href="/ventajas" className="text-white text-center no-underline rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10" onClick={() => setIsOpen(false)}>Ventajas</a>
-
                 <hr className="text-[white] bg-[white] w-[80%]"></hr>
-                <Enlace opcion={'perfil'} nombre={'Perfil'} setOpcionSeleccionada={setOpcionSeleccionada} onClick={() => setIsOpen(false)} />
-                <Enlace opcion={'inventario'} nombre={'Inventario'} setOpcionSeleccionada={setOpcionSeleccionada} onClick={() => setIsOpen(false)} />
-                <Enlace opcion={'logros'} nombre={'Logros'} setOpcionSeleccionada={setOpcionSeleccionada} onClick={() => setIsOpen(false)} />
-                <Enlace opcion={'pedidos'} nombre={'Pedidos'} setOpcionSeleccionada={setOpcionSeleccionada} onClick={() => setIsOpen(false)} />
-                <Enlace opcion={'cuentas de juego'} nombre={'Cuentas de Juego'} setOpcionSeleccionada={setOpcionSeleccionada} onClick={() => setIsOpen(false)} />
-                <Enlace opcion={'conexiones'} nombre={'Conexiones'} setOpcionSeleccionada={setOpcionSeleccionada} onClick={() => setIsOpen(false)} />
-                <Enlace opcion={'cuenta'} nombre={'Editar Perfil'} setOpcionSeleccionada={setOpcionSeleccionada} onClick={() => setIsOpen(false)} />
+                <a href="#perfil" className="text-white text-center no-underline rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10" onClick={() => { setOpcionSeleccionada('perfil'); setIsOpen(false); }}>Perfil</a>
+                <a href="#cuenta" className="text-white text-center no-underline rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10" onClick={() => { setOpcionSeleccionada('cuenta'); setIsOpen(false); }}>Editar Perfil</a>
+                <a href="#conexiones" className="text-white text-center no-underline rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10" onClick={() => { setOpcionSeleccionada('conexiones'); setIsOpen(false); }}>Conexiones</a>
+                <a href="#cuentas-de-juego" className="text-white text-center no-underline rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10" onClick={() => { setOpcionSeleccionada('cuentas de juego'); setIsOpen(false); }}>Cuentas de Juego</a>
+                <a href="#inventario" className="text-white text-center no-underline rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10" onClick={() => { setOpcionSeleccionada('inventario'); setIsOpen(false); }}>Inventario</a>
+                <a href="#logros" className="text-white text-center no-underline rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10" onClick={() => { setOpcionSeleccionada('logros'); setIsOpen(false); }}>Logros</a>
+                <a href="#pedidos" className="text-white text-center no-underline rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10" onClick={() => { setOpcionSeleccionada('pedidos'); setIsOpen(false); }}>Pedidos</a>
             </div>
             {renderContent()}
         </div>

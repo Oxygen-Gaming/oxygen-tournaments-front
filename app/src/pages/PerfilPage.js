@@ -11,8 +11,11 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { getImagenPerfil } from "../components/componentesPerfil/interfazCuentaComponent";
 import MenuHamburguesaPerfil from "@components/ComponentesMenuHamburguesa/MenuHamburguesaPerfilComponent";
+
 const Perfil = () => {
     const [opcionSeleccionada, setOpcionSeleccionada] = useState('perfil');
+    const [isMenuOpen, setIsMenuOpen] = useState(false); // Controla el estado del menú hamburguesa
+
     const renderContent = () => {
         switch(opcionSeleccionada) {
             case 'perfil':
@@ -33,10 +36,18 @@ const Perfil = () => {
                 return <Perfil2 />;
         }
     };
+
     return (
         <div className="bg-[#1AA9FF] text-white min-h-screen font-['Roboto_Condensed',sans-serif]">
             <Header />
-            <MenuHamburguesaPerfil />
+            <MenuHamburguesaPerfil 
+                isOpen={isMenuOpen} 
+                setIsOpen={setIsMenuOpen} 
+                setOpcionSeleccionada={(opcion) => {
+                    setOpcionSeleccionada(opcion);
+                    setIsMenuOpen(false); // Cierra el menú al seleccionar una opción
+                }} 
+            />
             <div className="hidden lg:flex items-center text-center w-full justify-center gap-[30px] font-bold">
                 <p className="text-[30px]">Tu Perfil</p>
             </div>
@@ -55,7 +66,6 @@ const Perfil = () => {
             <div className="hidden lg:flex">
                 {renderContent()}
             </div>
-            
             <Footer />   
         </div>
     );
