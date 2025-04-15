@@ -94,8 +94,10 @@ const MissionDetailsPage = () => {
               </div>
             </div>
             <div className="text-right">
-              <h2 className="text-2xl font-bold mb-2">Recompensa</h2>
-              <p className="text-lg">{currentMission.points} puntos</p>
+              <h2 className="text-2xl font-bold mb-2">Recompensa:</h2>
+              <p className="text-4xl font-extrabold bg-gray-800 px-4 py-2 inline-block rounded-lg">
+                {typeof currentMission.points === "string" ? currentMission.points : `${currentMission.points} puntos`}
+              </p> {/* Ensure "puntos" is not repeated */}
             </div>
           </div>
         </div>
