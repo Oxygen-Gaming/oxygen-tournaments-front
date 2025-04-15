@@ -3,53 +3,40 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
-
-import Banner from "@components/componentesInicio/BannerComponent";
-import VentajasMixtas from "@components/componentesInicio/VentajasMixtasComponent";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import MenuHamburguesaNormal from "@components/ComponentesMenuHamburguesa/MenuHamburguesaNormalComponent";
-import Tarjeta from "@imgs/poster1.webp";
-import Tarjeta2 from "@imgs/poster2.webp";
-import Tarjeta3 from "@imgs/poster3.webp";
-import Tarjeta4 from "@imgs/poster4.webp";
-import Tarjeta5 from "@imgs/poster5.webp";
-import Tarjeta6 from "@imgs/poster6.webp";
-import Tarjeta7 from "@imgs/poster7.webp";
-import Tarjeta8 from "@imgs/poster8.webp";
-import Tarjeta9 from "@imgs/poster9.webp";
+import VentajaMovil from "@components/ComponentesVentajas/VentajasMovil";
+import VentajaGrande from "@components/ComponentesVentajas/VentajasGrandeComponent";
+import VentajaPequeño from "@components/ComponentesVentajas/VentajasPequeñoComponent";
 import PortadaDeHome from "@imgs/Portada_de_Home.jpg";
 import rewards from '../components/Recompensas/rewardsData';
 import RewardCard from '../components/Recompensas/CardRewardHome';
+import posternormal1 from "@imgs/poster1.webp"
+import posternormal2 from "@imgs/poster2.webp"
+import poster1 from "@imgs/poster1.webp"
+import poster3 from "@imgs/Ventaja Obsequio.webp"
+import poster2 from "@imgs/Ventaja Descuentos.webp"
+import poster10 from "@imgs/Recompensas_Premium1.jpg"
 
 const OxygenGaming = () => {
-  const premiumCards = [
-    { image: Tarjeta },
-    { image: Tarjeta2 },
-    { image: Tarjeta3 },
-    { image: Tarjeta4 },
-    { image: Tarjeta5 },
-    { image: Tarjeta6 },
-    { image: Tarjeta7 },
-    { image: Tarjeta8 },
-    { image: Tarjeta9 },
-  ];
+  
 
   return (
     <div className="bg-[#1AA9FF] text-white overflow-x-hidden font-['Roboto_Condensed',sans-serif] lg:p-0 pt-[30px] flex flex-col gap-0">
       <Header />
       <MenuHamburguesaNormal />
       <main
-        className="flex items-center h-[calc(100vh-80px)] px-16 relative overflow-hidden mt-[20px] lg:mt-0 pt-7"
+        className="flex items-center max-[320px]:h-[100vh] landscape:min-[568px]:h-[100vh] md:h-[80vh] px-16 relative overflow-hidden mt-[20px] lg:mt-0 pt-7"
         style={{
           backgroundImage: `url(${PortadaDeHome})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       >
-        <div className="absolute inset-0 bg-black bg-opacity-50 z-0"></div>
-        <div className="hidden lg:block absolute bottom-0 left-0 w-full h-32 bg-gradient-to-b from-transparent to-[#1AA9FF] z-10"></div>
-        <div className="max-w-[600px] z-20 relative">
+        <div className="absolute inset-0 bg-black bg-opacity-50 z-0 "></div>
+        <div className="hidden lg:block absolute bottom-0 left-0 w-full h-32 bg-gradient-to-b from-transparent to-[#1AA9FF] z-10 "></div>
+        <div className="max-w-[600px] z-20 relative my-5 ">
           <h1 className="text-3xl mb-4 leading-[1.2]">
             VENTAJAS EXCLUSIVAS PARA <span className="text-white">GAMERS</span>.
           </h1>
@@ -70,20 +57,90 @@ const OxygenGaming = () => {
         </div>
       </main>
 
-      <div className="w-screen xl:mt-[150px] mt-[80px]">
-        <div className="w-full flex xl:flex-row xl:items-center xl:justify-evenly lg:flex-row lg:items-center lg:justify-evenly md:flex-col md:items-center md:justify-evenly md:gap-[50px] sm:flex-col sm:items-center flex-col items-center gap-[30px]">
-          <div className="xl:w-[30rem] min-[2000px]:w-[45rem] xl:h-[30rem] min-[2000px]:h-[40rem] lg:w-[25rem] lg:h-[25rem] md:w-[30rem] md:h-[30rem] sm:w-[30rem] sm:h-[30rem] w-[80%] flex items-center justify-center relative">
-            <h1 className="absolute text-[50px] z-10">Ventajas Free</h1>
-            <img src={Tarjeta} alt="competiciones" className="w-full h-full object-cover rounded-[10px]" />
+      <div className="w-screen">
+        
+        <div className="w-full flex flex-col items-center">
+          <h1 className="text-[40px] font-bold text-center mt-[20px] mb-[50px]">Nuestras Ventajas Free</h1>
+          <p className="w-[60%] text-[20px] text-center mb-[20px]">Queremos agradecer tu apoyo incondicional ofreciéndote una selección de ventajas exclusivas y oportunidades únicas para conectar con el equipo. ¡Únete a nuestra comunidad y comienza a disfrutar!</p>
+          <div className="hidden lg:flex flex-row items-center justify-center gap-[2rem]">
+            <VentajaPequeño link={posternormal1} text={"Ventajas Free"} background={"#1796E6"} color="white"/>
+            <VentajaGrande link={poster1} text={"Ventajas Free"} background={" #1796E6"} color="white"/>
+            <VentajaPequeño link={posternormal2} text={"Ventajas Free"} background={"#1796E6"} color="white"/>
           </div>
-          <div className="xl:w-[30rem] min-[2000px]:w-[45rem] xl:h-[30rem] min-[2000px]:h-[40rem] lg:w-[25rem] lg:h-[25rem] md:w-[30rem] md:h-[30rem] sm:w-[30rem] sm:h-[30rem] w-[80%] flex items-center justify-center relative">
-            <h1 className="absolute text-[50px] z-10">Ventajas Premium</h1>
-            <img src={Tarjeta} alt="contenido" className="w-full h-full object-cover rounded-[10px]" />
+
+          <div className="lg:hidden flex flex-col items-center justify-center gap-[2rem]">
+            <VentajaMovil link={posternormal1} text={"Ventajas Free"} background={"#1796E6"} color="white"/>
+            <VentajaMovil link={posternormal2} text={"Ventajas Free"} background={"#1796E6"} color="white"/>
+            <VentajaMovil link={poster1} text={"Ventajas Free"} background={"#1796E6"} color="white"/>
+
           </div>
         </div>
 
+        <div className="w-full flex flex-col items-center">
+          <h1 className="text-[40px] font-bold text-center mt-[20px] mb-[50px]">Nuestras Ventajas Premium</h1>
+          <p className="w-[60%] text-[20px] text-center mb-[20px]">Eleva tu pasión al siguiente nivel y desbloquea una experiencia VIP con acceso anticipado, contenido exclusivo. Conviértete en un miembro de élite y disfruta de ventajas que no encontrarás en ningún otro lugar.</p>
+          <div className="hidden lg:flex flex-row items-center justify-center gap-[2rem]">
+            <VentajaPequeño link={poster2} shadow={"0_0_10px_10px_rgba(255,215,0,0.8)"} text={"Ventajas Premium"} background={"gold"} color="black"  />
+            <VentajaGrande link={poster10} text={"Ventajas Premium"} shadow={"0_0_10px_10px_rgba(255,215,0,0.8)"} background={"gold"} color="black"/>
+            <VentajaPequeño link={poster3} shadow={"0_0_10px_10px_rgba(255,215,0,0.8)"} text={"Ventajas Premium"} background={"gold"} color="black"  />
+          </div>
+
+          <div className="lg:hidden flex flex-col items-center justify-center gap-[2rem]">
+            <VentajaMovil link={poster1} shadow={"0_0_10px_10px_rgba(255,215,0,0.8)"} background={"gold"} color="black" text={"Ventajas Premium"} />
+            <VentajaMovil link={poster2} shadow={"0_0_10px_10px_rgba(255,215,0,0.8)"} background={"gold"} color="black" text={"Ventajas Premium"} />
+            <VentajaMovil link={poster3} shadow={"0_0_10px_10px_rgba(255,215,0,0.8)"} background={"gold"} color="black" text={"Ventajas Premium"} />
+
+          </div>
+        </div>
+
+
+        
+        <div className="text-white py-[12vh] px-6 sm:px-12 mt-[15vh] bg-gradient-to-b from-blue-900 to-blue-700">
+          <div className="max-w-[1400px] mx-auto">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-center mb-16 sm:mb-20 tracking-wide">Así funciona</h1>
+            <div className="grid gap-10 grid-cols-1 md:grid-cols-3">
+              {[
+                {
+                  icon: "fas fa-trophy",
+                  title: "Competiciones",
+                  text: "Participa en desafíos, pronósticos y torneos oficiales para demostrar tus conocimientos y escalar posiciones en los rankings.",
+                  link: "/competition",
+                },
+                {
+                  icon: "fas fa-photo-video",
+                  title: "Contenido",
+                  text: "Accede a contenido exclusivo de tus equipos y deportes favoritos: entrevistas, entrenamientos, backstage y mucho más.",
+                  link: "/content",
+                },
+                {
+                  icon: "fas fa-tasks",
+                  title: "Misiones",
+                  text: "Completa tareas, responde encuestas, juega y gana puntos que podrás canjear por premios y recompensas únicas.",
+                  link: "/missions",
+                },
+              ].map((item, index) => (
+                <div
+                  key={index}
+                  className="flex flex-col items-center text-center p-8 sm:p-10 bg-white/10 rounded-2xl backdrop-blur-md hover:shadow-2xl hover:scale-105 transition duration-300"
+                >
+                  <i className={`${item.icon} text-white text-5xl sm:text-6xl mb-6 sm:mb-8`}></i>
+                  <a href={item.link} className="text-xl sm:text-2xl lg:text-3xl font-semibold mb-4 sm:mb-6 hover:text-orange-400 transition-colors">
+                    {item.title}
+                  </a>
+                  <p className="text-base sm:text-lg lg:text-xl leading-relaxed text-gray-300">{item.text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+
         {/* Reemplazamos el p con el slider */}
-        <div className="mt-[100px] mb-20 flex flex-col justify-center items-center overflow-x-hidden lg:p-0 p-[20px] md:p-[40px]" id="events">
+        <div className="mt-[100px] mb-20 flex flex-col justify-center items-center overflow-x-hidden lg:p-0 p-[20px] md:p-[40px] w-full" id="events">
           <h1 className="text-[40px] font-bold text-center">Nuestras Recompensas</h1>
 
           <div className="w-full flex justify-center items-center mt-[50px]">
@@ -117,29 +174,17 @@ const OxygenGaming = () => {
               className="lg:w-[80%] w-full flex justify-center items-center"
             >
               {rewards.map((reward) => (
-                <SwiperSlide key={reward.id} className="flex items-center justify-center ">
-                  <RewardCard {...reward} />
+                <SwiperSlide key={reward.id} className="w-full flex">
+                  <div className="w-full flex items-center justify-center">
+                    <RewardCard {...reward} />
+                  </div>
+                  
                 </SwiperSlide>
               ))}
             </Swiper>
           </div>
         </div>
-
-        <div className=" mt-[20vh] mb-[100px] w-full flex xl:flex-row xl:items-center xl:justify-evenly lg:flex-row lg:items-center lg:justify-evenly md:flex-col md:items-center md:justify-evenly md:gap-[50px] sm:flex-col sm:items-center flex-col items-center gap-[30px]">
-          <div className="xl:w-[30rem] min-[2000px]:w-[45rem] xl:h-[30rem] min-[2000px]:h-[40rem] lg:w-[25rem] lg:h-[25rem] md:w-[30rem] md:h-[30rem] sm:w-[30rem] sm:h-[30rem] w-[80%] flex items-center justify-center relative">
-            <h1 className="absolute text-[50px] z-10">Competiciones</h1>
-            <img src={Tarjeta} alt="competiciones" className="w-full h-full object-cover rounded-[10px]" />
-          </div>
-          <div className="xl:w-[30rem] min-[2000px]:w-[45rem] xl:h-[30rem] min-[2000px]:h-[40rem] lg:w-[25rem] lg:h-[25rem] md:w-[30rem] md:h-[30rem] sm:w-[30rem] sm:h-[30rem] w-[80%] flex items-center justify-center relative">
-            <h1 className="absolute text-[50px] z-10">Contenido</h1>
-            <img src={Tarjeta} alt="contenido" className="w-full h-full object-cover rounded-[10px]" />
-          </div>
-        </div>
-
       </div>
-
-      
-
       <Footer />
     </div>
   );

@@ -5,7 +5,7 @@ import oxygen from "@imgs/Logo_OxygenGaming2.png";
 const Logros = () => {
     const [misionesCompletadas, setMisionesCompletadas] = useState([]);
     const [recompensasSolicitadas, setRecompensasSolicitadas] = useState([]);
-
+    const [recompensas_canjeadas, setCanjeadas] = useState([]);
     useEffect(() => {
         setMisionesCompletadas([
             { imagen: oxygen, juego: 'Clip de la cagada de la semana', puntos: 20 },
@@ -16,12 +16,18 @@ const Logros = () => {
             { imagen: oxygen, juego: 'Camiseta del club', puntos: 50 },
             { imagen: oxygen, juego: 'Silla Playseat Puma', puntos: 100 }
         ]);
+        setCanjeadas([
+            { imagen: oxygen, juego: 'Camiseta del club', puntos:50 }, 
+            { imagen: oxygen, juego: 'Silla Playseat Puma', puntos:100 }
+        ]);
+
     }, []);
 
     return (
-        <div className="flex flex-col lg:flex-row w-full items-center py-5">
+        <div className="flex flex-wrap w-full items-center py-5">
             <Logro titulo="Misiones Completadas" variable={misionesCompletadas} />
             <Logro titulo="Recompensas Solicitadas" variable={recompensasSolicitadas} />
+            <Logro titulo="Recompensas Canjeadas" variable={recompensas_canjeadas} />
         </div>
     );
 }

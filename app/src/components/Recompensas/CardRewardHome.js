@@ -3,12 +3,9 @@ import PropTypes from 'prop-types';
 
 const Card = ({ image, title, points }) => {
   return (
-    <div className="card flex flex-col items-center justify-between w-full max-w-[500px] aspect-[1/1] bg-gradient-to-b from-blue-900 to-blue-600 rounded-xl shadow-md overflow-hidden">
+    <div className="card flex flex-col items-center justify-between w-[80%] aspect-[1/1] bg-gradient-to-b from-blue-900 to-blue-600 rounded-xl shadow-md overflow-hidden">
       <div className="relative w-full h-full">
         <img src={image} alt={title} className="w-full h-full object-cover rounded-xl" />
-        <p className="absolute bottom-2 right-2 text-white text-sm bg-black bg-opacity-50 px-2 py-1 rounded">
-          Puntos: {points}
-        </p>
       </div>
       <div className="p-4 text-white text-center">
         <h3 className="text-lg font-bold">{title}</h3>

@@ -2,7 +2,7 @@ import React from "react";
 
 const Logro = ({ titulo, variable }) => {
     return (
-        <div className="flex flex-wrap w-screen gap-[20px] lg:w-[50%] justify-center items-center">
+        <div className="flex flex-wrap w-screen gap-[20px] lg:w-[50%] justify-center items-center mt-[50px]">
             <h1 className="text-[35px] text-center">{titulo}</h1>
             <div className="flex flex-wrap justify-center w-screen gap-[20px]">
                 
