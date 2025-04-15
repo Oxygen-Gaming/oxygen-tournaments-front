@@ -167,8 +167,8 @@ const RewardDetailsPage = () => {
               </div>
             </div>
             <div className="text-right mt-12"> {/* Added margin-top */}
-              <h2 className="text-2xl font-bold mb-4">Puntos Necesarios:</h2> {/* Increased margin-bottom */}
-              <p className="text-lg">{currentReward.points} puntos</p>
+              <h2 className="text-2xl font-bold mb-4">Objetivo Necesario:</h2> {/* Increased margin-bottom */}
+              <p className="text-4xl font-extrabold bg-gray-800 px-4 py-2 inline-block rounded-lg">{currentReward.points} puntos</p> {/* Highlighted with background */}
             </div>
           </div>
         </div>

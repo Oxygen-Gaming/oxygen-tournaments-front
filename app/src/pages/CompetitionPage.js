@@ -175,10 +175,20 @@ const Competition = () => {
               {defaultCards.map((card) => (
                 <div
                   key={card[0]}
-                  className="card relative overflow-hidden rounded-lg shadow-lg bg-[#1c1c1c] text-white p-6 flex flex-col justify-between h-[600px] cursor-pointer transition-transform transform hover:scale-105"
+                  className="card relative overflow-hidden rounded-lg shadow-lg bg-[#1c1c1c] text-white p-6 flex flex-col justify-between h-[600px] cursor-pointer transition-transform transform hover:scale-105 group"
                   onClick={() => handleCardClick(card)}
                 >
                   <img src={card[6]} alt={card[1]} className="w-full h-[300px] object-cover rounded-lg mb-4 shadow-md" />
+                  <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-300">
+                    <div className="text-center px-4 transform -translate-y-22 group-hover:-translate-y-24 transition-transform duration-300">
+                      <p className="text-white text-lg font-extrabold">
+                        Haz click en la tarjeta
+                      </p>
+                      <p className="text-white text-lg font-extrabold">
+                        para ver los detalles del torneo <span className="text-blue-400">{card[2]}</span>
+                      </p>
+                    </div>
+                  </div>
                   <h2 className="text-white text-3xl font-bold mb-2">{card[2]}</h2>
                   <p className="text-lg mb-2 text-gray-300">Fecha de Inicio: {card[3]} • 18:00</p>
                   <p className="text-lg mb-2 text-gray-300">Formato: {card[1] === "Valorant" || card[1] === "League of Legends" ? "5vs5" : "1vs1 y 3vs3"}</p>
