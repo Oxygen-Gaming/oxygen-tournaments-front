@@ -19,7 +19,7 @@ const Logros = () => {
     }, []);
 
     return (
-        <div className="flex flex-col lg:flex-row w-full items-center">
+        <div className="flex flex-col lg:flex-row w-full items-center py-5">
             <Logro titulo="Misiones Completadas" variable={misionesCompletadas} />
             <Logro titulo="Recompensas Solicitadas" variable={recompensasSolicitadas} />
         </div>
