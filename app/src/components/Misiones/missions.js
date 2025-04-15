@@ -14,7 +14,7 @@ const missions = [
     id: 1, 
     title: 'Síguenos en X', 
     image: Twitter, 
-    points: 'Puntos: 120', 
+    points: '120 puntos', 
     description: 'Dale click, sigue a Oxygen y disfruta de tus puntos.', 
     link: 'https://x.com/GamingOxygen'
   },
@@ -22,7 +22,7 @@ const missions = [
     id: 2, 
     title: 'Síguenos en Instagram', 
     image: Instagram, 
-    points: 'Puntos: 100', 
+    points: '100 puntos', 
     description: 'Dale click, sigue a Oxygen y disfruta de tus puntos.', 
     link: 'https://www.instagram.com/GamingOxygen/'
   },
@@ -30,7 +30,7 @@ const missions = [
     id: 3, 
     title: 'Síguenos en Tik Tok', 
     image: TikTok, 
-    points: 'Puntos: 110', 
+    points: '110 puntos', 
     description: 'Dale click, sigue a Oxygen y disfruta de tus puntos.', 
     link: 'https://www.tiktok.com/@oxg_esports?lang=es'
   },
@@ -38,7 +38,7 @@ const missions = [
     id: 4, 
     title: 'Completa el quiz semanal', 
     image: Quiz, 
-    points: 'Puntos: 250', 
+    points: '250 puntos', 
     description: 'Vamos a medir tu ingenio, esperamos mucho de ti. Responde las preguntas de forma correcta y lo más rápido posible para llevarte el mayor número de puntos. ¿Te atreves?', 
     link: 'https://example.com/quiz-semanal'
   },
@@ -46,7 +46,7 @@ const missions = [
     id: 5, 
     title: 'Meme del mes', 
     image: Meme, 
-    points: 'Puntos: 190', 
+    points: '190 puntos', 
     description: 'Demuestra tu sentido del humor. Crea o elige el meme que hará reír a todos. ¿Tienes lo que se necesita para ser el rey del meme?', 
     link: 'https://example.com/meme-del-mes'
   },
@@ -54,7 +54,7 @@ const missions = [
     id: 6, 
     title: 'Únete al discord', 
     image: Discord, 
-    points: 'Puntos: 200', 
+    points: '200 puntos', 
     description: 'Dale click, sigue a Oxygen y disfruta de tus puntos.', 
     link: 'https://discord.com/invite/Udsstfpeze'
   },
@@ -62,7 +62,7 @@ const missions = [
     id: 7, 
     title: 'Invita a un amigo', 
     image: Amigo, 
-    points: 'Puntos: 250', 
+    points: '250 puntos', 
     description: 'Comparte la diversión con tus amigos. Invítalos a unirse a nuestra comunidad y juntos podrán disfrutar de más momentos increíbles. ¿Quién será tu próximo compañero de aventuras?', 
     link: 'https://example.com/invita-amigo'
   },
@@ -70,7 +70,7 @@ const missions = [
     id: 8, 
     title: 'Mejor clip creadores oxygen', 
     image: Clip, 
-    points: 'Puntos: 220', 
+    points: '220 puntos', 
     description: 'Muestra tu talento como fan. Envía tus mejores clips de nuestros creadores de contenido y destaca.', 
     link: 'https://example.com/mejor-clip'
   },
@@ -78,7 +78,7 @@ const missions = [
     id: 9, 
     title: 'Clip de la cagada de la semana', 
     image: Caca, 
-    points: 'Puntos: 170', 
+    points: '170 puntos', 
     description: 'Todos tenemos esos momentos. Comparte tu clip más divertido o embarazoso de la semana. ¿Te atreves a mostrar tu lado más torpe?', 
     link: 'https://example.com/clip-cagada'
   },
@@ -86,7 +86,7 @@ const missions = [
     id: 10, 
     title: 'Hazte con la camiseta', 
     image: Camiseta, 
-    points: 'Puntos: 400', 
+    points: '400 puntos', 
     description: 'Demuestra tu lealtad y estilo. No es solo una prenda, es un símbolo de tu compromiso. ¿Estás listo para lucirla?', 
     link: 'https://example.com/camiseta'
   },
