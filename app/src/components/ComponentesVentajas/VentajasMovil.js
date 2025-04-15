@@ -2,11 +2,6 @@ import React from "react";
 
 const VentajaMovil = ({ link, text, shadow, background, color }) => {
 
-
-
-
-
-
   return (
     <div className={`group h-[15rem] w-[15rem] sm:w-[30rem] sm:h-[30rem] [perspective:1000px]  rounded-xl`}>
       <div className={`shadow-[${shadow}] h-full w-full rounded-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]`}>

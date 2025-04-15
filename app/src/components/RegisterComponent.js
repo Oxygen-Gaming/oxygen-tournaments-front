@@ -7,56 +7,68 @@ const Register = () => {
   
     return (
       
-      <div className="bg-[#1AA9FF] text-[white] font-roboto-condensed">
+      <div className="bg-[#1AA9FF] text-[white] flex flex-col items-center font-roboto-condensed pt-[30px] lg:block lg:p-0">
         <Header />
         <MenuHamburguesaNormal />
-        <div className="flex flex-row items-center justify-center">
-          <div className="bg-blue-500 lg:w-[40%] sm:w-[80%] flex flex-col justify-center items-center lg:gap-[20px] gap-[10px]  lg:h-[85vh] p-[30px] my-[30px] rounded-l-lg"><img className="w-[75%]" src={register} />      </div>  
-          
-          <div className="lg:w-[40%] sm:w-[80%] flex flex-col justify-center items-center lg:gap-[20px] gap-[10px]  lg:h-[85vh] p-[30px] my-[30px]  bg-[#313ee3] rounded-r-lg">
-            
-            <h1 className="text-[50px] font-semibold">Crear cuenta</h1>
-            
-            <form className="flex flex-col items-center justify-center lg:gap-[30px] w-full gap-[20px]">
-                <div className="lg:grid lg:grid-cols-2 flex flex-col items-center justify-center lg:gap-[30px] w-full gap-[20px]">
-                  <div className="flex flex-col lg:gap-[10px] w-full">
-                    <span className="italic">Nombre y apellidos</span>
-                    <input placeholder="Nombre Apellidos" type="text" className="lg:w-full lg:h-[35px] sm:min-w-[100%] h-[30px] rounded lg:p-[7px] text-[black] p-[6px]"  required />
+        <div className="w-full flex flex-col items-center">
+          <div className="w-[90%] sm:h-full lg:w-[60%] flex flex-col sm:flex-row sm:items-center sm:bg-blue-500 sm:rounded-r-lg items-center mt-[30px] mb-[30px] xl:mt-[100px] xl:mb-[100px] rounded-lg">
+            <div className="bg-blue-500 p-[30px] w-full sm:w-[80%] sm:h-full flex flex-col items-center h-full rounded-t-lg">
+              <img className="w-[80%]" src={register} />      
+            </div> 
+            <div className="bg-[#313ee3] w-full flex flex-col items-center p-[15px] rounded-b-lg sm:rounded-none sm:rounded-r-lg sm:rounded-rb-none">
+              
+              <h1 className="text-[40px] font-semibold">Crear cuenta</h1>
+              
+              <form className="w-full flex flex-col items-center gap-[20px]">
+                <div className="w-full h-full flex flex-col xl:flex-row">
+                  <div className="w-full flex flex-col items-center gap-[20px]">
+                    
+                    <div className="w-[90%] flex flex-col gap-[10px]">
+                      <span className="italic">Nombre y apellidos</span>
+                      <input placeholder="Nombre Apellidos" type="text" className="w-full h-[40px] p-[10px] text-[black] rounded" required />
+                    </div>
+        
+                    <div className="w-[90%] flex flex-col gap-[10px]">
+                      <span className="italic">Fecha de nacimiento</span>
+                      <input type="date" className="w-full h-[40px] p-[10px] text-[black] rounded" required />
+                    </div>
+
+                    <div className="w-[90%] flex flex-col gap-[10px]">
+                      <span className="italic">Correo electrónico</span>
+                      <input placeholder="ejemplo@gmail.com" type="email" className="w-full h-[40px] p-[10px] text-[black] rounded" required />
+                    </div>
                   </div>
-      
-                  <div className="flex flex-col lg:gap-[10px] w-full">
-                    <span className="italic">Nombre de usuario</span>
-                    <input placeholder="Username" type="text" className="lg:w-full lg:h-[35px] sm:min-w-[100%] h-[30px] rounded lg:p-[7px] text-[black] p-[6px]"/>
-                  </div>
-      
-                  <div className="flex flex-col lg:gap-[10px] w-full">
-                    <span className="italic">Fecha de nacimiento</span>
-                    <input type="date" className="lg:w-full min-w-[33vh] sm:min-w-[97%] lg:h-[35px] h-[30px] rounded lg:p-[7px] text-[black] p-[6px]" required />
-                  </div>
-      
-                  <div className="flex flex-col gap-[10px] w-full">
-                    <span className="italic">Teléfono</span>
-                    <input placeholder="999999999" type="tel" className="lg:w-full lg:h-[35px] h-[30px] sm:min-w-[100%] rounded lg:p-[7px] text-[black] p-[6px]"/>
-                  </div>
-      
-                  <div className="flex flex-col lg:gap-[10px] w-full">
-                    <span className="italic">Correo electrónico</span>
-                    <input placeholder="ejemplo@gmail.com" type="email" className="lg:w-full lg:h-[35px] h-[30px] sm:min-w-[100%] rounded lg:p-[7px] text-[black] p-[6px]" required />
-                  </div>
-      
-                  <div className="flex flex-col lg:gap-[10px] w-full">
-                    <span className="italic">Contraseña</span>
-                    <input placeholder="Nunca la compartas" type="password" className="lg:w-full lg:h-[35px] h-[30px] sm:min-w-[100%] rounded lg:p-[7px] text-[black] p-[6px]" required />
+                  <div className="w-full flex flex-col items-center gap-[20px]">
+                    
+                    <div className="w-[90%] flex flex-col gap-[10px]">
+                      <span className="italic">Nombre de usuario</span>
+                      <input placeholder="Username" type="text" className="w-full h-[40px] p-[10px] text-[black] rounded" required />
+                    </div>
+        
+                    <div className="w-[90%] flex flex-col gap-[10px]">
+                      <span className="italic">Teléfono</span>
+                      <input placeholder="123456789" type="tel" className="w-full h-[40px] p-[10px] text-[black] rounded" required />
+                    </div>
+
+                    <div className="w-[90%] flex flex-col gap-[10px]">
+                      <span className="italic">Contraseña</span>
+                      <input placeholder="Nunca la compartas" type="password" className="w-full h-[40px] p-[10px] text-[black] rounded" required />
+                    </div>
                   </div>
                 </div>
+                  
 
-              <p className="text-[20px]">¿Ya tienes cuenta? <a href="/login" className="underline text-blue-400">Inicia sesión</a></p>
-    
-              <button type="submit" className="bg-[white] text-[black] lg:w-[150px] lg:h-[40px] w-[120px] h-[50px] hover:bg-blue-900 hover:text-[white] hover:border-[white] hover:border-[1px] rounded" >Registrarse</button>
+                <p className="w-[70%] text-center text-[20px]">¿Ya tienes cuenta? <a href="/login" className="underline text-blue-400">Iniciar Sesión</a></p>
+      
+                <button type="submit" className="w-[70%] h-[50px] text-[20px] bg-[white] text-[black] hover:bg-blue-900 hover:text-[white] hover:border-[white] rounded" >Crear Cuenta</button>
 
-            </form>
+              </form>
+            </div>
+
+              
           </div>
         </div>
+        
         <Footer />
       </div>
     );

@@ -22,7 +22,7 @@ import poster12 from "@imgs/Recompensas_Premium3.jpg"
 import poster13 from "@imgs/Recompensas_Premium4.jpg"
 const VentajasPremium = () => {
     return (
-        <section className=" p-[15px] flex flex-col justify-center items-center mt-[5vh] gap-[40px]">
+        <section id="ventajas_premium" className=" p-[15px] flex flex-col justify-center items-center mt-[5vh] gap-[40px]">
             <div className="flex flex-col justify-center items-center">
                 <h1 className="text-[40px] font-bold ">Ventajas Premium</h1>
                 <span className="text-[15px] font-semibold">Disfruta de nuestras mejores funciones como miembro especial del club  y aprovecha al máximo tu experiencia.</span>

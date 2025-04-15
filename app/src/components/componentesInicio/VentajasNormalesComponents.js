@@ -13,7 +13,7 @@ import posternormal6 from "@imgs/poster6.webp"
 
 const VentajasNormales = () => {
     return (
-        <section className=" p-[15px] flex flex-col justify-center items-center mt-[5vh] gap-[5vh] overflow-hidden">
+        <section id="ventajas_normales" className=" p-[15px] flex flex-col justify-center items-center mt-[5vh] gap-[5vh] overflow-hidden">
             <div className=" flex flex-col justify-center items-center">
                 <h1 className="text-[40px] font-bold ">Ventajas Free</h1>
                 <span className="text-[18px] font-semibold">Disfruta de nuestras funciones esenciales sin costo y aprovecha al máximo tu experiencia.</span>

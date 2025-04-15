@@ -5,7 +5,7 @@ const Perfil2 = () => {
     const imagenPerfil = getImagenPerfil();
 
     return (
-        <div className="flex flex-col gap-[30px] lg:pl-[100px] lg:pr-[100px] py-5 md:py-10 lg:py-0 ">
+        <div className="w-full lg:w-[60%] xl:w-[50%] lg:items-center flex flex-col items-center gap-[30px] lg:pl-[100px] lg:pr-[100px] py-5 md:py-10 lg:py-0 ">
             <div className="flex flex-col items-center lg:flex-row w-full gap-[30px]">
                 <img src={imagenPerfil} alt="imagen de perfil" className="w-[150px] h-[150px] p-[10px] border-[2px] rounded-full"/>
                 <div className="text-[20px]">
