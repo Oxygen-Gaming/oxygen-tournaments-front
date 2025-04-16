@@ -77,7 +77,7 @@ const OxygenGaming = () => {
         </div>
 
         <div className="w-full flex flex-col items-center">
-          <h1 className="text-[40px] font-bold text-center mt-[20px] mb-[50px]">Nuestras Ventajas Premium</h1>
+          <h1 className="text-[40px] font-bold text-center mt-[60px] mb-[50px]">Nuestras Ventajas Premium</h1>
           <p className="w-[60%] text-[20px] text-center mb-[20px]">Eleva tu pasión al siguiente nivel y desbloquea una experiencia VIP con acceso anticipado, contenido exclusivo. Conviértete en un miembro de élite y disfruta de ventajas que no encontrarás en ningún otro lugar.</p>
           <div className="hidden lg:flex flex-row items-center justify-center gap-[2rem]">
             <VentajaPequeño link={poster2} shadow={"0_0_10px_10px_rgba(255,215,0,0.8)"} text={"Ventajas Premium"} background={"gold"} color="black"  />
@@ -178,10 +178,18 @@ const OxygenGaming = () => {
                   <div className="w-full flex items-center justify-center">
                     <RewardCard {...reward} />
                   </div>
-                  
                 </SwiperSlide>
               ))}
             </Swiper>
+          </div>
+          {/* Botón para ir a recompensas */}
+          <div className="mt-[50px] flex justify-center items-center">
+            <a
+                href="rewards"
+                className="inline-block px-8 py-4 text-lg rounded-lg font-bold transition transform hover:-translate-y-2 hover:shadow-lg bg-[#005f99] hover:bg-[#00487a] text-white"
+            >
+                Ver Recompensas
+            </a>
           </div>
         </div>
       </div>

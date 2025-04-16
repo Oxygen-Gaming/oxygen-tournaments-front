@@ -1,5 +1,6 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+
 import Register from '@components/RegisterComponent';
 import Login from '@components/LoginComponent';
 import Rewards from './pages/RewardsPage';
@@ -14,28 +15,60 @@ import Ventajas from './pages/VentajasPage';
 import ReportPlayerPage from "./pages/ReportPlayerPage";
 import MissionDetailsPage from "./pages/MissionDetailsPage";
 import RewardDetailsPage from "./pages/RewardDetailsPage";
+import MaintenancePage from "./pages/MaintenancePage";
 
 function App() {
+  const [maintenance, setMaintenance] = useState(false);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch('/mantenimiento.txt')
+      .then(res => res.text())
+      .then(data => {
+        const flag = data.trim().toLowerCase();
+        setMaintenance(flag === 'on');
+        setLoading(false);
+      })
+      .catch(err => {
+        console.error('Error leyendo mantenimiento.txt, illo:', err);
+        setLoading(false);
+      });
+  }, []);
+
+  if (loading) return <div>Cargando, illo...</div>;
+
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Welcome />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<Login />} />   
-        <Route path="/competition" element={<Competition />} />
-        <Route path="/rewards" element={<Rewards />} />
-        <Route path='/perfil' element={<Perfil />} />
-        <Route path="/missions" element={<Missions />} />
-        <Route path="/content" element={<Content />} />
-        <Route path="/game" element={<SpecificGameComponent />} />
-        <Route path="/tournament-details" element={<TournamentDetailsPage />} />
-        <Route path="/ventajas" element={<Ventajas />} />
-        <Route path="/report-player" element={<ReportPlayerPage />} />
-        <Route path="/mission-details" element={<MissionDetailsPage />} />
-        <Route path="/reward-details" element={<RewardDetailsPage />} />
+        {maintenance ? (
+          <>
+            <Route path="/maintenance" element={<MaintenancePage />} />
+            <Route path="*" element={<Navigate to="/maintenance" replace />} />
+          </>
+        ) : (
+          <>
+            <Route path="/" element={<Welcome />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/login" element={<Login />} />   
+            <Route path="/competition" element={<Competition />} />
+            <Route path="/rewards" element={<Rewards />} />
+            <Route path='/perfil' element={<Perfil />} />
+            <Route path="/missions" element={<Missions />} />
+            <Route path="/content" element={<Content />} />
+            <Route path="/game" element={<SpecificGameComponent />} />
+            <Route path="/tournament-details" element={<TournamentDetailsPage />} />
+            <Route path="/ventajas" element={<Ventajas />} />
+            <Route path="/report-player" element={<ReportPlayerPage />} />
+            <Route path="/mission-details" element={<MissionDetailsPage />} />
+            <Route path="/reward-details" element={<RewardDetailsPage />} />
+            {/* Redirigimos de nuevo si está en modo off */}
+            <Route path="/maintenance" element={<Navigate to="/" replace />} />
+          </>
+        )}
       </Routes>
     </Router>
   );
 }
 
 export default App;
+

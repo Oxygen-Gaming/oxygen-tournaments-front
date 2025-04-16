@@ -28,7 +28,7 @@ const Footer = () => {
     
             <div id="redes_sociales" className="flex flex-col items-center text-center">
                 <a href="https://oxygengaming.es/">
-                    <img id="logo_footer" src="https://oxygengaming.es/wp-content/uploads/2025/03/Logo_Blue.png" alt="Oxygen Gaming Logo" className="w-[150px] mb-3.5"/>
+                    <img id="logo_footer" src="https://oxygengaming.es/wp-content/uploads/2025/04/o2glogo.svg" alt="Oxygen Gaming Logo" className="w-[150px] mb-3.5"/>
                 </a>
                 <div className="social-links flex gap-4">
                     <a href="https://twitter.com/GamingOxygen" aria-label="Twitter de Oxygen Gaming" className="flex justify-center items-center text-white bg-[#222] border-2 border-[#1AA9FF] w-10 h-10 rounded-full transition-all duration-300 hover:text-[#1AA9FF] text-[20px] md:w-[70px] md:h-[70px] md:text-[30px] lg:w-[50px] lg:h-[50px] lg:text-[20px]">
