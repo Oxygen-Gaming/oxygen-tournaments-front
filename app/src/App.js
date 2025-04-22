@@ -30,12 +30,12 @@ function App() {
         setLoading(false);
       })
       .catch(err => {
-        console.error('Error leyendo mantenimiento.txt, illo:', err);
+        console.error('Cargando', err);
         setLoading(false);
       });
   }, []);
 
-  if (loading) return <div>Cargando, illo...</div>;
+  if (loading) return <div>Cargando</div>;
 
   return (
     <Router>
@@ -61,7 +61,6 @@ function App() {
             <Route path="/report-player" element={<ReportPlayerPage />} />
             <Route path="/mission-details" element={<MissionDetailsPage />} />
             <Route path="/reward-details" element={<RewardDetailsPage />} />
-            {/* Redirigimos de nuevo si está en modo off */}
             <Route path="/maintenance" element={<Navigate to="/" replace />} />
           </>
         )}
