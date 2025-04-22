@@ -93,9 +93,8 @@ const OxygenGaming = () => {
           </div>
         </div>
 
-
         
-        <div className="text-white py-[12vh] px-6 sm:px-12 mt-[15vh] bg-gradient-to-b from-blue-900 to-blue-700">
+        <div className="text-[#1AA9FF] py-[12vh] px-6 sm:px-12 mt-[15vh] bg-[white]">
           <div className="max-w-[1400px] mx-auto">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-center mb-16 sm:mb-20 tracking-wide">Así funciona</h1>
             <div className="grid gap-10 grid-cols-1 md:grid-cols-3">
@@ -121,21 +120,18 @@ const OxygenGaming = () => {
               ].map((item, index) => (
                 <div
                   key={index}
-                  className="flex flex-col items-center text-center p-8 sm:p-10 bg-white/10 rounded-2xl backdrop-blur-md hover:shadow-2xl hover:scale-105 transition duration-300"
+                  className="flex flex-col items-center text-center p-8 sm:p-10 bg-[#f5f4f4] rounded-2xl backdrop-blur-md hover:shadow-2xl hover:scale-105 transition duration-300"
                 >
-                  <i className={`${item.icon} text-white text-5xl sm:text-6xl mb-6 sm:mb-8`}></i>
-                  <a href={item.link} className="text-xl sm:text-2xl lg:text-3xl font-semibold mb-4 sm:mb-6 hover:text-orange-400 transition-colors">
+                  <i className={`${item.icon} text-[#1AA9FF] text-5xl sm:text-6xl mb-6 sm:mb-8`}></i>
+                  <a href={item.link} className="text-xl sm:text-2xl lg:text-3xl font-semibold mb-4 sm:mb-6 hover:text-[black] transition-colors">
                     {item.title}
                   </a>
-                  <p className="text-base sm:text-lg lg:text-xl leading-relaxed text-gray-300">{item.text}</p>
+                  <p className="text-base sm:text-lg lg:text-xl leading-relaxed text-[#78c0ff]">{item.text}</p>
                 </div>
               ))}
             </div>
           </div>
         </div>
-
-
-
 
 
 
@@ -175,7 +171,7 @@ const OxygenGaming = () => {
             >
               {rewards.map((reward) => (
                 <SwiperSlide key={reward.id} className="w-full flex">
-                  <div className="w-full flex items-center justify-center">
+                  <div className="w-full flex items-center justify-center cursor-pointer">
                     <RewardCard {...reward} />
                   </div>
                 </SwiperSlide>
