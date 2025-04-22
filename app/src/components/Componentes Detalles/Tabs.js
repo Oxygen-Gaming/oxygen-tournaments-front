@@ -18,7 +18,7 @@ const Tabs = ({ activeTab, setActiveTab }) => {
               ? "border-b-4 border-white text-white"
               : "text-gray-200 hover:text-white"
           }`}
-          onClick={() => setActiveTab(tab.id)} // Cambiar la pestaña activa
+          onClick={() => setActiveTab(tab.id)}
         >
           {tab.label}
         </button>
