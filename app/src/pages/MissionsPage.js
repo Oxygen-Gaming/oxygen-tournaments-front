@@ -5,6 +5,7 @@ import missions from '../components/Misiones/missions';
 import MissionCard from '../components/Misiones/MissionCard';
 import { useNavigate } from "react-router-dom";
 import MenuHamburguesaNormal from "@components/ComponentesMenuHamburguesa/MenuHamburguesaNormalComponent";
+import Banner from '@imgs/Header_Misiones.jpg'; // Import the banner image
 
 const Missions = () => {
   const navigate = useNavigate();
@@ -21,7 +22,7 @@ const Missions = () => {
       {/* Banner */}
       <div className="w-full h-96 bg-cover bg-center relative mt-0">
         <img
-          src="https://via.placeholder.com/1920x1080" // Replace with an appropriate image URL
+          src={Banner} // Replace with an appropriate image URL
           alt="Misiones Banner"
           className="w-full h-full object-cover transition-opacity duration-500"
         />

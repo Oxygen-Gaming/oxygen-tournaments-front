@@ -12,7 +12,7 @@ import ValorantLogo from "@imgs/Valorant_logo.png";
 import RocketLeagueLogo from "@imgs/rocket-league.png";
 import LeagueOfLegendsLogo from "@imgs/lol-logo.png";
 import Logo from "@imgs/Logo_Blue.png"; // Added import for Logo
-
+import Banner from "@imgs/Header_Competiciones.jpg"; 
 
 const Competition = () => {
   const [currentImage, setCurrentImage] = useState(0);
@@ -94,7 +94,7 @@ const Competition = () => {
       {/* BANNER */}
       <div className="w-full h-96 bg-cover bg-center relative mt-0">
         <img
-          src={images[currentImage].src}
+          src={Banner}
           alt={images[currentImage].alt}
           className="w-full h-full object-cover transition-opacity duration-500"
         />

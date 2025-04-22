@@ -3,6 +3,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import MenuHamburguesaNormal from "@components/ComponentesMenuHamburguesa/MenuHamburguesaNormalComponent";
 import RankingTable from '@components/Contenido/RankingTable';
+import Banner from '@imgs/Header_Contenido.jpg'; 
 
 const Contenido = () => {
   const [selectedCategory, setSelectedCategory] = useState(null);
@@ -80,7 +81,7 @@ const Contenido = () => {
       {!selectedCategory && (
         <div className="w-full h-96 bg-cover bg-center relative mt-0">
           <img
-            src="https://via.placeholder.com/1920x1080" // Replace with an appropriate image URL
+            src={Banner} // Use the imported Banner image
             alt="Contenido Banner"
             className="w-full h-full object-cover transition-opacity duration-500"
           />
