@@ -126,19 +126,66 @@ const Contenido = () => {
             />
           </div>
 
-          {/* Video Info Card Slightly Larger */}
-          <div className="bg-black text-white p-6 rounded-lg shadow-lg w-56 h-48 flex flex-col justify-between mt-36">
-            <h3 className="text-sm text-center font-bold mb-2">Título del Video</h3>
-            <p className="text-xs mb-2">Progreso: {getVideoProgress()}</p>
+          {/* Video Info Card with Circular Progress */}
+          <div className="bg-[#1c1c1c] text-white p-6 rounded-lg shadow-lg w-56 h-48 flex flex-col justify-between mt-36 items-center">
+            <h3 className="text-base text-center font-bold mb-4">Título del Video</h3> {/* Increased font size */}
+            <div className="relative w-16 h-16 mb-4"> {/* Added margin-bottom */}
+              <svg className="w-16 h-16 transform -rotate-90" viewBox="0 0 36 36">
+                <path
+                  className="text-gray-700"
+                  d="M18 2.0845
+                     a 15.9155 15.9155 0 0 1 0 31.831
+                     a 15.9155 15.9155 0 0 1 0 -31.831"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                />
+                <path
+                  className="text-blue-500"
+                  d="M18 2.0845
+                     a 15.9155 15.9155 0 0 1 0 31.831
+                     a 15.9155 15.9155 0 0 1 0 -31.831"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeDasharray={`${getVideoProgress()}, 100`}
+                />
+              </svg>
+              <div className="absolute inset-0 flex items-center justify-center">
+                <span className="text-xs text-white">{getVideoProgress()}</span>
+              </div>
+            </div>
             <button
               onClick={handleShareClick}
-              className="bg-blue-600 text-white text-xs px-2 py-1 rounded shadow hover:bg-blue-700 transition"
+              className="bg-blue-600 text-white text-sm px-4 py-2 rounded shadow hover:bg-blue-700 transition"
             >
               Compartir
             </button>
             {shareMessage && (
               <p className="text-green-400 text-xs mt-2">{shareMessage}</p>
             )}
+          </div>
+
+          {/* Video Description and Social Media Links */}
+          <div className="bg-[#1c1c1c] text-white p-6 rounded-lg shadow-lg w-56 h-48 flex flex-col justify-between mt-36 items-center">
+            <h4 className="text-sm font-bold mb-4">Descripción del Video</h4>
+            <p className="text-xs text-center mb-4">
+              Este video muestra los mejores momentos de la partida, destacando estrategias clave y jugadas impresionantes.
+            </p>
+            <div className="flex gap-4 justify-center">
+              <a href="https://www.tiktok.com/@oxg_esports?lang=es" target="_blank" rel="noopener noreferrer">
+                <i className="fab fa-tiktok"></i>
+              </a>
+              <a href="https://www.instagram.com/GamingOxygen" target="_blank" rel="noopener noreferrer">
+                <i className="fab fa-instagram"></i>
+              </a>
+              <a href="https://x.com/GamingOxygen" target="_blank" rel="noopener noreferrer">
+                <i className="fab fa-twitter"></i>
+              </a>
+              <a href="https://discord.gg/Udsstfpeze" target="_blank" rel="noopener noreferrer">
+                <i className="fab fa-discord"></i>
+              </a>
+            </div>
           </div>
         </div>
       )}

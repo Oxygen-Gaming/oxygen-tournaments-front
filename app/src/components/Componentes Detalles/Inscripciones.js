@@ -19,7 +19,7 @@ const Inscripciones = ({ confirmedPlayersList, pendingPlayersList }) => {
 
   return (
     <div id="inscription-section" className="p-6">
-      <h2 className="text-3xl font-bold mb-6 text-center">Inscritos</h2>
+      
       <div className="bg-[#1c1c1c] text-white p-6 rounded-lg shadow-lg">
         {allPlayersList.length > 0 ? (
           <ul className="space-y-4">

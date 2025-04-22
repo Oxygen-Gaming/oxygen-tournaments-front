@@ -33,7 +33,7 @@ const Bracket = ({ tournamentName, mirrored = false }) => {
 
   return (
     <div
-      className={`bg-gray-900 text-white p-5 rounded-lg w-full max-w-[1400px] mx-auto mt-8 ${
+      className={`bg-[#1c1c1c] text-white p-5 rounded-lg w-full max-w-[1400px] mx-auto mt-8 ${
         mirrored ? "transform scale-x-[-1]" : ""
       }`}
     >
