@@ -1,8 +1,8 @@
 import React from "react";
-import register from "@imgs/register.png"
 import MenuHamburguesaNormal from "@components/ComponentesMenuHamburguesa/MenuHamburguesaNormalComponent";
 import Header from "@components/Header";
 import Footer from "@components/Footer";
+import Banner from "@imgs/Unete_Al_OxyClub.jpg";
 const Register = () => {
   
     return (
@@ -13,7 +13,7 @@ const Register = () => {
         <div className="w-full flex flex-col items-center">
           <div className="w-[90%] sm:h-full lg:w-[60%] flex flex-col sm:flex-row sm:items-center sm:bg-blue-500 sm:rounded-r-lg items-center mt-[30px] mb-[30px] xl:mt-[100px] xl:mb-[100px] rounded-lg">
             <div className="bg-blue-500 p-[30px] w-full sm:w-[80%] sm:h-full flex flex-col items-center h-full rounded-t-lg">
-              <img className="w-[80%]" src={register} />      
+              <img className="w-[80%]" src={Banner} />      
             </div> 
             <div className="bg-[#313ee3] w-full flex flex-col items-center p-[15px] rounded-b-lg sm:rounded-none sm:rounded-r-lg sm:rounded-rb-none">
               

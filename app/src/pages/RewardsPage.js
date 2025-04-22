@@ -5,6 +5,7 @@ import rewards from '../components/Recompensas/rewardsData';
 import RewardCard from '../components/Recompensas/Cardrewards'; 
 import { useNavigate } from "react-router-dom";
 import MenuHamburguesaNormal from "@components/ComponentesMenuHamburguesa/MenuHamburguesaNormalComponent";
+import Banner from '@imgs/Header_Recompensas.jpg'; 
 
 const Rewards = () => {
   const navigate = useNavigate();
@@ -21,7 +22,7 @@ const Rewards = () => {
       {/* Banner */}
       <div className="w-full h-96 bg-cover bg-center relative mt-0"> {/* Increased height to h-96 */}
         <img
-          src="https://via.placeholder.com/1920x1080" // Replace with an appropriate image URL
+          src={Banner} // Replace with an appropriate image URL
           alt="Rewards Banner"
           className="w-full h-full object-cover"
         />
