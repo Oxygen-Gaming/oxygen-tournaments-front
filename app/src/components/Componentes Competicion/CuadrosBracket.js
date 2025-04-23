@@ -85,7 +85,7 @@ const CuadrosBracket = ({ positions }) => {
   const thirdPlaceWinner = "Bears";
 
   return (
-    <div className="overflow-hidden no-scrollbar"> 
+    <div className="overflow-hidden no-scrollbar bg-[#1c1c1c] min-h-screen"> 
       <style>{`
         .no-scrollbar::-webkit-scrollbar {
           display: none;
@@ -114,7 +114,7 @@ const CuadrosBracket = ({ positions }) => {
         onMouseUp={handleMouseUp}
         onMouseLeave={handleMouseUp}
       >
-        <div className="absolute inset-0 bg-gray-900 w-full h-full -z-10"></div>
+        <div className="absolute inset-0 bg-[#1c1c1c] w-full h-full -z-10"></div>
         <div className="w-1/4 pr-2"> {/* Dieciseisavos */}
           {Array.from({ length: 16 }).map((_, i) => (
             <div key={`dieciseisavos-${i}`} className="mb-8 relative ml-8" style={{ top: positions.dieciseisavos[i].top }}>

@@ -12,12 +12,15 @@ import VentajaPequeño from "@components/ComponentesVentajas/VentajasPequeñoCom
 import PortadaDeHome from "@imgs/Portada_de_Home.jpg";
 import rewards from '../components/Recompensas/rewardsData';
 import RewardCard from '../components/Recompensas/CardRewardHome';
-import posternormal1 from "@imgs/poster1.webp"
-import posternormal2 from "@imgs/poster2.webp"
-import poster1 from "@imgs/poster1.webp"
-import poster3 from "@imgs/Ventaja Obsequio.webp"
-import poster2 from "@imgs/Ventaja Descuentos.webp"
-import poster10 from "@imgs/Recompensas_Premium1.jpg"
+import posternormal1 from "@imgs/Watch parties.webp"; // Fixed case sensitivity
+import posternormal2 from "@imgs/recompensas por misiones.webp"; // Fixed case sensitivity
+import poster1 from "@imgs/Watch parties.webp"; // Fixed case sensitivity
+import poster3 from "@imgs/Obsequio cumpleaños.webp";
+import poster2 from "@imgs/Descuentos merchandising.webp";
+import poster10 from "@imgs/Entradas a eventos.jpg";
+import Competiciones from "@imgs/Header_Competiciones.jpg";
+import Contenido from "@imgs/Header_Contenido.jpg";
+import Misiones from "@imgs/Header_Misiones.jpg";
 
 const OxygenGaming = () => {
   
@@ -44,12 +47,14 @@ const OxygenGaming = () => {
             VIVE LA MEJOR EXPERIENCIA GAMER CON <span className="text-white">OXYCLUB</span>.
           </h1>
           <p className="mb-8 text-white">
-            ¡Bienvenido a OxyClub! La plataforma que te da más: más acceso a
+            ¡Bienvenido a OxyClub! La plataforma definitiva para gamers apasionados. 
+            Descubre competiciones emocionantes, contenido exclusivo y recompensas únicas. 
+            Únete a nuestra comunidad y lleva tu experiencia gamer al siguiente nivel.
           </p>
-          <div className="flex gap-4 mt-[-20px]">
+          <div className="flex gap-4 mt-4"> {/* Adjusted margin */}
             <a
               href="/register"
-              className="inline-block px-4 py-3 rounded font-bold transition transform hover:-translate-y-1 hover:shadow-md bg-[#005f99] text-white"
+              className="inline-block px-6 py-3 rounded-lg font-bold text-lg transition transform hover:-translate-y-1 hover:shadow-lg bg-gradient-to-r from-[#005f99] to-[#1AA9FF] text-white hover:from-[#00487a] hover:to-[#007acc] animate-pulse"
             >
               Únete a Oxyclub
             </a>
@@ -60,36 +65,39 @@ const OxygenGaming = () => {
       <div className="w-screen">
         
         <div className="w-full flex flex-col items-center">
-          <h1 className="text-[40px] font-bold text-center mt-[20px] mb-[50px]">Nuestras Ventajas Free</h1>
-          <p className="w-[60%] text-[20px] text-center mb-[20px]">Queremos agradecer tu apoyo incondicional ofreciéndote una selección de ventajas exclusivas y oportunidades únicas para conectar con el equipo. ¡Únete a nuestra comunidad y comienza a disfrutar!</p>
+          <h1 className="text-[40px] font-bold text-center mt-[20px] mb-[30px]">Nuestras Ventajas</h1>
+          <div className="w-[60%] text-[20px] text-center mb-[30px]">
+            <p>
+              <span className="font-bold text-white">Ventajas Free:</span> Queremos agradecer tu apoyo incondicional ofreciéndote una selección de ventajas exclusivas y oportunidades únicas para conectar con el equipo. 
+              ¡Únete a nuestra comunidad y comienza a disfrutar!
+            </p>
+            <hr className="my-6 border-t-2 border-gray-300" /> {/* Line separator */}
+            <p>
+              <span className="font-bold bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 text-transparent bg-clip-text animate-pulse">
+                Ventajas VIP:
+              </span> Eleva tu pasión al siguiente nivel y desbloquea una experiencia VIP con acceso anticipado, contenido exclusivo. 
+              Conviértete en un miembro de élite y disfruta de ventajas que no encontrarás en ningún otro lugar.
+            </p>
+          </div>
           <div className="hidden lg:flex flex-row items-center justify-center gap-[2rem]">
-            <VentajaPequeño link={posternormal1} text={"Ventajas Free"} background={"#1796E6"} color="white"/>
-            <VentajaGrande link={poster1} text={"Ventajas Free"} background={" #1796E6"} color="white"/>
-            <VentajaPequeño link={posternormal2} text={"Ventajas Free"} background={"#1796E6"} color="white"/>
+            <VentajaPequeño link={posternormal1} text={"Ventajas Free"} background={"#1796E6"} color="white" />
+            <VentajaGrande link={poster1} text={"Ventajas Free"} background={"#1796E6"} color="white" />
+            <VentajaPequeño link={posternormal2} text={"Ventajas Free"} background={"#1796E6"} color="white" />
           </div>
-
           <div className="lg:hidden flex flex-col items-center justify-center gap-[2rem]">
-            <VentajaMovil link={posternormal1} text={"Ventajas Free"} background={"#1796E6"} color="white"/>
-            <VentajaMovil link={posternormal2} text={"Ventajas Free"} background={"#1796E6"} color="white"/>
-            <VentajaMovil link={poster1} text={"Ventajas Free"} background={"#1796E6"} color="white"/>
-
+            <VentajaMovil link={posternormal1} text={"Ventajas Free"} background={"#1796E6"} color="white" />
+            <VentajaMovil link={posternormal2} text={"Ventajas Free"} background={"#1796E6"} color="white" />
+            <VentajaMovil link={poster1} text={"Ventajas Free"} background={"#1796E6"} color="white" />
           </div>
-        </div>
-
-        <div className="w-full flex flex-col items-center">
-          <h1 className="text-[40px] font-bold text-center mt-[60px] mb-[50px]">Nuestras Ventajas Premium</h1>
-          <p className="w-[60%] text-[20px] text-center mb-[20px]">Eleva tu pasión al siguiente nivel y desbloquea una experiencia VIP con acceso anticipado, contenido exclusivo. Conviértete en un miembro de élite y disfruta de ventajas que no encontrarás en ningún otro lugar.</p>
-          <div className="hidden lg:flex flex-row items-center justify-center gap-[2rem]">
-            <VentajaPequeño link={poster2} shadow={"0_0_10px_10px_rgba(255,215,0,0.8)"} text={"Ventajas Premium"} background={"gold"} color="black"  />
-            <VentajaGrande link={poster10} text={"Ventajas Premium"} shadow={"0_0_10px_10px_rgba(255,215,0,0.8)"} background={"gold"} color="black"/>
-            <VentajaPequeño link={poster3} shadow={"0_0_10px_10px_rgba(255,215,0,0.8)"} text={"Ventajas Premium"} background={"gold"} color="black"  />
+          <div className="hidden lg:flex flex-row items-center justify-center gap-[2rem] mt-8">
+            <VentajaPequeño link={poster2} shadow={"0_0_10px_10px_rgba(255,215,0,0.8)"} text={"Ventajas Premium"} background={"gold"} color="black" />
+            <VentajaGrande link={poster10} text={"Ventajas Premium"} shadow={"0_0_10px_10px_rgba(255,215,0,0.8)"} background={"gold"} color="black" />
+            <VentajaPequeño link={poster3} shadow={"0_0_10px_10px_rgba(255,215,0,0.8)"} text={"Ventajas Premium"} background={"gold"} color="black" />
           </div>
-
-          <div className="lg:hidden flex flex-col items-center justify-center gap-[2rem]">
+          <div className="lg:hidden flex flex-col items-center justify-center gap-[2rem] mt-8">
             <VentajaMovil link={poster1} shadow={"0_0_10px_10px_rgba(255,215,0,0.8)"} background={"gold"} color="black" text={"Ventajas Premium"} />
             <VentajaMovil link={poster2} shadow={"0_0_10px_10px_rgba(255,215,0,0.8)"} background={"gold"} color="black" text={"Ventajas Premium"} />
             <VentajaMovil link={poster3} shadow={"0_0_10px_10px_rgba(255,215,0,0.8)"} background={"gold"} color="black" text={"Ventajas Premium"} />
-
           </div>
         </div>
 
@@ -104,29 +112,41 @@ const OxygenGaming = () => {
                   title: "Competiciones",
                   text: "Participa en desafíos, pronósticos y torneos oficiales para demostrar tus conocimientos y escalar posiciones en los rankings.",
                   link: "/competition",
+                  background: Competiciones, // Use the imported image
                 },
                 {
                   icon: "fas fa-photo-video",
                   title: "Contenido",
                   text: "Accede a contenido exclusivo de tus equipos y deportes favoritos: entrevistas, entrenamientos, backstage y mucho más.",
                   link: "/content",
+                  background: Contenido, // Use the imported image
                 },
                 {
                   icon: "fas fa-tasks",
                   title: "Misiones",
                   text: "Completa tareas, responde encuestas, juega y gana puntos que podrás canjear por premios y recompensas únicas.",
                   link: "/missions",
+                  background: Misiones, // Use the imported image
                 },
               ].map((item, index) => (
                 <div
                   key={index}
-                  className="flex flex-col items-center text-center p-8 sm:p-10 bg-[#f5f4f4] rounded-2xl backdrop-blur-md hover:shadow-2xl hover:scale-105 transition duration-300"
+                  className="relative flex flex-col items-center text-center p-8 sm:p-10 bg-[#f5f4f4] rounded-2xl backdrop-blur-md hover:shadow-2xl hover:scale-105 transition duration-300"
+                  style={{
+                    backgroundImage: item.background ? `url(${item.background})` : "none", // Apply background if available
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                  }}
                 >
-                  <i className={`${item.icon} text-[#1AA9FF] text-5xl sm:text-6xl mb-6 sm:mb-8`}></i>
-                  <a href={item.link} className="text-xl sm:text-2xl lg:text-3xl font-semibold mb-4 sm:mb-6 hover:text-[black] transition-colors">
+                  <div className="absolute inset-0 bg-black bg-opacity-50 rounded-2xl"></div> {/* Dark overlay */}
+                  <i className={`${item.icon} text-[#1AA9FF] text-5xl sm:text-6xl mb-6 sm:mb-8 relative z-10`}></i>
+                  <a
+                    href={item.link}
+                    className="text-xl sm:text-2xl lg:text-3xl font-semibold mb-4 sm:mb-6 hover:text-[#1AA9FF] transition-colors relative z-10" // Changed hover color
+                  >
                     {item.title}
                   </a>
-                  <p className="text-base sm:text-lg lg:text-xl leading-relaxed text-[#78c0ff]">{item.text}</p>
+                  <p className="text-base sm:text-lg lg:text-xl leading-relaxed text-[#78c0ff] relative z-10">{item.text}</p>
                 </div>
               ))}
             </div>

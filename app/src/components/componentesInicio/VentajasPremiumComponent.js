@@ -3,12 +3,12 @@ import VentajaGrande from "@components/ComponentesVentajas/VentajasGrandeCompone
 import VentajaPequeño from "@components/ComponentesVentajas/VentajasPequeñoComponent";
 import VentajaMovil from "@components/ComponentesVentajas/VentajasMovil";
 
-import poster1 from "@imgs/Ventaja Banner.webp"
-import poster2 from "@imgs/Ventaja Descuentos.webp"
-import poster3 from "@imgs/Ventaja Obsequio.webp"
-import poster4 from "@imgs/Ventaja Puntos Dobles.webp"
-import poster5 from "@imgs/Ventaja Seccion C.webp"
-import poster6 from "@imgs/Ventaja Activo D.webp"
+import poster1 from "@imgs/Banner exclusivo.webp"
+import poster2 from "@imgs/Descuentos merchandising.webp"
+import poster3 from "@imgs/Obsequio cumpleaños.webp"
+import poster4 from "@imgs/Puntos Dobles.webp"
+import poster5 from "@imgs/Seccion coaching.webp"
+import poster6 from "@imgs/Activo digital.webp"
 
 import poster7 from "@imgs/Ventaja Entradas.webp"
 import poster8 from "@imgs/Ventaja Informacion.webp"
@@ -16,9 +16,9 @@ import poster9 from "@imgs/Ventaja Partidas.webp"
 
 
 
-import poster10 from "@imgs/Recompensas_Premium1.jpg"
-import poster11 from "@imgs/Recompensas_Premium2.jpg"
-import poster12 from "@imgs/Recompensas_Premium3.jpg"
+import poster10 from "@imgs/Entradas a eventos.jpg"
+import poster11 from "@imgs/Partidas con creadores.jpg"
+import poster12 from "@imgs/Información privilegiada.jpg"
 import poster13 from "@imgs/Recompensas_Premium4.jpg"
 const VentajasPremium = () => {
     return (

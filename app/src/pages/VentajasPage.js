@@ -28,9 +28,9 @@ const Ventajas = () => {
       </div>
 
       <div className="flex flex-col justify-start items-center gap-[10vh]">
-        <VentajasNormales />
-        <CardVentajas />
-        <VentajasPremium />
+        <VentajasNormales showTitleOnFlip={true} /> {/* Cards will display their titles on the back */}
+        <CardVentajas showTitleOnFlip={true} /> {/* Cards will display their titles on the back */}
+        <VentajasPremium showTitleOnFlip={true} /> {/* Cards will display their titles on the back */}
         <TablaVentajas />
       </div>
 

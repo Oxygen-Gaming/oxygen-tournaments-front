@@ -10,15 +10,15 @@ const VentajaPequeño = ({ link, text, background, color, shadow }) => {
         
         <div className={`absolute inset-0 w-full h-full rounded-xl [transform:rotateY(180deg)] [backface-visibility:hidden]`} style={{ backgroundColor: background }}>
           <div className="flex justify-center items-center flex-col p-[3rem]">
-            <h2 className={`text-[18px] text-[${color}] text-center font-bold lg:text-[3rem]`}>{text}</h2>
+            <h2 className={`text-[18px] text-[${color}] text-center font-bold lg:text-[3rem]`}>
+            {link.split('/').pop().split('.')[0]} {/* Extract and display the image name */}
+            </h2>
           </div>
         </div>
       </div>
     </div>
   );
 }
-
-
 
 export default VentajaPequeño;
 
