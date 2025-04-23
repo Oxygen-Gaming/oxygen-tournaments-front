@@ -64,11 +64,64 @@ const OxygenGaming = () => {
 
       <div className="w-screen">
         
-        <div className="w-full flex flex-col items-center">
+        {/* Así funciona */}
+        <div className="text-white py-[8vh] px-6 sm:px-12 bg-[#1AA9FF]"> {/* Reduced top padding */}
+          <div className="max-w-[1400px] mx-auto">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-center mb-16 sm:mb-20 tracking-wide">Así funciona</h1>
+            <div className="grid gap-10 grid-cols-1 md:grid-cols-3">
+              {[
+                {
+                  icon: "fas fa-trophy",
+                  title: "Competiciones",
+                  text: "Demuestra tus habilidades participando en torneos y desafíos. ¡Escala posiciones y conviértete en el mejor!",
+                  link: "/competition",
+                  background: Competiciones, // Use the imported image
+                },
+                {
+                  icon: "fas fa-photo-video",
+                  title: "Contenido Exclusivo",
+                  text: "Disfruta de entrevistas, entrenamientos y momentos únicos de tu equipo favorito.",
+                  link: "/content",
+                  background: Contenido, // Use the imported image
+                },
+                {
+                  icon: "fas fa-tasks",
+                  title: "Desafíos ",
+                  text: "Completa tareas divertidas y gana puntos para canjear por increíbles premios",
+                  link: "/missions",
+                  background: Misiones, // Use the imported image
+                },
+              ].map((item, index) => (
+                <div
+                  key={index}
+                  className="relative flex flex-col items-center text-center p-8 sm:p-10 bg-[#f5f4f4] rounded-2xl backdrop-blur-md hover:shadow-2xl hover:scale-105 transition duration-300"
+                  style={{
+                    backgroundImage: item.background ? `url(${item.background})` : "none", // Apply background if available
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                  }}
+                >
+                  <div className="absolute inset-0 bg-black bg-opacity-50 rounded-2xl"></div> {/* Dark overlay */}
+                  <i className={`${item.icon} text-[#1AA9FF] text-5xl sm:text-6xl mb-6 sm:mb-8 relative z-10`}></i>
+                  <a
+                    href={item.link}
+                    className="text-xl sm:text-2xl lg:text-3xl font-semibold mb-4 sm:mb-6 hover:text-[#1AA9FF] transition-colors relative z-10"
+                  >
+                    {item.title}
+                  </a>
+                  <p className="text-base sm:text-lg lg:text-xl leading-relaxed text-white relative z-10">{item.text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Nuestras Ventajas */}
+        <div className="w-full flex flex-col items-center bg-white text-[#1AA9FF] pb-[10vh]"> {/* Increased bottom padding */}
           <h1 className="text-[40px] font-bold text-center mt-[20px] mb-[30px]">Nuestras Ventajas</h1>
           <div className="w-[60%] text-[20px] text-center mb-[30px]">
             <p>
-              <span className="font-bold text-white">Ventajas Free:</span> Queremos agradecer tu apoyo incondicional ofreciéndote una selección de ventajas exclusivas y oportunidades únicas para conectar con el equipo. 
+              <span className="font-bold">Ventajas Free:</span> Queremos agradecer tu apoyo incondicional ofreciéndote una selección de ventajas exclusivas y oportunidades únicas para conectar con el equipo. 
               ¡Únete a nuestra comunidad y comienza a disfrutar!
             </p>
             <hr className="my-6 border-t-2 border-gray-300" /> {/* Line separator */}
@@ -102,62 +155,8 @@ const OxygenGaming = () => {
         </div>
 
         
-        <div className="text-[#1AA9FF] py-[12vh] px-6 sm:px-12 mt-[15vh] bg-[white]">
-          <div className="max-w-[1400px] mx-auto">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-center mb-16 sm:mb-20 tracking-wide">Así funciona</h1>
-            <div className="grid gap-10 grid-cols-1 md:grid-cols-3">
-              {[
-                {
-                  icon: "fas fa-trophy",
-                  title: "Competiciones",
-                  text: "Participa en desafíos, pronósticos y torneos oficiales para demostrar tus conocimientos y escalar posiciones en los rankings.",
-                  link: "/competition",
-                  background: Competiciones, // Use the imported image
-                },
-                {
-                  icon: "fas fa-photo-video",
-                  title: "Contenido",
-                  text: "Accede a contenido exclusivo de tus equipos y deportes favoritos: entrevistas, entrenamientos, backstage y mucho más.",
-                  link: "/content",
-                  background: Contenido, // Use the imported image
-                },
-                {
-                  icon: "fas fa-tasks",
-                  title: "Misiones",
-                  text: "Completa tareas, responde encuestas, juega y gana puntos que podrás canjear por premios y recompensas únicas.",
-                  link: "/missions",
-                  background: Misiones, // Use the imported image
-                },
-              ].map((item, index) => (
-                <div
-                  key={index}
-                  className="relative flex flex-col items-center text-center p-8 sm:p-10 bg-[#f5f4f4] rounded-2xl backdrop-blur-md hover:shadow-2xl hover:scale-105 transition duration-300"
-                  style={{
-                    backgroundImage: item.background ? `url(${item.background})` : "none", // Apply background if available
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                  }}
-                >
-                  <div className="absolute inset-0 bg-black bg-opacity-50 rounded-2xl"></div> {/* Dark overlay */}
-                  <i className={`${item.icon} text-[#1AA9FF] text-5xl sm:text-6xl mb-6 sm:mb-8 relative z-10`}></i>
-                  <a
-                    href={item.link}
-                    className="text-xl sm:text-2xl lg:text-3xl font-semibold mb-4 sm:mb-6 hover:text-[#1AA9FF] transition-colors relative z-10" // Changed hover color
-                  >
-                    {item.title}
-                  </a>
-                  <p className="text-base sm:text-lg lg:text-xl leading-relaxed text-[#78c0ff] relative z-10">{item.text}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
-
-
-        {/* Reemplazamos el p con el slider */}
         <div className="mt-[100px] mb-20 flex flex-col justify-center items-center overflow-x-hidden lg:p-0 p-[20px] md:p-[40px] w-full" id="events">
-          <h1 className="text-[40px] font-bold text-center">Nuestras Recompensas</h1>
+          <h1 className="text-[40px] font-bold text-center">Gana Recompensas</h1>
 
           <div className="w-full flex justify-center items-center mt-[50px]">
             <Swiper
@@ -198,13 +197,13 @@ const OxygenGaming = () => {
               ))}
             </Swiper>
           </div>
-          {/* Botón para ir a recompensas */}
+          {/* Botón para ir a misiones*/}
           <div className="mt-[50px] flex justify-center items-center">
             <a
-                href="rewards"
+                href="missions"
                 className="inline-block px-8 py-4 text-lg rounded-lg font-bold transition transform hover:-translate-y-2 hover:shadow-lg bg-[#005f99] hover:bg-[#00487a] text-white"
             >
-                Ver Recompensas
+                Como ganarlas
             </a>
           </div>
         </div>
