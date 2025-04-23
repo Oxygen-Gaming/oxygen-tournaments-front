@@ -12,15 +12,15 @@ import VentajaPequeño from "@components/ComponentesVentajas/VentajasPequeñoCom
 import PortadaDeHome from "@imgs/Portada_de_Home.jpg";
 import rewards from '../components/Recompensas/rewardsData';
 import RewardCard from '../components/Recompensas/CardRewardHome';
-import posternormal1 from "@imgs/poster1.webp"
-import posternormal2 from "@imgs/poster2.webp"
-import poster1 from "@imgs/poster1.webp"
-import poster3 from "@imgs/Ventaja Obsequio.webp"
-import poster2 from "@imgs/Ventaja Descuentos.webp"
-import poster10 from "@imgs/Recompensas_Premium1.jpg"
-import Competiciones from "@imgs/Header_Competiciones.jpg"
-import Contenido from "@imgs/Header_Contenido.jpg"
-import Misiones from "@imgs/Header_Misiones.jpg"
+import posternormal1 from "@imgs/Watch parties.webp"; // Fixed case sensitivity
+import posternormal2 from "@imgs/recompensas por misiones.webp"; // Fixed case sensitivity
+import poster1 from "@imgs/Watch parties.webp"; // Fixed case sensitivity
+import poster3 from "@imgs/Obsequio cumpleaños.webp";
+import poster2 from "@imgs/Descuentos merchandising.webp";
+import poster10 from "@imgs/Entradas a eventos.jpg";
+import Competiciones from "@imgs/Header_Competiciones.jpg";
+import Contenido from "@imgs/Header_Contenido.jpg";
+import Misiones from "@imgs/Header_Misiones.jpg";
 
 const OxygenGaming = () => {
   
