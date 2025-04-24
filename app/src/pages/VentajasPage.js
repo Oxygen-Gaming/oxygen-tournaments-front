@@ -5,7 +5,6 @@ import Footer from "@components/Footer";
 import CardVentajas from "@components/componentesInicio/CardVentajasComponent";
 import TablaVentajas from "@components/ComponentesVentajas/VentajasTablaComponent";
 import VentajasNormales from "@components/componentesInicio/VentajasNormalesComponents";
-import VentajasPremium from "@components/componentesInicio/VentajasPremiumComponent";
 
 const Ventajas = () => {
   const bannerImage = "https://via.placeholder.com/1920x1080"; // Replace with the desired image URL
@@ -20,17 +19,47 @@ const Ventajas = () => {
         <img
           src={bannerImage} // Use the custom image
           alt="Ventajas Banner"
-          className="w-full h-full object-cover transition-opacity duration-500"
+          className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center"> {/* Updated opacity */}
+        <div className="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center">
           <h1 className="text-5xl font-extrabold text-white">Ventajas</h1>
         </div>
       </div>
 
       <div className="flex flex-col justify-start items-center gap-[10vh]">
-        <VentajasNormales showTitleOnFlip={true} /> {/* Cards will display their titles on the back */}
-        <CardVentajas showTitleOnFlip={true} /> {/* Cards will display their titles on the back */}
-        <VentajasPremium showTitleOnFlip={true} /> {/* Cards will display their titles on the back */}
+        {/* Section: OXYGEN */}
+        <VentajasNormales
+          section="oxygen"
+          title="OXYGEN, TU EQUIPO"
+          subtitle="Descubre las ventajas exclusivas que Oxygen tiene para ti."
+          isBlue={true}
+        />
+
+        {/* Section: CONTENIDO POR Y PARA TI */}
+        <VentajasNormales
+          section="contenido"
+          title="CONTENIDO POR Y PARA TI"
+          subtitle="Aprovecha contenido exclusivo diseñado especialmente para ti."
+          isBlue={false}
+        />
+
+        {/* Section: GANA PREMIOS */}
+        <VentajasNormales
+          section="premios"
+          title="GANA PREMIOS"
+          subtitle="Participa en actividades y eventos para ganar increíbles premios."
+          isBlue={true}
+        />
+
+        {/* Section: PRODUCTOS EXCLUSIVOS Y DESCUENTOS */}
+        <VentajasNormales
+          section="productos"
+          title="PRODUCTOS EXCLUSIVOS Y DESCUENTOS"
+          subtitle="Aprovecha ofertas exclusivas y descuentos en productos seleccionados."
+          isBlue={false}
+        />
+
+        <CardVentajas /> {/* No animations */}
         <TablaVentajas />
       </div>
 
