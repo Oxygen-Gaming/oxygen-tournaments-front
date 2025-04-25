@@ -6,6 +6,7 @@ import CardVentajas from "@components/componentesInicio/CardVentajasComponent";
 import TablaVentajas from "@components/ComponentesVentajas/VentajasTablaComponent";
 import VentajasNormales from "@components/componentesInicio/VentajasNormalesComponents";
 
+
 const Ventajas = () => {
   const bannerImage = "https://via.placeholder.com/1920x1080"; // Replace with the desired image URL
 
@@ -64,6 +65,19 @@ const Ventajas = () => {
       </div>
 
       <Footer />
+      <style>{`
+  .premium-glow {
+    border: 10px  gold;
+    box-shadow: 0 0 15px 5px rgba(255, 217, 0, 0.76);
+    transition: transform 0.3s, border 0.3s, box-shadow 0.3s;
+  }
+
+  .premium-glow:hover {
+    transform: scale(1.1);
+    border-width: 12px;
+    box-shadow: 0 0 20px 7px rgba(255, 217, 0, 0.9);
+  }
+`}</style>
     </div>
   );
 };

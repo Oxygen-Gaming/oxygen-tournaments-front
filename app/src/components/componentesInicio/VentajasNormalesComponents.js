@@ -152,16 +152,8 @@ export default VentajasNormales;
 
 // Add the following styles directly in this file using a <style> tag
 <style>{`
-  .premium-glow::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 120%;
-    height: 120%;
-    background: radial-gradient(circle, rgba(255, 223, 0, 0.5), transparent);
-    border-radius: 50%;
-    z-index: -1;
+  .premium-glow {
+    border: 5px solid gold;
+    box-shadow: 0 0 15px 5px rgba(255, 215, 0, 0.6);
   }
 `}</style>
