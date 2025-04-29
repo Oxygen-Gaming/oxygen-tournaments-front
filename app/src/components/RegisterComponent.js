@@ -11,17 +11,17 @@ const Register = () => {
         <Header />
         <MenuHamburguesaNormal />
         <div className="w-full flex flex-col items-center">
-          <div className="w-[90%] sm:h-full lg:w-[60%] flex flex-col sm:flex-row sm:items-center sm:bg-blue-500 sm:rounded-r-lg items-center mt-[30px] mb-[30px] xl:mt-[100px] xl:mb-[100px] rounded-lg">
-            <div className="bg-blue-500 p-[30px] w-full sm:w-[80%] sm:h-full flex flex-col items-center h-full rounded-t-lg">
-              <img className="w-[80%]" src={Banner} />      
+          <div className="w-[80%] lg:w-[60%] flex flex-col lg:flex-row items-stretch justify-center mt-[30px] mb-[30px] xl:mt-[50px] xl:mb-[50px]">
+            <div className="bg-blue-500 w-full lg:w-1/2 flex items-center justify-center rounded-t-lg lg:rounded-l-lg lg:rounded-tr-none">
+              <img className="w-full h-full object-cover rounded-t-lg lg:rounded-l-lg lg:rounded-tr-none" src={Banner} />      
             </div> 
-            <div className="bg-[#313ee3] w-full flex flex-col items-center p-[15px] rounded-b-lg sm:rounded-none sm:rounded-r-lg sm:rounded-rb-none">
+            <div className="bg-[#313ee3] w-full lg:w-1/2 flex flex-col items-center justify-center p-[20px] rounded-b-lg lg:rounded-r-lg lg:rounded-bl-none">
               
-              <h1 className="text-[40px] font-semibold">Crear cuenta</h1>
+              <h1 className="text-[30px] font-semibold text-center">Crear cuenta</h1>
               
-              <form className="w-full flex flex-col items-center gap-[20px]">
-                <div className="w-full h-full flex flex-col xl:flex-row">
-                  <div className="w-full flex flex-col items-center gap-[20px]">
+              <form className="w-[90%] max-w-[500px] flex flex-col items-center gap-[20px]">
+                <div className="w-full flex flex-col xl:flex-row gap-[20px]">
+                  <div className="w-full flex flex-col gap-[20px]">
                     
                     <div className="w-[90%] flex flex-col gap-[10px]">
                       <span className="italic">Nombre y apellidos</span>
@@ -38,7 +38,7 @@ const Register = () => {
                       <input placeholder="ejemplo@gmail.com" type="email" className="w-full h-[40px] p-[10px] text-[black] rounded" required />
                     </div>
                   </div>
-                  <div className="w-full flex flex-col items-center gap-[20px]">
+                  <div className="w-full flex flex-col gap-[20px]">
                     
                     <div className="w-[90%] flex flex-col gap-[10px]">
                       <span className="italic">Nombre de usuario</span>
