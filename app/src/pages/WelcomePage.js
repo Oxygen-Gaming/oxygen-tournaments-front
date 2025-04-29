@@ -72,22 +72,22 @@ const OxygenGaming = () => {
               {[
                 {
                   icon: "fas fa-trophy",
-                  title: "Competiciones",
-                  text: "Demuestra tus habilidades participando en torneos y desafíos. ¡Escala posiciones y conviértete en el mejor!",
+                  title: "Demuestra tus habilidades",
+                  text: "Participa en emocionantes torneos y desafíos llenos de acción. ¡Compite, progresa y conviértete en una verdadera leyenda del juego!",
                   link: "/competition",
                   background: Competiciones, // Use the imported image
                 },
                 {
                   icon: "fas fa-photo-video",
                   title: "Contenido Exclusivo",
-                  text: "Disfruta de entrevistas, entrenamientos y momentos únicos de tu equipo favorito.",
+                  text: "Sumérgete en el mundo de tu equipo favorito con contenido exclusivo: disfruta de entrevistas a tus ídolos, entrenamientos y momentos únicos que solo los verdaderos fanáticos pueden apreciar. ",
                   link: "/content",
                   background: Contenido, // Use the imported image
                 },
                 {
                   icon: "fas fa-tasks",
                   title: "Desafíos ",
-                  text: "Completa tareas divertidas y gana puntos para canjear por increíbles premios",
+                  text: "Disfruta completando tareas entretenidas mientras acumulas puntos con cada logro. Cuantos más desafíos superes, más puntos obtendrás para canjear por recompensas increíbles.",
                   link: "/missions",
                   background: Misiones, // Use the imported image
                 },
@@ -156,7 +156,7 @@ const OxygenGaming = () => {
 
         
         <div className="mt-[100px] mb-20 flex flex-col justify-center items-center overflow-x-hidden lg:p-0 p-[20px] md:p-[40px] w-full" id="events">
-          <h1 className="text-[40px] font-bold text-center">Gana Recompensas</h1>
+          <h1 className="text-[40px] font-bold text-center">Hazte con una de estas</h1>
 
           <div className="w-full flex justify-center items-center mt-[50px]">
             <Swiper
