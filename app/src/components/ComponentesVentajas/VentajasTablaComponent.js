@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import premiumCards from "@components/componentesInicio/PremiumCardsComponent";
 const ventajas_free = [
     'Watch Parties',
@@ -24,52 +24,106 @@ const ventajas_premium = [
     'Activo Digital'
 ]
 
-const TablaVentajas = () => {
-    const interleavedVentajas = [];
-    const maxLength = Math.max(ventajas_free.length, ventajas_premium.length);
+const sections = [
+    { 
+        title: "OXYGEN, TU EQUIPO", 
+        ventajas: [
+            'Watch Parties',
+            'Wallpapers',
+            'Banner Exclusivo',
+            'Follow Club',
+            'Acceso Discord VIP',
+            'Información Privilegiada'
+        ] 
+    },
+    { 
+        title: "CONTENIDO POR Y PARA TI", 
+        ventajas: [
+            'Contenido Exclusivo',
+            'Eventos Comunidad',
+            'Guías Competitivas',
+            'Sesión de Coaching'
+        ] 
+    },
+    { 
+        title: "GANA PREMIOS", 
+        ventajas: [
+            'Recompensas por Misiones',
+            'Entradas a Eventos',
+            'Obsequio Cumpleaños',
+            'Puntos Dobles',
+            'Activo Digital'
+        ] 
+    },
+    { 
+        title: "PRODUCTOS EXCLUSIVOS Y DESCUENTOS", 
+        ventajas: [
+            'Descuento Merchandising',
+            'Descuento 15% Merchandising',
+            'Drops Exclusivos',
+            'Wallpapers'
+        ] 
+    },
+];
 
-    for (let i = 0; i < maxLength; i++) {
-        if (i < ventajas_free.length) {
-            interleavedVentajas.push({ type: "free", text: ventajas_free[i] });
-        }
-        if (i < ventajas_premium.length) {
-            interleavedVentajas.push({ type: "premium", text: ventajas_premium[i] });
-        }
-    }
+const TablaVentajas = () => {
+    const [openSections, setOpenSections] = useState({});
+
+    const toggleSection = (index) => {
+        setOpenSections((prev) => ({
+            ...prev,
+            [index]: !prev[index],
+        }));
+    };
 
     return (
-        <div id="tabla_ventajas" className="mt-12 px-0 sm:px-4 lg:px-8 xl:px-16 mb-12"> {/* Reduced outer padding for more width */}
-            <h2 className="text-3xl font-bold text-center mb-10 text-white">Ventajas Exclusivas de la Suscripción</h2>
-            <div className="shadow-2xl overflow-x-auto rounded-lg border border-gray-700 w-full max-w-[2000px] mx-auto"> {/* Increased max width */}
-                <table className="w-full sm:w-auto min-w-full divide-y divide-gray-700">
-                    <thead className="bg-gray-800/50 backdrop-blur-sm">
-                    <tr>
-                        <th scope="col" className="px-8 py-3 text-center text-[15px] font-semibold text-gray-300 uppercase tracking-wider">Ventajilla</th>
-                        <th scope="col" className="px-8 py-3 text-center text-[15px] font-semibold text-gray-300 uppercase tracking-wider">Normal</th>
-                        <th scope="col" className="px-8 py-3 text-center text-[15px] font-semibold text-amber-300 uppercase tracking-wider bg-gradient-to-br from-amber-800 to-amber-600">Premium Exclusivo</th>
-                    </tr>
-                    </thead>
-                    <tbody className="bg-gray-900/80 divide-y divide-gray-700 backdrop-blur-sm">
-                    {interleavedVentajas.map((ventaja, index) => (
-                        <tr key={index} className="hover:bg-gray-800/70 transition duration-200 ease-in-out align-middle">
-                            <td className="p-6 text-center">
-                                <span className="text-white text-base font-semibold">{ventaja.text}</span> {/* Increased font size */}
-                            </td>
-                            <td className="p-6 text-center">
-                                <span className={`text-xl font-bold ${ventaja.type === "free" ? "text-green-500" : "text-red-500"}`}> {/* Increased font size */}
-                                    {ventaja.type === "free" ? "✔" : "X"}
-                                </span>
-                            </td>
-                            <td className="p-6 text-center">
-                                <span className="text-amber-500 text-xl font-bold">✔</span> {/* Increased font size */}
-                            </td>
-                        </tr>
-                    ))}
-                    </tbody>
-                </table>
+        <div id="tabla_ventajas" className="mt-12 px-4 lg:px-8 xl:px-16 mb-12">
+            <h2 className="text-4xl font-extrabold text-center mb-10 text-white">Ventajas Exclusivas de la Suscripción</h2>
+            <div className="space-y-6">
+                {sections.map((section, sectionIndex) => (
+                    <div key={sectionIndex} className="bg-gray-800/50 rounded-lg shadow-lg border border-gray-700">
+                        <div
+                            className="flex justify-between items-center px-6 py-4 cursor-pointer bg-gradient-to-r from-gray-700 to-gray-900 rounded-t-lg"
+                            onClick={() => toggleSection(sectionIndex)}
+                        >
+                            <h3 className="text-2xl font-semibold text-white">{section.title}</h3>
+                            <span className="text-white text-xl">
+                                {openSections[sectionIndex] ? "▲" : "▼"}
+                            </span>
+                        </div>
+                        {openSections[sectionIndex] && (
+                            <div className="overflow-hidden">
+                                <table className="w-full text-left divide-y divide-gray-700">
+                                    <thead className="bg-gray-900">
+                                        <tr>
+                                            <th className="px-6 py-3 text-sm font-bold text-gray-300 uppercase">Ventajilla</th>
+                                            <th className="px-6 py-3 text-sm font-bold text-gray-300 uppercase">Normal</th>
+                                            <th className="px-6 py-3 text-sm font-bold text-amber-300 uppercase">Premium Exclusivo</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody className="bg-gray-800 divide-y divide-gray-700">
+                                        {section.ventajas.map((ventaja, index) => (
+                                            <tr key={index} className="hover:bg-gray-700 transition duration-200">
+                                                <td className="px-6 py-4 text-white text-base align-middle">{ventaja}</td> {/* Added align-middle */}
+                                                <td className="px-6 py-4 text-center align-middle"> {/* Added align-middle */}
+                                                    <span className={`text-xl font-bold ${ventajas_free.includes(ventaja) ? "text-green-500" : "text-red-500"}`}>
+                                                        {ventajas_free.includes(ventaja) ? "✔" : "X"}
+                                                    </span>
+                                                </td>
+                                                <td className="px-6 py-4 text-center align-middle"> {/* Added align-middle */}
+                                                    <span className="text-xl font-bold text-amber-500">✔</span>
+                                                </td>
+                                            </tr>
+                                        ))}
+                                    </tbody>
+                                </table>
+                            </div>
+                        )}
+                    </div>
+                ))}
             </div>
         </div>
     );
-}
+};
 
 export default TablaVentajas;
