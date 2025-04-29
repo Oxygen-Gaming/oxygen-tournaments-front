@@ -19,7 +19,7 @@ import poster3 from "@imgs/Obsequio cumpleaños.webp";
 import poster2 from "@imgs/Descuentos merchandising.webp";
 import poster10 from "@imgs/Entradas a eventos.webp";
 import Competiciones from "@imgs/Header_Competiciones.jpg";
-import Contenido from "@imgs/Header_Contenido.jpg";
+import Contenido from "@imgs/Headers_Contenido.jpg";
 import Misiones from "@imgs/Header_Misiones.jpg";
 
 const OxygenGaming = () => {
