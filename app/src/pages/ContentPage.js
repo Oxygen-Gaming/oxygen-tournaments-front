@@ -3,7 +3,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import MenuHamburguesaNormal from "@components/ComponentesMenuHamburguesa/MenuHamburguesaNormalComponent";
 import RankingTable from '@components/Contenido/RankingTable';
-import Banner from '@imgs/Header_Contenido.jpg'; 
+import Banner from '@imgs/Headers_Contenido_Prueba.jpg'; 
 
 const Contenido = () => {
   const [selectedCategory, setSelectedCategory] = useState(null);
@@ -79,11 +79,11 @@ const Contenido = () => {
 
       {/* Banner */}
       {!selectedCategory && (
-        <div className="w-full h-96 bg-cover bg-center relative mt-0">
+        <div className="w-full h-64 bg-cover bg-center relative mt-0 mb-6"> {/* Changed height to h-64 */}
           <img
             src={Banner} // Use the imported Banner image
             alt="Contenido Banner"
-            className="w-full h-full object-cover transition-opacity duration-500"
+            className="w-full h-auto object-cover" // Ensures the image occupies full width and adjusts height automatically
           />
           <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
             <h1 className="text-6xl font-extrabold text-white">Contenido</h1>
