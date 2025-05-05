@@ -86,10 +86,11 @@ const CardsComponent = ({ handleCardClick, selectedGame, filter }) => {
                             </p>
                         </div>
                     </div>
-                    <h2 className="text-white text-3xl font-bold mb-2">{card[2]}</h2>
-                    <p className="text-lg mb-2 text-gray-300">
-                        Fecha de Inicio: {card[3]} • 18:00
-                    </p>
+                    <div className="flex items-center gap-2 mb-2">
+                        <span className="inline-flex items-center px-3 py-1 rounded-full bg-blue-500/20 text-blue-400 text-md font-semibold">
+                            🗓️ {card[3]} • 18:00
+                        </span>
+                    </div>
                     <p className="text-lg mb-2 text-gray-300">
                         Formato: {card[1] === "Valorant" || card[1] === "League of Legends"
                             ? "5vs5"
@@ -97,9 +98,11 @@ const CardsComponent = ({ handleCardClick, selectedGame, filter }) => {
                             ? "1vs1"
                             : "3vs3"}
                     </p>
-                    <p className="text-lg mb-2 text-gray-300">
-                        Premio Total: $500
-                    </p>
+                    <div className="flex items-center gap-2 mb-2">
+                        <span className="inline-flex items-center px-3 py-1 rounded-full bg-yellow-400/20 text-yellow-300 text-md font-semibold">
+                            🏆 Premio: $500
+                        </span>
+                    </div>
                     <div className="flex items-center mb-2">
                         <img src={Logo} alt="Trophy" className="w-8 h-8 mr-2" />
                         <span className={`text-lg font-bold ${
