@@ -81,25 +81,25 @@ const Info = ({ selectedCard }) => {
         </button>
         {showFormat && (
           <div className="mt-4 bg-gradient-to-r from-blue-900 to-blue-700 p-4 rounded-lg shadow-lg">
-            <h4 className="text-lg font-bold mb-2 text-gray-200">Rondas Preliminares</h4>
-            <ul className="list-disc list-inside ml-5 text-gray-200">
-              <li>Todos los participantes competirán en rondas preliminares.</li>
-              <li>Se jugará un sistema de puntos o eliminación simple según el juego.</li>
-              <li>Los mejores jugadores o equipos avanzarán a la siguiente fase.</li>
-            </ul>
-            <h4 className="text-lg font-bold mt-4 mb-2 text-gray-200">Eliminación Directa</h4>
-            <ul className="list-disc list-inside ml-5 text-gray-200">
-              <li>Los clasificados se enfrentarán en un formato de eliminación directa.</li>
-              <li>Cada partida será al mejor de [X] rondas/mapas según la mecánica del juego.</li>
-              <li>Solo los más fuertes avanzarán a la Gran Final.</li>
-            </ul>
-            <h4 className="text-lg font-bold mt-4 mb-2 text-gray-200">Gran Final</h4>
-            <ul className="list-disc list-inside ml-5 text-gray-200">
-              <li>Los dos mejores jugadores o equipos se enfrentarán en un enfrentamiento definitivo.</li>
-              <li>El formato será al mejor de [X] partidas para definir al campeón.</li>
-              <li>Se transmitirá en vivo con comentaristas y cobertura en nuestras redes sociales.</li>
-            </ul>
-          </div>
+          <h4 className="text-lg font-bold mb-2 text-gray-200">Rondas Preliminares</h4>
+          <ul className="list-disc list-inside ml-5 text-gray-200">
+            <li>Todos los participantes competirán en rondas preliminares.</li>
+            <li>Se jugará un sistema de puntos o eliminación simple según el juego.</li>
+            <li>Los mejores jugadores o equipos avanzarán a la siguiente fase.</li>
+          </ul>
+          <h4 className="text-lg font-bold mt-4 mb-2 text-gray-200">Eliminación Directa</h4>
+          <ul className="list-disc list-inside ml-5 text-gray-200">
+            <li>Los clasificados se enfrentarán en un formato de eliminación directa.</li>
+            <li>Cada partida será al mejor de [X] rondas/mapas según la mecánica del juego.</li>
+            <li>Solo los más fuertes avanzarán a la Gran Final.</li>
+          </ul>
+          <h4 className="text-lg font-bold mt-4 mb-2 text-gray-200">Gran Final</h4>
+          <ul className="list-disc list-inside ml-5 text-gray-200">
+            <li>Los dos mejores jugadores o equipos se enfrentarán en un enfrentamiento definitivo.</li>
+            <li>El formato será al mejor de [X] partidas para definir al campeón.</li>
+            <li>Se transmitirá en vivo con comentaristas y cobertura en nuestras redes sociales.</li>
+          </ul>
+        </div>
         )}
       </div>
 
