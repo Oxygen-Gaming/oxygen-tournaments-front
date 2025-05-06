@@ -40,17 +40,9 @@ const OxygenGaming = () => {
         <div className="absolute inset-0 bg-black bg-opacity-50 z-0 "></div>
         <div className="hidden lg:block absolute bottom-0 left-0 w-full h-32 bg-gradient-to-b from-transparent to-[#1AA9FF] z-10 "></div>
         <div className="max-w-[600px] z-20 relative my-5 ">
-          <h1 className="text-3xl mb-4 leading-[1.2]">
-            VENTAJAS EXCLUSIVAS PARA <span className="text-white">GAMERS</span>.
+          <h1 className="text-[50px] mb-4">
+            VIVE LA MEJOR EXPERIENCIA GAMER CON <span className="text-[#1AA9FF] text-[50px] font-bold">OXYCLUB</span>.
           </h1>
-          <h1 className="text-3xl mb-4 leading-[1.2]">
-            VIVE LA MEJOR EXPERIENCIA GAMER CON <span className="text-white">OXYCLUB</span>.
-          </h1>
-          <p className="mb-8 text-white">
-            ¡Bienvenido a OxyClub! La plataforma definitiva para gamers apasionados. 
-            Descubre competiciones emocionantes, contenido exclusivo y recompensas únicas. 
-            Únete a nuestra comunidad y lleva tu experiencia gamer al siguiente nivel.
-          </p>
           <div className="flex gap-4 mt-4"> {/* Adjusted margin */}
             <a
               href="/register"
@@ -66,9 +58,9 @@ const OxygenGaming = () => {
         
         {/* Así funciona */}
         <div className="text-white py-[8vh] px-6 sm:px-12 bg-[#1AA9FF]"> {/* Reduced top padding */}
-          <div className="max-w-[1400px] mx-auto">
+          <div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-center mb-16 sm:mb-20 tracking-wide">Así funciona</h1>
-            <div className="grid gap-10 grid-cols-1 md:grid-cols-3">
+            <div className="grid place-items-center gap-[6rem] grid-cols-1 md:grid-cols-3 w-full">
               {[
                 {
                   icon: "fas fa-trophy",
@@ -94,22 +86,21 @@ const OxygenGaming = () => {
               ].map((item, index) => (
                 <div
                   key={index}
-                  className="relative flex flex-col items-center text-center p-8 sm:p-10 bg-[#f5f4f4] rounded-2xl backdrop-blur-md hover:shadow-2xl hover:scale-105 transition duration-300"
+                  className="relative flex flex-col items-center justify-center h-[30rem] w-[30rem] text-center sm:p-10 bg-[#f5f4f4] rounded-2xl backdrop-blur-md hover:shadow-2xl hover:scale-105 transition duration-300"
                   style={{
                     backgroundImage: item.background ? `url(${item.background})` : "none", // Apply background if available
                     backgroundSize: "cover",
-                    backgroundPosition: "center",
+                    backgroundPosition: "center"
                   }}
-                >
-                  <div className="absolute inset-0 bg-black bg-opacity-50 rounded-2xl"></div> {/* Dark overlay */}
-                  <i className={`${item.icon} text-[#1AA9FF] text-5xl sm:text-6xl mb-6 sm:mb-8 relative z-10`}></i>
-                  <a
-                    href={item.link}
-                    className="text-xl sm:text-2xl lg:text-3xl font-semibold mb-4 sm:mb-6 hover:text-[#1AA9FF] transition-colors relative z-10"
+                >                
+                <div className="absolute inset-0 bg-black bg-opacity-50 rounded-2xl"></div> {/* Dark overlay */}
+                  <a href={item.link} className="w-full h-full absolute"></a>
+                  <i className={`${item.icon} text-[white] text-5xl sm:text-6xl mb-6 sm:mb-8 relative z-10`}></i>
+                  <p
+                    className="text-xl sm:text-2xl lg:text-[35px] font-semibold mb-4 sm:mb-6 relative z-10"
                   >
                     {item.title}
-                  </a>
-                  <p className="text-base sm:text-lg lg:text-xl leading-relaxed text-white relative z-10">{item.text}</p>
+                  </p>
                 </div>
               ))}
             </div>
@@ -118,21 +109,11 @@ const OxygenGaming = () => {
 
         {/* Nuestras Ventajas */}
         <div className="w-full flex flex-col items-center bg-white text-[#1AA9FF] pb-[10vh]"> {/* Increased bottom padding */}
-          <h1 className="text-[40px] font-bold text-center mt-[20px] mb-[30px]">Nuestras Ventajas</h1>
-          <div className="w-[60%] text-[20px] text-center mb-[30px]">
-            <p>
-              <span className="font-bold">Ventajas Free:</span> Queremos agradecer tu apoyo incondicional ofreciéndote una selección de ventajas exclusivas y oportunidades únicas para conectar con el equipo. 
-              ¡Únete a nuestra comunidad y comienza a disfrutar!
-            </p>
-            <hr className="my-6 border-t-2 border-gray-300" /> {/* Line separator */}
-            <p>
-              <span className="font-bold bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 text-transparent bg-clip-text animate-pulse">
-                Ventajas VIP:
-              </span> Eleva tu pasión al siguiente nivel y desbloquea una experiencia VIP con acceso anticipado, contenido exclusivo. 
-              Conviértete en un miembro de élite y disfruta de ventajas que no encontrarás en ningún otro lugar.
-            </p>
-          </div>
-          <div className="hidden lg:flex flex-row items-center justify-center gap-[2rem]">
+          <h1 className="text-[60px] font-bold text-center mt-[20px] mb-[30px] text-[black]">Nuestras Ventajas</h1>
+          
+          <p className="text-[black] text-[30px] font-bold">Los descuentos son solo el principio...</p>
+
+          <div className="hidden lg:flex flex-row items-center justify-center gap-[2rem] mt-[20px]">
             <VentajaPequeño link={posternormal1} text={"Ventajas Free"} background={"#1796E6"} color="white" />
             <VentajaGrande link={poster1} text={"Ventajas Free"} background={"#1796E6"} color="white" />
             <VentajaPequeño link={posternormal2} text={"Ventajas Free"} background={"#1796E6"} color="white" />
@@ -152,12 +133,14 @@ const OxygenGaming = () => {
             <VentajaMovil link={poster2} background={"gold"} color="black" text={"Ventajas Premium"} isPremium={true} />
             <VentajaMovil link={poster3} background={"gold"} color="black" text={"Ventajas Premium"} isPremium={true} />
           </div>
-        </div>
 
+          <button href="/ventajas" className="text-[30px] text-[white] bg-[#1AA9FF] w-[10rem] text-center rounded-[8px] mt-[50px] pointer"><a href="/ventajas">Ver mas</a></button>
+        </div>
+            
         
         <div className="mt-[100px] mb-20 flex flex-col justify-center items-center overflow-x-hidden lg:p-0 p-[20px] md:p-[40px] w-full" id="events">
-          <h1 className="text-[40px] font-bold text-center">Hazte con una de estas</h1>
-
+          <h1 className="text-[60px] font-bold text-center">En Oxyclub todos ganan</h1>
+          <p className="text-[30px]">Cada ventaja ha sido diseñada pensando en ti, para ofrecerte una experiencia sin igual</p>
           <div className="w-full flex justify-center items-center mt-[50px]">
             <Swiper
               modules={[Autoplay]}
@@ -201,7 +184,7 @@ const OxygenGaming = () => {
           <div className="mt-[50px] flex justify-center items-center">
             <a
                 href="missions"
-                className="inline-block px-8 py-4 text-lg rounded-lg font-bold transition transform hover:-translate-y-2 hover:shadow-lg bg-[#005f99] hover:bg-[#00487a] text-white"
+                className="inline-block px-8 py-4 text-lg rounded-lg font-bold transition transform hover:-translate-y-2 hover:shadow-lg bg-[white] hover:bg-[#00487a] text-[#1AA9FF]"
             >
                 Como ganarlas
             </a>
@@ -214,6 +197,3 @@ const OxygenGaming = () => {
 };
 
 export default OxygenGaming;
-
-
-

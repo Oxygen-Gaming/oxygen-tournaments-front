@@ -4,10 +4,10 @@ const RankingTable = () => {
   return (
     <div className="ranking-section w-full md:w-2/3 mx-auto mt-20 text-center">
       {/* Title */}
-      <h2 className="text-3xl font-bold text-white mb-6">Tabla de Clasificación</h2>
+      <h2 className="text-3xl font-bold text-black mb-6">Tabla de Clasificación</h2>
       
       {/* Motivational Message */}
-      <p className="text-white text-lg mt-6">
+      <p className="text-black text-lg mt-6">
         ¡Mira los videos destacados y acumula puntos para subir en la tabla de clasificación! 
         Participa activamente y demuestra que eres el mejor en Oxygen Gaming.
       </p>

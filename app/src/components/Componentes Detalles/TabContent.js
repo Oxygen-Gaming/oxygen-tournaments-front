@@ -99,64 +99,67 @@ const TabContent = ({ activeTab, selectedCard, setShowMatchModal, setSelectedMat
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             {/* Formato */}
             <div className="relative bg-[#1c1c1c] text-white p-6 rounded-lg shadow-lg border border-gray-700">
-              <h3 className="text-2xl font-extrabold mb-4 text-center">Formato</h3>
-              <p className="text-lg mb-2 text-gray-300 text-center">
-                Este torneo sigue un formato de eliminación directa, diseñado para garantizar que solo los mejores equipos avancen a las etapas finales.
+              <h3 className="text-2xl font-extrabold mb-4 text-center border-b-2 border-gray-300 pb-2">Formato</h3>
+              <p className="text-lg mb-2 text-gray-300 text-center border-b border-gray-600 pb-2">
+                Este torneo sigue un formato de eliminación directa, diseñado para garantizar que solo los <span className="text-[#1AA9FF]">mejores equipos</span>  avancen a las etapas finales.
               </p>
-              <p className="text-lg mb-2 text-gray-300 text-center">
-                Cada partida se juega al mejor de 3 mapas, lo que permite a los equipos demostrar su habilidad y adaptabilidad en diferentes escenarios.
+              <p className="text-lg mb-2 text-gray-300 text-center border-b border-gray-600 pb-2">
+                Cada partida se juega al mejor de <span className="text-[#1AA9FF]">3 mapas</span>, lo que permite a los equipos demostrar su habilidad y adaptabilidad en diferentes escenarios.
               </p>
               <p className="text-lg text-gray-300 text-center">
-                Este formato asegura una competencia emocionante y justa para todos los participantes.
+                Este formato asegura una competencia <span className="text-[#1AA9FF]">emocionante</span> y <span className="text-[#1AA9FF]">justa</span> para todos los participantes.
               </p>
             </div>
+
             {/* Equipos */}
             <div className="relative bg-[#1c1c1c] text-white p-6 rounded-lg shadow-lg border border-gray-700">
-              <h3 className="text-2xl font-extrabold mb-4 text-center">Equipos</h3>
-              <p className="text-lg mb-2 text-gray-300 text-center">
-                Actualmente, hay <b>{registeredPlayers}</b> jugadores registrados para este torneo.
+              <h3 className="text-2xl font-extrabold mb-4 text-center border-b-2 border-gray-300 pb-2">Equipos</h3>
+              <p className="text-lg mb-2 text-gray-300 text-center border-b border-gray-600 pb-2">
+                Actualmente, hay <span className="text-[#1AA9FF]">{registeredPlayers} jugadores</span> registrados para este torneo.
               </p>
-              <p className="text-lg mb-2 text-gray-300 text-center">
-                De estos, <b>{confirmedPlayers}</b> jugadores han confirmado su participación.
+              <p className="text-lg mb-2 text-gray-300 text-center border-b border-gray-600 pb-2">
+                De estos, <span className="text-[#1AA9FF]">{confirmedPlayers} jugadores</span> han confirmado su participación.
               </p>
               <p className="text-lg text-gray-300 text-center">
-                El torneo tiene un límite de 32 equipos, así que asegúrate de registrarte pronto para asegurar tu lugar.
+                El torneo tiene un límite de <span className="text-[#1AA9FF]">32 equipos</span>, así que asegúrate de registrarte pronto para asegurar tu lugar.
               </p>
             </div>
+
             {/* Ajustes de partida */}
-            <div className="relative bg-[#1c1c1c] text-white p-6 rounded-lg shadow-lg border border-gray-700">
-              <h3 className="text-2xl font-extrabold mb-4 text-center">Ajustes de partida</h3>
-              <p className="text-lg mb-2 text-gray-300 text-center">
-                El mapa seleccionado para este torneo es <b>Howling Abyss</b>, conocido por su diseño único y desafíos estratégicos.
-              </p>
-              <p className="text-lg mb-2 text-gray-300 text-center">
-                El modo de juego será <b>Destroy Nexus</b>, donde los equipos competirán para destruir la base enemiga.
-              </p>
-              <p className="text-lg text-gray-300 text-center">
-                El modo de selección será <b>Blind Pick</b>, lo que significa que los equipos seleccionarán sus campeones sin conocer las elecciones del oponente.
-              </p>
-            </div>
+          <div className="relative bg-[#1c1c1c] text-white p-6 rounded-lg shadow-lg border border-gray-700">
+            <h3 className="text-2xl font-extrabold mb-4 text-center border-b-2 border-gray-300 pb-2">Ajustes de partida</h3>
+            <p className="text-lg mb-2 text-gray-300 text-center border-b border-gray-600 pb-2">
+              El mapa seleccionado para este torneo es <span className="text-[#1AA9FF]"><b>Howling Abyss</b></span> , conocido por su diseño único y desafíos estratégicos.
+            </p>
+            <p className="text-lg mb-2 text-gray-300 text-center border-b border-gray-600 pb-2">
+              El modo de juego será <span className="text-[#1AA9FF]"><b>Destroy Nexus</b></span> , donde los equipos competirán para destruir la base enemiga.
+            </p>
+            <p className="text-lg text-gray-300 text-center">
+              El modo de selección será <span className="text-[#1AA9FF]"><b>Blind Pick</b></span> , lo que significa que los equipos seleccionarán sus campeones sin conocer las elecciones del oponente.
+            </p>
+          </div>
+
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6">
             {/* Información del torneo/Reglas */}
             <div className="relative bg-[#1c1c1c] text-white p-6 rounded-lg shadow-lg border border-gray-700">
-              <h3 className="text-2xl font-extrabold mb-4 text-center">Reglas</h3>
-              <p className="text-lg mb-2 text-gray-300 text-center">
-                <b>Juego limpio:</b> No se permite el uso de hacks o trampas. Cualquier infracción resultará en descalificación inmediata.
+              <h3 className="text-2xl font-extrabold mb-4 text-center border-b-2 border-gray-300 pb-2">Reglas</h3>
+              <p className="text-lg mb-2 text-gray-300 text-center border-b border-gray-600 pb-2">
+              <span className="text-[#1AA9FF]"><b>Juego limpio:</b></span> No se permite el uso de hacks o trampas. Cualquier infracción resultará en descalificación inmediata.
               </p>
-              <p className="text-lg mb-2 text-gray-300 text-center">
-                <b>Respeto:</b> Se espera que todos los jugadores mantengan una conducta respetuosa. El comportamiento ofensivo no será tolerado.
+              <p className="text-lg mb-2 text-gray-300 text-center border-b border-gray-600 pb-2">
+              <span className="text-[#1AA9FF]"><b>Respeto:</b></span> Se espera que todos los jugadores mantengan una conducta respetuosa. El comportamiento ofensivo no será tolerado.
               </p>
-              <p className="text-lg mb-2 text-gray-300 text-center">
-                <b>Puntualidad:</b> Los jugadores deben estar presentes según el horario establecido para evitar retrasos.
+              <p className="text-lg mb-2 text-gray-300 text-center border-b border-gray-600 pb-2">
+              <span className="text-[#1AA9FF]"><b>Puntualidad:</b></span> Los jugadores deben estar presentes según el horario establecido para evitar retrasos.
               </p>
               <p className="text-lg text-gray-300 text-center">
-                <b>Decisiones finales:</b> Las decisiones de los organizadores son definitivas y no están sujetas a apelación.
+              <span className="text-[#1AA9FF]"><b>Decisiones finales:</b></span> Las decisiones de los organizadores son definitivas y no están sujetas a apelación.
               </p>
             </div>
             {/* Premios */}
             <div className="relative bg-[#1c1c1c] text-white p-6 rounded-lg shadow-lg border border-gray-700">
-              <h3 className="text-2xl font-extrabold mb-4 text-center">Premios</h3>
+              <h3 className="text-2xl font-extrabold mb-4 text-center border-b-2 border-gray-300 pb-2">Premios</h3>
               <table className="w-full text-left border-collapse">
                 <thead>
                   <tr className="border-b border-gray-700">
