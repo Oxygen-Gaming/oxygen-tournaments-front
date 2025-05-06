@@ -10,13 +10,6 @@ import Silla from '@imgs/Recompensas_Silla.jpg';
 
 const rewards = [
   { 
-    id: 1, 
-    title: "Follow por parte de Oxygen", 
-    image: Follow, 
-    points: 100, 
-    description: "¿Quieres unirte a la élite? Un follow exclusivo de Oxygen te conectará con una comunidad única. Por 100 puntos, estarás dentro del círculo del círculo de los mejores." 
-  },
-  { 
     id: 2, 
     title: "Clave aleatoria Steam", 
     image: Clave, 
