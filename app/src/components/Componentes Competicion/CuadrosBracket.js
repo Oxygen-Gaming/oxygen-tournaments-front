@@ -27,11 +27,9 @@ const CuadrosBracket = ({ positions }) => {
   // Estado que guarda el partido seleccionado para mostrar sus detalles
   const [selectedMatch, setSelectedMatch] = useState(null);
 
-  // Función para manejar cuando el mouse entra sobre un equipo, resaltando el equipo
-  const handleMouseEnter = (team) => setHighlightedTeam(team);
+
   
-  // Función para manejar cuando el mouse sale del equipo, eliminando el resaltado
-  const handleMouseLeave = () => setHighlightedTeam(null);
+
   
   // Función para manejar el clic sobre un equipo, estableciendo el equipo seleccionado en el modal
   const handleTeamClick = (team) => setModalTeam(team);
@@ -69,21 +67,13 @@ const CuadrosBracket = ({ positions }) => {
     setShowMatchDetails(true); // Mostrar los detalles del partido seleccionado
   };
 
-  // Función para determinar el estilo del equipo en función de su estado (por ejemplo, si es el ganador)
-  const getTeamStyle = (team) => {
-    if (team === finalWinner) return "bg-yellow-500 text-gold font-bold"; // Si es el ganador final, aplicar estilo especial
-    if (highlightedTeam === team) return "bg-green-500 text-white"; // Si es el equipo resaltado, aplicar estilo especial
-    return "hover:bg-green-700 hover:text-white transition-colors duration-200"; // Si no, aplicar estilo por defecto con hover
-  };
-
   // Función para determinar el estilo de la tarjeta del equipo (para mostrar su cuadro)
   const getCardStyle = (team) => {
     return `bg-gray-800 ${highlightedTeam === team ? "border-gray-600 shadow-lg" : "border-gray-700"}`; // Si es el equipo resaltado, aplicar borde y sombra especial
   };
 
   // Estilos específicos para el ganador (finalista)
-  const winnerStyle = "bg-gradient-to-r from-yellow-400 to-yellow-600 text-gold font-bold";
-  const scoreWinnerStyle = "text-white font-bold px-2 py-1"; // Estilo para mostrar el puntaje del ganador
+
 
   // Lista de nombres de equipos
   const teamNames = [
@@ -170,38 +160,36 @@ const CuadrosBracket = ({ positions }) => {
                 Partida {i + 1}
               </button>
               <div className={`${getCardStyle(teamNames[i * 2])} text-sm rounded overflow-hidden shadow-lg w-[12rem]`}>
-                <div className={`border-b border-gray-700 py-2 px-3 flex justify-between items-center hover:bg-green-700 transition-colors duration-150 ${getTeamStyle(teamNames[i * 2])}`}
-                  onMouseEnter={() => handleMouseEnter(teamNames[i * 2])}
-                  onMouseLeave={handleMouseLeave}
+                <div className={`border-b border-gray-700 py-2 px-3 flex justify-between items-center transition-colors duration-150 `}
+                  
                 >
                   <div className="flex items-center font-bold text-white">
                     <div className="w-6 h-6 rounded-full bg-gray-600 mr-2 overflow-hidden flex-shrink-0">
                       <img src={`/logos/${teamNames[i * 2].toLowerCase()}.png`} alt={`${teamNames[i * 2]} logo`} className="w-full h-full object-cover" />
                     </div>
-                    <p className="text-blue-500">{teamNames[i * 2]}</p> 
+                    <p className="text-yellow-500">{teamNames[i * 2]}</p> 
                   </div>
-                  <span className={scoreWinnerStyle}>{i % 2 === 0 ? 2 : 1}</span>
+                  <span >{i % 2 === 0 ? 2 : 1}</span>
                 </div>
-                <div className={`py-2 px-3 flex justify-between items-center hover:bg-green-700 transition-colors duration-150 ${getTeamStyle(teamNames[i * 2 + 1])}`}
-                  onMouseEnter={() => handleMouseEnter(teamNames[i * 2 + 1])}
-                  onMouseLeave={handleMouseLeave}
+                <div className={`py-2 px-3 flex justify-between items-center transition-colors duration-150 $`}
+                  
                 >
                   <div className="flex items-center font-bold text-white">
                     <div className="w-6 h-6 rounded-full bg-gray-600 mr-2 overflow-hidden flex-shrink-0">
                       <img src={`/logos/${teamNames[i * 2 + 1].toLowerCase()}.png`} alt={`${teamNames[i * 2 + 1]} logo`} className="w-full h-full object-cover" />
                     </div>
-                    <p className="text-[red]">{teamNames[i * 2 + 1]}</p>
+                    <p className="text-blue-500">{teamNames[i * 2 + 1]}</p>
                   </div>
-                  <span className={scoreWinnerStyle}>{i % 2 === 0 ? 1 : 2}</span>
+                  <span>{i % 2 === 0 ? 1 : 2}</span>
                 </div>
                 <div className="bg-[#1c1c1c] px-3 py-2 flex justify-center">
                   <button 
                     onClick={() => handleMatchClick(i + 1, teamNames[i * 2], teamNames[i * 2 + 1])}
                     className="bg-blue-600 hover:bg-blue-700 text-white text-xs px-3 py-1 rounded-full transition-colors duration-200"
                   >
-                    Ver Detalleazos
+                    Ver Detalles
                   </button>
-                </div>
+                </div> 
               </div>
             </div>
           ))}
@@ -216,30 +204,28 @@ const CuadrosBracket = ({ positions }) => {
                 Partida {i + 17}
               </button>
               <div className={`${getCardStyle(dieciseisavosWinners[i * 2])} text-sm rounded overflow-hidden shadow-lg w-[12rem]`}>
-                <div className={`border-b border-gray-700 py-2 px-3 flex justify-between items-center hover:bg-green-700 transition-colors duration-150 ${getTeamStyle(dieciseisavosWinners[i * 2])}`}
-                  onMouseEnter={() => handleMouseEnter(dieciseisavosWinners[i * 2])}
-                  onMouseLeave={handleMouseLeave}
+                <div className={`border-b border-gray-700 py-2 px-3 flex justify-between items-center transition-colors duration-150 `}
+                  
                 >
                   <div className="flex items-center font-bold text-white">
                     <div className="w-6 h-6 rounded-full bg-gray-600 mr-2 overflow-hidden flex-shrink-0">
                       <img src={`/logos/${dieciseisavosWinners[i * 2].toLowerCase()}.png`} alt={`${dieciseisavosWinners[i * 2]} logo`} className="w-full h-full object-cover" />
                     </div>
-                    <p className="text-blue-500">{dieciseisavosWinners[i * 2]}</p>
+                    <p className="text-yellow-500">{dieciseisavosWinners[i * 2]}</p>
                     
                   </div>
-                  <span className={scoreWinnerStyle}>{i % 2 === 0 ? 2 : 1}</span>
+                  <span>{i % 2 === 0 ? 2 : 1}</span>
                 </div>
-                <div className={`py-2 px-3 flex justify-between items-center hover:bg-green-700 transition-colors duration-150 ${getTeamStyle(dieciseisavosWinners[i * 2 + 1])}`}
-                  onMouseEnter={() => handleMouseEnter(dieciseisavosWinners[i * 2 + 1])}
-                  onMouseLeave={handleMouseLeave}
+                <div className={`py-2 px-3 flex justify-between items-center transition-colors duration-150 `}
+                 
                 >
                   <div className="flex items-center font-bold text-white">
                     <div className="w-6 h-6 rounded-full bg-gray-600 mr-2 overflow-hidden flex-shrink-0">
                       <img src={`/logos/${dieciseisavosWinners[i * 2 + 1].toLowerCase()}.png`} alt={`${dieciseisavosWinners[i * 2 + 1]} logo`} className="w-full h-full object-cover" />
                     </div>
-                    <p className="text-[red]">{dieciseisavosWinners[i * 2 + 1]}</p>
+                    <p className="text-blue-500">{dieciseisavosWinners[i * 2 + 1]}</p>
                   </div>
-                  <span className={scoreWinnerStyle}>{i % 2 === 0 ? 1 : 2}</span>
+                  <span>{i % 2 === 0 ? 1 : 2}</span>
                 </div>
                 <div className="bg-[#1c1c1c] px-3 py-2 flex justify-center">
                   <button 
@@ -269,31 +255,29 @@ const CuadrosBracket = ({ positions }) => {
                 Partida {i + 25}
               </button>
               <div className={`${getCardStyle(octavosWinners[i * 2])} text-sm rounded overflow-hidden shadow-lg w-[12rem]`}>
-                <div className={`border-b border-gray-700 py-2 px-3 flex justify-between items-center hover:bg-green-700 transition-colors duration-150 ${getTeamStyle(octavosWinners[i * 2])}`}
-                  onMouseEnter={() => handleMouseEnter(octavosWinners[i * 2])}
-                  onMouseLeave={handleMouseLeave}
+                <div className={`border-b border-gray-700 py-2 px-3 flex justify-between items-center transition-colors duration-150 `}
+                  
                 >
                   <div className="flex items-center font-bold text-white">
                     <div className="w-6 h-6 rounded-full bg-gray-600 mr-2 overflow-hidden flex-shrink-0">
                       <img src={`/logos/${octavosWinners[i * 2].toLowerCase()}.png`} alt={`${octavosWinners[i * 2]} logo`} className="w-full h-full object-cover" />
                     </div>
-                    <p className="text-blue-500">{octavosWinners[i * 2]}</p>
+                    <p className="text-yellow-500">{octavosWinners[i * 2]}</p>
                    
                   </div>
-                  <span className={scoreWinnerStyle}>{i % 2 === 0 ? 2 : 1}</span>
+                  <span>{i % 2 === 0 ? 2 : 1}</span>
                 </div>
-                <div className={`py-2 px-3 flex justify-between items-center hover:bg-green-700 transition-colors duration-150 ${getTeamStyle(octavosWinners[i * 2 + 1])}`}
-                  onMouseEnter={() => handleMouseEnter(octavosWinners[i * 2 + 1])}
-                  onMouseLeave={handleMouseLeave}
+                <div className={`py-2 px-3 flex justify-between items-center transition-colors duration-150 $`}
+                  
                 >
                   <div className="flex items-center font-bold text-white">
                     <div className="w-6 h-6 rounded-full bg-gray-600 mr-2 overflow-hidden flex-shrink-0">
                       <img src={`/logos/${octavosWinners[i * 2 + 1].toLowerCase()}.png`} alt={`${octavosWinners[i * 2 + 1]} logo`} className="w-full h-full object-cover" />
                     </div>
                     
-                    <p className="text-[red]">{octavosWinners[i * 2 + 1]}</p>
+                    <p className="text-blue-500">{octavosWinners[i * 2 + 1]}</p>
                   </div>
-                  <span className={scoreWinnerStyle}>{i % 2 === 0 ? 1 : 2}</span>
+                  <span>{i % 2 === 0 ? 1 : 2}</span>
                 </div>
                 <div className="bg-[#1c1c1c] px-3 py-2 flex justify-center">
                   <button 
@@ -323,30 +307,28 @@ const CuadrosBracket = ({ positions }) => {
                 Partida {i + 29}
               </button>
               <div className={`${getCardStyle(cuartosWinners[i * 2])} text-sm rounded overflow-hidden shadow-lg w-[12rem]`}>
-                <div className={`border-b border-gray-700 py-2 px-3 flex justify-between items-center hover:bg-green-700 transition-colors duration-150 ${getTeamStyle(cuartosWinners[i * 2])}`}
+                <div className={`border-b border-gray-700 py-2 px-3 flex justify-between items-center transition-colors duration-150 `}
 
-                  onMouseEnter={() => handleMouseEnter(cuartosWinners[i * 2])}
-                  onMouseLeave={handleMouseLeave}
+                 
                 >
                   <div className="flex items-center font-bold text-white">
                     <div className="w-6 h-6 rounded-full bg-gray-600 mr-2 overflow-hidden flex-shrink-0">
                       <img src={`/logos/${cuartosWinners[i * 2].toLowerCase()}.png`} alt={`${cuartosWinners[i * 2]} logo`} className="w-full h-full object-cover" />
                     </div>
-                    <p className="text-blue-500">{cuartosWinners[i * 2]}</p>
+                    <p className="text-yellow-500">{cuartosWinners[i * 2]}</p>
                   </div>
-                  <span className={scoreWinnerStyle + " text-gold"}>2</span>
+                  <span>2</span>
                 </div>
-                <div className={`py-2 px-3 flex justify-between items-center hover:bg-green-700 transition-colors duration-150 ${getTeamStyle(cuartosWinners[i * 2 + 1])}`}
-                  onMouseEnter={() => handleMouseEnter(cuartosWinners[i * 2 + 1])}
-                  onMouseLeave={handleMouseLeave}
+                <div className={`py-2 px-3 flex justify-between items-center transition-colors duration-150 $`}
+                  
                 >
                   <div className="flex items-center font-bold text-white">
                     <div className="w-6 h-6 rounded-full bg-gray-600 mr-2 overflow-hidden flex-shrink-0">
                       <img src={`/logos/${cuartosWinners[i * 2 + 1].toLowerCase()}.png`} alt={`${cuartosWinners[i * 2 + 1]} logo`} className="w-full h-full object-cover" />
                     </div>
-                    <p className="text-[red]">{octavosWinners[i * 2 + 1]}</p>
+                    <p className="text-blue-500">{octavosWinners[i * 2 + 1]}</p>
                   </div>
-                  <span className={scoreWinnerStyle + " text-gold"}>1</span>
+                  <span>1</span>
                 </div>
                 <div className="bg-[#1c1c1c] px-3 py-2 flex justify-center">
                   <button 
@@ -374,28 +356,27 @@ const CuadrosBracket = ({ positions }) => {
               Partida 31
             </button>
             <div className="bg-gray-800 text-sm rounded overflow-hidden shadow-lg w-[12rem]">
-              <div className={`border-b border-gray-700 py-2 px-3 flex justify-between items-center bg-green-900 bg-opacity-80 hover:bg-green-700 transition-colors duration-150 ${winnerStyle} ${getTeamStyle(finalWinner)} text-gold`}>
+              <div className={`border-b border-gray-700 py-2 px-3 flex justify-between items-cente bg-opacity-80 transition-colors duration-150  text-gold`}>
                 <div className="flex items-center font-bold text-white">
                   <div className="w-6 h-6 rounded-full bg-gray-600 mr-2 overflow-hidden flex-shrink-0">
                     <img src={`/logos/${finalWinner.toLowerCase()}.png`} alt={`${finalWinner} logo`} className="w-full h-full object-cover" />
                   </div>
-                  <p className="text-blue-500">{finalWinner}</p>
+                  <p className="text-yellow-500">{finalWinner}</p>
                   
                 </div>
-                <span className={scoreWinnerStyle + " text-gold"}>2</span>
+                <span>2</span>
               </div>
-              <div className={`py-2 px-3 flex justify-between items-center hover:bg-green-700 transition-colors duration-150 ${getTeamStyle(secondPlaceWinner)}`}
-                onMouseEnter={() => handleMouseEnter(secondPlaceWinner)}
-                onMouseLeave={handleMouseLeave}
+              <div className={`py-2 px-3 flex justify-between items-center transition-colors duration-150 `}
+                
               >
                 <div className="flex items-center font-bold text-white">
                   <div className="w-6 h-6 rounded-full bg-gray-600 mr-2 overflow-hidden flex-shrink-0">
                     <img src={`/logos/${secondPlaceWinner.toLowerCase()}.png`} alt={`${secondPlaceWinner} logo`} className="w-full h-full object-cover" />
                   </div>
-                  <p className="text-[red]">{secondPlaceWinner}</p>
+                  <p className="text-blue-500">{secondPlaceWinner}</p>
                   
                 </div>
-                <span className={scoreWinnerStyle + " text-gold"}>1</span>
+                <span >1</span>
               </div>
               <div className="bg-[#1c1c1c] px-3 py-2 flex justify-center">
                 <button 
@@ -420,32 +401,30 @@ const CuadrosBracket = ({ positions }) => {
               Partida 32
             </button>
             <div className="bg-gray-800 text-sm rounded overflow-hidden shadow-lg w-[12rem]">
-              <div className={`border-b border-gray-700 py-2 px-3 flex justify-between items-center hover:bg-green-700 transition-colors duration-150 ${getTeamStyle(thirdPlaceWinner)}`}
-                onMouseEnter={() => handleMouseEnter(thirdPlaceWinner)}
-                onMouseLeave={handleMouseLeave}
+              <div className={`border-b border-gray-700 py-2 px-3 flex justify-between items-center transition-colors duration-150 `}
+                
               >
                 <div className="flex items-center font-bold text-white">
                   <div className="w-6 h-6 rounded-full bg-gray-600 mr-2 overflow-hidden flex-shrink-0">
                     <img src={`/logos/${thirdPlaceWinner.toLowerCase()}.png`} alt={`${thirdPlaceWinner} logo`} className="w-full h-full object-cover" />
                   </div>
-                  <p className="text-blue-500">{thirdPlaceWinner}</p>
+                  <p className="text-yellow-500">{secondPlaceWinner}</p>
                   
                 </div>
-                <span className={scoreWinnerStyle + " text-gold"}>2</span>
+                <span >2</span>
               </div>
-              <div className={`py-2 px-3 flex justify-between items-center hover:bg-green-700 transition-colors duration-150 ${getTeamStyle(cuartosWinners[3])}`}
-                onMouseEnter={() => handleMouseEnter(cuartosWinners[3])}
-                onMouseLeave={handleMouseLeave}
+              <div className={`py-2 px-3 flex justify-between items-center transition-colors duration-150 `}
+                
               >
                 <div className="flex items-center font-bold text-white">
                   <div className="w-6 h-6 rounded-full bg-gray-600 mr-2 overflow-hidden flex-shrink-0">
                     <img src={`/logos/${cuartosWinners[3].toLowerCase()}.png`} alt={`${cuartosWinners[3]} logo`} className="w-full h-full object-cover" />
                   </div>
                   
-                  <p className="text-[red]">{cuartosWinners[3]}</p>
+                  <p className="text-blue-500">{thirdPlaceWinner}</p>
                   
                 </div>
-                <span className={scoreWinnerStyle + " text-gold"}>1</span>
+                <span>1</span>
               </div>
               <div className="bg-[#1c1c1c] px-3 py-2 flex justify-center">
                 <button 
@@ -471,7 +450,7 @@ const CuadrosBracket = ({ positions }) => {
                   key={`team1-player-${index}`}
                   className="flex items-center text-white p-4 rounded-lg shadow-lg bg-[#1c1c1c]"
                 >
-                  <div className="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center">
+                  <div className="w-8 h-8 rounded-full flex items-center justify-center">
                     <i className="fas fa-user text-white"></i>
                   </div>
                   <p className="text-sm font-bold ml-4">{nick}</p>
