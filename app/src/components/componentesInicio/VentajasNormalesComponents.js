@@ -54,10 +54,90 @@ const VentajasNormales = ({ section, title, subtitle, isBlue }) => {
   const textColor = isBlue ? "text-white" : "text-gray-800";
 
   const renderImages = () => {
-    if (items.length === 6) {
+    if (section === "contenido") { // Adjust gap specifically for "contenido"
       return (
-        <div className="flex flex-col items-center gap-[20px]">
-          <div className="grid grid-cols-3 gap-[30px] justify-center">
+        <div className="flex flex-col items-center gap-[80px] pb-[80px]"> {/* Added padding-bottom of 50px */}
+          <div className="grid grid-cols-2 gap-[90px] justify-center"> {/* Increased gap from 70px to 90px */}
+            {items.map((item, index) => (
+              <div
+                key={index}
+                className={`relative h-[300px] w-[300px] rounded-xl overflow-hidden transform transition-transform duration-500 hover:scale-110 hover:shadow-lg ${
+                  item.isPremium ? "premium-glow" : ""
+                }`}
+              >
+                <img src={item.img} alt="" className="h-full w-full object-cover rounded-xl" />
+              </div>
+            ))}
+          </div>
+        </div>
+      );
+    } else if (section === "premios") { // Adjust gap and size specifically for "premios"
+      return (
+        <div className="flex flex-col items-center gap-[60px]"> {/* Reduced gap from 80px to 60px */}
+          <div className="grid grid-cols-3 gap-[50px] justify-center"> {/* Reduced gap from 90px to 50px */}
+            {items.slice(0, 3).map((item, index) => (
+              <div
+                key={index}
+                className={`relative h-[250px] w-[250px] rounded-xl overflow-hidden transform transition-transform duration-500 hover:scale-110 hover:shadow-lg ${
+                  item.isPremium ? "premium-glow" : ""
+                }`}
+              >
+                <img src={item.img} alt="" className="h-full w-full object-cover rounded-xl" />
+              </div>
+            ))}
+          </div>
+          <div className="grid grid-cols-2 gap-[50px] justify-center"> {/* Reduced gap from 90px to 50px */}
+            {items.slice(3).map((item, index) => (
+              <div
+                key={index}
+                className={`relative h-[250px] w-[250px] rounded-xl overflow-hidden transform transition-transform duration-500 hover:scale-110 hover:shadow-lg ${
+                  item.isPremium ? "premium-glow" : ""
+                }`}
+              >
+                <img src={item.img} alt="" className="h-full w-full object-cover rounded-xl" />
+              </div>
+            ))}
+          </div>
+        </div>
+      );
+    } else if (section === "productos") { // Adjust gap specifically for "productos"
+      return (
+        <div className="flex flex-col items-center gap-[80px] pb-[80px]"> {/* Added padding-bottom of 50px */}
+          <div className="grid grid-cols-2 gap-[90px] justify-center"> {/* Increased gap from 70px to 90px */}
+            {items.map((item, index) => (
+              <div
+                key={index}
+                className={`relative h-[300px] w-[300px] rounded-xl overflow-hidden transform transition-transform duration-500 hover:scale-110 hover:shadow-lg ${
+                  item.isPremium ? "premium-glow" : ""
+                }`}
+              >
+                <img src={item.img} alt="" className="h-full w-full object-cover rounded-xl" />
+              </div>
+            ))}
+          </div>
+        </div>
+      );
+    } else if (section === "oxygen") { // Adjust gap specifically for "oxygen"
+      return (
+        <div className="flex flex-col items-center gap-[80px]"> {/* Increased gap from 60px to 80px */}
+          <div className="grid grid-cols-3 gap-[90px] justify-center"> {/* Increased gap from 70px to 90px */}
+            {items.map((item, index) => (
+              <div
+                key={index}
+                className={`relative h-[300px] w-[300px] rounded-xl overflow-hidden transform transition-transform duration-500 hover:scale-110 hover:shadow-lg ${
+                  item.isPremium ? "premium-glow" : ""
+                }`}
+              >
+                <img src={item.img} alt="" className="h-full w-full object-cover rounded-xl" />
+              </div>
+            ))}
+          </div>
+        </div>
+      );
+    } else if (items.length === 6) {
+      return (
+        <div className="flex flex-col items-center gap-[60px]"> {/* Increased gap from 40px to 60px */}
+          <div className="grid grid-cols-3 gap-[70px] justify-center"> {/* Increased gap from 50px to 70px */}
             {items.slice(0, 3).map((item, index) => (
               <div
                 key={index}
@@ -69,7 +149,7 @@ const VentajasNormales = ({ section, title, subtitle, isBlue }) => {
               </div>
             ))}
           </div>
-          <div className="grid grid-cols-3 gap-[30px] justify-center">
+          <div className="grid grid-cols-3 gap-[70px] justify-center"> {/* Increased gap from 50px to 70px */}
             {items.slice(3).map((item, index) => (
               <div
                 key={index}
@@ -134,34 +214,34 @@ const VentajasNormales = ({ section, title, subtitle, isBlue }) => {
   };
 
   return (
-    <section className={`w-full py-[50px] px-[15px] ${bgColor} flex justify-center`}>
+    <section
+      className={`w-full py-[50px] px-[15px] flex justify-center relative ${
+        isBlue ? "bg-[#1AA9FF]" : "bg-white"
+      }`}
+    >
       <div className="max-w-[1200px] w-full">
-        <div className="text-center mb-[30px]">
-          <h2 className={`text-[36px] font-extrabold uppercase ${textColor}`}>{title}</h2>
+        <div className="text-center mb-[60px]"> {/* Increased margin from 30px to 60px */}
+          <h2 className={`text-[48px] font-extrabold uppercase ${textColor}`}>{title}</h2> {/* Increased font size from 36px to 48px */}
           <p className={`text-[18px] font-light ${isBlue ? "text-gray-200" : "text-gray-600"}`}>
             {subtitle}
           </p>
         </div>
         {renderImages()}
       </div>
+      {section === "oxygen" && (
+        <div className="absolute inset-x-0 bottom-[-183px] h-[115px] bg-gradient-to-b from-[#1AA9FF] via-[#1AA9FF] to-white pointer-events-nonee"></div>
+      )} {/* Gradient for "oxygen" moved to the bottom edge */}
+      {section === "contenido" && (
+        <div className="absolute bottom-0 left-0 w-full h-[115px] bg-gradient-to-b from-white via-white to-[#1AA9FF] pointer-events-none"></div>
+      )} {/* Gradient for "contenido" */}
+      {section === "premios" && (
+        <div className="absolute inset-x-0 bottom-[-183px] h-[115px] bg-gradient-to-b from-[#1AA9FF] via-[#1AA9FF] to-white pointer-events-none"></div>
+      )} {/* Gradient for "premios" moved 50px further down */}
+      {section === "productos" && (
+        <div className="absolute bottom-0 left-0 w-full h-[115px] bg-gradient-to-b from-white via-white to-[#1AA9FF] pointer-events-none"></div>
+      )} {/* Gradient for "productos" */}
     </section>
   );
 };
 
 export default VentajasNormales;
-
-// Add the following styles directly in this file using a <style> tag
-<style>{`
-  .premium-glow::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 120%;
-    height: 120%;
-    background: radial-gradient(circle, rgba(255, 223, 0, 0.5), transparent);
-    border-radius: 50%;
-    z-index: -1;
-  }
-`}</style>
