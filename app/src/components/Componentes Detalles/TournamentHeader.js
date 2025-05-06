@@ -118,7 +118,3 @@ const TournamentHeader = ({ selectedCard }) => {
 };
 
 export default TournamentHeader;
-
-
-
-
