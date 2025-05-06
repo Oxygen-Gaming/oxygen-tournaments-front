@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import Follow from '@imgs/Recompensas_Follow.jpg';
 import Clave from '@imgs/Recompensas_Clave.jpg';
 import Camiseta from '@imgs/Recompensas_Camiseta.jpg';
 import Ticket from '@imgs/Recompensas_Ticket.jpg';
@@ -28,12 +27,16 @@ const RewardDetailsPage = () => {
     });
   }, []);
 
-  const handleRedeemReward = () => setShowConfirmationPopup(true);
+  const handleRedeemReward = () => {
+    setShowConfirmationPopup(true);
+    document.body.style.overflow = "hidden"; // Block scrolling
+  };
 
   const confirmRedeem = () => {
     if (userPoints >= currentReward.points) {
       setUserPoints(userPoints - currentReward.points);
       setShowConfirmationPopup(false);
+      document.body.style.overflow = "auto"; // Restore scrolling
 
       // Create a blur overlay
       const blurOverlay = document.createElement("div");
@@ -95,10 +98,12 @@ const RewardDetailsPage = () => {
     }
   };
 
-  const cancelRedeem = () => setShowConfirmationPopup(false);
+  const cancelRedeem = () => {
+    setShowConfirmationPopup(false);
+    document.body.style.overflow = "auto"; // Restore scrolling
+  };
 
   const allRewards = [
-    { id: 1, image: Follow, title: "Follow por parte de Oxygen", points: 100, description: "¿Quieres unirte a la élite? Un follow exclusivo de Oxygen te conectará con una comunidad única. Por 100 puntos, estarás dentro del círculo del circulo de los mejores." },
     { id: 2, image: Clave, title: "Clave aleatoria Steam", points: 200, description: "¿Buscas un nuevo juego? Una clave aleatoria de Steam te sorprenderá con un título increíble para tu biblioteca. Por  200 puntos, la aventura te espera." },
     { id: 3, image: Camiseta, title: "Camiseta del Club", points: 300, description: "¿Listo para mostrar tu pasión? La camiseta del club te hará lucir con orgullo tu espíritu Oxygen. Por 300 puntos, vístete con estilo." },
     { id: 4, image: Ticket, title: "Ticket a Sorteo", points: 500, description: "¿Sueñas con premios épicos? Un ticket a sorteo te da la chance de ganar recompensas increíbles. Por  500 puntos, la suerte está de tu lado." },
@@ -107,7 +112,7 @@ const RewardDetailsPage = () => {
     { id: 7, image: Google, title: "Tarjeta 10€ Google Play", points: 800, description: "¿Buscas diversión digital? Con 10 € en Google Play, tendrás acceso a apps, juegos y más para disfrutar al máximo. Por  800 puntos, el entretenimiento es tuyo." },
     { id: 8, image: Playstation, title: "Tarjeta 10€ PlayStation", points: 900, description: "¿Quieres más juegos en Playstation? Con 10 € en crédito, podrás descargar títulos y contenido para tu consola. Por 900 puntos, la diversión no para." },
     { id: 9, image: Silla, title: "Silla PlaySeat PUMA", points: 10000, description: "Consigue la silla Playseat Puma y lleva tu experiencia de gaming al siguiente nivel." },
-  ];
+  ].filter((reward) => reward.title !== "Follow por parte de Oxygen");
 
   const currentReward = reward || allRewards.find((r) => r.id === reward?.id);
 

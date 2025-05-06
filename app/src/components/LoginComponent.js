@@ -15,7 +15,7 @@ const Login = () => {
             <div className="bg-blue-500 w-full lg:w-1/2 flex items-center justify-center rounded-t-lg lg:rounded-r-lg lg:rounded-tl-none">
               <img className="w-full h-full object-cover rounded-t-lg lg:rounded-r-lg lg:rounded-tl-none" src={Banner} />
             </div>
-            <div className="bg-[#313ee3] w-full lg:w-1/2 flex flex-col items-center justify-center p-[20px] rounded-b-lg lg:rounded-l-lg lg:rounded-br-none">
+            <div className="bg-[#1c1c1c] w-full lg:w-1/2 flex flex-col items-center justify-center p-[20px] rounded-b-lg lg:rounded-l-lg lg:rounded-br-none">
               <h1 className="text-[30px] font-semibold text-center">Iniciar Sesión</h1>
               <form className="w-[90%] max-w-[500px] flex flex-col items-center gap-[20px]">
                 <div className="w-full flex flex-col gap-[20px]">

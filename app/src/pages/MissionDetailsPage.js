@@ -27,16 +27,16 @@ const MissionDetailsPage = () => {
   }, []);
 
   const allMissions = [
-    { id: 1, image: Amigo, title: "Completa la Misión: Invita a un Amigo", points: 250, description: "Comparte la diversión con tus amigos. Invítalos a unirse a nuestra comunidad y juntos podrán disfrutar de más momentos increíbles. ¿Quién será tu próximo compañero de aventuras?", link: "https://example.com/invita-amigo" },
-    { id: 2, image: Clip, title: "Completa la Misión: Mejor Clip Creadores Oxygen", points: 220, description: "Muestra tu talento como fan. Envía tus mejores clips de nuestros creadores de contenido y destaca.", link: "https://example.com/mejor-clip" },
-    { id: 3, image: Discord, title: "Completa la Misión: Únete a Discord", points: 200, description: "Dale click, sigue a Oxygen y disfruta de tus puntos.", link: "https://discord.com/invite/Udsstfpeze" },
-    { id: 4, image: Instagram, title: "Completa la Misión: Síguenos en Instagram", points: 100, description: "Dale click, sigue a Oxygen y disfruta de tus puntos.", link: "https://www.instagram.com/GamingOxygen/" },
-    { id: 5, image: Quiz, title: "Completa la Misión: Quiz Semanal", points: 250, description: "Vamos a medir tu ingenio, esperamos mucho de ti. Responde las preguntas de forma correcta y lo más rápido posible para llevarte el mayor número de puntos. ¿Te atreves?", link: "https://example.com/quiz-semanal" },
-    { id: 6, image: TikTok, title: "Completa la Misión: Síguenos en TikTok", points: 110, description: "Dale click, sigue a Oxygen y disfruta de tus puntos.", link: "https://www.tiktok.com/@oxygengaming.tv?lang=es" },
-    { id: 7, image: Twitter, title: "Completa la Misión: Síguenos en X", points: 120, description: "Dale click, sigue a Oxygen y disfruta de tus puntos.", link: "https://x.com/GamingOxygen" },
-    { id: 8, image: Camiseta, title: "Completa la Misión: Hazte con la Camiseta", points: 400, description: "Demuestra tu lealtad y estilo. No es solo una prenda, es un símbolo de tu compromiso. ¿Estás listo para lucirla?", link: "https://example.com/camiseta" },
-    { id: 9, image: Meme, title: "Completa la Misión: Meme del Mes", points: 190, description: "Demuestra tu sentido del humor. Crea o elige el meme que hará reír a todos. ¿Tienes lo que se necesita para ser el rey del meme?", link: "https://example.com/meme-del-mes" },
-    { id: 10, image: Caca, title: "Completa la Misión: Clip de la Cagada de la Semana", points: 170, description: "Todos tenemos esos momentos. Comparte tu clip más divertido o embarazoso de la semana. ¿Te atreves a mostrar tu lado más torpe?", link: "https://example.com/clip-cagada" },
+    { id: 1, image: Amigo, title: "Completa la Misión: Invita a un Amigo", points: 250, description: "Comparte la diversión con tus amigos. Invítalos a unirse a nuestra comunidad y juntos podrán disfrutar de más momentos increíbles. ¿Quién será tu próximo compañero de aventuras?", link: "https://example.com/invita-amigo", buttonText: "Invitar Ahora" },
+    { id: 2, image: Clip, title: "Completa la Misión: Mejor Clip Creadores Oxygen", points: 220, description: "Muestra tu talento como fan. Envía tus mejores clips de nuestros creadores de contenido y destaca.", link: "https://example.com/mejor-clip", buttonText: "Enviar Clip" },
+    { id: 3, image: Discord, title: "Completa la Misión: Únete a Discord", points: 200, description: "Dale click, sigue a Oxygen y disfruta de tus puntos.", link: "https://discord.com/invite/Udsstfpeze", buttonText: "Unirse Ahora" },
+    { id: 4, image: Instagram, title: "Completa la Misión: Síguenos en Instagram", points: 100, description: "Dale click, sigue a Oxygen y disfruta de tus puntos.", link: "https://www.instagram.com/GamingOxygen/", buttonText: "Seguir en Instagram" },
+    { id: 5, image: Quiz, title: "Completa la Misión: Quiz Semanal", points: 250, description: "Vamos a medir tu ingenio, esperamos mucho de ti. Responde las preguntas de forma correcta y lo más rápido posible para llevarte el mayor número de puntos. ¿Te atreves?", link: "https://example.com/quiz-semanal", buttonText: "Participar en el Quiz" },
+    { id: 6, image: TikTok, title: "Completa la Misión: Síguenos en TikTok", points: 110, description: "Dale click, sigue a Oxygen y disfruta de tus puntos.", link: "https://www.tiktok.com/@oxygengaming.tv?lang=es", buttonText: "Seguir en TikTok" },
+    { id: 7, image: Twitter, title: "Completa la Misión: Síguenos en X", points: 120, description: "Dale click, sigue a Oxygen y disfruta de tus puntos.", link: "https://x.com/GamingOxygen", buttonText: "Seguir en X" },
+    { id: 8, image: Camiseta, title: "Completa la Misión: Hazte con la Camiseta", points: 400, description: "Demuestra tu lealtad y estilo. No es solo una prenda, es un símbolo de tu compromiso. ¿Estás listo para lucirla?", link: "https://example.com/camiseta", buttonText: "Conseguir Camiseta" },
+    { id: 9, image: Meme, title: "Completa la Misión: Meme del Mes", points: 190, description: "Demuestra tu sentido del humor. Crea o elige el meme que hará reír a todos. ¿Tienes lo que se necesita para ser el rey del meme?", link: "https://example.com/meme-del-mes", buttonText: "Enviar Meme" },
+    { id: 10, image: Caca, title: "Completa la Misión: Clip de la Cagada de la Semana", points: 170, description: "Todos tenemos esos momentos. Comparte tu clip más divertido o embarazoso de la semana. ¿Te atreves a mostrar tu lado más torpe?", link: "https://example.com/clip-cagada", buttonText: "Compartir Clip" },
   ];
 
   // Buscar la misión en caso de que no se pase la descripción
@@ -88,7 +88,7 @@ const MissionDetailsPage = () => {
                     rel="noopener noreferrer"
                     className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-transform transform hover:scale-105"
                   >
-                    Más Información
+                    {currentMission.buttonText} {/* Use the custom button text */}
                   </a>
                 </div>
               </div>

@@ -32,8 +32,8 @@ const Rewards = () => {
         </div>
       </div>
 
-      z<section className="hidden md:flex flex-wrap justify-center gap-x-12 gap-y-16 md:gap-x-28 md:gap-y-44 pt-24 pb-32 px-4 md:px-10 mb-32">
-        {rewards.map((reward) => (
+      <section className="hidden md:flex flex-wrap justify-center gap-x-12 gap-y-16 md:gap-x-28 md:gap-y-44 pt-24 pb-32 px-4 md:px-10 mb-32">
+        {rewards.filter((reward) => reward.title !== "Follow por parte de Oxygen").map((reward) => (
           <div key={reward.id} onClick={() => handleCardClick(reward)} className="w-[360px] h-[320px] rounded-lg shadow-lg">
             <RewardCard {...reward} />
           </div>
@@ -41,7 +41,7 @@ const Rewards = () => {
       </section>
       <div className="md:hidden px-4 mb-24">
         <div className="grid grid-cols-1 gap-16 mt-12"> {/* Single column for mobile */}
-          {rewards.map((reward) => (
+          {rewards.filter((reward) => reward.title !== "Follow por parte de Oxygen").map((reward) => (
             <div key={reward.id} onClick={() => handleCardClick(reward)} className="w-full h-80 rounded-lg shadow-lg">
               <div className="relative">
                 <img src={reward.image} alt={reward.title} className="w-full h-[360px] object-cover rounded-lg" />
