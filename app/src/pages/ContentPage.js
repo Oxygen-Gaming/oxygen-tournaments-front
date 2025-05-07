@@ -3,6 +3,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import RankingTable from '@components/Contenido/RankingTable';
 import Banner from '@imgs/Headers_Contenido_Prueba.jpg';
+import MenuHamburguesaNormal from '@components/ComponentesMenuHamburguesa/MenuHamburguesaNormalComponent';
 import { motion } from 'framer-motion';
 
 const Contenido = () => {
@@ -124,7 +125,7 @@ const Contenido = () => {
     return (
         <div className="font-['Roboto_Condensed',sans-serif] text-black m-0 p-0 min-h-screen flex flex-col">
             <Header />
-
+            <MenuHamburguesaNormal />
             {selectedVideo ? (
                 // ------------- PÁGINA DE DETALLES DEL VIDEO -------------
                 <div className="flex-grow w-full max-w-screen-xl mt-[-1rem] mx-auto px-4 py-8 flex flex-col lg:flex-row">

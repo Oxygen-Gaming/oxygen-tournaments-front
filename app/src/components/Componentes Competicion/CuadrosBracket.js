@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import MatchModal from "../Componentes Detalles/MatchModal"; // Importa el componente que muestra el modal del partido
 import MatchDetailsPopup from "../Componentes Detalles/MatchDetailsPopup"; // Importa el componente que muestra los detalles emergentes del partido
-import Ronda32 from "./Ronda32BracketComponent";
+import RondasComponent from "./RondasComponent";
 import Dieciseisavos from "./DieciseisavosComponent";
 import Octavos from "./OctavosComponent";
 import Cuartos from "./CuartosComponent";
@@ -74,7 +74,7 @@ const CuadrosBracket = ({ positions }) => {
         }
       `}</style>
 
-      <Ronda32></Ronda32>
+      <RondasComponent></RondasComponent>
 
       <div
         ref={bracketRef}
@@ -94,6 +94,7 @@ const CuadrosBracket = ({ positions }) => {
         
         
 
+
       {/* Modal */}
       {modalTeam && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 overflow-hidden">
@@ -112,12 +113,7 @@ const CuadrosBracket = ({ positions }) => {
                 </div>
               ))}
             </div>
-            <button
-              className="absolute bottom-4 bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600"
-              onClick={closeModal}
-            >
-              Cerrar
-            </button>
+            
           </div>
         </div>
       )}
@@ -131,9 +127,11 @@ const CuadrosBracket = ({ positions }) => {
           onClose={() => setShowMatchDetails(false)}
         />
       )}
+
     </div>
     </div>
   );
 };
+
 
 export default CuadrosBracket;

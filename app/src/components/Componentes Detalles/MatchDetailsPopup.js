@@ -26,7 +26,7 @@ const MatchDetailsPopup = ({ matchNumber, team1, team2, onClose }) => {
           className="absolute top-2 right-2 bg-red-500 text-white px-3 py-1 rounded-full hover:bg-red-600 transition"
           onClick={onClose}
         >
-          X
+          x
         </button>
         <h2 className="text-3xl font-bold mb-2 text-center">Partida {matchNumber}</h2>
         <div className="flex justify-center mb-4">

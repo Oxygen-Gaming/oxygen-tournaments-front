@@ -6,9 +6,9 @@ import RewardCard from '../../components/Recompensas/CardRewardHome';
 
 const RecompensasInicio = () => {
     return (
-        <div className="mt-[100px] mb-20 flex flex-col justify-center items-center overflow-x-hidden lg:p-0 p-[20px] md:p-[40px] w-full" id="events">
-          <h1 className="text-[60px] font-bold text-center">¡Llevate recompensas por ser un auténtico Fan de Oxygen!</h1>
-          <p className="text-[30px]">Cada ventaja ha sido diseñada pensando en ti, para ofrecerte una experiencia sin igual</p>
+        <div className="mt-[100px] mb-20 flex flex-col gap-[50px] justify-center items-center overflow-x-hidden lg:p-0 p-[20px] md:p-[40px] w-full" id="events">
+          <h1 className="text-[40px] md:text-[60px] font-bold text-center">¡Llevate recompensas por ser un auténtico Fan de Oxygen!</h1>
+          <p className="text-[25px] text-center md:text-[30px]">Cada ventaja ha sido diseñada pensando en ti, para ofrecerte una experiencia sin igual</p>
           <div className="w-full flex justify-center items-center mt-[50px]">
             <Swiper
               modules={[Autoplay]}

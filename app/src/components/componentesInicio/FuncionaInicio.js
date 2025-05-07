@@ -33,7 +33,7 @@ const FuncionaInicio = () => {
               ].map((item, index) => (
                 <div
                   key={index}
-                  className="relative flex flex-col items-center justify-center h-[30rem] w-[30rem] text-center sm:p-10 bg-[#f5f4f4] rounded-2xl backdrop-blur-md hover:shadow-2xl hover:scale-105 transition duration-300"
+                  className="relative flex flex-col items-center justify-center w-full h-[80vw] sm:w-full sm:h-[50vw] md:w-[16rem] md:h-[16rem] lg:h-[20rem] lg:w-[20rem] xl:h-[25rem] xl:w-full text-center sm:p-10 bg-[#f5f4f4] rounded-2xl backdrop-blur-md hover:shadow-2xl hover:scale-105 transition duration-300"
                   style={{
                     backgroundImage: item.background ? `url(${item.background})` : "none", // Apply background if available
                     backgroundSize: "cover",
