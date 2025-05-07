@@ -28,14 +28,13 @@ const Inscripciones = ({ confirmedPlayersList, pendingPlayersList }) => {
                 key={index}
                 className="flex items-center justify-between py-2 border-b border-gray-700"
               >
-                <div className="flex items-center gap-4">
-                  <img
+                <img
                     src={player.avatar || "https://via.placeholder.com/40"}
                     alt={player.name}
                     className="w-12 h-12 rounded-full"
                   />
                   <span className="text-lg font-semibold">{player.name}</span>
-                </div>
+                  <span>🚩 Se ha unido hace 17 minutos, 11:31</span>
               </li>
             ))}
           </ul>

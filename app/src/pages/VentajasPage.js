@@ -27,7 +27,7 @@ const Ventajas = () => {
         </div>
       </div>
 
-      <div className="flex flex-col justify-start items-center gap-[10vh]">
+      <div className="flex flex-col justify-start items-center gap-[20vh]"> {/* Increased gap from 10vh to 20vh */}
         {/* Section: OXYGEN */}
         <VentajasNormales
           section="oxygen"
@@ -60,24 +60,10 @@ const Ventajas = () => {
           isBlue={false}
         />
 
-        <CardVentajas /> {/* No animations */}
         <TablaVentajas />
       </div>
 
       <Footer />
-      <style>{`
-  .premium-glow {
-    border: 10px  gold;
-    box-shadow: 0 0 15px 5px rgba(255, 217, 0, 0.76);
-    transition: transform 0.3s, border 0.3s, box-shadow 0.3s;
-  }
-
-  .premium-glow:hover {
-    transform: scale(1.1);
-    border-width: 12px;
-    box-shadow: 0 0 20px 7px rgba(255, 217, 0, 0.9);
-  }
-`}</style>
     </div>
   );
 };

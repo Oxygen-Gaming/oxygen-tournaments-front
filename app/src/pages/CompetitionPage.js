@@ -75,9 +75,9 @@ const Competition = () => {
   ];
 
   const defaultCards = [
-    ['1', 'League of Legends', 'LoL Championship Series', '30/03/2025', 'upcoming', 78, LeagueOfLegends],
-    ['4', 'Valorant', 'Valorant Open', '01/04/2025', 'upcoming', 200, Valorant],
-    ['7', 'Rocket League', 'Rocket League Invitational', '28/03/2025', 'upcoming', 120, RocketLeague],
+    ['1', 'League of Legends', 'LoL Championship Series', '06/05/2025', 'upcoming', 78, LeagueOfLegends],
+    ['4', 'Valorant', 'Valorant Open', '01/06/2025', 'upcoming', 200, Valorant],
+    ['7', 'Rocket League', 'Rocket League Invitational', '28/05/2025', 'upcoming', 120, RocketLeague],
   ];
 
   const fadeVariants = {

@@ -9,7 +9,7 @@ const VentajaGrande = ({ link, shadow, isPremium }) => {
 
   return (
     <div
-      className="h-[15rem] lg:w-[25rem] xl:w-[50rem] xl:h-[25rem] rounded-xl relative"
+      className="h-[15rem] lg:w-[25rem] xl:w-[40rem] xl:h-[20rem] rounded-xl relative"
       style={premiumStyles}
     >
       <div className="h-full w-full rounded-xl" style={{ boxShadow: shadow }}>

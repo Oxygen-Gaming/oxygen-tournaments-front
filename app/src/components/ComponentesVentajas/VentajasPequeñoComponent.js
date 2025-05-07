@@ -9,7 +9,7 @@ const VentajaPequeño = ({ link, shadow, isPremium }) => {
 
   return (
     <div
-      className="h-[15rem] lg:w-[15rem] xl:w-[25rem] xl:h-[25rem] rounded-xl relative transform transition-transform duration-500 hover:scale-105"
+      className="h-[15rem] lg:w-[15rem] xl:w-[20rem] xl:h-[20rem] rounded-xl relative transform transition-transform duration-500 hover:scale-105"
       style={premiumStyles}
     >
       <div className="h-full w-full rounded-xl" style={{ boxShadow: shadow }}>
