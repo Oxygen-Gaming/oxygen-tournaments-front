@@ -54,6 +54,23 @@ const VentajasNormales = ({ section, title, subtitle, isBlue }) => {
   const textColor = isBlue ? "text-white" : "text-gray-800";
 
   const renderImages = () => {
+    const isMobile = window.innerWidth <= 768; // Check if the view is mobile
+    if (isMobile) {
+      return (
+        <div className="flex flex-col items-center gap-4"> {/* Vertical layout for mobile */}
+          {items.map((item, index) => (
+            <div
+              key={index}
+              className={`relative w-2/3 h-auto rounded-xl overflow-hidden transform transition-transform duration-500 hover:scale-110 hover:shadow-lg ${
+                item.isPremium ? "premium-glow" : ""
+              }`} // Reduced width for smaller images
+            >
+              <img src={item.img} alt="" className="w-full h-auto object-contain rounded-xl" />
+            </div>
+          ))}
+        </div>
+      );
+    }
     if (section === "contenido") { // Adjust gap specifically for "contenido"
       return (
         <div className="flex flex-col items-center gap-[80px] pb-[80px]"> {/* Added padding-bottom of 50px */}
@@ -232,13 +249,13 @@ const VentajasNormales = ({ section, title, subtitle, isBlue }) => {
         <div className="absolute inset-x-0 bottom-[-183px] h-[115px] bg-gradient-to-b from-[#1AA9FF] via-[#1AA9FF] to-white pointer-events-nonee"></div>
       )} {/* Gradient for "oxygen" moved to the bottom edge */}
       {section === "contenido" && (
-        <div className="absolute bottom-0 left-0 w-full h-[115px] bg-gradient-to-b from-white via-white to-[#1AA9FF] pointer-events-none"></div>
+        <div className="absolute bottom-0 left-0 w-full h-[40px] bg-gradient-to-b from-white via-white to-[#1AA9FF] pointer-events-none"></div>
       )} {/* Gradient for "contenido" */}
       {section === "premios" && (
         <div className="absolute inset-x-0 bottom-[-183px] h-[115px] bg-gradient-to-b from-[#1AA9FF] via-[#1AA9FF] to-white pointer-events-none"></div>
       )} {/* Gradient for "premios" moved 50px further down */}
       {section === "productos" && (
-        <div className="absolute bottom-0 left-0 w-full h-[115px] bg-gradient-to-b from-white via-white to-[#1AA9FF] pointer-events-none"></div>
+        <div className="absolute bottom-0 left-0 w-full h-[40px] bg-gradient-to-b from-white via-white to-[#1AA9FF] pointer-events-none"></div>
       )} {/* Gradient for "productos" */}
     </section>
   );
