@@ -58,11 +58,11 @@ const TournamentDetailsPage = () => {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
           transition={{ duration: 0.4 }}
-          className="bg-[#1AA9FF] text-white w-full min-h-screen font-['Roboto_Condensed',sans-serif]"
+          className="bg-[#1AA9FF] text-white w-full min-h-screen font-['Roboto_Condensed',sans-serif] flex flex-col"
         >
           <Header />
 
-          <div className="relative w-full">
+          <div className="relative w-full p-4">
             <button
               className="absolute top-4 left-4 px-4 py-2 bg-[#005f99] text-white rounded-lg hover:bg-[#0077b6] transition z-10"
               onClick={handleBackClick}
@@ -71,10 +71,10 @@ const TournamentDetailsPage = () => {
             </button>
 
             {/* Información del torneo */}
-            <div className="text-center p-6">
-              <h1 className="text-3xl font-bold">{selectedCard.title || "Torneo sin título"}</h1>
-              <p className="text-lg mt-2">{selectedCard.description || "Descripción no disponible"}</p>
-              <p className="text-md mt-2">Fecha: {parseDate(selectedCard.date)}</p>
+            <div className="text-center p-6 space-y-4">
+              <h1 className="text-3xl md:text-4xl font-bold">{selectedCard.title || "Torneo sin título"}</h1>
+              <p className="text-lg">{selectedCard.description || "Descripción no disponible"}</p>
+              <p className="text-md">Fecha: {parseDate(selectedCard.date)}</p>
               <button
                 className="mt-4 px-6 py-2 bg-[#005f99] text-white rounded-lg hover:bg-[#0077b6] transition"
                 onClick={scrollToInscription}
@@ -86,7 +86,7 @@ const TournamentDetailsPage = () => {
 
           <div className="w-full p-4">
             {/* Tabs Navigation */}
-            <div className="flex justify-center mt-6 border-b-4 border-[#005f99] max-w-[1200px] mx-auto">
+            <div className="flex flex-wrap justify-center mt-6 border-b-4 border-[#005f99] max-w-[1200px] mx-auto">
               {["resumen", "bracket", "partidas", "inscritos"].map((tab) => (
                 <button
                   key={tab}
