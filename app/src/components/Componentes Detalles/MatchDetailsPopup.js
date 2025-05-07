@@ -20,8 +20,8 @@ const MatchDetailsPopup = ({ matchNumber, team1, team2, onClose }) => {
   const team2Players = ["PhoenixRider", "ThunderStrike", "FrostBlade", "DarkViper", "SteelFang"];
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-      <div className="bg-black text-white p-6 rounded-lg w-[90%] max-w-[600px] relative">
+    <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center px-2">
+      <div className="bg-black text-white rounded-lg w-full max-w-[600px] max-h-[90vh] overflow-y-auto p-6 relative scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-gray-900">
         <button
           className="absolute top-2 right-2 bg-red-500 text-white px-3 py-1 rounded-full hover:bg-red-600 transition"
           onClick={onClose}
@@ -34,7 +34,7 @@ const MatchDetailsPopup = ({ matchNumber, team1, team2, onClose }) => {
             Finalizado
           </p>
         </div>
-        <div className="flex justify-center items-center gap-4 mb-4">
+        <div className="flex justify-center items-center gap-4 mb-4 flex-wrap">
           <div className="flex flex-col items-center">
             <div className="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center">
               <i className="fas fa-user text-white"></i>
@@ -78,7 +78,7 @@ const MatchDetailsPopup = ({ matchNumber, team1, team2, onClose }) => {
                   {games.map((game, index) => (
                     <div
                       key={index}
-                      className={`relative flex flex-col items-center p-2 rounded-lg shadow-lg overflow-hidden bg-[#003366] text-white h-[120px]`}
+                      className="relative flex flex-col items-center p-2 rounded-lg shadow-lg overflow-hidden bg-[#003366] text-white h-[120px]"
                     >
                       <div className="absolute inset-0 bg-black opacity-50"></div>
                       {game.undisputed && (
@@ -135,7 +135,7 @@ const MatchDetailsPopup = ({ matchNumber, team1, team2, onClose }) => {
             {activeTab === "alineaciones" && (
               <div>
                 <h3 className="text-lg font-bold mb-4">Alineaciones</h3>
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <h4 className="text-white text-lg font-bold mb-4">Equipo 1</h4>
                     {team1Players.map((player, index) => (
