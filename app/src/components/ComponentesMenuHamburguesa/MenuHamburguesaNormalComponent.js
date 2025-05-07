@@ -4,14 +4,14 @@ const MenuHamburguesaNormal = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <div>
+        <div className="bg-[#1AA9FF]">
             <button
-                className="lg:hidden w-full flex flex-col items-center justify-center mt-2"
+                className="lg:hidden w-full flex flex-col items-center justify-center mt-[30px] mb-[30px]"
                 onClick={() => setIsOpen(!isOpen)}
             >
-                <div className="w-6 h-0.5 bg-white mb-1 transition-transform duration-300"></div>
-                <div className="w-6 h-0.5 bg-white mb-1 transition-transform duration-300"></div>
-                <div className="w-6 h-0.5 bg-white transition-transform duration-300"></div>
+                <div className="w-8 h-1 bg-white mb-1 transition-transform duration-300"></div>
+                <div className="w-8 h-1 bg-white mb-1 transition-transform duration-300"></div>
+                <div className="w-8 h-1 bg-white transition-transform duration-300"></div>
             </button>
             <div
                 className={`lg:hidden fixed inset-0 z-50 bg-[#1AA9FF] flex flex-col justify-center items-center gap-6 transition-transform duration-300 ${
