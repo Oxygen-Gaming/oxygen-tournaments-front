@@ -198,7 +198,7 @@ const TabContent = ({ activeTab, selectedCard, setShowMatchModal, setSelectedMat
           <h2 className="text-3xl font-bold mb-4 text-center">Partidas</h2>
           <div className="grid grid-cols-1 gap-4">
             {/* Match 1 */}
-            <div className="bg-[#1c1c1c] text-white p-3 rounded-lg shadow-lg flex justify-between items-center h-[120px]"> {/* Reduced height */}
+            <div className="bg-[#1c1c1c] text-white p-12 rounded-lg shadow-lg flex justify-between items-center flex-col min-[568px]:flex-row h-30 gap-8"> {/* Reduced height */}
               <div>
                 <h3 className="text-xl font-bold">Partida 1</h3>
                 <p className="text-sm text-gray-300">Fecha: 29/03/2025</p> {/* Fecha pasada */}
@@ -296,7 +296,7 @@ const TabContent = ({ activeTab, selectedCard, setShowMatchModal, setSelectedMat
               </div>
             </div>
             {/* Match 2 */}
-            <div className="bg-[#1c1c1c] text-white p-3 rounded-lg shadow-lg flex justify-between items-center h-[120px]"> {/* Reduced height */}
+            <div className="bg-[#1c1c1c] text-white p-12 rounded-lg shadow-lg flex justify-between items-center flex-col min-[568px]:flex-row h-30 gap-8"> {/* Reduced height */}
               <div>
                 <h3 className="text-xl font-bold">Partida 2</h3>
                 <p className="text-sm text-gray-300">Fecha: 30/03/2025</p> {/* Fecha pasada */}
@@ -392,7 +392,7 @@ const TabContent = ({ activeTab, selectedCard, setShowMatchModal, setSelectedMat
               </div>
             </div>
             {/* Match 3 */}
-            <div className="bg-[#1c1c1c] text-white p-3 rounded-lg shadow-lg flex justify-between items-center h-[120px]"> {/* Reduced height */}
+            <div className="bg-[#1c1c1c] text-white p-12 rounded-lg shadow-lg flex justify-between items-center flex-col min-[568px]:flex-row h-30 gap-8"> {/* Reduced height */}
               <div>
                 <h3 className="text-xl font-bold">Partida 3</h3>
                 <p className="text-sm text-gray-300">Fecha: 10/04/2025</p> {/* Fecha futura */}

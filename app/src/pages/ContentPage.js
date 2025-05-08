@@ -224,19 +224,19 @@ const Contenido = () => {
                         </div>
                     )}
 
-                    <div className="relative flex flex-row items-center space-x-4 py-4 bg-black w-full justify-center">
+                    <div className="relative flex flex-wrap items-center justify-center space-x-4 py-4 bg-black w-full">
                         {categories.map((category) => (
                             <button
                                 key={category.name}
                                 className={`rounded-full px-6 py-2 font-semibold ${
                                     selectedCategory === category.value ? 'bg-white text-black' : 'bg-[#333333] text-white'
-                                } hover:bg-gray-400 focus:outline-none`}
+                                } hover:bg-gray-400 focus:outline-none mb-2 sm:mb-0`}
                                 onClick={() => handleCardClick(category.value)}
                             >
                                 {category.name}
                             </button>
                         ))}
-                        <button onClick={handleSearchClick} className="bg-gray-700 text-white rounded-full px-6 py-2 font-semibold hover:bg-gray-500 focus:outline-none">
+                        <button onClick={handleSearchClick} className="bg-gray-700 text-white rounded-full px-6 py-2 font-semibold hover:bg-gray-500 focus:outline-none mb-2 sm:mb-0">
                             <i className="fa-solid fa-magnifying-glass"></i>
                         </button>
 
