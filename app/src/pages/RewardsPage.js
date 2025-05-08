@@ -5,7 +5,7 @@ import rewards from '../components/Recompensas/rewardsData';
 import RewardCard from '../components/Recompensas/Cardrewards'; 
 import { useNavigate } from "react-router-dom";
 import MenuHamburguesaNormal from "@components/ComponentesMenuHamburguesa/MenuHamburguesaNormalComponent";
-import Banner from '@imgs/Header_Recompensas.jpg'; 
+import Banner from '@imgs/Headers_Recompensas_2.webp'; 
 
 const Rewards = () => {
   const navigate = useNavigate();
