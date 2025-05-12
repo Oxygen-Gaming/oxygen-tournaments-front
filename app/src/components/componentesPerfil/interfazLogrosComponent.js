@@ -58,6 +58,7 @@ const Logros = () => {
             <div className="w-full">
                 <Logro titulo={seleccion} variable={getDatosSeleccionados()} />
             </div>
+
         </div>
     );
 };
