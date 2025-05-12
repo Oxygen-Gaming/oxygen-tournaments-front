@@ -76,7 +76,7 @@ const TournamentDetailsPage = () => {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
           transition={{ duration: 0.4 }}
-          className="bg-[#1AA9FF] text-white w-full min-h-screen font-['Roboto_Condensed',sans-serif]"
+          className="bg-[#1c1c1c] text-white w-full min-h-screen font-['Roboto_Condensed',sans-serif]"
         >
           <Header />
 

@@ -38,35 +38,46 @@ const Pedidos = () => {
     };
 
     return (
-        <div className="w-full flex justify-center px-4 py-10">
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 w-full max-w-[1600px] px-4">
-                {pedidos.map((pedido, index) => (
-                    <div
-                        key={index}
-                        className="bg-[#1c1c1c] text-white rounded-[15px] p-6 lg:pb-24 flex flex-col items-center justify-start shadow-lg transition duration-300 ease-in-out hover:scale-[1.02]"
-                        style={{ height: "500px", width: "100%" }}
-                    >
-                        <img
-                            src={pedido.imagen}
-                            alt={`Imagen de ${pedido.producto}`}
-                            className="w-full h-[40%] object-contain mb-6"
-                        />
-                        <div className="flex flex-col gap-3 text-[22px] text-left w-full flex-grow">
-                            <p><strong>Código:</strong> {pedido.codigo}</p>
-                            <p><strong>Producto:</strong> {pedido.producto}</p>
-                            <p><strong>Precio:</strong> {pedido.precio}€</p>
-                            <p><strong>Fecha:</strong> {pedido.fecha}</p>
-                            <p><strong>Estado:</strong> <span className={getStateColor(pedido.estado)}>{pedido.estado}</span></p>
-                        </div>
-                    </div>
-                ))}
-            </div>
-        </div>
+        <div className="w-full px-4 py-8 flex flex-col items-center">
+      <div className="overflow-x-auto w-full max-w-[1200px] shadow-lg rounded-2xl bg-white">
+        <table className="min-w-full text-left border-collapse text-[white]">
+          <thead className="bg-gradient-to-r from-[#18538a] to-[#1e90ff] text-white">
+            <tr className="bg-gray-800 hover:bg-gray-700">
+              <th className="px-4 py-3 text-[25px] font-bold text-center">Imagen</th>
+              <th className="px-4 py-3 text-[25px] font-bold text-center">Código</th>
+              <th className="px-4 py-3 text-[25px] font-bold text-center">Producto</th>
+              <th className="px-4 py-3 text-[25px] font-bold text-center">Precio</th>
+              <th className="px-4 py-3 text-[25px] font-bold text-center">Fecha</th>
+              <th className="px-4 py-3 text-[25px] font-bold text-center">Estado</th>
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-gray-200">
+            {pedidos.map((cuenta, index) => (
+              <tr
+                key={index}
+                className="bg-gray-900 even:bg-gray-800 hover:bg-gray-700"
+              >
+                <td className="px-4 py-3 flex items-center justify-center">
+                  <img
+                    src={cuenta.imagen}
+                    alt="logo"
+                    className="w-12 h-12 object-contain rounded-md"
+                  />
+                </td>
+                <td className="px-4 py-3 text-[18px] font-semibold text-center">{cuenta.codigo}</td>
+                <td className="px-4 py-3 text-[18px] font-semibold text-center">{cuenta.producto}</td>
+                <td className="px-4 py-3 text-[18px] font-semibold text-center">{cuenta.precio}</td>
+                <td className="px-4 py-3 text-[18px] font-semibold text-center">{cuenta.fecha}</td>
+                <td className={`px-4 py-3 text-[18px] font-semibold text-center ${getStateColor(cuenta.estado)}`}>{cuenta.estado}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
     );
 };
 
 export default Pedidos;
-
-
 
 

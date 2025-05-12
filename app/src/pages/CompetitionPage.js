@@ -87,7 +87,7 @@ const Competition = () => {
   };
 
   return (
-    <div className="bg-[#1AA9FF] text-white overflow-x-hidden font-['Roboto_Condensed',sans-serif]">
+    <div className="bg-[#1c1c1c] text-white overflow-x-hidden font-['Roboto_Condensed',sans-serif]">
       <Header />
       <MenuHamburguesaNormal />
 
@@ -116,9 +116,9 @@ const Competition = () => {
           }}
         >
           <div className="w-20 h-20 rounded-lg flex items-center justify-center md:w-20 md:h-20">
-            <i className="fas fa-calendar-alt text-white text-3xl md:text-5xl"></i>
+            <i className="fas fa-calendar-alt text-[white] text-3xl md:text-5xl"></i>
           </div>
-          <span className="text-white font-bold text-lg md:text-sm text-center">Próximos Torneos</span>
+          <span className="text-[white] font-bold text-lg md:text-sm text-center">Próximos Torneos</span>
         </div>
 
         {games.map((game) => (
@@ -134,7 +134,7 @@ const Competition = () => {
               alt={game.name}
               className="w-20 h-20 object-cover rounded-lg md:w-20 md:h-20"
             />
-            <span className="text-white font-bold text-lg md:text-sm text-center">{game.name}</span>
+            <span className="text-[white] font-bold text-lg md:text-sm text-center">{game.name}</span>
           </div>
         ))}
       </div>
@@ -151,7 +151,7 @@ const Competition = () => {
       {selectedGame === "Próximos Torneos" && !showAllTournaments && (
         <>
           <div className="relative mb-12">
-            <h2 className="text-4xl font-extrabold text-center text-white relative z-10">Próximos Torneos</h2>
+            <h2 className="text-4xl font-extrabold text-center text-[white] relative z-10">Próximos Torneos</h2>
             <div className="absolute top-full left-0 w-full h-1 bg-gradient-to-r from-transparent via-blue-900 to-transparent z-0 mt-2"></div>
             <div className="absolute top-[calc(100%+0.5rem)] left-1/2 transform -translate-x-1/2 w-16 h-1 bg-blue-900 rounded-full"></div>
           </div>

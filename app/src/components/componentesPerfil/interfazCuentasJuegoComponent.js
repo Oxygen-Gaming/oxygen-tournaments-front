@@ -8,16 +8,40 @@ const CuentasJuego = () => {
     setCuentas([
       {
         imagen: oxygen,
-        juego: "EA FC25",
+        juego: "League of Legend",
         nickname: "Chusneo",
         region: "Europa",
       },
       {
         imagen: oxygen,
-        juego: "EA FC25",
-        nickname: "Chusneo",
+        juego: "League of Legend",
+        nickname: "Kaique Kp",
+        region: "Asia",
+      },
+      {
+        imagen: oxygen,
+        juego: "League of Legend",
+        nickname: "Pekka",
+        region: "América Latina",
+      },
+      {
+        imagen: oxygen,
+        juego: "Valorant",
+        nickname: "Matalentajas",
+        region: "África",
+      },
+      {
+        imagen: oxygen,
+        juego: "Valorant",
+        nickname: "Skullraicer",
         region: "Europa",
       },
+      {
+        imagen: oxygen,
+        juego: "Valorant",
+        nickname: "TheBlackHatDAW",
+        region: "Oceania",
+      }
     ]);
   }, []);
 
@@ -27,10 +51,12 @@ const CuentasJuego = () => {
         <table className="min-w-full text-left border-collapse text-[white]">
           <thead className="bg-gradient-to-r from-[#18538a] to-[#1e90ff] text-white">
             <tr className="bg-gray-800 hover:bg-gray-700">
-              <th className="px-4 py-3 text-[25px] font-bold">Logo</th>
-              <th className="px-4 py-3 text-[25px] font-bold">Juego</th>
-              <th className="px-4 py-3 text-[25px] font-bold">Nickname</th>
-              <th className="px-4 py-3 text-[25px] font-bold">Región</th>
+
+              <th className="px-4 py-3 text-[25px] font-bold text-center">Logo</th>
+              <th className="px-4 py-3 text-[25px] font-bold text-center">Juego</th>
+              <th className="px-4 py-3 text-[25px] font-bold text-center">Nickname</th>
+              <th className="px-4 py-3 text-[25px] font-bold text-center">Región</th>
+
               <th className="px-4 py-3 text-[25px] font-bold text-center">Acciones</th>
             </tr>
           </thead>
@@ -40,16 +66,17 @@ const CuentasJuego = () => {
                 key={index}
                 className="bg-gray-900 even:bg-gray-800 hover:bg-gray-700"
               >
-                <td className="px-4 py-3">
+                <td className="px-4 py-3 flex flex-row items-center justify-center">
                   <img
                     src={cuenta.imagen}
                     alt="logo"
                     className="w-12 h-12 object-contain rounded-md"
                   />
                 </td>
-                <td className="px-4 py-3 text-[18px] font-semibold">{cuenta.juego}</td>
-                <td className="px-4 py-3 text-[18px] font-semibold">{cuenta.nickname}</td>
-                <td className="px-4 py-3 text-[18px] font-semibold">{cuenta.region}</td>
+                <td className="px-4 py-3 text-[18px] font-semibold text-center">{cuenta.juego}</td>
+                <td className="px-4 py-3 text-[18px] font-semibold text-center">{cuenta.nickname}</td>
+                <td className="px-4 py-3 text-[18px] font-semibold text-center">{cuenta.region}</td>
+
                 <td className="px-4 py-3">
                   <div className="flex flex-wrap gap-3 justify-center items-center">
                     <button
