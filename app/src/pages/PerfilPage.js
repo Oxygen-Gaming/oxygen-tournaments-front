@@ -19,7 +19,7 @@ const Perfil = () => {
     const renderContent = () => {
         switch(opcionSeleccionada) {
             case 'perfil':
-                return <Perfil2 />;
+                return <Perfil2/>;
             case 'cuenta':
                 return <Cuenta />;
             case 'conexiones':
@@ -51,14 +51,13 @@ const Perfil = () => {
             
             <div className="pl-[100px] px-[30px] hidden lg:flex lg:flex-col mt-[50px] ">
                 <div className="flex text-[10px] gap-[7px] lg:text-[20px] lg:gap-[30px] w-[100%] font-bold">
-                    <Enlace opcion={'perfil'} nombre={'Perfil'} setOpcionSeleccionada={setOpcionSeleccionada} />
-                    <Enlace opcion={'logros'} nombre={'Logros'} setOpcionSeleccionada={setOpcionSeleccionada} />
-                    <Enlace opcion={'pedidos'} nombre={'Pedidos'} setOpcionSeleccionada={setOpcionSeleccionada} />
-                    <Enlace opcion={'cuentas de juego'} nombre={'Cuentas de Juego'} setOpcionSeleccionada={setOpcionSeleccionada} />
-                    <Enlace opcion={'conexiones'} nombre={'Conexiones'} setOpcionSeleccionada={setOpcionSeleccionada} />
-                    <Enlace opcion={'cuenta'} nombre={'Editar Perfil'} setOpcionSeleccionada={setOpcionSeleccionada} />
+                    <Enlace opcion={'perfil'} nombre={'Perfil'} setOpcionSeleccionada={setOpcionSeleccionada} opcionSeleccionada={opcionSeleccionada}/>
+                    <Enlace opcion={'logros'} nombre={'Logros'} setOpcionSeleccionada={setOpcionSeleccionada} opcionSeleccionada={opcionSeleccionada}/>
+                    <Enlace opcion={'pedidos'} nombre={'Pedidos'} setOpcionSeleccionada={setOpcionSeleccionada} opcionSeleccionada={opcionSeleccionada}/>
+                    <Enlace opcion={'cuentas de juego'} nombre={'Cuentas de Juego'} setOpcionSeleccionada={setOpcionSeleccionada} opcionSeleccionada={opcionSeleccionada}/>
+                    <Enlace opcion={'conexiones'} nombre={'Conexiones'} setOpcionSeleccionada={setOpcionSeleccionada} opcionSeleccionada={opcionSeleccionada}/>
+                    <Enlace opcion={'cuenta'} nombre={'Editar Perfil'} setOpcionSeleccionada={setOpcionSeleccionada} opcionSeleccionada={opcionSeleccionada}/>
                 </div>
-                <hr className="underline w-full"></hr>
             </div>
             <div className="hidden lg:flex lg:flex-col lg:items-center lg:mt-[50px] lg:mb-[50px]">
                 {renderContent()}
