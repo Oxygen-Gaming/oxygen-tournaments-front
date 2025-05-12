@@ -95,98 +95,87 @@ const TabContent = ({ activeTab, selectedCard, setShowMatchModal, setSelectedMat
   return (
     <div className="p-6 max-w-[1200px] mx-auto">
       {activeTab === "resumen" && (
-        <div>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="">
+          <div className="grid grid-cols-1 lg:grid-cols-1">
             {/* Formato */}
-            <div className="relative bg-[#1c1c1c] text-white p-6 rounded-lg shadow-lg border border-gray-700">
-              <h3 className="text-2xl font-extrabold mb-4 text-center border-b-2 border-gray-300 pb-2">Formato</h3>
-              <p className="text-lg mb-2 text-gray-300 text-center border-b border-gray-600 pb-2">
-                Este torneo sigue un formato de eliminación directa, diseñado para garantizar que solo los <span className="text-[#1AA9FF]">mejores equipos</span>  avancen a las etapas finales.
+            <div className="flex flex-col justify-center items-start relative text-white p-6">
+              <h3 className="text-2xl font-extrabold mb-4 text-justify">Información General</h3>
+              <p className="text-xl mb-2 text-gray-300 text-justify pb-2">
+                Este torneo adopta un formato de eliminación directa, cuidadosamente estructurado para garantizar que únicamente los <span className="text-[#1AA9FF]">mejores equipos</span> avancen a las fases decisivas del evento. Esta modalidad fomenta una competencia intensa desde el primer enfrentamiento.
+                
+                Cada enfrentamiento se disputará al mejor de <span className="text-[#1AA9FF]">3 mapas</span>, lo que brinda a los equipos múltiples oportunidades para demostrar su dominio técnico, su capacidad estratégica y su habilidad para adaptarse a distintas situaciones dentro del juego.
+
+                Gracias a este formato, se asegura una competencia <span className="text-[#1AA9FF]">emocionante</span>, <span className="text-[#1AA9FF]">justa</span> y repleta de momentos inolvidables para todos los participantes y espectadores.
               </p>
-              <p className="text-lg mb-2 text-gray-300 text-center border-b border-gray-600 pb-2">
-                Cada partida se juega al mejor de <span className="text-[#1AA9FF]">3 mapas</span>, lo que permite a los equipos demostrar su habilidad y adaptabilidad en diferentes escenarios.
+
+              <p className="text-xl mb-2 text-gray-300 text-justify pb-2">
+                Actualmente, contamos con un total de <span className="text-[#1AA9FF]">{registeredPlayers} jugadores</span> registrados oficialmente para participar en este torneo. Este número refleja el creciente interés por formar parte de esta competencia.
+
+                De ese grupo, <span className="text-[#1AA9FF]">{confirmedPlayers} jugadores</span> ya han confirmado su participación, asegurando así su lugar en la contienda y su compromiso con el desarrollo del torneo.
+
+                El límite establecido para este torneo es de <span className="text-[#1AA9FF]">32 equipos</span>, por lo que se recomienda a los interesados completar su registro lo antes posible para evitar quedarse fuera.
               </p>
-              <p className="text-lg text-gray-300 text-center">
-                Este formato asegura una competencia <span className="text-[#1AA9FF]">emocionante</span> y <span className="text-[#1AA9FF]">justa</span> para todos los participantes.
+
+              <p className="text-xl mb-2 text-gray-300 text-justify pb-2">
+                El mapa oficial seleccionado para este torneo es <span className="text-[#1AA9FF]"><b>Howling Abyss</b></span>, ampliamente reconocido por su diseño singular, su dinámica fluida y los retos estratégicos que plantea para los equipos.
+
+                El modo de juego será <span className="text-[#1AA9FF]"><b>Destroy Nexus</b></span>, en el cual los equipos competirán intensamente con el objetivo principal de destruir la base enemiga, lo que añade un componente de presión y estrategia constantes.
+
+                En cuanto al sistema de selección, se utilizará el formato <span className="text-[#1AA9FF]"><b>Blind Pick</b></span>, lo que implica que cada equipo seleccionará a sus campeones sin conocer las elecciones del adversario, potenciando así la creatividad y la sorpresa en cada partida.
               </p>
             </div>
 
-            {/* Equipos */}
-            <div className="relative bg-[#1c1c1c] text-white p-6 rounded-lg shadow-lg border border-gray-700">
-              <h3 className="text-2xl font-extrabold mb-4 text-center border-b-2 border-gray-300 pb-2">Equipos</h3>
-              <p className="text-lg mb-2 text-gray-300 text-center border-b border-gray-600 pb-2">
-                Actualmente, hay <span className="text-[#1AA9FF]">{registeredPlayers} jugadores</span> registrados para este torneo.
-              </p>
-              <p className="text-lg mb-2 text-gray-300 text-center border-b border-gray-600 pb-2">
-                De estos, <span className="text-[#1AA9FF]">{confirmedPlayers} jugadores</span> han confirmado su participación.
-              </p>
-              <p className="text-lg text-gray-300 text-center">
-                El torneo tiene un límite de <span className="text-[#1AA9FF]">32 equipos</span>, así que asegúrate de registrarte pronto para asegurar tu lugar.
-              </p>
-            </div>
-
-            {/* Ajustes de partida */}
-          <div className="relative bg-[#1c1c1c] text-white p-6 rounded-lg shadow-lg border border-gray-700">
-            <h3 className="text-2xl font-extrabold mb-4 text-center border-b-2 border-gray-300 pb-2">Ajustes de partida</h3>
-            <p className="text-lg mb-2 text-gray-300 text-center border-b border-gray-600 pb-2">
-              El mapa seleccionado para este torneo es <span className="text-[#1AA9FF]"><b>Howling Abyss</b></span> , conocido por su diseño único y desafíos estratégicos.
-            </p>
-            <p className="text-lg mb-2 text-gray-300 text-center border-b border-gray-600 pb-2">
-              El modo de juego será <span className="text-[#1AA9FF]"><b>Destroy Nexus</b></span> , donde los equipos competirán para destruir la base enemiga.
-            </p>
-            <p className="text-lg text-gray-300 text-center">
-              El modo de selección será <span className="text-[#1AA9FF]"><b>Blind Pick</b></span> , lo que significa que los equipos seleccionarán sus campeones sin conocer las elecciones del oponente.
-            </p>
           </div>
 
-          </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6">
-            {/* Información del torneo/Reglas */}
-            <div className="relative bg-[#1c1c1c] text-white p-6 rounded-lg shadow-lg border border-gray-700">
-              <h3 className="text-2xl font-extrabold mb-4 text-center border-b-2 border-gray-300 pb-2">Reglas</h3>
-              <p className="text-lg mb-2 text-gray-300 text-center border-b border-gray-600 pb-2">
-              <span className="text-[#1AA9FF]"><b>Juego limpio:</b></span> No se permite el uso de hacks o trampas. Cualquier infracción resultará en descalificación inmediata.
+          <div className="flex flex-col gap-6 mt-6">
+            {/* Reglas */}
+            <div className="flex flex-col justify-center items-start relative text-white p-6">
+              <h3 className="text-[30px] font-extrabold mb-4 text-justify pb-2">Reglamento</h3>
+              <p className="text-xl mb-2 text-gray-300 text-justify pb-2">
+                Está absolutamente prohibido el uso de hacks, trampas o cualquier tipo de software que otorgue ventajas injustas. Cualquier infracción a esta norma conllevará la <span className="text-red-500">descalificación inmediata</span> del jugador o equipo implicado.
               </p>
-              <p className="text-lg mb-2 text-gray-300 text-center border-b border-gray-600 pb-2">
-              <span className="text-[#1AA9FF]"><b>Respeto:</b></span> Se espera que todos los jugadores mantengan una conducta respetuosa. El comportamiento ofensivo no será tolerado.
+              <p className="text-xl mb-2 text-gray-300 text-justify pb-2">
+                Se exige que todos los jugadores mantengan en todo momento una conducta <span className="text-green-500">respetuosa</span> tanto dentro como fuera del juego. Cualquier comportamiento ofensivo, discriminatorio o provocador será sancionado severamente.
               </p>
-              <p className="text-lg mb-2 text-gray-300 text-center border-b border-gray-600 pb-2">
-              <span className="text-[#1AA9FF]"><b>Puntualidad:</b></span> Los jugadores deben estar presentes según el horario establecido para evitar retrasos.
+              <p className="text-xl mb-2 text-gray-300 text-justify pb-2">
+                La <span className="text-blue-500">asistencia puntual</span> a las partidas programadas es indispensable. Los retrasos no justificados podrán resultar en la pérdida automática del enfrentamiento correspondiente.
               </p>
-              <p className="text-lg text-gray-300 text-center">
-              <span className="text-[#1AA9FF]"><b>Decisiones finales:</b></span> Las decisiones de los organizadores son definitivas y no están sujetas a apelación.
+              <p className="text-xl text-gray-300 text-justify">
+                Las decisiones tomadas por el comité organizador serán <span className="text-yellow-500">definitivas</span> y no estarán sujetas a apelación. Se recomienda acatar las directrices con profesionalismo y espíritu deportivo.
               </p>
             </div>
+
             {/* Premios */}
-            <div className="relative bg-[#1c1c1c] text-white p-6 rounded-lg shadow-lg border border-gray-700">
+            <div className="relative text-white p-6">
               <h3 className="text-2xl font-extrabold mb-4 text-center border-b-2 border-gray-300 pb-2">Premios</h3>
               <table className="w-full text-left border-collapse">
                 <thead>
                   <tr className="border-b border-gray-700">
-                    <th className="py-2 px-4 text-yellow-400 text-lg font-bold">🏆 1er Puesto</th>
-                    <th className="py-2 px-4 text-gray-300">Por decidir</th>
-                    <th className="py-2 px-4 text-yellow-400 text-right">€300</th>
+                    <th className="py-2 px-4 text-yellow-400 text-xl font-bold">🏆 1er Puesto</th>
+                    <th className="py-2 px-4 text-gray-300 text-xl">Por decidir</th>
+                    <th className="py-2 px-4 text-yellow-400 text-right text-xl">€300</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr className="border-b border-gray-700">
-                    <td className="py-2 px-4 text-gray-400 text-lg font-bold">🥈 2º Puesto</td>
-                    <td className="py-2 px-4 text-gray-300">Por decidir</td>
-                    <td className="py-2 px-4 text-gray-400 text-right">€150</td>
+                    <td className="py-2 px-4 text-gray-400 text-xl font-bold">🥈 2º Puesto</td>
+                    <td className="py-2 px-4 text-gray-300 text-xl">Por decidir</td>
+                    <td className="py-2 px-4 text-gray-400 text-right text-xl">€150</td>
                   </tr>
                   <tr>
-                    <td className="py-2 px-4 text-orange-400 text-lg font-bold">🥉 3er Puesto</td>
-                    <td className="py-2 px-4 text-gray-300">Por decidir</td>
-                    <td className="py-2 px-4 text-orange-400 text-right">€50</td>
+                    <td className="py-2 px-4 text-orange-400 text-xl font-bold">🥉 3er Puesto</td>
+                    <td className="py-2 px-4 text-gray-300 text-xl">Por decidir</td>
+                    <td className="py-2 px-4 text-orange-400 text-right text-xl">€50</td>
                   </tr>
                 </tbody>
               </table>
-              <p className="mt-4 text-gray-300 text-center">
-                Estos premios están diseñados para recompensar el esfuerzo y la dedicación de los equipos participantes.
+              <p className="mt-4 text-gray-300 text-xl text-center">
+                Estos premios han sido pensados para reconocer y recompensar el esfuerzo, la dedicación y el alto rendimiento de los equipos participantes a lo largo del torneo.
               </p>
             </div>
           </div>
         </div>
+
       )}
       {activeTab === "bracket" && (
         <div>

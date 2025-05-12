@@ -14,7 +14,7 @@ const Header = () => {
         <NavLink
           to="/"
           className={`text-white no-underline px-2 py-2 rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10 font-['Roboto_Condensed',sans-serif] ${
-            location.pathname === "/" ? "bg-blue-600" : ""
+            location.pathname === "/" ? "bg-gradient-to-r from-[#005f99] to-[#1AA9FF]" : ""
           }`}
         >
           Inicio
@@ -22,7 +22,7 @@ const Header = () => {
         <NavLink
           to="/competition"
           className={`text-white no-underline px-2 py-2 rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10 font-['Roboto_Condensed',sans-serif] ${
-            location.pathname.startsWith("/competition") || location.pathname.startsWith("/tournament-details") ? "bg-blue-600" : ""
+            location.pathname.startsWith("/competition") || location.pathname.startsWith("/tournament-details") ? "bg-gradient-to-r from-[#005f99] to-[#1AA9FF]" : ""
           }`}
         >
           Competiciones
@@ -30,7 +30,7 @@ const Header = () => {
         <NavLink
           to="/content"
           className={`text-white no-underline px-2 py-2 rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10 font-['Roboto_Condensed',sans-serif] ${
-            location.pathname.startsWith("/content") ? "bg-blue-600" : ""
+            location.pathname.startsWith("/content") ? "bg-gradient-to-r from-[#005f99] to-[#1AA9FF]" : ""
           }`}
         >
           Contenido
@@ -38,7 +38,7 @@ const Header = () => {
         <NavLink
           to="/missions"
           className={`text-white no-underline px-2 py-2 rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10 font-['Roboto_Condensed',sans-serif] ${
-            location.pathname.startsWith("/missions") || location.pathname.startsWith("/mission-details") ? "bg-blue-600" : ""
+            location.pathname.startsWith("/missions") || location.pathname.startsWith("/mission-details") ? "bg-gradient-to-r from-[#005f99] to-[#1AA9FF]" : ""
           }`}
         >
           Misiones
@@ -46,7 +46,7 @@ const Header = () => {
         <NavLink
           to="/rewards"
           className={`text-white no-underline px-2 py-2 rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10 font-['Roboto_Condensed',sans-serif] ${
-            location.pathname.startsWith("/rewards") || location.pathname.startsWith("/reward-details") ? "bg-blue-600" : ""
+            location.pathname.startsWith("/rewards") || location.pathname.startsWith("/reward-details") ? "bg-gradient-to-r from-[#005f99] to-[#1AA9FF]" : ""
           }`}
         >
           Recompensas
@@ -54,7 +54,7 @@ const Header = () => {
         <NavLink
           to="/ventajas"
           className={`text-white no-underline px-2 py-2 rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10 font-['Roboto_Condensed',sans-serif] ${
-            location.pathname.startsWith("/ventajas") ? "bg-blue-600" : ""
+            location.pathname.startsWith("/ventajas") ? "bg-gradient-to-r from-[#005f99] to-[#1AA9FF]" : ""
           }`}
         >
           Ventajas

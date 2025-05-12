@@ -1,5 +1,5 @@
 import React from "react";
-import PortadaDeHome from "@imgs/Portada_de_Home.jpg";
+import PortadaDeHome from "@imgs/Portada_de_Home.webp";
 
 const PrincipalInicio = () => {
     return (

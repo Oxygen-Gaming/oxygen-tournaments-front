@@ -38,7 +38,7 @@ const Perfil = () => {
     };
 
     return (
-        <div className="bg-[#1AA9FF] text-white min-h-screen font-['Roboto_Condensed',sans-serif] pt-5 lg:pt-0">
+        <div className="bg-[#1c1c1c] text-white min-h-screen font-['Roboto_Condensed',sans-serif] pt-5 lg:pt-0">
             <Header />
             <MenuHamburguesaPerfil 
                 isOpen={isMenuOpen} 
