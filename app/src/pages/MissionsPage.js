@@ -15,7 +15,7 @@ const Missions = () => {
   };
 
   return (
-    <div className="bg-[#1AA9FF] text-[18px] font-['Roboto_Condensed'] min-h-screen">
+    <div className="bg-white text-white text-[18px] font-['Roboto_Condensed'] min-h-screen">
       <Header />
       <MenuHamburguesaNormal /> {/* Added MenuHamburguesaNormal */}
 

@@ -17,6 +17,8 @@ import posternormal15 from "@imgs/Activo digital.webp";
 import posternormal16 from "@imgs/descuento.webp";
 import posternormal17 from "@imgs/Descuentos merchandising.webp";
 import posternormal18 from "@imgs/drops exclusivos.webp";
+import ventajaEntradasE from "@imgs/Ventaja_Entradas_E.webp";
+
 
 const sections = {
   oxygen: [
@@ -39,6 +41,8 @@ const sections = {
     { img: posternormal13, isPremium: true }, // Obsequio cumpleaños
     { img: posternormal14, isPremium: true }, // Puntos Dobles
     { img: posternormal15, isPremium: true }, // Activo Digital
+    { img: ventajaEntradasE, isPremium: true } //Ventajas entradas
+
   ],
   productos: [
     { img: posternormal16 },
@@ -103,7 +107,7 @@ const VentajasNormales = ({ section, title, subtitle, isBlue }) => {
               </div>
             ))}
           </div>
-          <div className="grid grid-cols-2 gap-[50px] justify-center"> {/* Reduced gap from 90px to 50px */}
+          <div className="grid grid-cols-3 gap-[50px] justify-center"> {/* Reduced gap from 90px to 50px */}
             {items.slice(3).map((item, index) => (
               <div
                 key={index}

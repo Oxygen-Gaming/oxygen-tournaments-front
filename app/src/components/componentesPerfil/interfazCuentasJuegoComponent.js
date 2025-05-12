@@ -23,26 +23,22 @@ const CuentasJuego = () => {
 
   return (
     <div className="w-full px-4 py-8 flex flex-col items-center">
-      <h1 className="text-[30px] md:text-[40px] font-semibold mb-6 text-center">
-        Cuentas de juego
-      </h1>
-
       <div className="overflow-x-auto w-full max-w-[1200px] shadow-lg rounded-2xl bg-white">
-        <table className="min-w-full text-left border-collapse">
+        <table className="min-w-full text-left border-collapse text-[white]">
           <thead className="bg-gradient-to-r from-[#18538a] to-[#1e90ff] text-white">
-            <tr>
-              <th className="px-4 py-3 text-sm sm:text-base font-medium">Logo</th>
-              <th className="px-4 py-3 text-sm sm:text-base font-medium">Juego</th>
-              <th className="px-4 py-3 text-sm sm:text-base font-medium">Nickname</th>
-              <th className="px-4 py-3 text-sm sm:text-base font-medium">Región</th>
-              <th className="px-4 py-3 text-sm sm:text-base font-medium text-center">Acciones</th>
+            <tr className="bg-gray-800 hover:bg-gray-700">
+              <th className="px-4 py-3 text-[25px] font-bold">Logo</th>
+              <th className="px-4 py-3 text-[25px] font-bold">Juego</th>
+              <th className="px-4 py-3 text-[25px] font-bold">Nickname</th>
+              <th className="px-4 py-3 text-[25px] font-bold">Región</th>
+              <th className="px-4 py-3 text-[25px] font-bold text-center">Acciones</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-200">
             {cuentas.map((cuenta, index) => (
               <tr
                 key={index}
-                className="hover:bg-blue-50 transition-colors duration-200"
+                className="bg-gray-900 even:bg-gray-800 hover:bg-gray-700"
               >
                 <td className="px-4 py-3">
                   <img
@@ -51,9 +47,9 @@ const CuentasJuego = () => {
                     className="w-12 h-12 object-contain rounded-md"
                   />
                 </td>
-                <td className="px-4 py-3 text-sm sm:text-base text-blue-600 font-semibold">{cuenta.juego}</td>
-                <td className="px-4 py-3 text-sm sm:text-base text-blue-600 font-semibold">{cuenta.nickname}</td>
-                <td className="px-4 py-3 text-sm sm:text-base text-blue-600 font-semibold">{cuenta.region}</td>
+                <td className="px-4 py-3 text-[18px] font-semibold">{cuenta.juego}</td>
+                <td className="px-4 py-3 text-[18px] font-semibold">{cuenta.nickname}</td>
+                <td className="px-4 py-3 text-[18px] font-semibold">{cuenta.region}</td>
                 <td className="px-4 py-3">
                   <div className="flex flex-wrap gap-3 justify-center items-center">
                     <button

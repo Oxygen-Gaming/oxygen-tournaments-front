@@ -15,7 +15,7 @@ const ViewAllComponent = ({ selectedGame, handleViewAll }) => {
 
   const tournaments = {
     'League of Legends': [
-      { name: 'LoL Championship Series', date: '30/03/2025', status: 'Inscripciones abiertas', players: 78, img: LeagueOfLegends },
+      { name: 'LoL Championship Series', date: '31/10/2025', status: 'Inscripciones abiertas', players: 78, img: LeagueOfLegends },
       { name: 'LoL Winter Cup', date: '26/03/2025', status: 'Activo', players: 150, img: LeagueOfLegends },
       { name: 'LoL Spring Showdown', date: '15/03/2025', status: 'Finalizado', players: 120, img: LeagueOfLegends },
       { name: 'LoL Spring Clash', date: '10/04/2025', status: 'Inscripciones abiertas', players: 95, img: LeagueOfLegends },

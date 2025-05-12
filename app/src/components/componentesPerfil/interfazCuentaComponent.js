@@ -24,9 +24,9 @@ const Cuenta = () => {
     };
 
     return (
-        <div className="w-[90%] sm:h-full lg:w-[60%] flex flex-col-reverse sm:flex-row sm:items-center sm:bg-blue-500 sm:rounded-r-lg items-center mt-[30px] mb-[30px] xl:mt-[100px] xl:mb-[100px] rounded-lg">
+        <div className="w-[100%]  sm:h-full lg:w-[50%] flex justify-center items-center flex-col lg:flex-row sm:items-center sm:bg-blue-500 sm:rounded-r-lg mb-[30px] xl:mt-[100px] xl:mb-[100px] rounded-lg">
             
-            <div className="bg-blue-500 p-[30px] lg:w-[30%] w-full sm:w-[80%] sm:h-full flex flex-col items-center h-full rounded-t-lg">
+            <div className=" bg-blue-500 p-[30px] lg:w-[30%] w-full sm:w-[80%] sm:h-full flex flex-col items-center h-full rounded-t-lg">
                 <div className="relative w-[150px] h-[150px] lg:float-right">
                     <button onClick={() => document.getElementById('fileInput').click()} className="bg-[white] text-[#1AA9FF] p-2 mt-[75%] ml-[75%] rounded-full absolute">
                         <i className="fa-solid fa-user-pen"></i>
@@ -35,7 +35,7 @@ const Cuenta = () => {
                     <input type="file" accept="image/*" onChange={handleImageChange} className="hidden" id="fileInput"/>  
                 </div>
             </div>
-            <form className="bg-[#313ee3] w-full flex flex-col items-center p-[15px] rounded-b-lg sm:rounded-none sm:rounded-r-lg sm:rounded-rb-none">
+            <form className="lg:py-[10vh] lg:px-[5vh] bg-[#1c1c1c] w-full flex flex-col items-center p-[15px] rounded-b-lg sm:rounded-none sm:rounded-r-lg sm:rounded-rb-none">
                 <h1 className="text-[30px]">Información personal</h1>
                 <div className="w-full flex flex-col items-center gap-[20px]">
                 
@@ -78,7 +78,7 @@ const Cuenta = () => {
                     <div className="flex lg:flex-row flex-col xl:w-[80%] w-[50%] gap-[10px] text-center justify-between lg:items-start lg:text-start items-center">
                         <div>
                             <h1 className="text-[30px]">Borrar cuenta</h1>
-                            <p className="text-[#545454]">Si eliminas la cuenta no podrás recuperarla</p>
+                            <p className="text-red-500">Si eliminas la cuenta no podrás recuperarla</p>
                         </div>
                         <button className="bg-[white] w-[150px] h-[40px] hover:bg-[red] duration-500 hover:text-[white] hover:border-[white] hover:border-[1px] text-[red] rounded">Borrar Cuenta</button>
                     </div>
