@@ -15,7 +15,7 @@ const Rewards = () => {
   };
 
   return (
-    <div className="bg-white text-[18px] font-['Roboto_Condensed'] min-h-screen">
+    <div className="bg-[#1c1c1c] text-[18px] font-['Roboto_Condensed'] min-h-screen">
       <Header />
       <MenuHamburguesaNormal /> {/* Added MenuHamburguesaNormal */}
 

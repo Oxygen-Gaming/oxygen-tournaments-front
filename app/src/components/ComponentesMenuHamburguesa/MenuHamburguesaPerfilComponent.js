@@ -31,14 +31,14 @@ const MenuHamburguesaPerfil = () => {
     };
 
     return (
-        <div className="flex flex-col gap-[10vh] lg:hidden">
+        <div className="flex flex-col gap-[10vh] lg:hidden ">
             <button className="lg:hidden w-full flex flex-col items-center justify-center" onClick={() => setIsOpen(!isOpen)}>
                 <div className="w-6 h-0.5 bg-white mb-1"></div>
                 <div className="w-6 h-0.5 bg-white mb-1"></div>
                 <div className="w-6 h-0.5 bg-white"></div>
             </button>
             <div
-                className={`lg:hidden fixed top-0 left-0 w-full h-full bg-[#1AA9FF] flex flex-col justify-start items-center p-4 gap-4 transition-transform ease-in-out duration-300 ${
+                className={`lg:hidden fixed top-0 left-0 w-full h-full bg-[#1c1c1c] flex flex-col justify-start items-center p-4 gap-4 transition-transform ease-in-out duration-300 ${
                     isOpen ? 'translate-x-0 z-50' : '-translate-x-full'
                 } overflow-y-auto`}
             >
