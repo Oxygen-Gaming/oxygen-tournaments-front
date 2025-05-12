@@ -50,14 +50,14 @@ const MissionDetailsPage = () => {
 
   if (!currentMission) {
     return (
-      <div className="bg-[#1AA9FF] text-white h-screen flex items-center justify-center">
+      <div className="bg-white text-white h-screen flex items-center justify-center">
         <h1 className="text-3xl font-bold text-center">No se encontró información de la misión.</h1>
       </div>
     );
   }
 
   return (
-    <div className="bg-[#1AA9FF] text-white min-h-screen font-['Roboto_Condensed',sans-serif]">
+    <div className="bg-white text-white min-h-screen font-['Roboto_Condensed',sans-serif]">
       <Header />
       <div className="container mx-auto p-6">
         {/* Back Button */}

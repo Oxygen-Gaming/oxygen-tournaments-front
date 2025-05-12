@@ -40,6 +40,7 @@ const Logro = ({ titulo, variable }) => {
       
     </div>
     
+
     );
 }
 

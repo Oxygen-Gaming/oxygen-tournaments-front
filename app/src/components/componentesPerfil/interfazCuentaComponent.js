@@ -27,6 +27,7 @@ const Cuenta = () => {
         <div className="w-[100%]  sm:h-full lg:w-[50%] flex justify-center items-center flex-col lg:flex-row sm:items-center sm:bg-gray-700 sm:rounded-r-lg mb-[30px] xl:mt-[100px] xl:mb-[100px] rounded-lg">
             
             <div className="  p-[30px] lg:w-[30%] w-full sm:w-[80%] sm:h-full flex flex-col items-center h-full rounded-t-lg">
+
                 <div className="relative w-[150px] h-[150px] lg:float-right">
                     <button onClick={() => document.getElementById('fileInput').click()} className="bg-[white] text-[#1AA9FF] p-2 mt-[75%] ml-[75%] rounded-full absolute">
                         <i className="fa-solid fa-user-pen"></i>
@@ -36,6 +37,7 @@ const Cuenta = () => {
                 </div>
             </div>
             <form className="lg:py-[10vh] lg:px-[5vh] bg-gray-800 w-full flex flex-col items-center p-[15px] rounded-b-lg sm:rounded-none sm:rounded-r-lg sm:rounded-rb-none">
+
                 <h1 className="text-[30px]">Información personal</h1>
                 <div className="w-full flex flex-col items-center gap-[20px]">
                 

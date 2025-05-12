@@ -13,11 +13,12 @@ const Red = ({ logo, nombre, estado, boton, fondo, relleno }) => {
                 <p className="text-sm text-gray-300">{estado}</p>
             </div>
             <button className="bg-gradient-to-r from-[#005f99] to-[#1AA9FF] text-white font-medium h-10 px-4 rounded-[10px] transition-all duration-300 ease-in-out">
+
                 {boton}
             </button>
         </div>
     );
-};
+
 
 export default Red;
 

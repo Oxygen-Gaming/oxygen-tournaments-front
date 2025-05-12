@@ -51,10 +51,12 @@ const CuentasJuego = () => {
         <table className="min-w-full text-left border-collapse text-[white]">
           <thead className="bg-gradient-to-r from-[#18538a] to-[#1e90ff] text-white">
             <tr className="bg-gray-800 hover:bg-gray-700">
+
               <th className="px-4 py-3 text-[25px] font-bold text-center">Logo</th>
               <th className="px-4 py-3 text-[25px] font-bold text-center">Juego</th>
               <th className="px-4 py-3 text-[25px] font-bold text-center">Nickname</th>
               <th className="px-4 py-3 text-[25px] font-bold text-center">Región</th>
+
               <th className="px-4 py-3 text-[25px] font-bold text-center">Acciones</th>
             </tr>
           </thead>
@@ -74,6 +76,7 @@ const CuentasJuego = () => {
                 <td className="px-4 py-3 text-[18px] font-semibold text-center">{cuenta.juego}</td>
                 <td className="px-4 py-3 text-[18px] font-semibold text-center">{cuenta.nickname}</td>
                 <td className="px-4 py-3 text-[18px] font-semibold text-center">{cuenta.region}</td>
+
                 <td className="px-4 py-3">
                   <div className="flex flex-wrap gap-3 justify-center items-center">
                     <button
