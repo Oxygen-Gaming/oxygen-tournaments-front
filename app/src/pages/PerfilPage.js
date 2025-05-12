@@ -48,7 +48,6 @@ const Perfil = () => {
                     setIsMenuOpen(false); // Cierra el menú al seleccionar una opción
                 }} 
             />
-            
             <div className="pl-[100px] px-[30px] hidden lg:flex lg:flex-col mt-[50px] ">
                 <div className="flex text-[10px] gap-[7px] lg:text-[20px] lg:gap-[30px] w-[100%] font-bold">
                     <Enlace opcion={'perfil'} nombre={'Perfil'} setOpcionSeleccionada={setOpcionSeleccionada} opcionSeleccionada={opcionSeleccionada}/>
@@ -66,5 +65,4 @@ const Perfil = () => {
         </div>
     );
 }
-export { getImagenPerfil };
 export default Perfil;

@@ -19,6 +19,5 @@ const Red = ({ logo, nombre, estado, boton, fondo, relleno }) => {
         </div>
     );
 
-
+}
 export default Red;
-
