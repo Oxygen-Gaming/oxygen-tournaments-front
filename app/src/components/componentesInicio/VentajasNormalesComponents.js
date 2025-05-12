@@ -58,180 +58,66 @@ const VentajasNormales = ({ section, title, subtitle, isBlue }) => {
   const textColor = isBlue ? "text-white" : "text-gray-800";
 
   const renderImages = () => {
-    const isMobile = window.innerWidth <= 768; // Check if the view is mobile
-    if (isMobile) {
+    if (items.length === 4) {
       return (
-        <div className="flex flex-col items-center gap-4"> {/* Vertical layout for mobile */}
+        <div className="grid grid-cols-2 gap-8 px-6"> {/* Reduced gap */}
           {items.map((item, index) => (
             <div
               key={index}
-              className={`relative w-2/3 h-auto rounded-xl overflow-hidden transform transition-transform duration-500 hover:scale-110 hover:shadow-lg ${
+              className={`relative bg-black rounded-lg overflow-hidden transform transition-transform duration-500 hover:scale-110 hover:shadow-lg ${
                 item.isPremium ? "premium-glow" : ""
-              }`} // Reduced width for smaller images
+              }`}
             >
-              <img src={item.img} alt="" className="w-full h-auto object-contain rounded-xl" />
+              <img
+                src={item.img}
+                alt=""
+                className="w-full h-full object-cover"
+              />
             </div>
           ))}
         </div>
       );
     }
-    if (section === "contenido") { // Adjust gap specifically for "contenido"
+
+    if (items.length === 6) {
       return (
-        <div className="flex flex-col items-center gap-[80px] pb-[80px]"> {/* Added padding-bottom of 50px */}
-          <div className="grid grid-cols-2 gap-[90px] justify-center"> {/* Increased gap from 70px to 90px */}
-            {items.map((item, index) => (
-              <div
-                key={index}
-                className={`relative h-[300px] w-[300px] rounded-xl overflow-hidden transform transition-transform duration-500 hover:scale-110 hover:shadow-lg ${
-                  item.isPremium ? "premium-glow" : ""
-                }`}
-              >
-                <img src={item.img} alt="" className="h-full w-full object-cover rounded-xl" />
-              </div>
-            ))}
-          </div>
-        </div>
-      );
-    } else if (section === "premios") { // Adjust gap and size specifically for "premios"
-      return (
-        <div className="flex flex-col items-center gap-[60px]"> {/* Reduced gap from 80px to 60px */}
-          <div className="grid grid-cols-3 gap-[50px] justify-center"> {/* Reduced gap from 90px to 50px */}
-            {items.slice(0, 3).map((item, index) => (
-              <div
-                key={index}
-                className={`relative h-[250px] w-[250px] rounded-xl overflow-hidden transform transition-transform duration-500 hover:scale-110 hover:shadow-lg ${
-                  item.isPremium ? "premium-glow" : ""
-                }`}
-              >
-                <img src={item.img} alt="" className="h-full w-full object-cover rounded-xl" />
-              </div>
-            ))}
-          </div>
-          <div className="grid grid-cols-3 gap-[50px] justify-center"> {/* Reduced gap from 90px to 50px */}
-            {items.slice(3).map((item, index) => (
-              <div
-                key={index}
-                className={`relative h-[250px] w-[250px] rounded-xl overflow-hidden transform transition-transform duration-500 hover:scale-110 hover:shadow-lg ${
-                  item.isPremium ? "premium-glow" : ""
-                }`}
-              >
-                <img src={item.img} alt="" className="h-full w-full object-cover rounded-xl" />
-              </div>
-            ))}
-          </div>
-        </div>
-      );
-    } else if (section === "productos") { // Adjust gap specifically for "productos"
-      return (
-        <div className="flex flex-col items-center gap-[80px] pb-[80px]"> {/* Added padding-bottom of 50px */}
-          <div className="grid grid-cols-2 gap-[90px] justify-center"> {/* Increased gap from 70px to 90px */}
-            {items.map((item, index) => (
-              <div
-                key={index}
-                className={`relative h-[300px] w-[300px] rounded-xl overflow-hidden transform transition-transform duration-500 hover:scale-110 hover:shadow-lg ${
-                  item.isPremium ? "premium-glow" : ""
-                }`}
-              >
-                <img src={item.img} alt="" className="h-full w-full object-cover rounded-xl" />
-              </div>
-            ))}
-          </div>
-        </div>
-      );
-    } else if (section === "oxygen") { // Adjust gap specifically for "oxygen"
-      return (
-        <div className="flex flex-col items-center gap-[80px]"> {/* Increased gap from 60px to 80px */}
-          <div className="grid grid-cols-3 gap-[90px] justify-center"> {/* Increased gap from 70px to 90px */}
-            {items.map((item, index) => (
-              <div
-                key={index}
-                className={`relative h-[300px] w-[300px] rounded-xl overflow-hidden transform transition-transform duration-500 hover:scale-110 hover:shadow-lg ${
-                  item.isPremium ? "premium-glow" : ""
-                }`}
-              >
-                <img src={item.img} alt="" className="h-full w-full object-cover rounded-xl" />
-              </div>
-            ))}
-          </div>
-        </div>
-      );
-    } else if (items.length === 6) {
-      return (
-        <div className="flex flex-col items-center gap-[60px]"> {/* Increased gap from 40px to 60px */}
-          <div className="grid grid-cols-3 gap-[70px] justify-center"> {/* Increased gap from 50px to 70px */}
-            {items.slice(0, 3).map((item, index) => (
-              <div
-                key={index}
-                className={`relative h-[300px] w-[300px] rounded-xl overflow-hidden transform transition-transform duration-500 hover:scale-110 hover:shadow-lg ${
-                  item.isPremium ? "premium-glow" : ""
-                }`}
-              >
-                <img src={item.img} alt="" className="h-full w-full object-cover rounded-xl" />
-              </div>
-            ))}
-          </div>
-          <div className="grid grid-cols-3 gap-[70px] justify-center"> {/* Increased gap from 50px to 70px */}
-            {items.slice(3).map((item, index) => (
-              <div
-                key={index}
-                className={`relative h-[300px] w-[300px] rounded-xl overflow-hidden transform transition-transform duration-500 hover:scale-110 hover:shadow-lg ${
-                  item.isPremium ? "premium-glow" : ""
-                }`}
-              >
-                <img src={item.img} alt="" className="h-full w-full object-cover rounded-xl" />
-              </div>
-            ))}
-          </div>
-        </div>
-      );
-    } else if (items.length === 4) {
-      return (
-        <div className="flex justify-center">
-          <div className="grid grid-cols-2 gap-[30px]">
-            {items.map((item, index) => (
-              <div
-                key={index}
-                className={`relative h-[300px] w-[300px] rounded-xl overflow-hidden transform transition-transform duration-500 hover:scale-110 hover:shadow-lg ${
-                  item.isPremium ? "premium-glow" : ""
-                }`}
-              >
-                <img src={item.img} alt="" className="h-full w-full object-cover rounded-xl" />
-              </div>
-            ))}
-          </div>
-        </div>
-      );
-    } else if (items.length === 5) {
-      return (
-        <div className="flex flex-col items-center gap-[20px]">
-          <div className="grid grid-cols-2 gap-[30px] justify-center">
-            {items.slice(0, 2).map((item, index) => (
-              <div
-                key={index}
-                className={`relative h-[350px] w-[350px] rounded-xl overflow-hidden transform transition-transform duration-500 hover:scale-110 hover:shadow-lg ${
-                  item.isPremium ? "premium-glow" : ""
-                }`}
-              >
-                <img src={item.img} alt="" className="h-full w-full object-cover rounded-xl" />
-              </div>
-            ))}
-          </div>
-          <div className="grid grid-cols-3 gap-[30px] justify-center">
-            {items.slice(2).map((item, index) => (
-              <div
-                key={index}
-                className={`relative h-[250px] w-[250px] rounded-xl overflow-hidden transform transition-transform duration-500 hover:scale-110 hover:shadow-lg ${
-                  item.isPremium ? "premium-glow" : ""
-                }`}
-              >
-                <img src={item.img} alt="" className="h-full w-full object-cover rounded-xl" />
-              </div>
-            ))}
-          </div>
+        <div className="grid grid-cols-3 gap-6 px-6"> {/* Reduced gap */}
+          {items.map((item, index) => (
+            <div
+              key={index}
+              className={`relative bg-black rounded-lg overflow-hidden transform transition-transform duration-500 hover:scale-110 hover:shadow-lg ${
+                item.isPremium ? "premium-glow" : ""
+              }`}
+            >
+              <img
+                src={item.img}
+                alt=""
+                className="w-[100] h-[450px] object-cover" 
+              />
+            </div>
+          ))}
         </div>
       );
     }
-    return null;
+
+    return (
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 px-6"> {/* Default structure */}
+        {items.map((item, index) => (
+          <div
+            key={index}
+            className={`relative bg-black rounded-lg overflow-hidden transform transition-transform duration-500 hover:scale-110 hover:shadow-lg ${
+              item.isPremium ? "premium-glow" : ""
+            }`}
+          >
+            <img
+              src={item.img}
+              alt=""
+              className="w-full h-full object-cover"
+            />
+          </div>
+        ))}
+      </div>
+    );
   };
 
   return (
