@@ -6,6 +6,9 @@ import Banner from '@imgs/Headers_Contenido_Prueba.jpg';
 import MenuHamburguesaNormal from '@components/ComponentesMenuHamburguesa/MenuHamburguesaNormalComponent';
 import { motion } from 'framer-motion';
 
+
+
+
 const Contenido = () => {
     const [selectedCategory, setSelectedCategory] = useState(null);
     const [showSearchInput, setShowSearchInput] = useState(false);
@@ -76,11 +79,20 @@ const Contenido = () => {
 
     const videos = [
         { id: 1, title: 'Introducción a React Hooks', category: 'creadores', thumbnail: 'https://img.youtube.com/vi/dpw9EHDh2bM/hqdefault.jpg', src: 'https://www.youtube.com/embed/dpw9EHDh2bM', description: 'Aprende los fundamentos de React Hooks en este tutorial completo.' },
-        { id: 2, title: '10 seconds timer - Temporizador 10 segundos- Cronómetro 10 segundos.', category: 'creadores', thumbnail: 'https://img.youtube.com/vi/E-DDmIhL4IM/hq720.jpg?sqp=-oaymwFBCNAFEJQDSFryq4qpAzMIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB8AEB-AH-CYAC0AWKAgwIABABGEsgZSgyMA8=&rs=AOn4CLDJtOiPiNG2vCXvnEo34gDJ0ixvEQ', src: 'https://www.youtube.com/embed/E-DDmIhL4IM', description: '10 seconds Blue timer . Temporizador de 10 segundos azul. ' },
-        { id: 3, title: 'Guía Completa de Campeones de LoL', category: 'lol', thumbnail: 'https://img.youtube.com/vi/0ay9u23_rcA/hqdefault.jpg', src: 'https://www.youtube.com/embed/0ay9u23_rcA', description: 'Domina a tus campeones favoritos con esta guía detallada.' },
-        { id: 4, title: 'Trucos y Mecánicas Avanzadas en Rocket League', category: 'rocketleague', thumbnail: 'https://img.youtube.com/vi/PMt9M4t9n1g/hqdefault.jpg', src: 'https://www.youtube.com/embed/PMt9M4t9n1g', description: 'Lleva tu juego al siguiente nivel con estos trucos de Rocket League.' },
-        { id: 5, title: 'Cómo crecer en YouTube en 2024', category: 'creadores', thumbnail: 'https://img.youtube.com/vi/8_0JyjB0yMs/hqdefault.jpg', src: 'https://www.youtube.com/embed/8_0JyjB0yMs', description: 'Estrategias efectivas para hacer crecer tu canal de YouTube.' },
-        { id: 6, title: 'Análisis del Nuevo Agente de Valorant', category: 'valorant', thumbnail: 'https://img.youtube.com/vi/Svn1hxcgWXM/hqdefault.jpg', src: 'https://www.youtube.com/embed/Svn1hxcgWXM', description: 'Todo lo que necesitas saber sobre el nuevo agente y sus habilidades.' },
+        
+        { id: 2, title: 'Como jugar al League of Legends - Guía para empezar de cero.', category: 'lol', thumbnail: 'https://media.vandal.net/master/8-2021/202183014214660_1.jpg', src: 'https://www.youtube.com/embed/LjLKNGQK0Tg?si=75EusSQXybNqZ2bR', description: 'Domina a tus campeones favoritos con esta guía detallada.' },
+        
+        { id: 3, title: 'COMO MEJORAR RÁPIDO EN ROCKET LEAGUE 🚀 CONSEJOS PRO #1', category: 'rocketleague', thumbnail: 'https://i.ytimg.com/vi/2fkdWjtaxuo/hq720.jpg?sqp=-oaymwEXCK4FEIIDSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLAGaSr7GuYhij6Yle1KL8kgB45a9w', src: 'https://www.youtube.com/embed/2fkdWjtaxuo?si=PiDLdDcf9hoILhk5', description: 'Lleva tu juego al siguiente nivel con estos trucos de Rocket League.' },
+        
+        { id: 4, title: 'Trailer GTA VI', category: 'valorant', thumbnail: 'https://img.youtube.com/vi/VQRLujxTm3c/maxresdefault.jpg', src: 'https://www.youtube.com/embed/VQRLujxTm3c?si=lsz2poNFYbwTZuFT', description: 'Estrategias efectivas para hacer crecer tu canal de YouTube.' },
+        
+        { id: 5, title: 'Como Crecer en Youtube', category: 'creadores', thumbnail: 'https://img.youtube.com/vi/xnnxUzZmKY0/maxresdefault.jpg', src: 'https://www.youtube.com/embed/xnnxUzZmKY0?si=lDgMsEkxnsahSKIm', description: 'Todo lo que necesitas saber sobre el nuevo agente y sus habilidades.' },
+        
+        { id: 6, title: 'Mejores trolleos en Valorant', category: 'valorant', thumbnail: 'https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/media/image/2015/04/95797-trollface.jpg?tf=3840x', src: 'https://www.youtube.com/embed/4TnAKurylA8?si=Hv-jy5E1zueUZOdy', description: 'Todo lo que necesitas saber sobre el nuevo agente y sus habilidades.' },
+        
+        { id: 7, title: '5 MEJORES CONSEJOS PARA MEJORAR EN VALORANT', category: 'valorant', thumbnail: 'https://i.ytimg.com/vi/OzEwtlgKBXw/maxresdefault.jpg', src: 'https://www.youtube.com/embed/OzEwtlgKBXw?si=NR6VayCHyktBpeOX', description: 'Todo lo que necesitas saber sobre como mejorar en valorant y mejores consejillos.' },
+
+        { id: 8, title: 'EN el colectivo', category: 'creadores', thumbnail: 'https://ecomovilidad.net/wp-content/uploads/2010/13/nuevosbuses/IMG_8975.JPG', src: 'https://www.youtube.com/embed/CfrMEZppaXM?si=-gHj5XpJseROe3xV', description: 'Sin descripcion.' }
     ];
 
     const filteredVideos = selectedCategory
@@ -123,7 +135,7 @@ const Contenido = () => {
     };
 
     return (
-        <div className="font-['Roboto_Condensed',sans-serif] text-black m-0 p-0 min-h-screen flex flex-col">
+        <div className="font-['Roboto_Condensed',sans-serif] text-black m-0 p-0 min-h-screen flex flex-col bg-[#1c1c1c]">
             <Header />
             <MenuHamburguesaNormal />
             {selectedVideo ? (
@@ -150,7 +162,7 @@ const Contenido = () => {
                             ></iframe>
                         </div>
                         <div className="flex justify-between items-center">
-                            <h1 className="text-2xl lg:text-3xl font-bold mt-4">{selectedVideo.title}</h1>
+                            <h1 className="text-2xl lg:text-3xl font-bold mt-4 text-[white]">{selectedVideo.title}</h1>
                             <motion.button
                                 onClick={handleShare}
                                 className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg inline-flex items-center mt-4"
@@ -186,7 +198,7 @@ const Contenido = () => {
 
                     {/* Columna Derecha: Videos Recomendados */}
                     <div className="lg:w-1/3 mt-8 lg:mt-10 lg:pl-4">
-                        <h2 className="text-xl font-semibold mb-4">Recomendados</h2>
+                        <h2 className="text-xl font-semibold mb-4 text-[wh]">Recomendados</h2>
                         <div className="space-y-4">
                             {recommendedVideos.map(recVideo => (
                                 <div
@@ -242,13 +254,13 @@ const Contenido = () => {
 
                         {showSearchInput && (
                             <motion.div
-                                className="absolute top-[100%] right-[0%] w-full mx-auto overflow-hidden transition-all duration-300 ease-in-out bg-black"
+                                className=" absolute top-[100%] right-[0%] w-full mx-auto overflow-hidden transition-all duration-300 ease-in-out bg-black"
                                 style={{
                                     maxHeight: showSearchInput ? '50px' : '0',
                                     
                                 }}
                             >
-                                <div className="flex items-center rounded-md shadow-md w-11/12 mx-auto py-2">
+                                <div className="flex items-center rounded-md shadow-md w-11/12 mx-auto py-2 ">
                                     <i className="fa-solid fa-magnifying-glass text-gray-400 ml-2"></i>
                                     <input
                                         type="text"
