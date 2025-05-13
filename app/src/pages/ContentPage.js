@@ -78,7 +78,7 @@ const Contenido = () => {
     };
 
     const videos = [
-        { id: 1, title: 'Introducción a React Hooks', category: 'creadores', thumbnail: 'https://img.youtube.com/vi/dpw9EHDh2bM/hqdefault.jpg', src: 'https://www.youtube.com/embed/dpw9EHDh2bM', description: 'Aprende los fundamentos de React Hooks en este tutorial completo.' },
+        { id: 1, title: 'Introducción a React Hooks', category: 'creadores', thumbnail: 'https://img.youtube.com/vi/dpw9EHDh2bM/hqdefault.jpg', src: 'https://www.youtube.com/embed/dpw9EHDh2bM', description: 'Aprende los fundamentos de React Hooks en este tutorial completo.Aprende los fundamentos de React Hooks en este tutorial completo.Aprende los fundamentos de React Hooks en este tutorial completo.Aprende los fundamentos de React Hooks en este tutorial completo.Aprende los fundamentos de React Hooks en este tutorial completo.Aprende los fundamentos de React Hooks en este tutorial completo.Aprende los fundamentos de React Hooks en este tutorial completo.' },
         
         { id: 2, title: 'Como jugar al League of Legends - Guía para empezar de cero.', category: 'lol', thumbnail: 'https://media.vandal.net/master/8-2021/202183014214660_1.jpg', src: 'https://www.youtube.com/embed/LjLKNGQK0Tg?si=75EusSQXybNqZ2bR', description: 'Domina a tus campeones favoritos con esta guía detallada.' },
         
@@ -135,7 +135,7 @@ const Contenido = () => {
     };
 
     return (
-        <div className="font-['Roboto_Condensed',sans-serif] text-black m-0 p-0 min-h-screen flex flex-col bg-[#1c1c1c]">
+        <div className="font-['Roboto_Condensed',sans-serif] text-black m-0 p-0 min-h-screen flex flex-col bg-black">
             <Header />
             <MenuHamburguesaNormal />
             {selectedVideo ? (
@@ -145,7 +145,7 @@ const Contenido = () => {
                     <div className="lg:w-2/3 lg:pr-8">
                         <button
                             onClick={handleBackClick}
-                            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-4 py-2 rounded-md mb-4"
+                            className="mb-[13px] inline-block px-3 py-1 rounded-lg font-bold text-lg transition transform hover:-translate-y-1 hover:shadow-lg bg-gradient-to-r from-[#005f99] to-[#1AA9FF] text-white hover:from-[#00487a] hover:to-[#007acc]"
                         >
                             Volver
                         </button>
@@ -176,7 +176,7 @@ const Contenido = () => {
                         </div>
                                    
                   <div className="flex items-center p-4 bg-gray-800 rounded-lg text-white mt-6">
-                    <div className="w-2/3 pr-4">
+                    <div className="w-full mt-[25px] pr-4">
                       <p className="text-sm whitespace-pre-wrap">
                         {selectedVideo.description || "No hay descripción disponible."}
                       </p>
@@ -192,13 +192,15 @@ const Contenido = () => {
                       <p className="text-sm mt-2 text-center">Mira el video completo para obtener la recompensa</p>
                       {videoProgress === 100 && <p className="text-green-500 mt-2">¡Felicidades! Has visto el video completo.</p>}
                     </div>
+  
+                    
                   </div>
               
                     </div>
 
                     {/* Columna Derecha: Videos Recomendados */}
                     <div className="lg:w-1/3 mt-8 lg:mt-10 lg:pl-4">
-                        <h2 className="text-xl font-semibold mb-4 text-[wh]">Recomendados</h2>
+                        <h2 className="text-xl text-white font-semibold mb-4 text-[wh]">Recomendados</h2>
                         <div className="space-y-4">
                             {recommendedVideos.map(recVideo => (
                                 <div
@@ -218,7 +220,7 @@ const Contenido = () => {
                                 </div>
                             ))}
                             {recommendedVideos.length === 0 && (
-                                <p className="text-gray-400">No hay más videos en esta categoría.</p>
+                                <p className="text-white text-gray-400">No hay más videos en esta categoría.</p>
                             )}
                         </div>
                     </div>

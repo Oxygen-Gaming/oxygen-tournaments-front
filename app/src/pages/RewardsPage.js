@@ -15,7 +15,7 @@ const Rewards = () => {
   };
 
   return (
-    <div className="bg-[#1c1c1c] text-[18px] font-['Roboto_Condensed'] min-h-screen">
+    <div className="bg-black text-[18px] font-['Roboto_Condensed'] min-h-screen">
       <Header />
       <MenuHamburguesaNormal /> {/* Added MenuHamburguesaNormal */}
 
@@ -32,7 +32,7 @@ const Rewards = () => {
         </div>
       </div>
 
-      <section className="hidden md:flex flex-wrap justify-center gap-x-12 gap-y-16 md:gap-x-28 md:gap-y-44 pt-24 pb-32 px-4 md:px-10 mb-32">
+      <section className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 justify-center gap-x-12 md:gap-x-2 md:gap-y-44 pt-24 pb-32 px-4 md:px-6 mb-32">
         {rewards.filter((reward) => reward.title !== "Follow por parte de Oxygen").map((reward) => (
           <div key={reward.id} onClick={() => handleCardClick(reward)} className="w-[360px] h-[320px] rounded-lg shadow-lg">
             <RewardCard {...reward} />

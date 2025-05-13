@@ -29,7 +29,6 @@ const MenuHamburguesaPerfil = () => {
                 return <Perfil2 />;
         }
     };
-
     return (
         <div className="flex flex-col gap-[10vh] lg:hidden ">
             <button className="lg:hidden w-full flex flex-col items-center justify-center" onClick={() => setIsOpen(!isOpen)}>

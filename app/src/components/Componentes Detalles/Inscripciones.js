@@ -20,13 +20,13 @@ const Inscripciones = ({ confirmedPlayersList, pendingPlayersList }) => {
   return (
     <div id="inscription-section" className="p-6">
       
-      <div className="bg-[#1c1c1c] text-white p-6 rounded-lg shadow-lg ">
+      <div className="bg-black text-white p-6 rounded-lg shadow-lg ">
         {allPlayersList.length > 0 ? (
           <ul className="space-y-4 ">
             {allPlayersList.map((player, index) => (
               <li
                 key={index}
-                className="flex items-center justify-between py-2 border-b border-gray-700 flex-col gap-4 min-[568px]:flex-row"
+                className="flex items-center justify-between py-2 border-b border-blue-500 flex-col gap-4 min-[568px]:flex-row"
               >
                 <img
                     src={player.avatar || "https://via.placeholder.com/40"}

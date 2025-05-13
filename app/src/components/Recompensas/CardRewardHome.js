@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const Card = ({ image, title, points }) => {
   return (
-    <div className="card flex flex-col items-center justify-between w-[80%] aspect-[1/1] bg-gradient-to-b from-blue-900 to-blue-600 rounded-xl shadow-md overflow-hidden">
+    <div className="card flex flex-col items-center justify-between w-full h-full aspect-[1/1] bg-gradient-to-b from-blue-900 to-blue-600 rounded-xl shadow-md overflow-hidden">
       <div className="relative w-full h-full">
         <img src={image} alt={title} className="w-full h-full object-cover rounded-xl" />
       </div>

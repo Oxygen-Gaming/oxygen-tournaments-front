@@ -50,33 +50,33 @@ const MissionDetailsPage = () => {
 
   if (!currentMission) {
     return (
-      <div className="bg-white text-white h-screen flex items-center justify-center">
+      <div className="bg-black text-white h-screen flex items-center justify-center">
         <h1 className="text-3xl font-bold text-center">No se encontró información de la misión.</h1>
       </div>
     );
   }
 
   return (
-    <div className="bg-white text-white min-h-screen font-['Roboto_Condensed',sans-serif]">
+    <div className="bg-black text-white min-h-screen font-['Roboto_Condensed',sans-serif]">
       <Header />
       <div className="container mx-auto p-6">
         {/* Back Button */}
         <button
-          className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-transform transform hover:scale-105 mb-6" // Added margin-bottom
+          className="px-4 py-2 bg-gradient-to-r from-[#005f99] to-[#1AA9FF]  text-white rounded-lg hover:bg-blue-700 transition-transform transform hover:scale-105 mb-6" // Added margin-bottom
           onClick={() => navigate("/missions")}
         >
           Volver
         </button>
 
         {/* Mission Details */}
-        <div className="flex flex-col lg:flex-row gap-8 bg-[#1c1c1c] p-6 rounded-lg shadow-lg">
+        <div className="flex flex-col lg:flex-row gap-8 bg-gradient-to-r from-[#162c39] to-[#012439] p-6 rounded-lg shadow-lg">
           <img
             src={mission.image}
             alt={mission.title}
             className="w-full lg:w-1/3 h-auto object-cover rounded-lg"
           />
           <div className="flex flex-col justify-between w-full">
-            <div>
+            <div className="lg:mt-24">
               <h1 className="text-4xl font-bold mb-8 text-center">{currentMission.title}</h1> {/* Increased margin-bottom */}
               <div className="mb-12"> {/* Increased margin-bottom */}
                 <h2 className="text-2xl font-semibold text-gray-300 mb-4 text-center">Descripción</h2> {/* Centered title */}
@@ -86,7 +86,7 @@ const MissionDetailsPage = () => {
                     href={currentMission.link} // Use the specific link for the current mission
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-transform transform hover:scale-105"
+                    className="px-4 py-2 bg-gradient-to-r from-[#005f99] to-[#1AA9FF]  text-white rounded-lg hover:bg-blue-700 transition-transform transform hover:scale-105"
                   >
                     {currentMission.buttonText} {/* Use the custom button text */}
                   </a>
@@ -95,21 +95,22 @@ const MissionDetailsPage = () => {
             </div>
             <div className="text-right">
               <h2 className="text-2xl font-bold mb-2">Recompensa:</h2>
-              <p className="text-4xl font-extrabold bg-gray-800 px-4 py-2 inline-block rounded-lg">
+              <p className="text-4xl font-extrabold bg-gradient-to-r from-[#005f99] to-[#1AA9FF]  px-4 py-2 inline-block rounded-lg">
                 {typeof currentMission.points === "string" ? currentMission.points : `${currentMission.points} puntos`}
               </p> {/* Ensure "puntos" is not repeated */}
             </div>
           </div>
         </div>
+        
 
         {/* Recommended Missions */}
         <div className="mt-8">
           <h2 className="text-3xl font-bold mb-6">Misiones Recomendadas</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             {recommendedMissions.map((recommendedMission) => (
               <div
                 key={recommendedMission.id}
-                className="bg-[#1c1c1c] rounded-lg shadow-lg overflow-hidden cursor-pointer transition-transform transform hover:scale-105"
+                className="bg-gradient-to-r from-[#162c39] to-[#012439] rounded-lg shadow-lg overflow-hidden cursor-pointer transition-transform transform hover:scale-105"
                 onClick={() => {
                   window.scrollTo({ top: 0, behavior: "smooth" }); // Animación de scroll al principio
                   navigate("/mission-details", { state: { mission: recommendedMission } });

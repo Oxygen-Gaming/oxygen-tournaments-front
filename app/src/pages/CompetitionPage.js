@@ -87,7 +87,7 @@ const Competition = () => {
   };
 
   return (
-    <div className="bg-[#1c1c1c] text-white overflow-x-hidden font-['Roboto_Condensed',sans-serif]">
+    <div className="bg-black text-white overflow-x-hidden font-['Roboto_Condensed',sans-serif]">
       <Header />
       <MenuHamburguesaNormal />
 
@@ -159,7 +159,7 @@ const Competition = () => {
             {defaultCards.map((card) => (
               <div
                 key={card[0]}
-                className="card relative overflow-hidden rounded-lg shadow-lg bg-[#1c1c1c] text-white p-6 flex flex-col justify-between h-[600px] cursor-pointer transition-transform transform hover:scale-105 group"
+                className="card relative overflow-hidden rounded-lg shadow-lg bg-black text-white p-6 flex flex-col justify-between h-[600px] cursor-pointer transition-transform transform hover:scale-105 group"
                 onClick={() => handleCardClick(card)}
               >
                 <img src={card[6]} alt={card[1]} className="w-full h-[300px] object-cover rounded-lg mb-4 shadow-md" />

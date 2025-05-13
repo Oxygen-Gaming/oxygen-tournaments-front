@@ -95,10 +95,41 @@ const TabContent = ({ activeTab, selectedCard, setShowMatchModal, setSelectedMat
   return (
     <div className="p-6 max-w-[1200px] mx-auto">
       {activeTab === "resumen" && (
-        <div className="">
-          <div className="grid grid-cols-1 lg:grid-cols-1">
-            {/* Formato */}
+        <div className="flex flex-col lg:flex-row gap-4">
+          
+          {/* Premios */}
+          <div className="flex relative rounded flex-col items-start text-white p-6 h-72">
+              
+              <div className="relative w-full z-10 justify-center items-start">
+                <h3 className="text-2xl font-extrabold mb-4 text-left">Premios</h3>
+                <div className="flex flex-col itmes-start ">
+                  <div className="flex w-full justify-center items-center">
+                    <p className="py-2 px-4 text-yellow-400 text-lg font-bold">1ero</p>
+                    <p className="py-2 px-4 text-white text-lg font-bold">Por decidir</p>
+                    <p className="py-2 px-4 text-yellow-400 text-lg font-bold">300€</p>
+                  </div>
+
+                  <div className="flex w-full justify-center items-center">
+                    <p className="py-2 px-4 text-gray-400 text-lg font-bold">2ndo</p>
+                    <p className="py-2 px-4 text-white text-lg font-bold">Por decidir</p>
+                    <p className="py-2 px-4 text-gray-400 text-lg font-bold">150€</p>
+                  </div>
+
+                  <div className="flex w-full justify-center items-center ">
+                    <p className="py-2 px-4 text-orange-400 text-lg font-bold">3ero</p>
+                    <p className="py-2 px-4 text-white text-lg font-bold">Por decidir</p>
+                    <p className="py-2 px-4 text-orange-400 text-lg font-bold">50€</p>
+                  </div>
+                </div>
+              </div>
+            
+            </div>
+          
+          {/* Info y reglamento */}
+          <div className="grid grid-cols-1 lg:grid-cols-1 mt-12">
+            
             <div className="flex flex-col justify-center items-start relative text-white p-6">
+              
               <h3 className="text-2xl font-extrabold mb-4 text-justify">Información General</h3>
               <p className="text-xl mb-2 text-gray-300 text-justify pb-2">
                 Este torneo adopta un formato de eliminación directa, cuidadosamente estructurado para garantizar que únicamente los <span className="text-[#1AA9FF]">mejores equipos</span> avancen a las fases decisivas del evento. Esta modalidad fomenta una competencia intensa desde el primer enfrentamiento.
@@ -123,58 +154,36 @@ const TabContent = ({ activeTab, selectedCard, setShowMatchModal, setSelectedMat
 
                 En cuanto al sistema de selección, se utilizará el formato <span className="text-[#1AA9FF]"><b>Blind Pick</b></span>, lo que implica que cada equipo seleccionará a sus campeones sin conocer las elecciones del adversario, potenciando así la creatividad y la sorpresa en cada partida.
               </p>
+            
             </div>
 
+            <div className="flex flex-col gap-6 mt-6">
+            
+              <div className="flex flex-col justify-center items-start relative text-white p-6">
+                <h3 className="text-2xl font-extrabold mb-4 text-justify pb-2">Reglamento</h3>
+                <p className="text-xl mb-2 text-gray-300 text-justify pb-2">
+                  Está absolutamente prohibido el uso de hacks, trampas o cualquier tipo de software que otorgue ventajas injustas. Cualquier infracción a esta norma conllevará la <span className="text-red-500">descalificación inmediata</span> del jugador o equipo implicado.
+                </p>
+                <p className="text-xl mb-2 text-gray-300 text-justify pb-2">
+                  Se exige que todos los jugadores mantengan en todo momento una conducta <span className="text-green-500">respetuosa</span> tanto dentro como fuera del juego. Cualquier comportamiento ofensivo, discriminatorio o provocador será sancionado severamente.
+                </p>
+                <p className="text-xl mb-2 text-gray-300 text-justify pb-2">
+                  La <span className="text-blue-500">asistencia puntual</span> a las partidas programadas es indispensable. Los retrasos no justificados podrán resultar en la pérdida automática del enfrentamiento correspondiente.
+                </p>
+                <p className="text-xl text-gray-300 text-justify">
+                  Las decisiones tomadas por el comité organizador serán <span className="text-yellow-500">definitivas</span> y no estarán sujetas a apelación. Se recomienda acatar las directrices con profesionalismo y espíritu deportivo.
+                </p>
+              </div>
+
+            </div>
+          
           </div>
 
-          <div className="flex flex-col gap-6 mt-6">
-            {/* Reglas */}
-            <div className="flex flex-col justify-center items-start relative text-white p-6">
-              <h3 className="text-[30px] font-extrabold mb-4 text-justify pb-2">Reglamento</h3>
-              <p className="text-xl mb-2 text-gray-300 text-justify pb-2">
-                Está absolutamente prohibido el uso de hacks, trampas o cualquier tipo de software que otorgue ventajas injustas. Cualquier infracción a esta norma conllevará la <span className="text-red-500">descalificación inmediata</span> del jugador o equipo implicado.
-              </p>
-              <p className="text-xl mb-2 text-gray-300 text-justify pb-2">
-                Se exige que todos los jugadores mantengan en todo momento una conducta <span className="text-green-500">respetuosa</span> tanto dentro como fuera del juego. Cualquier comportamiento ofensivo, discriminatorio o provocador será sancionado severamente.
-              </p>
-              <p className="text-xl mb-2 text-gray-300 text-justify pb-2">
-                La <span className="text-blue-500">asistencia puntual</span> a las partidas programadas es indispensable. Los retrasos no justificados podrán resultar en la pérdida automática del enfrentamiento correspondiente.
-              </p>
-              <p className="text-xl text-gray-300 text-justify">
-                Las decisiones tomadas por el comité organizador serán <span className="text-yellow-500">definitivas</span> y no estarán sujetas a apelación. Se recomienda acatar las directrices con profesionalismo y espíritu deportivo.
-              </p>
-            </div>
-
-            {/* Premios */}
-            <div className="relative text-white p-6">
-              <h3 className="text-2xl font-extrabold mb-4 text-center border-b-2 border-gray-300 pb-2">Premios</h3>
-              <table className="w-full text-left border-collapse">
-                <thead>
-                  <tr className="border-b border-gray-700">
-                    <th className="py-2 px-4 text-yellow-400 text-xl font-bold">🏆 1er Puesto</th>
-                    <th className="py-2 px-4 text-gray-300 text-xl">Por decidir</th>
-                    <th className="py-2 px-4 text-yellow-400 text-right text-xl">€300</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr className="border-b border-gray-700">
-                    <td className="py-2 px-4 text-gray-400 text-xl font-bold">🥈 2º Puesto</td>
-                    <td className="py-2 px-4 text-gray-300 text-xl">Por decidir</td>
-                    <td className="py-2 px-4 text-gray-400 text-right text-xl">€150</td>
-                  </tr>
-                  <tr>
-                    <td className="py-2 px-4 text-orange-400 text-xl font-bold">🥉 3er Puesto</td>
-                    <td className="py-2 px-4 text-gray-300 text-xl">Por decidir</td>
-                    <td className="py-2 px-4 text-orange-400 text-right text-xl">€50</td>
-                  </tr>
-                </tbody>
-              </table>
-              <p className="mt-4 text-gray-300 text-xl text-center">
-                Estos premios han sido pensados para reconocer y recompensar el esfuerzo, la dedicación y el alto rendimiento de los equipos participantes a lo largo del torneo.
-              </p>
-            </div>
-          </div>
+          
+        
         </div>
+
+        
 
       )}
       {activeTab === "bracket" && (
@@ -187,7 +196,7 @@ const TabContent = ({ activeTab, selectedCard, setShowMatchModal, setSelectedMat
           <h2 className="text-3xl font-bold mb-4 text-center">Partidas</h2>
           <div className="grid grid-cols-1 gap-4">
             {/* Match 1 */}
-            <div className="bg-[#1c1c1c] text-white p-12 rounded-lg shadow-lg flex justify-between items-center flex-col min-[568px]:flex-row h-30 gap-8"> {/* Reduced height */}
+            <div className="bg-black border-blue-500 border-b-2 text-white p-12  shadow-lg flex justify-between items-center flex-col min-[568px]:flex-row h-30 gap-8"> {/* Reduced height */}
               <div>
                 <h3 className="text-xl font-bold">Partida 1</h3>
                 <p className="text-sm text-gray-300">Fecha: 29/03/2025</p> {/* Fecha pasada */}
@@ -208,7 +217,7 @@ const TabContent = ({ activeTab, selectedCard, setShowMatchModal, setSelectedMat
               </div>
               <div className="flex flex-col items-center gap-2">
                 <button
-                  className="hidden md:block px-4 py-2 bg-gray-700 text-white rounded-lg transition-all duration-300 transform hover:scale-105 hover:bg-gray-600"
+                  className="hidden md:block px-4 py-2 bg-gradient-to-r from-[#005f99] to-[#1AA9FF] text-white rounded-lg transition-all duration-300 transform hover:scale-105 hover:bg-gray-600"
                   onClick={() =>
                     handleViewMoreClick({
                       matchNumber: 1,
@@ -246,7 +255,7 @@ const TabContent = ({ activeTab, selectedCard, setShowMatchModal, setSelectedMat
                 </button>
                 {/* Mobile Buttons */}
                 <button
-                  className="md:hidden px-3 py-1 text-sm bg-gray-700 text-white rounded-lg transition-all duration-300 transform hover:scale-105 hover:bg-gray-600"
+                  className="md:hidden px-3 py-1 text-sm bg-gradient-to-r from-[#005f99] to-[#1AA9FF] text-white rounded-lg transition-all duration-300 transform hover:scale-105 hover:bg-gray-600"
                   onClick={() =>
                     handleViewMoreClick({
                       matchNumber: 1,
@@ -285,7 +294,7 @@ const TabContent = ({ activeTab, selectedCard, setShowMatchModal, setSelectedMat
               </div>
             </div>
             {/* Match 2 */}
-            <div className="bg-[#1c1c1c] text-white p-12 rounded-lg shadow-lg flex justify-between items-center flex-col min-[568px]:flex-row h-30 gap-8"> {/* Reduced height */}
+            <div className="bg-black border-blue-500 border-b-2 text-white p-12  shadow-lg flex justify-between items-center flex-col min-[568px]:flex-row h-30 gap-8"> {/* Reduced height */}
               <div>
                 <h3 className="text-xl font-bold">Partida 2</h3>
                 <p className="text-sm text-gray-300">Fecha: 30/03/2025</p> {/* Fecha pasada */}
@@ -306,7 +315,7 @@ const TabContent = ({ activeTab, selectedCard, setShowMatchModal, setSelectedMat
               </div>
               <div className="flex flex-col items-center gap-2">
                 <button
-                  className="hidden md:block px-4 py-2 bg-gray-700 text-white rounded-lg transition-all duration-300 transform hover:scale-105 hover:bg-gray-600"
+                  className="hidden md:block px-4 py-2 bg-gradient-to-r from-[#005f99] to-[#1AA9FF] text-white rounded-lg transition-all duration-300 transform hover:scale-105 hover:bg-gray-600"
                   onClick={() =>
                     handleViewMoreClick({
                       matchNumber: 2,
@@ -343,7 +352,7 @@ const TabContent = ({ activeTab, selectedCard, setShowMatchModal, setSelectedMat
                 </button>
                 {/* Mobile Buttons */}
                 <button
-                  className="md:hidden px-3 py-1 text-sm bg-gray-700 text-white rounded-lg transition-all duration-300 transform hover:scale-105 hover:bg-gray-600"
+                  className="md:hidden px-3 py-1 text-sm bg-gradient-to-r from-[#005f99] to-[#1AA9FF] text-white rounded-lg transition-all duration-300 transform hover:scale-105 hover:bg-gray-600"
                   onClick={() =>
                     handleViewMoreClick({
                       matchNumber: 2,
@@ -381,7 +390,7 @@ const TabContent = ({ activeTab, selectedCard, setShowMatchModal, setSelectedMat
               </div>
             </div>
             {/* Match 3 */}
-            <div className="bg-[#1c1c1c] text-white p-12 rounded-lg shadow-lg flex justify-between items-center flex-col min-[568px]:flex-row h-30 gap-8"> {/* Reduced height */}
+            <div className="bg-black border-blue-500 border-b-2 text-white p-12  shadow-lg flex justify-between items-center flex-col min-[568px]:flex-row h-30 gap-8"> {/* Reduced height */}
               <div>
                 <h3 className="text-xl font-bold">Partida 3</h3>
                 <p className="text-sm text-gray-300">Fecha: 10/04/2025</p> {/* Fecha futura */}
@@ -402,7 +411,7 @@ const TabContent = ({ activeTab, selectedCard, setShowMatchModal, setSelectedMat
               </div>
               <div className="flex flex-col items-center gap-2">
                 <button
-                  className="hidden md:block px-4 py-2 bg-gray-700 text-white rounded-lg transition-all duration-300 transform hover:scale-105 hover:bg-gray-600"
+                  className="hidden md:block px-4 py-2 bg-gradient-to-r from-[#005f99] to-[#1AA9FF] text-white rounded-lg transition-all duration-300 transform hover:scale-105 hover:bg-gray-600"
                   onClick={() =>
                     handleViewMoreClick({
                       matchNumber: 3,
@@ -442,7 +451,7 @@ const TabContent = ({ activeTab, selectedCard, setShowMatchModal, setSelectedMat
                 </button>
                 {/* Mobile Buttons */}
                 <button
-                  className="md:hidden px-3 py-1 text-sm bg-gray-700 text-white rounded-lg transition-all duration-300 transform hover:scale-105 hover:bg-gray-600"
+                  className="md:hidden px-3 py-1 text-sm bg-gradient-to-r from-[#005f99] to-[#1AA9FF] text-white rounded-lg transition-all duration-300 transform hover:scale-105 hover:bg-gray-600"
                   onClick={() =>
                     handleViewMoreClick({
                       matchNumber: 3,

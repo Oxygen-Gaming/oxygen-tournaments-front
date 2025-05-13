@@ -15,7 +15,7 @@ const Missions = () => {
   };
 
   return (
-    <div className="bg-[#1c1c1c] text-white text-[18px] font-['Roboto_Condensed'] min-h-screen">
+    <div className="bg-black text-white text-[18px] font-['Roboto_Condensed'] min-h-screen">
       <Header />
       <MenuHamburguesaNormal /> {/* Added MenuHamburguesaNormal */}
 
@@ -31,7 +31,7 @@ const Missions = () => {
         </div>
       </div>
 
-      <section className="hidden md:flex flex-wrap justify-center gap-x-12 gap-y-16 md:gap-x-28 md:gap-y-44 pt-24 pb-32 px-4 md:px-10 mb-32">
+      <section className="hidden md:grid md:grid-cols-1 lg:grid-cols-4 justify-center gap-x-12  md:gap-x-12 md:gap-y-44 pt-24 pb-32 px-4 md:px-10 mb-32">
         {missions.map((mission) => (
           <div key={mission.id} onClick={() => handleCardClick(mission)} className="w-[360px] h-[320px] rounded-lg shadow-lg">
             <MissionCard {...mission} />
