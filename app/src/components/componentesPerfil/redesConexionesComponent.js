@@ -2,7 +2,7 @@ import React from "react";
 
 const Red = ({ logo, nombre, estado, boton, fondo, relleno }) => {
     return (
-        <div className="bg-gray-700 text-white w-[18rem] min-[568px]:w-[20rem] lg:w-[50vh] xl:w-[25rem] flex items-center justify-between p-5 rounded-[10px] shadow-md">
+        <div className="bg-gray-700 text-white w-[18rem] min-[568px]:w-[20rem] lg:w-[50vh] xl:w-[20rem] flex items-center justify-between p-5 rounded-[10px] shadow-md">
             <img
                 src={logo}
                 alt="Logo"

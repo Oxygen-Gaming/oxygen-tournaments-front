@@ -123,19 +123,19 @@ const RewardDetailsPage = () => {
 
   if (!currentReward) {
     return (
-      <div className="bg-white text-white h-screen flex items-center justify-center">
+      <div className="bg-black text-white h-screen flex items-center justify-center">
         <h1 className="text-3xl font-bold text-center">No se encontró información de la recompensa.</h1>
       </div>
     );
   }
 
   return (
-    <div className="bg-white text-white min-h-screen font-['Roboto_Condensed',sans-serif]">
+    <div className="bg-black text-white min-h-screen font-['Roboto_Condensed',sans-serif]">
       <Header />
       <div className="container mx-auto p-6">
         {/* Back Button */}
         <button
-          className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-transform transform hover:scale-105 mb-6" // Added margin-bottom
+          className="px-4 py-2 bg-gradient-to-r from-[#005f99] to-[#1AA9FF] text-white rounded-lg hover:bg-blue-700 transition-transform transform hover:scale-105 mb-6" // Added margin-bottom
           onClick={() => navigate("/rewards")}
         >
           Volver
@@ -143,7 +143,7 @@ const RewardDetailsPage = () => {
         <br></br>
 
         {/* Reward Details */}
-        <div className="flex flex-col lg:flex-row gap-8 bg-[#1c1c1c] p-6 rounded-lg shadow-lg">
+        <div className="flex flex-col lg:flex-row gap-8 bg-gradient-to-r from-[#162c39] to-[#012439] p-6 rounded-lg shadow-lg">
           <img
             src={currentReward.image}
             alt={currentReward.title}
@@ -163,7 +163,7 @@ const RewardDetailsPage = () => {
                 </p>
                 <div className="flex justify-center">
                   <button
-                    className="px-6 py-3 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-transform transform hover:scale-105 hover:translate-y-[-2px]" // Added animation
+                    className="px-6 py-3 bg-gradient-to-r from-[#005f99] to-[#1AA9FF] text-white rounded-lg hover:bg-green-600 transition-transform transform hover:scale-105 hover:translate-y-[-2px]" // Added animation
                     onClick={handleRedeemReward} // Trigger the confirmation pop-up
                   >
                     Canjear Recompensa
@@ -173,7 +173,7 @@ const RewardDetailsPage = () => {
             </div>
             <div className="text-right mt-12"> {/* Added margin-top */}
               <h2 className="text-2xl font-bold mb-4">Objetivo Necesario:</h2> {/* Increased margin-bottom */}
-              <p className="text-4xl font-extrabold bg-gray-800 px-4 py-2 inline-block rounded-lg">{currentReward.points} puntos</p> {/* Highlighted with background */}
+              <p className="text-4xl font-extrabold bg-gradient-to-r from-[#005f99] to-[#1AA9FF] px-4 py-2 inline-block rounded-lg">{currentReward.points} puntos</p> {/* Highlighted with background */}
             </div>
           </div>
         </div>
@@ -226,7 +226,7 @@ const RewardDetailsPage = () => {
             {recommendedRewards.map((recommendedReward) => (
               <div
                 key={recommendedReward.id}
-                className="bg-[#1c1c1c] rounded-lg shadow-lg overflow-hidden cursor-pointer transition-transform transform hover:scale-105"
+                className="bg-gradient-to-r from-[#162c39] to-[#012439] rounded-lg shadow-lg overflow-hidden cursor-pointer transition-transform transform hover:scale-105"
                 onClick={() => {
                   window.scrollTo({ top: 0, behavior: "smooth" }); // Animación de scroll al principio
                   navigate("/reward-details", { state: { reward: recommendedReward } });

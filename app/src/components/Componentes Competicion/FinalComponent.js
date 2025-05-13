@@ -59,7 +59,7 @@ const Final = ({positions}) => {
                 </div>
                 <span >1</span>
               </div>
-              <div className="bg-[#1c1c1c] px-3 py-2 flex justify-center">
+              <div className="bg-black px-3 py-2 flex justify-center">
                 <button 
                   onClick={() => handleMatchClick(31, finalWinner, secondPlaceWinner)}
                   className="bg-blue-600 hover:bg-blue-700 text-white text-xs px-3 py-1 rounded-full transition-colors duration-200"

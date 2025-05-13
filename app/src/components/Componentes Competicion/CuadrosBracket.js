@@ -63,7 +63,7 @@ const CuadrosBracket = ({ positions }) => {
 
 
   return (
-    <div className="overflow-hidden no-scrollbar bg-[#1c1c1c] min-h-screen "> 
+    <div className="overflow-hidden no-scrollbar bg-black min-h-screen "> 
       <style>{`
         .no-scrollbar::-webkit-scrollbar {
           display: none;
@@ -84,7 +84,7 @@ const CuadrosBracket = ({ positions }) => {
         onMouseUp={handleMouseUp}
         onMouseLeave={handleMouseUp}
       >
-        <div className="absolute inset-0 bg-[#1c1c1c] w-full h-full -z-10"></div>
+        <div className="absolute inset-0 bg-black w-full h-full -z-10"></div>
         
         <Dieciseisavos positions = {positions}></Dieciseisavos>
         <Octavos positions = {positions}></Octavos>

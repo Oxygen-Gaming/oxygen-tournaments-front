@@ -36,7 +36,7 @@ const TournamentHeader = ({ selectedCard }) => {
 
     // Si ha pasado más de un día desde el torneo, mostrar "Ya finalizó"
     if (distance < -86400000) { // 86400000 ms = 1 día
-      return <span className="text-4xl text-red-600 font-bold">¡Ya finalizó!</span>;
+      return <span className="text-4xl text-red-700 font-bold">Torneo Finalizado</span>;
     }
 
     if (distance <= 0) return <span className="text-4xl text-green-600 font-bold">¡Ya ha comenzado!</span>;
@@ -49,19 +49,19 @@ const TournamentHeader = ({ selectedCard }) => {
     return (
       <div className="flex justify-center items-center space-x-6 text-4xl font-extrabold text-white">
         <div className="text-center">
-          <span className="block text-yellow-400">{days}</span>
+          <span className="block text-yewhite">{days}</span>
           <span className="text-lg text-white">Días</span>
         </div>
         <div className="text-center">
-          <span className="block text-red-500">{hours}</span>
+          <span className="block textwhite">{hours}</span>
           <span className="text-lg text-white">Horas</span>
         </div>
         <div className="text-center">
-          <span className="block text-green-500">{minutes}</span>
+          <span className="block text-gwhite">{minutes}</span>
           <span className="text-lg text-white">Minutos</span>
         </div>
         <div className="text-center">
-          <span className="block text-blue-500">{seconds}</span>
+          <span className="block text-white">{seconds}</span>
           <span className="text-lg text-white">Segundos</span>
         </div>
       </div>
@@ -103,7 +103,7 @@ const TournamentHeader = ({ selectedCard }) => {
         {/* Mostrar el botón solo si el torneo no ha comenzado ni ha finalizado */}
         {showJoinButton && (
           <button
-            className="mt-4 px-6 py-2 bg-[#005f99] text-white rounded-lg hover:bg-[#0077b6] transition-transform transform hover:scale-105 hover:translate-y-[-2px]"
+            className="mt-4 px-6 py-2 bg-gradient-to-r from-[#005f99] to-[#1AA9FF] text-white rounded-lg hover:bg-[#0077b6] transition-transform transform hover:scale-105 hover:translate-y-[-2px]"
             onClick={handleJoinTournament}
           >
             Unirse al torneo

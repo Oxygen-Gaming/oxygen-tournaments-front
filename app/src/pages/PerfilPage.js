@@ -38,7 +38,7 @@ const Perfil = () => {
     };
 
     return (
-        <div className="bg-[#1c1c1c] text-white min-h-screen font-['Roboto_Condensed',sans-serif] pt-5 lg:pt-0">
+        <div className="bg-[black] text-white min-h-screen font-['Roboto_Condensed',sans-serif] pt-5 lg:pt-0">
             <Header />
             <MenuHamburguesaPerfil 
                 isOpen={isMenuOpen} 
@@ -58,7 +58,7 @@ const Perfil = () => {
                     <Enlace opcion={'cuenta'} nombre={'Editar Perfil'} setOpcionSeleccionada={setOpcionSeleccionada} opcionSeleccionada={opcionSeleccionada}/>
                 </div>
             </div>
-            <div className="hidden lg:flex lg:flex-col lg:items-center lg:mt-[50px] lg:mb-[50px]">
+            <div className="hidden lg:flex lg:flex-col lg:ml-[50px] lg:mt-[50px] lg:mb-[50px]">
                 {renderContent()}
             </div>
             <Footer />   

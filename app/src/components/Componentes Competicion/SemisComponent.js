@@ -77,7 +77,7 @@ const Semis = ({ positions }) => {
                             </div>
                             <span>{i % 2 === 0 ? 1 : 2}</span>
                         </div>
-                        <div className="bg-[#1c1c1c] px-3 py-2 flex justify-center">
+                        <div className="bg-black px-3 py-2 flex justify-center">
                             <button 
                                 onClick={() => handleMatchClick(i + 17, winners[i], losers[i])}
                                 className="bg-blue-600 hover:bg-blue-700 text-white text-xs px-3 py-1 rounded-full transition-colors duration-200"

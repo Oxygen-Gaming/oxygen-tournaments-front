@@ -76,13 +76,13 @@ const TournamentDetailsPage = () => {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
           transition={{ duration: 0.4 }}
-          className="bg-[#1c1c1c] text-white w-full min-h-screen font-['Roboto_Condensed',sans-serif]"
+          className="bg-black text-white w-full min-h-screen font-['Roboto_Condensed',sans-serif]"
         >
           <Header />
 
           <div className="relative w-full">
             <button
-              className="absolute top-4 left-4 px-4 py-2 bg-[#005f99] text-white rounded-lg hover:bg-[#0077b6] transition z-10"
+              className="absolute top-4 left-4 px-4 py-2 bg-gradient-to-r from-[#005f99] to-[#1AA9FF] text-white rounded-lg hover:bg-[#0077b6] transition z-10"
               onClick={handleBackClick}
             >
               Volver

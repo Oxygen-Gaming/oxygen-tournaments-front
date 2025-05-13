@@ -24,7 +24,7 @@ const FuncionaInicio = () => {
                   background: Contenido, // Use the imported image
                 },
                 {
-                  icon: "fas fa-tasks",
+                  icon: "fa-solid fa-gift",
                   title: "Recompensas",
                   text: "Disfruta completando tareas entretenidas mientras acumulas puntos con cada logro. Cuantos más desafíos superes, más puntos obtendrás para canjear por recompensas increíbles.",
                   link: "/missions",

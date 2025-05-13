@@ -8,17 +8,17 @@ import VentajasNormales from "@components/componentesInicio/VentajasNormalesComp
 
 
 const Ventajas = () => {
-  const bannerImage = "https://via.placeholder.com/1920x1080"; // Replace with the desired image URL
+  const bannerImage = "https://via.placeholder.com/1920x1080";
 
   return (
-    <div className="bg-[#1AA9FF] text-[white] font-roboto-condensed">
+    <div className="bg-[#0f0f0f] text-[white] font-roboto-condensed">
       <Header />
       <MenuHamburguesaNormal />
 
       {/* Banner */}
       <div className="w-full h-96 bg-cover bg-center relative mt-0">
         <img
-          src={bannerImage} // Use the custom image
+          src={bannerImage}
           alt="Ventajas Banner"
           className="w-full h-full object-cover"
         />
@@ -27,13 +27,13 @@ const Ventajas = () => {
         </div>
       </div>
 
-      <div className="flex flex-col justify-start items-center gap-[20vh]"> {/* Increased gap from 10vh to 20vh */}
+      <div className="flex flex-col justify-start items-center">
         {/* Section: OXYGEN */}
         <VentajasNormales
           section="oxygen"
-          title="OXYGEN, TU EQUIPO"
-          subtitle="Descubre las ventajas exclusivas que Oxygen tiene para ti."
-          isBlue={true}
+          title="OXYGEN GAMING"
+          subtitle="Donde la competición no tiene límites, la emoción es constante y el nivel de juego alcanza su máximo potencial"
+
         />
 
         {/* Section: CONTENIDO POR Y PARA TI */}
