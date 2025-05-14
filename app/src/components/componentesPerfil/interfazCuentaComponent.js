@@ -53,17 +53,22 @@ const Cuenta = () => {
                 
                     <div className="w-[80%] flex flex-col gap-[20px] xl:flex-col">
                         <div className="w-full flex flex-col gap-[10px]">
+
                             <span className="italic">Nombre</span>
+
                             <input type="text" value={nombre} onChange={(e) => setNombre(e.target.value)} className="w-full h-[35px] rounded p-[7px] text-[black]" required/>
                         </div>
 
                         <div className="w-full flex flex-col gap-[10px]">
+
                             <span className="italic">Apellidos</span>
                             <input type="text" value={apellidos} onChange={(e) => setApellidos(e.target.value)} className="w-full h-[35px] rounded p-[7px] text-[black]" required/>
+
                         </div>
                     </div>
                     <div className="w-[80%] flex flex-col gap-[20px] xl:flex-col">
                         <div className="w-full flex flex-col gap-[10px]">
+
                             <span className="italic">Usuario</span>
                             <input type="text" value={usuario} onChange={(e) => setUsuario(e.target.value)} className="w-full h-[35px] rounded p-[7px] text-[black]" required/>
                         </div>
@@ -71,28 +76,35 @@ const Cuenta = () => {
                         <div className="w-full flex flex-col gap-[10px]">
                             <span className="italic">Correo electrónico</span>
                             <input type="text" value={correo} onChange={(e) => setCorreo(e.target.value)} className="w-full h-[35px] rounded p-[7px] text-[black]" required/>
+
                         </div>
                     </div>
                     <div className="w-[80%] flex flex-col gap-[20px] xl:flex-col">
                         <div className="w-full flex flex-col gap-[10px]">
                             <span className="italic">DNI</span>
+
                             <input type="text" value={dni} onChange={(e) => setDni(e.target.value)} className="w-full h-[35px] rounded p-[7px] text-[black]" required/>
+
                         </div>
 
                         <div className="w-full flex flex-col gap-[10px]">
                             <span className="italic">Teléfono</span>
+
                             <input type="text" value={telefono} onChange={(e) => setTelefono(e.target.value)} className="w-full h-[35px] rounded p-[7px] text-[black]" required/>
+
                         </div>
                     </div>
                     <div className="w-[80%] flex flex-col gap-[20px] xl:flex-col">
                         <div className="w-full flex flex-col gap-[10px]">
                             <span className="italic">DNI</span>
+
                             <input type="text" value={direccion} onChange={(e) => setDireccion(e.target.value)} className="w-full h-[35px] rounded p-[7px] text-[black]" required/>
                         </div>
 
                         <div className="w-full flex flex-col gap-[10px]">
                             <span className="italic">Código Postal</span>
                             <input type="text" value={codigo_postal} onChange={(e) => setCodigo_postal(e.target.value)} className="w-full h-[35px] rounded p-[7px] text-[black]" required/>
+
                         </div>
                     </div>
                     
