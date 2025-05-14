@@ -73,6 +73,7 @@ const TournamentDetailsPage = () => {
           <div className="relative w-full">
             <BackButton onClick={handleBackClick} />
             <TournamentHeader selectedCard={selectedCard} scrollToInscription={scrollToInscription} />
+
           </div>
 
           <div className="w-full p-4">
