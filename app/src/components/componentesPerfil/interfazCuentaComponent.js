@@ -29,9 +29,10 @@ const Cuenta = () => {
     };
 
     return (
-        <div className="w-[100%] lg:bg-[black] sm:h-full lg:w-full flex flex-col lg:flex-row sm:items-center sm:bg-gray-700 sm:rounded-r-lg mb-[30px] xl:mt-[100px] xl:mb-[100px] rounded-lg">
+        <div className="w-[100%] lg:bg-[black] sm:h-full lg:w-full flex flex-col lg:flex-row sm:items-center sm:bg-gray-700 sm:rounded-r-lg mb-[30px] xl:mt-[10px] xl:mb-[100px] rounded-lg">
             
-            <div className="p-[30px] lg:w-[15rem] lg:h-[25rem] w-full sm:w-[80%] sm:h-full flex flex-col items-center gap-[10px] h-full rounded-t-lg">
+            <div className="p-[30px]  lg:w-[15rem] lg:h-[25rem] w-full sm:w-[80%] sm:h-full flex flex-col items-center gap-[10px] h-full rounded-t-lg">
+
 
                 <div className="relative w-[150px] h-[150px] lg:float-right">
                     <button onClick={() => document.getElementById('fileInput').click()} className="bg-[white] text-[#1AA9FF] p-2 mt-[75%] ml-[75%] rounded-full absolute">
@@ -41,9 +42,9 @@ const Cuenta = () => {
                     <input type="file" accept="image/*" onChange={handleImageChange} className="hidden" id="fileInput"/>  
                 </div>
                 <div className="flex flex-col justify-between h-[7rem]">
-                    <button className="bg-[white] w-[150px] h-[40px] hover:bg-[red] duration-500 hover:text-[white] hover:border-[white] hover:border-[1px] text-[red] rounded">Borrar Cuenta</button>
                     <button className="bg-[white] w-[150px] h-[40px] hover:bg-[#1AA9FF] hover:text-[white] duration-500 hover:border-[white] hover:border-[1px] text-[black] rounded">Cambiar contraseña</button>
- 
+                    <button className="bg-[white] w-[150px] h-[40px] hover:bg-[red] duration-500 hover:text-[white] hover:border-[white] hover:border-[1px] text-[red] rounded">Borrar Cuenta</button>
+
                 </div>
             </div>
             <form className="lg:py-[10vh] lg:px-[5vh] lg:bg-[black] bg-gray-800 w-full lg:w-[50%] flex flex-col items-center p-[15px] rounded-b-lg sm:rounded-none sm:rounded-r-lg sm:rounded-rb-none">
@@ -60,7 +61,6 @@ const Cuenta = () => {
                         </div>
 
                         <div className="w-full flex flex-col gap-[10px]">
-
                             <span className="italic">Apellidos</span>
                             <input type="text" value={apellidos} onChange={(e) => setApellidos(e.target.value)} className="w-full h-[35px] rounded p-[7px] text-[black]" required/>
 
@@ -68,7 +68,6 @@ const Cuenta = () => {
                     </div>
                     <div className="w-[80%] flex flex-col gap-[20px] xl:flex-col">
                         <div className="w-full flex flex-col gap-[10px]">
-
                             <span className="italic">Usuario</span>
                             <input type="text" value={usuario} onChange={(e) => setUsuario(e.target.value)} className="w-full h-[35px] rounded p-[7px] text-[black]" required/>
                         </div>
@@ -76,27 +75,23 @@ const Cuenta = () => {
                         <div className="w-full flex flex-col gap-[10px]">
                             <span className="italic">Correo electrónico</span>
                             <input type="text" value={correo} onChange={(e) => setCorreo(e.target.value)} className="w-full h-[35px] rounded p-[7px] text-[black]" required/>
-
                         </div>
                     </div>
                     <div className="w-[80%] flex flex-col gap-[20px] xl:flex-col">
                         <div className="w-full flex flex-col gap-[10px]">
                             <span className="italic">DNI</span>
-
                             <input type="text" value={dni} onChange={(e) => setDni(e.target.value)} className="w-full h-[35px] rounded p-[7px] text-[black]" required/>
-
                         </div>
 
                         <div className="w-full flex flex-col gap-[10px]">
                             <span className="italic">Teléfono</span>
-
                             <input type="text" value={telefono} onChange={(e) => setTelefono(e.target.value)} className="w-full h-[35px] rounded p-[7px] text-[black]" required/>
 
                         </div>
                     </div>
                     <div className="w-[80%] flex flex-col gap-[20px] xl:flex-col">
                         <div className="w-full flex flex-col gap-[10px]">
-                            <span className="italic">DNI</span>
+                            <span className="italic">Dirección</span>
 
                             <input type="text" value={direccion} onChange={(e) => setDireccion(e.target.value)} className="w-full h-[35px] rounded p-[7px] text-[black]" required/>
                         </div>
@@ -104,6 +99,8 @@ const Cuenta = () => {
                         <div className="w-full flex flex-col gap-[10px]">
                             <span className="italic">Código Postal</span>
                             <input type="text" value={codigo_postal} onChange={(e) => setCodigo_postal(e.target.value)} className="w-full h-[35px] rounded p-[7px] text-[black]" required/>
+
+
 
                         </div>
                     </div>

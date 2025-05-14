@@ -1,85 +1,81 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
+import { useNavigate } from "react-router-dom";
 import Bracket from "@components/Componentes Competicion/BracketComponent";
 import Inscripciones from "@components/Componentes Detalles/Inscripciones";
-import InscriptionForm from "@components/Componentes Detalles/InscriptionForm"; // Import the form as a pop-up
-import ReportPlayerForm from "@components/Componentes Detalles/ReportPlayerForm"; // Import the pop-up form
+import InscriptionForm from "@components/Componentes Detalles/InscriptionForm";
+import ReportPlayerForm from "@components/Componentes Detalles/ReportPlayerForm";
 
 const TabContent = ({ activeTab, selectedCard, setShowMatchModal, setSelectedMatch }) => {
-  const navigate = useNavigate(); // Initialize useNavigate
+  const navigate = useNavigate(); 
   const [registeredPlayers, setRegisteredPlayers] = useState(() => {
-    // Retrieve registered players from localStorage
     const savedRegisteredPlayers = localStorage.getItem("registeredPlayers");
-    return savedRegisteredPlayers ? parseInt(savedRegisteredPlayers, 10) : 126; // Default to 126
+    return savedRegisteredPlayers ? parseInt(savedRegisteredPlayers, 10) : 126; 
   });
 
   const [confirmedPlayers, setConfirmedPlayers] = useState(() => {
-    // Retrieve confirmed players from localStorage
     const savedConfirmedPlayers = localStorage.getItem("confirmedPlayers");
     return savedConfirmedPlayers ? parseInt(savedConfirmedPlayers, 10) : 0;
   });
 
-  const [showInscriptionForm, setShowInscriptionForm] = useState(false); // State to control the pop-up
-  const [showReportForm, setShowReportForm] = useState(false); // State to control the pop-up
+  const [showInscriptionForm, setShowInscriptionForm] = useState(false); 
+  const [showReportForm, setShowReportForm] = useState(false); 
 
   const [confirmedPlayersList, setConfirmedPlayersList] = useState([
     { name: "Equipo A", avatar: "https://via.placeholder.com/40" },
     { name: "Equipo B", avatar: "https://via.placeholder.com/40" },
-  ]); // Example confirmed players
+  ]);
 
   const [pendingPlayersList, setPendingPlayersList] = useState([
     { name: "Equipo C", avatar: "https://via.placeholder.com/40" },
-  ]); // Example pending players
+  ]); 
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalContent, setModalContent] = useState(null);
 
   const handleUpdateRegisteredPlayers = (newCount) => {
-    setRegisteredPlayers(newCount); // Update state
-    localStorage.setItem("registeredPlayers", newCount); // Save to localStorage
+    setRegisteredPlayers(newCount); 
+    localStorage.setItem("registeredPlayers", newCount); 
   };
 
   const handleUpdateConfirmedPlayers = (newCount) => {
-    setConfirmedPlayers(newCount); // Update state
-    localStorage.setItem("confirmedPlayers", newCount); // Save to localStorage
+    setConfirmedPlayers(newCount);
+    localStorage.setItem("confirmedPlayers", newCount); 
   };
 
   const handleJoinTournament = () => {
-    setShowInscriptionForm(true); // Show the pop-up
+    setShowInscriptionForm(true); 
   };
 
   const closeInscriptionForm = () => {
-    setShowInscriptionForm(false); // Close the pop-up
+    setShowInscriptionForm(false); 
   };
 
   const handleReportPlayer = () => {
-    setShowReportForm(true); // Show the pop-up
+    setShowReportForm(true);
   };
 
   const closeReportForm = () => {
-    setShowReportForm(false); // Close the pop-up
+    setShowReportForm(false); 
   };
 
   const handleCardClick = (content) => {
     setModalContent(content);
     setIsModalOpen(true);
-    document.body.style.overflow = "hidden"; // Disable scrolling
+    document.body.style.overflow = "hidden";
   };
 
   const closeModal = () => {
     setIsModalOpen(false);
     setModalContent(null);
-    document.body.style.overflow = "auto"; // Restore scrolling
+    document.body.style.overflow = "auto"; 
   };
 
   useEffect(() => {
-    // Ensure registered players are updated from localStorage on mount
     const savedRegisteredPlayers = localStorage.getItem("registeredPlayers");
     if (savedRegisteredPlayers) {
       setRegisteredPlayers(parseInt(savedRegisteredPlayers, 10));
     }
 
-    // Ensure confirmed players are updated from localStorage on mount
     const savedConfirmedPlayers = localStorage.getItem("confirmedPlayers");
     if (savedConfirmedPlayers) {
       setConfirmedPlayers(parseInt(savedConfirmedPlayers, 10));
@@ -89,44 +85,107 @@ const TabContent = ({ activeTab, selectedCard, setShowMatchModal, setSelectedMat
   const handleViewMoreClick = (match) => {
     setSelectedMatch(match);
     setShowMatchModal(true);
-    document.body.style.overflow = "hidden"; // Block scrolling
+    document.body.style.overflow = "hidden";
   };
 
   return (
-    <div className="p-6 max-w-[1200px] mx-auto">
+    <div className="p-6 max-w-[1200px] mx-auto overflow-x-auto ">
       {activeTab === "resumen" && (
         <div className="flex flex-col lg:flex-row gap-4">
           
-          {/* Premios */}
-          <div className="flex relative rounded flex-col items-start text-white p-6 h-72">
-              
-              <div className="relative w-full z-10 justify-center items-start">
-                <h3 className="text-2xl font-extrabold mb-4 text-left">Premios</h3>
-                <div className="flex flex-col itmes-start ">
-                  <div className="flex w-full justify-center items-center">
-                    <p className="py-2 px-4 text-yellow-400 text-lg font-bold">1ero</p>
-                    <p className="py-2 px-4 text-white text-lg font-bold">Por decidir</p>
-                    <p className="py-2 px-4 text-yellow-400 text-lg font-bold">300€</p>
+
+          <div className="">
+            <div className="bg-[#1c1c1c] flex relative rounded flex-col items-start text-white p-6 h-[32rem]  lg:w-[24rem]">
+              <div className="w-full z-10 justify-center items-start">
+                
+                <div className="flex flex-row items-start justify-between">
+                  <h3 className="text-2xl font-extrabold mb-4 text-left">DISCORD-ESKILL</h3>
+                  
+                  <button
+                    className="px-2 py-1 bg-gradient-to-r from-[#005f99] to-[#1AA9FF] text-white rounded-sm hover:bg-[#0077b6] transition z-10"
+                  >
+                    ENTRAR
+                  </button>
+                </div>
+
+                <div className="flex flex-col items-start space-y-2 mt-4">
+                  <div className="flex w-full justify-between items-center">
+                    <p className="py-2 px-4 text-gray-400 text-lg font-bold">JUEGO</p>
+                    <p className="py-2 px-4 text-white text-lg font-bold">VALORANT</p>
                   </div>
 
-                  <div className="flex w-full justify-center items-center">
-                    <p className="py-2 px-4 text-gray-400 text-lg font-bold">2ndo</p>
-                    <p className="py-2 px-4 text-white text-lg font-bold">Por decidir</p>
-                    <p className="py-2 px-4 text-gray-400 text-lg font-bold">150€</p>
+                  <div className="flex w-full justify-between items-center">
+                    <p className="py-2 px-4 text-gray-400 text-lg font-bold">TORNEO</p>
+                    <p className="py-2 px-4 text-white text-lg font-bold">VALORANT OPEN</p>
                   </div>
 
-                  <div className="flex w-full justify-center items-center ">
-                    <p className="py-2 px-4 text-orange-400 text-lg font-bold">3ero</p>
-                    <p className="py-2 px-4 text-white text-lg font-bold">Por decidir</p>
-                    <p className="py-2 px-4 text-orange-400 text-lg font-bold">50€</p>
+                  <div className="flex w-full justify-between items-center">
+                    <p className="py-2 px-4 text-gray-400 text-lg font-bold">PRECIO</p>
+                    <p className="py-2 px-4 text-white text-lg font-bold">GRATUITO</p>
+                  </div>
+
+                  <div className="flex w-full justify-between items-center">
+                    <p className="py-2 px-4 text-gray-400 text-lg font-bold">INICIA</p>
+                    <p className="py-2 px-4 text-white text-lg font-bold">2025-08-15 12:12:00</p>
+                  </div>
+
+                  <div className="flex w-full justify-between items-center">
+                    <p className="py-2 px-4 text-gray-400 text-lg font-bold">MODALIDAD</p>
+                    <p className="py-2 px-4 text-white text-lg font-bold">5VS5</p>
+                  </div>
+
+                  <div className="flex w-full justify-between items-center">
+                    <p className="py-2 px-4 text-gray-400 text-lg font-bold">PARTIDOS</p>
+                    <p className="py-2 px-4 text-white text-lg font-bold">AL MEJOR DE 3</p>
+                  </div>
+
+                  <div className="flex w-full justify-between items-center">
+                    <p className="py-2 px-4 text-gray-400 text-lg font-bold">RONDA RÁPIDA</p>
+                    <p className="py-2 px-4 text-white text-lg font-bold">NO</p>
                   </div>
                 </div>
               </div>
-            
             </div>
+
+
+
+            <div className="bg-[#1c1c1c] flex relative mt-12 rounded flex-col items-start text-white p-6  lg:w-[24rem]">
+              <div className="w-full z-10 justify-center items-start">
+                
+                <div className="flex flex-row items-start justify-between">
+                  <h3 className="text-2xl font-extrabold mb-4 text-left text-yellow-500">Premios</h3>
+                  
+                  
+                </div>
+
+                <div className="flex flex-col items-start space-y-2 mt-4">
+                  <div className="flex w-full justify-between items-center">
+                    <p className="py-2 px-4 text-yellow-500 text-lg font-bold">1ero</p>
+                    <p className="py-2 px-4 text-white text-lg font-bold">POR DECIDIR</p>
+                    <p className="py-2 px-4 text-yellow-500 text-lg font-bold">300€</p>
+
+                  </div>
+
+                  <div className="flex w-full justify-between items-center">
+                    <p className="py-2 px-4 text-gray-400 text-lg font-bold">2ndo</p>
+                    <p className="py-2 px-4 text-white text-lg font-bold">POR DECIDIR</p>
+                    <p className="py-2 px-4 text-gray-400 text-lg font-bold">150€</p>
+
+                  </div>
+
+                  <div className="flex w-full justify-between items-center">
+                    <p className="py-2 px-4 text-orange-600 text-lg font-bold">3ero</p>
+                    <p className="py-2 px-4 text-white text-lg font-bold">POR DECIDIR</p>
+                    <p className="py-2 px-4 text-orange-600 text-lg font-bold">50€</p>
+
+                  </div>
+                
+                </div>
+              </div>
+            </div>            
+          </div>
           
-          {/* Info y reglamento */}
-          <div className="grid grid-cols-1 lg:grid-cols-1 mt-12">
+          <div className="grid grid-cols-1 lg:grid-cols-1">
             
             <div className="flex flex-col justify-center items-start relative text-white p-6">
               
@@ -199,16 +258,16 @@ const TabContent = ({ activeTab, selectedCard, setShowMatchModal, setSelectedMat
             <div className="bg-black border-blue-500 border-b-2 text-white p-12  shadow-lg flex justify-between items-center flex-col min-[568px]:flex-row h-30 gap-8"> {/* Reduced height */}
               <div>
                 <h3 className="text-xl font-bold">Partida 1</h3>
-                <p className="text-sm text-gray-300">Fecha: 29/03/2025</p> {/* Fecha pasada */}
-                <span className="text-red-500 text-sm">Finalizado</span> {/* Cambiado a Finalizado */}
+                <p className="text-sm text-gray-300">Fecha: 29/03/2025</p> 
+                <span className="text-red-500 text-sm">Finalizado</span>
               </div>
               <div className="flex items-center gap-4">
                 <div className="text-center">
                   <p className="text-2xl font-bold">2</p>
-                  <hr className="border-gray-500 my-1" /> {/* Línea debajo */}
+                  <hr className="border-gray-500 my-1" /> 
                   <p className="text-sm text-gray-300">Dragons</p>
                 </div>
-                <div className="w-px h-10 bg-gray-500"></div> {/* Línea en medio */}
+                <div className="w-px h-10 bg-gray-500"></div>
                 <div className="text-center">
                   <p className="text-2xl font-bold">0</p>
                   <hr className="border-gray-500 my-1" /> {/* Línea debajo */}
@@ -580,7 +639,7 @@ const TabContent = ({ activeTab, selectedCard, setShowMatchModal, setSelectedMat
                     <b>3er Puesto:</b> El equipo que termine en tercer lugar obtendrá un premio de <b>€50</b>.
                   </p>
                   <p className="mt-4 text-gray-300">
-                    Estos premios están diseñados para recompensar el esfuerzo y la dedicación de los equipos participantes.
+                    Estos premios están diseñados para poder recompensar el esfuerzo y la dedicación de los equipos participantes.
                   </p>
                 </>
               )}

@@ -44,6 +44,7 @@ const RecompensasInicio = () => {
 
                   <div className="w-full h-full flex items-center justify-center cursor-pointer">
 
+
                     <RewardCard {...reward} />
                   </div>
                 </SwiperSlide>

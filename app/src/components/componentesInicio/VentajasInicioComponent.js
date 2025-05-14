@@ -38,7 +38,15 @@ const VentajasInicio = () => {
             <VentajaMovil link={poster3} background={"gold"} color="black" text={"Ventajas Premium"} isPremium={true} />
           </div>
 
-          <a href="/ventajas" className="text-[20px] md:text-[30px] text-white p-[20px] text-center rounded-[8px] mt-[50px] pointer bg-gradient-to-r from-[#005f99] to-[#1AA9FF]">VER TODAS LAS VENTAJAS</a>
+
+          <a
+              href="missions"
+              className="inline-block px-8 py-4 text-lg mt-[50px] rounded-lg font-bold bg-gradient-to-r from-[#005f99] to-[#1AA9FF] text-white hover:from-[#00487a] hover:to-[#007acc]"
+          >
+              VER TODAS LAS VENTAJAS
+          </a>
+
+
         </div>
     )
 

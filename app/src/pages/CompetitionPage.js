@@ -86,6 +86,8 @@ const Competition = () => {
         </AnimatePresence>
       </div>
 
+
+
       <Footer />
     </div>
   );
