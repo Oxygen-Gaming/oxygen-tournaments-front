@@ -38,7 +38,7 @@ const VentajasInicio = () => {
             <VentajaMovil link={poster3} background={"gold"} color="black" text={"Ventajas Premium"} isPremium={true} />
           </div>
 
-          <button href="/ventajas" className="text-[20px] md:text-[30px] text-[white] bg-[#1AA9FF] p-[20px] text-center rounded-[8px] mt-[50px] pointer"><a href="/ventajas">VER TODAS LAS VENTAJAS</a></button>
+          <a href="/ventajas" className="text-[20px] md:text-[30px] text-white p-[20px] text-center rounded-[8px] mt-[50px] pointer bg-gradient-to-r from-[#005f99] to-[#1AA9FF]">VER TODAS LAS VENTAJAS</a>
         </div>
     )
 

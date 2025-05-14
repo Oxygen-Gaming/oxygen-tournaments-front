@@ -32,7 +32,8 @@ const Rewards = () => {
         </div>
       </div>
 
-      <section className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 justify-center gap-x-12 md:gap-x-2 md:gap-y-44 pt-24 pb-32 px-4 md:px-6 mb-32">
+      <section className="hidden md:grid md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-x-12 gap-y-44 pt-24 pb-32 px-4 md:px-10 mb-32 justify-items-center">
+
         {rewards.filter((reward) => reward.title !== "Follow por parte de Oxygen").map((reward) => (
           <div key={reward.id} onClick={() => handleCardClick(reward)} className="w-[360px] h-[320px] rounded-lg shadow-lg">
             <RewardCard {...reward} />
