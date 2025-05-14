@@ -1,31 +1,23 @@
 import React, { useEffect, useState } from "react";
 import Header from "@components/Header";
 import Footer from "@components/Footer";
-import View from "@components/Componentes Competicion/ViewComponent";
-import CardsComponent from "@components/Componentes Competicion/CardsComponent";
-import LeagueOfLegends from "@imgs/lol.jpg";
+import MenuHamburguesaNormal from "@components/ComponentesMenuHamburguesa/MenuHamburguesaNormalComponent";
+import BannerCarousel from "@components/Componentes Competicion/BannerCarousel";
+import GameSelectorMenu from "@components/Componentes Competicion/GameSelectorMenu";
+import DefaultTournamentCards from "@components/Componentes Competicion/DefaultTournamentCards";
+import TournamentsByGame from "@components/Componentes Competicion/TournamentsByGame";
+import { useNavigate } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
 import Valorant from "@imgs/valorant.jpg";
 import RocketLeague from "@imgs/rocketleague.jpg";
-import MenuHamburguesaNormal from "@components/ComponentesMenuHamburguesa/MenuHamburguesaNormalComponent";
-import { useNavigate } from "react-router-dom";
-import ValorantLogo from "@imgs/Valorant_logo.png";
-import RocketLeagueLogo from "@imgs/rocket-league.png";
-import LeagueOfLegendsLogo from "@imgs/lol-logo.png";
-import Logo from "@imgs/Logo_Blue.png";
-import Banner from "@imgs/Header_Competiciones.jpg";
-import { motion, AnimatePresence } from "framer-motion";
+import LeagueOfLegends from "@imgs/lol.jpg";
 
 const Competition = () => {
   const [currentImage, setCurrentImage] = useState(0);
-  const [showGeneralView, setShowGeneralView] = useState(false);
   const [showAllTournaments, setShowAllTournaments] = useState(false);
   const [selectedGame, setSelectedGame] = useState("Próximos Torneos");
   const [selectedCard, setSelectedCard] = useState(null);
-  const [showInfoModal, setShowInfoModal] = useState(false);
-  const [showBracket, setShowBracket] = useState(false);
-  const [showRegistrationModal, setShowRegistrationModal] = useState(false);
   const [inscriptionStatus, setInscriptionStatus] = useState({});
-  const [showCancelConfirmation, setShowCancelConfirmation] = useState(false);
 
   const navigate = useNavigate();
 
@@ -35,6 +27,12 @@ const Competition = () => {
     { src: LeagueOfLegends, alt: "League of Legends" },
   ];
 
+  const defaultCards = [
+    ['1', 'League of Legends', 'LoL Championship Series', '06/06/2025', 'upcoming', 78, LeagueOfLegends],
+    ['4', 'Valorant', 'Valorant Open', '01/06/2025', 'upcoming', 200, Valorant],
+    ['7', 'Rocket League', 'Rocket League Invitational', '28/06/2025', 'upcoming', 120, RocketLeague],
+  ];
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImage((prevImage) => (prevImage + 1) % images.length);
@@ -42,43 +40,10 @@ const Competition = () => {
     return () => clearInterval(interval);
   }, [images.length]);
 
-  useEffect(() => {
-    if (showInfoModal || showBracket || showRegistrationModal || showCancelConfirmation) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'auto';
-    }
-  }, [showInfoModal, showBracket, showRegistrationModal, showCancelConfirmation]);
-
-  const handleViewAll = (game) => {
-    setSelectedGame(game);
-    setShowGeneralView(false);
-    setShowAllTournaments(true);
-  };
-
   const handleCardClick = (content) => {
     setSelectedCard(content);
     navigate("/tournament-details", { state: { selectedCard: content } });
   };
-
-  const getImageForGame = (gameName) => {
-    if (gameName === "League of Legends") return LeagueOfLegends;
-    if (gameName === "Valorant") return Valorant;
-    if (gameName === "Rocket League") return RocketLeague;
-    return null;
-  };
-
-  const games = [
-    { name: "League of Legends", image: LeagueOfLegendsLogo },
-    { name: "Valorant", image: ValorantLogo },
-    { name: "Rocket League", image: RocketLeagueLogo },
-  ];
-
-  const defaultCards = [
-    ['1', 'League of Legends', 'LoL Championship Series', '06/05/2025', 'upcoming', 78, LeagueOfLegends],
-    ['4', 'Valorant', 'Valorant Open', '01/06/2025', 'upcoming', 200, Valorant],
-    ['7', 'Rocket League', 'Rocket League Invitational', '28/05/2025', 'upcoming', 120, RocketLeague],
-  ];
 
   const fadeVariants = {
     hidden: { opacity: 0, y: 10 },
@@ -90,54 +55,37 @@ const Competition = () => {
     <div className="bg-black text-white overflow-x-hidden font-['Roboto_Condensed',sans-serif]">
       <Header />
       <MenuHamburguesaNormal />
-
-      {/* BANNER */}
-      <div className="w-full h-96 bg-cover bg-center relative mt-0">
-        <img
-          src={Banner}
-          alt={images[currentImage].alt}
-          className="w-full h-full object-cover transition-opacity duration-500"
-        />
-        <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-          <h1 className="text-5xl font-extrabold text-white">Competiciones</h1>
-        </div>
-      </div>
-
-      {/* LOGOS MENU */}
-      <div className="flex justify-center gap-16 mt-8 flex-wrap">
-        <div
-          className={`flex flex-col items-center gap-2 cursor-pointer transition-transform hover:scale-110 w-1/2 sm:w-auto ${
-            selectedGame === "Próximos Torneos" ? "opacity-100" : "opacity-50 hover:opacity-100"
-          }`}
-          onClick={() => {
-            setSelectedGame("Próximos Torneos");
-            setShowGeneralView(false);
-            setShowAllTournaments(false);
-          }}
-        >
-          <div className="w-20 h-20 rounded-lg flex items-center justify-center md:w-20 md:h-20">
-            <i className="fas fa-calendar-alt text-[white] text-3xl md:text-5xl"></i>
-          </div>
-          <span className="text-[white] font-bold text-lg md:text-sm text-center">Próximos Torneos</span>
-        </div>
-
-        {games.map((game) => (
-          <div
-            key={game.name}
-            className={`flex flex-col items-center gap-2 cursor-pointer transition-transform hover:scale-110 w-1/2 sm:w-auto ${
-              selectedGame === game.name ? "opacity-100" : "opacity-50 hover:opacity-100"
-            }`}
-            onClick={() => handleViewAll(game.name)}
+      <BannerCarousel currentImage={currentImage} images={images} />
+      <GameSelectorMenu
+        selectedGame={selectedGame}
+        setSelectedGame={setSelectedGame}
+        setShowAllTournaments={setShowAllTournaments}
+      />
+      <div className="container mx-auto p-5">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={selectedGame}
+            variants={fadeVariants}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
           >
-            <img
-              src={game.image}
-              alt={game.name}
-              className="w-20 h-20 object-cover rounded-lg md:w-20 md:h-20"
-            />
-            <span className="text-[white] font-bold text-lg md:text-sm text-center">{game.name}</span>
-          </div>
-        ))}
+            {selectedGame === "Próximos Torneos" && !showAllTournaments && (
+              <DefaultTournamentCards cards={defaultCards} onCardClick={handleCardClick} />
+            )}
+
+            {selectedGame && showAllTournaments && (
+              <TournamentsByGame
+                selectedGame={selectedGame}
+                handleCardClick={handleCardClick}
+                inscriptionStatus={inscriptionStatus}
+                selectedCard={selectedCard}
+              />
+            )}
+          </motion.div>
+        </AnimatePresence>
       </div>
+
 
       <div className="container mx-auto p-5">
   <AnimatePresence mode="wait">
@@ -245,6 +193,7 @@ const Competition = () => {
     </motion.div>
   </AnimatePresence>
 </div>
+
 
 
       <Footer />

@@ -2,18 +2,15 @@ import React from "react";
 import VentajaGrande from "@components/ComponentesVentajas/VentajasGrandeComponent";
 import VentajaPequeño from "@components/ComponentesVentajas/VentajasPequeñoComponent";
 import VentajaMovil from "@components/ComponentesVentajas/VentajasMovil";
-
 import poster1 from "@imgs/Banner exclusivo.webp";
 import poster2 from "@imgs/Descuentos merchandising.webp";
 import poster3 from "@imgs/Obsequio cumpleaños.webp";
 import poster4 from "@imgs/Puntos Dobles.webp";
 import poster5 from "@imgs/Sesion coaching.webp";
 import poster6 from "@imgs/Activo digital.webp";
-
 import poster7 from "@imgs/Entradas a eventos.webp";
 import poster8 from "@imgs/Información privilegiada.webp";
 import poster9 from "@imgs/Partidas con creadores.webp";
-
 import poster10 from "@imgs/Entradas a eventos.webp";
 import poster11 from "@imgs/Partidas con creadores.jpg";
 import poster12 from "@imgs/Información privilegiada.jpg";

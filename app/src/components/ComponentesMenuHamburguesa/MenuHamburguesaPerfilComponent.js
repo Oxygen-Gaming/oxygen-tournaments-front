@@ -37,7 +37,7 @@ const MenuHamburguesaPerfil = () => {
                 <div className="w-6 h-0.5 bg-white"></div>
             </button>
             <div
-                className={`lg:hidden fixed top-0 left-0 w-full h-full bg-[#1c1c1c] flex flex-col justify-start items-center p-4 gap-4 transition-transform ease-in-out duration-300 ${
+                className={`lg:hidden fixed top-0 left-0 w-full h-full bg-black flex flex-col justify-start items-center p-4 gap-4 transition-transform ease-in-out duration-300 ${
                     isOpen ? 'translate-x-0 z-50' : '-translate-x-full'
                 } overflow-y-auto`}
             >

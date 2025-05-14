@@ -4,7 +4,7 @@ const MenuHamburguesaNormal = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <div className="bg-[#1c1c1c]">
+        <div className="bg-black">
             <button
                 className="lg:hidden w-full flex flex-col items-center justify-center mt-[30px] mb-[30px]"
                 onClick={() => setIsOpen(!isOpen)}
@@ -14,7 +14,7 @@ const MenuHamburguesaNormal = () => {
                 <div className="w-8 h-1 bg-white transition-transform duration-300"></div>
             </button>
             <div
-                className={`lg:hidden fixed inset-0 z-50 bg-[#1c1c1c] flex flex-col justify-center items-center gap-6 transition-transform duration-300 ${
+                className={`lg:hidden fixed inset-0 z-50 bg-black flex flex-col justify-center items-center gap-6 transition-transform duration-300 ${
                     isOpen ? "translate-x-0" : "-translate-x-full"
                 }`}
             >

@@ -131,7 +131,7 @@ const MatchDetailsPopup = ({ matchNumber, team1, team2, onClose }) => {
                   ))}
                 </div>
               </div>
-            )}
+            )} 
             {activeTab === "alineaciones" && (
               <div>
                 <h3 className="text-lg font-bold mb-4">Alineaciones</h3>

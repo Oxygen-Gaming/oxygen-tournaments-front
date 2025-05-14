@@ -78,6 +78,10 @@ const Contenido = () => {
     };
 
     const videos = [
+
+        { id: 1, title: 'Todos Los Niveles de Poder de Carl Johnson de GTA San Andreas', category: 'creadores', thumbnail: 'https://img.youtube.com/vi/sKyiB6r8JBQ/0.jpg', src: 'https://www.youtube.com/embed/sKyiB6r8JBQ?si=hG9fStH9qZphoLig', description: 'no' },
+
+
         { id: 1, title: 'Introducción a React Hooks', category: 'creadores', thumbnail: 'https://img.youtube.com/vi/dpw9EHDh2bM/hqdefault.jpg', src: 'https://www.youtube.com/embed/dpw9EHDh2bM', description: 'Aprende los fundamentos de React Hooks en este tutorial completo.Aprende los fundamentos de React Hooks en este tutorial completo.Aprende los fundamentos de React Hooks en este tutorial completo.Aprende los fundamentos de React Hooks en este tutorial completo.Aprende los fundamentos de React Hooks en este tutorial completo.Aprende los fundamentos de React Hooks en este tutorial completo.Aprende los fundamentos de React Hooks en este tutorial completo.' },
         
         { id: 2, title: 'Como jugar al League of Legends - Guía para empezar de cero.', category: 'lol', thumbnail: 'https://media.vandal.net/master/8-2021/202183014214660_1.jpg', src: 'https://www.youtube.com/embed/LjLKNGQK0Tg?si=75EusSQXybNqZ2bR', description: 'Domina a tus campeones favoritos con esta guía detallada.' },
@@ -92,7 +96,25 @@ const Contenido = () => {
         
         { id: 7, title: '5 MEJORES CONSEJOS PARA MEJORAR EN VALORANT', category: 'valorant', thumbnail: 'https://i.ytimg.com/vi/OzEwtlgKBXw/maxresdefault.jpg', src: 'https://www.youtube.com/embed/OzEwtlgKBXw?si=NR6VayCHyktBpeOX', description: 'Todo lo que necesitas saber sobre como mejorar en valorant y mejores consejillos.' },
 
-        { id: 8, title: 'EN el colectivo', category: 'creadores', thumbnail: 'https://ecomovilidad.net/wp-content/uploads/2010/13/nuevosbuses/IMG_8975.JPG', src: 'https://www.youtube.com/embed/CfrMEZppaXM?si=-gHj5XpJseROe3xV', description: 'Sin descripcion.' }
+        { id: 8, title: 'EN el colectivo', category: 'creadores', thumbnail: 'https://ecomovilidad.net/wp-content/uploads/2010/13/nuevosbuses/IMG_8975.JPG', src: 'https://www.youtube.com/embed/CfrMEZppaXM?si=-gHj5XpJseROe3xV', description: 'Sin descripcion.' },
+
+        { id: 9, title: 'Los SECRETOS de LEAGUE OF LEGENDS que NO SABÍAS', category: 'lol', thumbnail: 'https://img.youtube.com/vi/BHnjMBdx5KA/0.jpg', src: 'https://www.youtube.com/embed/BHnjMBdx5KA?si=6TeIcnxF0lf1PBaq', description: 'Secretos de LoL que no conocías ni sabias pero que deberías conocer y saber.' },
+
+        { id: 10, title: 'Papa Americano', category: 'lol', thumbnail: 'https://img.youtube.com/vi/GcMiSZhEg4w/maxresdefault.jpg', src: 'https://www.youtube.com/embed/GcMiSZhEg4w?si=4wcGKcW3Wz-rShWw', description: 'Sin descripcion.' },
+
+        { id: 11, title: 'CLASES / TIPOS DE CAMPEONES EN LEAGUE OF LEGENDS 💥 GUIAS LOL', category: 'lol', thumbnail: 'https://img.youtube.com/vi/51dEwjZcx5w/0.jpg', src: 'https://www.youtube.com/embed/51dEwjZcx5w?si=4A0FSayOetkF4x2J', description: 'Sin descripcion.' },
+
+        { id: 12, title: 'Portazo', category: 'creadores', thumbnail: 'https://img.youtube.com/vi/ATQF-pAaono/maxresdefault.jpg', src: 'https://www.youtube.com/embed/ATQF-pAaono?si=mehVuhWlpYW8J7ym', description: 'Continuamos viendo comandos de Docker para trabajar con imágenes y contenedores. Portazo incluido.' },
+
+        { id: 13, title: 'MI MEJOR PSYCHO EN ROCKET LEAGUE CON MONKEYMOON', category: 'rocketleague', thumbnail: 'https://img.youtube.com/vi/I78tzt0z63A/0.jpg', src: 'https://www.youtube.com/embed/I78tzt0z63A?si=S4afKHQbGhUlzBd4', description: '★ MIS REDES ★ NUEVO CANAL SECUNDARIO:/ @rxiitv' },
+
+        { id: 14, title: 'Rocket League - Official 4K Cinematic Free To Play Trailer', category: 'rocketleague', thumbnail: 'https://img.youtube.com/vi/SgSX3gOrj60/0.jpg', src: 'https://www.youtube.com/embed/SgSX3gOrj60?si=8pRQHtZS6z-cRXs1', description: 'Sin descripcion.' },
+
+        { id: 15, title: '𝙆𝙞𝙣𝙙 𝙤𝙛 𝙒𝙖𝙞𝙩𝙞𝙣𝙜 静観 | Lo-fi Chillhop from the High Clouds | Broadcasting Beyond', category: 'creadores', thumbnail: 'https://img.youtube.com/vi/50yVqm7JmtM/0.jpg', src: 'https://www.youtube.com/embed/50yVqm7JmtM?si=fpeLaQMoLkQ3BN1P', description: 'Sin descripcion.' },
+
+        
+
+        
     ];
 
     const filteredVideos = selectedCategory
@@ -320,3 +342,4 @@ const Contenido = () => {
 };
 
 export default Contenido;
+

@@ -5,9 +5,14 @@ import { motion, AnimatePresence } from "framer-motion";
 import Header from "@components/Header";
 import Footer from "@components/Footer";
 import TournamentHeader from "@components/Componentes Detalles/TournamentHeader";
-import Tabs from "@components/Componentes Detalles/Tabs";
 import TabContent from "@components/Componentes Detalles/TabContent";
 import MatchModal from "@components/Componentes Detalles/MatchModal";
+
+
+import BackButton from "@components/Componentes Detalles/BackButton";
+import TabNavigation from "@components/Componentes Detalles/TabNavigation";
+import AnimatedTabContent from "@components/Componentes Detalles/AnimatedTabContent";
+import useScrollToInscription from "@components/Componentes Detalles/useScrollToInscription";
 
 const TournamentDetailsPage = () => {
   const location = useLocation();
@@ -17,7 +22,15 @@ const TournamentDetailsPage = () => {
   const [activeTab, setActiveTab] = useState("resumen");
   const [showMatchModal, setShowMatchModal] = useState(false);
   const [selectedMatch, setSelectedMatch] = useState(null);
-  const [isExiting, setIsExiting] = useState(false); // <-- nuevo estado
+  const [isExiting, setIsExiting] = useState(false);
+
+  const scrollToInscription = useScrollToInscription({
+    activeTab,
+    setActiveTab,
+    selectedCard,
+    location,
+    navigate,
+  });
 
   useEffect(() => {
     window.scrollTo({ top: 0 });
@@ -33,30 +46,7 @@ const TournamentDetailsPage = () => {
     setIsExiting(true);
     setTimeout(() => {
       navigate("/competition");
-    }, 400); // Tiempo igual al de la animación
-  };
-
-  const scrollToInscription = () => {
-    const currentPath = location.pathname;
-    if (!currentPath.includes("/tournament-details")) {
-      navigate("/tournament-details", { state: { selectedCard } });
-      setTimeout(() => {
-        setActiveTab("inscritos");
-        const inscriptionSection = document.getElementById("inscription-section");
-        if (inscriptionSection) {
-          inscriptionSection.scrollIntoView({ behavior: "smooth" });
-        }
-      }, 500);
-      return;
-    }
-
-    setActiveTab("inscritos");
-    setTimeout(() => {
-      const inscriptionSection = document.getElementById("inscription-section");
-      if (inscriptionSection) {
-        inscriptionSection.scrollIntoView({ behavior: "smooth" });
-      }
-    }, 100);
+    }, 400);
   };
 
   if (!selectedCard) {
@@ -81,6 +71,10 @@ const TournamentDetailsPage = () => {
           <Header />
 
           <div className="relative w-full">
+
+            <BackButton onClick={handleBackClick} />
+            <TournamentHeader selectedCard={selectedCard} scrollToInscription={scrollToInscription} />
+
             <button
               className="absolute top-4 left-4 px-4 py-2 bg-gradient-to-r from-[#005f99] to-[#1AA9FF] text-white rounded-lg hover:bg-[#0077b6] transition z-10"
               onClick={handleBackClick}
@@ -92,61 +86,17 @@ const TournamentDetailsPage = () => {
               selectedCard={selectedCard}
               scrollToInscription={scrollToInscription}
             />
+
           </div>
 
           <div className="w-full p-4">
-            {/* Tabs Navigation */}
-            <div className="flex justify-center mt-6 border-b-4 border-[#005f99] max-w-[1200px] mx-auto md:hidden">
-              {["resumen", "bracket", "partidas", "inscritos"].map((tab) => (
-                <button
-                  key={tab}
-                  className={`flex-1 text-center px-4 py-2 text-sm font-bold transition-all duration-300 ${
-                    activeTab === tab
-                      ? "border-b-4 border-white text-white"
-                      : "text-gray-200 hover:text-white"
-                  }`}
-                  onClick={() => setActiveTab(tab)}
-                >
-                  {tab.charAt(0).toUpperCase() + tab.slice(1)}
-                </button>
-              ))}
-            </div>
-
-            <div className="hidden md:flex justify-center mt-6 border-b-4 border-[#005f99] max-w-[1200px] mx-auto">
-              {["resumen", "bracket", "partidas", "inscritos"].map((tab) => (
-                <button
-                  key={tab}
-                  className={`px-6 py-3 text-lg font-bold transition-all duration-300 ${
-                    activeTab === tab
-                      ? "border-b-4 border-white text-white"
-                      : "text-gray-200 hover:text-white"
-                  }`}
-                  onClick={() => setActiveTab(tab)}
-                >
-                  {tab.charAt(0).toUpperCase() + tab.slice(1)}
-                </button>
-              ))}
-            </div>
-
-            {/* Contenido con animación entre tabs */}
-            <div className="mt-6 max-w-[1200px] mx-auto">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={activeTab}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                  transition={{ duration: 0.4 }}
-                >
-                  <TabContent
-                    activeTab={activeTab}
-                    selectedCard={selectedCard}
-                    setShowMatchModal={setShowMatchModal}
-                    setSelectedMatch={setSelectedMatch}
-                  />
-                </motion.div>
-              </AnimatePresence>
-            </div>
+            <TabNavigation activeTab={activeTab} setActiveTab={setActiveTab} />
+            <AnimatedTabContent
+              activeTab={activeTab}
+              selectedCard={selectedCard}
+              setShowMatchModal={setShowMatchModal}
+              setSelectedMatch={setSelectedMatch}
+            />
           </div>
 
           {showMatchModal && selectedMatch && (
@@ -161,5 +111,4 @@ const TournamentDetailsPage = () => {
 };
 
 export default TournamentDetailsPage;
-
 
