@@ -78,9 +78,12 @@ const Contenido = () => {
     };
 
     const videos = [
+
         { id: 1, title: 'Todos Los Niveles de Poder de Carl Johnson de GTA San Andreas', category: 'creadores', thumbnail: 'https://img.youtube.com/vi/sKyiB6r8JBQ/0.jpg', src: 'https://www.youtube.com/embed/sKyiB6r8JBQ?si=hG9fStH9qZphoLig', description: 'no' },
 
 
+        { id: 1, title: 'Introducción a React Hooks', category: 'creadores', thumbnail: 'https://img.youtube.com/vi/dpw9EHDh2bM/hqdefault.jpg', src: 'https://www.youtube.com/embed/dpw9EHDh2bM', description: 'Aprende los fundamentos de React Hooks en este tutorial completo.Aprende los fundamentos de React Hooks en este tutorial completo.Aprende los fundamentos de React Hooks en este tutorial completo.Aprende los fundamentos de React Hooks en este tutorial completo.Aprende los fundamentos de React Hooks en este tutorial completo.Aprende los fundamentos de React Hooks en este tutorial completo.Aprende los fundamentos de React Hooks en este tutorial completo.' },
+        
         { id: 2, title: 'Como jugar al League of Legends - Guía para empezar de cero.', category: 'lol', thumbnail: 'https://media.vandal.net/master/8-2021/202183014214660_1.jpg', src: 'https://www.youtube.com/embed/LjLKNGQK0Tg?si=75EusSQXybNqZ2bR', description: 'Domina a tus campeones favoritos con esta guía detallada.' },
         
         { id: 3, title: 'COMO MEJORAR RÁPIDO EN ROCKET LEAGUE 🚀 CONSEJOS PRO #1', category: 'rocketleague', thumbnail: 'https://i.ytimg.com/vi/2fkdWjtaxuo/hq720.jpg?sqp=-oaymwEXCK4FEIIDSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLAGaSr7GuYhij6Yle1KL8kgB45a9w', src: 'https://www.youtube.com/embed/2fkdWjtaxuo?si=PiDLdDcf9hoILhk5', description: 'Lleva tu juego al siguiente nivel con estos trucos de Rocket League.' },

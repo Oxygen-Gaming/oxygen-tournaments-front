@@ -37,7 +37,11 @@ const sections = {
   premios: [
     { img: posternormal11 },
     { img: posternormal12, isPremium: true },
+
     { img: posternormal13, isPremium: true },
+
+    { img: posternormal13, isPremium: true }, // Obsequio cumpleaños
+
     { img: posternormal14, isPremium: true },
     { img: posternormal15, isPremium: true },
     { img: ventajaEntradasE, isPremium: true }
@@ -72,12 +76,41 @@ const renderSixImagesLayout = (items) => (
     <div className="w-full sm:w-[80%] md:w-[70%] grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-6">
       {items.slice(2, 6).map((item, index) => (
         <ImageCard key={index} item={item} />
+
+const renderSixImagesLayout = (items) => (
+  <div className="flex flex-col items-center gap-10 ">
+    {/* Primera fila con dos imágenes grandes */}
+    <div className="grid grid-cols-2 gap-10">
+      {items.slice(0, 2).map((item, index) => (
+        <div
+          key={index}
+          className={`relative h-[600px] w-[600px] rounded-xl overflow-hidden transform transition-transform duration-500 hover:scale-110 hover:shadow-lg ${
+            item.isPremium ? "premium-glow" : ""
+          }`}
+        >
+          <img src={item.img} alt="" className="h-full w-full object-cover rounded-xl" />
+        </div>
+      ))}
+    </div>
+    {/* Segunda fila con cuatro imágenes más pequeñas */}
+    <div className="grid grid-cols-4 gap-10">
+      {items.slice(2, 6).map((item, index) => (
+        <div
+          key={index}
+          className={`relative h-[280px] w-[280px] rounded-xl overflow-hidden transform transition-transform duration-500 hover:scale-110 hover:shadow-lg ${
+            item.isPremium ? "premium-glow" : ""
+          }`}
+        >
+          <img src={item.img} alt="" className="h-full w-full object-cover rounded-xl" />
+        </div>
+
       ))}
     </div>
   </div>
 );
 
 const renderFourImagesLayout = (items) => (
+
   <div className="flex flex-col items-center gap-10 w-full sm:w-[80%] md:w-[70%]">
     <div className="w-full max-w-[500px]">
       <ImageCard item={items[0]} />
@@ -85,16 +118,34 @@ const renderFourImagesLayout = (items) => (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-full">
       {items.slice(1).map((item, index) => (
         <ImageCard key={index} item={item} />
+
+  <div className="flex flex-col items-center gap-10">
+    {/* Imagen destacada arriba */}
+    <div className="w-[400px] h-[400px] rounded-xl overflow-hidden transform transition-transform duration-500 hover:scale-110 hover:shadow-lg">
+      <img src={items[0].img} alt="" className="h-full w-full object-cover rounded-xl" />
+    </div>
+    {/* Tres imágenes más pequeñas abajo */}
+    <div className="grid grid-cols-3 gap-10">
+      {items.slice(1).map((item, index) => (
+        <div 
+          key={index} 
+          className="relative h-[280px] w-[280px] rounded-xl overflow-hidden transform transition-transform duration-500 hover:scale-110 hover:shadow-lg"
+        >
+          <img src={item.img} alt="" className="h-full w-full object-cover rounded-xl" />
+        </div>
+
       ))}
     </div>
   </div>
 );
+
 
 const VentajasNormales = ({ section, title, subtitle }) => {
   const items = sections[section] || [];
 
   return (
     <section className="w-full py-12 px-4 flex flex-col items-center bg-black">
+
       <div className="max-w-6xl w-full flex flex-col items-center mb-16 mt-5">
         <div className="flex flex-col md:flex-row items-center justify-center gap-6 text-white text-center">
           <div className="w-[80px] h-[3px] bg-[#1AA9FF] md:w-[200px]" />
@@ -113,8 +164,42 @@ const VentajasNormales = ({ section, title, subtitle }) => {
             ))}
           </div>
         )}
+
+    <div className="max-w-[1200px] w-full flex flex-col items-center mb-16 mt-[20px]">
+      <div className="flex items-center justify-center gap-6">
+        {/* Línea izquierda */}
+        <div className="w-[200px] h-[3px] bg-[#1AA9FF]"></div>
+
+        {/* Título */}
+        <h2 className="text-6xl text-center font-extrabold uppercase text-white">{title}</h2>
+
+        {/* Línea derecha */}
+        <div className="w-[200px] h-[3px] bg-[#1AA9FF]"></div>
+      </div>
+
+      {/* Subtítulo */}
+      <p className="text-xl text-gray-400">{subtitle}</p>
+    </div>
+
+      {items.length === 6 ? renderSixImagesLayout(items) : 
+       items.length === 4 ? renderFourImagesLayout(items) : (
+        <div className="grid grid-cols-2 gap-10">
+          {items.map((item, index) => (
+            <div
+              key={index}
+              className={`relative h-[300px] w-[300px] rounded-xl overflow-hidden transform transition-transform duration-500 hover:scale-110 hover:shadow-lg ${
+                item.isPremium ? "premium-glow" : ""
+              }`}
+            >
+              <img src={item.img} alt="" className="h-full w-full object-cover rounded-xl" />
+            </div>
+          ))}
+        </div>
+      )}
+
     </section>
   );
 };
 
 export default VentajasNormales;
+

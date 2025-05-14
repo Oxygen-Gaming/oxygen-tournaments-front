@@ -32,6 +32,9 @@ const Missions = () => {
       </div>
 
       <section className="hidden md:grid md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-x-12 gap-y-44 pt-24 pb-32 px-4 md:px-10 mb-32 justify-items-center">
+
+      <section className="hidden md:grid md:grid-cols-1 lg:grid-cols-4 justify-center gap-x-12  md:gap-x-12 md:gap-y-44 pt-24 pb-32 px-4 md:px-10 mb-32">
+
         {missions.map((mission) => (
           <div key={mission.id} onClick={() => handleCardClick(mission)} className="w-[360px] h-[320px] rounded-lg shadow-lg cursor-pointer">
             <MissionCard {...mission} />

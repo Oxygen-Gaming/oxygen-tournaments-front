@@ -71,8 +71,22 @@ const TournamentDetailsPage = () => {
           <Header />
 
           <div className="relative w-full">
+
             <BackButton onClick={handleBackClick} />
             <TournamentHeader selectedCard={selectedCard} scrollToInscription={scrollToInscription} />
+
+            <button
+              className="absolute top-4 left-4 px-4 py-2 bg-gradient-to-r from-[#005f99] to-[#1AA9FF] text-white rounded-lg hover:bg-[#0077b6] transition z-10"
+              onClick={handleBackClick}
+            >
+              Volver
+            </button>
+
+            <TournamentHeader
+              selectedCard={selectedCard}
+              scrollToInscription={scrollToInscription}
+            />
+
           </div>
 
           <div className="w-full p-4">

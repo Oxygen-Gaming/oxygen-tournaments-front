@@ -41,7 +41,11 @@ const RecompensasInicio = () => {
             >
               {rewards.map((reward) => (
                 <SwiperSlide key={reward.id} className="w-full flex">
+
                   <div className="w-full h-full flex items-center justify-center cursor-pointer">
+
+                  <div className="w-full h-[17rem] flex items-center justify-center cursor-pointer">
+
                     <RewardCard {...reward} />
                   </div>
                 </SwiperSlide>
