@@ -84,7 +84,7 @@ const TabContent = ({ activeTab, selectedCard, setShowMatchModal, setSelectedMat
     if (savedConfirmedPlayers) {
       setConfirmedPlayers(parseInt(savedConfirmedPlayers, 10));
     }
-  }, []);
+  }, []); 
 
   const handleViewMoreClick = (match) => {
     setSelectedMatch(match);
