@@ -580,7 +580,7 @@ const TabContent = ({ activeTab, selectedCard, setShowMatchModal, setSelectedMat
                     <b>3er Puesto:</b> El equipo que termine en tercer lugar obtendrá un premio de <b>€50</b>.
                   </p>
                   <p className="mt-4 text-gray-300">
-                    Estos premios están diseñados para recompensar el esfuerzo y la dedicación de los equipos participantes.
+                    Estos premios están diseñados para poder recompensar el esfuerzo y la dedicación de los equipos participantes.
                   </p>
                 </>
               )}
