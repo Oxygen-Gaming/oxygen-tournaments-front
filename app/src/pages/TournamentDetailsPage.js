@@ -51,7 +51,7 @@ const TournamentDetailsPage = () => {
 
   if (!selectedCard) {
     return (
-      <div className="bg-[#1AA9FF] text-white h-screen flex items-center justify-center">
+      <div className="bg-black text-white h-screen flex items-center justify-center">
         <h1 className="text-3xl font-bold text-center">No se encontró información del torneo.</h1>
       </div>
     );

@@ -7,7 +7,7 @@ const Register = () => {
   
     return (
       
-      <div className="bg-[#1c1c1c] text-[white] flex flex-col items-center font-roboto-condensed pt-[30px] lg:block lg:p-0">
+      <div className="bg-[black] text-[white] flex flex-col items-center font-roboto-condensed pt-[30px] lg:block lg:p-0">
         <Header />
         <MenuHamburguesaNormal />
         <div className="w-full flex flex-col items-center">
@@ -15,7 +15,7 @@ const Register = () => {
             <div className=" w-full lg:w-1/2 flex items-center justify-center rounded-t-lg lg:rounded-l-lg lg:rounded-tr-none">
               <img className="w-full h-full object-cover rounded-t-lg lg:rounded-l-lg lg:rounded-tr-none" src={Banner} />      
             </div> 
-            <div className="bg-gray-800 w-full lg:w-2/3 flex flex-col items-center justify-center p-[20px] rounded-b-lg lg:rounded-r-lg lg:rounded-bl-none">
+            <div className="bg-gray-700 w-full lg:w-2/3 flex flex-col items-center justify-center p-[20px] rounded-b-lg lg:rounded-r-lg lg:rounded-bl-none">
               
               <h1 className="text-[50px] font-semibold text-center">Crear cuenta</h1>
               
