@@ -93,6 +93,7 @@ const TabContent = ({ activeTab, selectedCard, setShowMatchModal, setSelectedMat
       {activeTab === "resumen" && (
         <div className="flex flex-col lg:flex-row gap-4">
           
+
           <div className="">
             <div className="bg-[#1c1c1c] flex relative rounded flex-col items-start text-white p-6 h-[32rem]  lg:w-[24rem]">
               <div className="w-full z-10 justify-center items-start">

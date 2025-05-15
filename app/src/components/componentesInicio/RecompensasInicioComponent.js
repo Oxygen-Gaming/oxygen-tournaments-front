@@ -8,6 +8,7 @@ const RecompensasInicio = () => {
     return (
         <div className="mt-[100px] mb-20 flex flex-col gap-[50px] justify-center items-center overflow-x-hidden lg:p-0 p-[20px] md:p-[40px] w-full" id="events">
           <h1 className="text-[40px] md:text-[60px] font-bold text-center">¡Llévate recompensas por ser un auténtico Fan de Oxygen!</h1>
+
           <div className="w-full flex justify-center items-center mt-[50px]">
             <Swiper
               modules={[Autoplay]}
@@ -40,7 +41,9 @@ const RecompensasInicio = () => {
             >
               {rewards.map((reward) => (
                 <SwiperSlide key={reward.id} className="w-full flex">
+
                   <div className="w-full h-full flex items-center justify-center cursor-pointer">
+
                     <RewardCard {...reward} />
                   </div>
                 </SwiperSlide>
