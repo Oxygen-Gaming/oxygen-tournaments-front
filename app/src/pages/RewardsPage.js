@@ -32,6 +32,12 @@ const Rewards = () => {
         </div>
       </div>
 
+      <div className="flex flex-col md:flex-row items-center justify-center mt-[40px] gap-6 text-white text-center">
+        <div className="w-[80px] h-[3px] bg-[#1AA9FF] md:w-[200px]" />
+          <h2 className="text-3xl md:text-5xl font-extrabold uppercase">Recompensas</h2>
+        <div className="w-[80px] h-[3px] bg-[#1AA9FF] md:w-[200px]" />
+      </div>
+
       <section className="hidden md:grid md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-x-12 gap-y-44 pt-24 pb-32 px-4 md:px-10 mb-32 justify-items-center">
         {rewards.filter((reward) => reward.title !== "Follow por parte de Oxygen").map((reward) => (
           <div key={reward.id} onClick={() => handleCardClick(reward)} className="w-[360px] h-[320px] rounded-lg shadow-lg">
