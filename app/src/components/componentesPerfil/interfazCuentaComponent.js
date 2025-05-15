@@ -100,8 +100,6 @@ const Cuenta = () => {
                             <span className="italic">Código Postal</span>
                             <input type="text" value={codigo_postal} onChange={(e) => setCodigo_postal(e.target.value)} className="w-full h-[35px] rounded p-[7px] text-[black]" required/>
 
-
-
                         </div>
                     </div>
                     

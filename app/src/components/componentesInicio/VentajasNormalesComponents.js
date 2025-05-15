@@ -39,8 +39,6 @@ const sections = {
     { img: posternormal12, isPremium: true },
     { img: posternormal13, isPremium: true },
 
-
-
     { img: posternormal14, isPremium: true },
     { img: posternormal15, isPremium: true },
     { img: ventajaEntradasE, isPremium: true }
@@ -76,8 +74,6 @@ const renderSixImagesLayout = (items) => (
       {items.slice(2, 6).map((item, index) => (
         <ImageCard key={index} item={item} />
 
-
-
       ))}
     </div>
   </div>
@@ -97,17 +93,11 @@ const renderFourImagesLayout = (items) => (
 );
 
 
-
-
-
-
 const VentajasNormales = ({ section, title, subtitle }) => {
   const items = sections[section] || [];
 
   return (
     <section className="w-full py-12 px-4 flex flex-col items-center bg-black">
-
-
 
       <div className="max-w-6xl w-full flex flex-col items-center mb-16 mt-5">
         <div className="flex flex-col md:flex-row items-center justify-center gap-6 text-white text-center">
@@ -127,8 +117,6 @@ const VentajasNormales = ({ section, title, subtitle }) => {
             ))}
           </div>
         )}
-
-
 
     </section>
   );

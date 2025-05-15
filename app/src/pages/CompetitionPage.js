@@ -56,6 +56,13 @@ const Competition = () => {
       <Header />
       <MenuHamburguesaNormal />
       <BannerCarousel currentImage={currentImage} images={images} />
+
+      <div className="flex flex-col md:flex-row items-center justify-center mt-[40px] gap-6 text-white text-center">
+        <div className="w-[80px] h-[3px] bg-[#1AA9FF] md:w-[200px]" />
+          <h2 className="text-3xl md:text-5xl font-extrabold uppercase">Juega torneos</h2>
+        <div className="w-[80px] h-[3px] bg-[#1AA9FF] md:w-[200px]" />
+      </div>
+
       <GameSelectorMenu
         selectedGame={selectedGame}
         setSelectedGame={setSelectedGame}
@@ -85,8 +92,6 @@ const Competition = () => {
           </motion.div>
         </AnimatePresence>
       </div>
-
-
 
       <Footer />
     </div>
