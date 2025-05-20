@@ -1,7 +1,7 @@
 import React from "react";
-import Competiciones from "@imgs/Header_Competiciones.jpg";
-import Contenido from "@imgs/Headers_Contenido.jpg";
-import Misiones from "@imgs/Header_Misiones.jpg";
+import Competiciones from "@imgs/inicio1.webp";
+import Contenido from "@imgs/inicio2.webp";
+import Misiones from "@imgs/inicio3.webp";
 const FuncionaInicio = () => {
     return (
         <div className="text-white py-[8vh] px-6 sm:px-12 bg-[#1AA9FF]"> {/* Reduced top padding */}
