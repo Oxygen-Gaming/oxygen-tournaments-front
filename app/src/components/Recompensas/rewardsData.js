@@ -7,7 +7,10 @@ import Box from '@imgs/Recompensas_Box.jpg';
 import Google from '@imgs/Recompensas_10_Google.jpg';
 import Playstation from '@imgs/Recompensas_10_Playstation.jpg';
 import Silla from '@imgs/Recompensas_Silla.jpg';
-
+import Taza from '@imgs/Recompensas_Taza.webp';
+import Alfombrilla from '@imgs/Recompensas_Alfombrilla.webp';
+import Mochila from '@imgs/Recompensas_Mochila.webp';
+import Amazon from '@imgs/Recompensas_10_Amazon.webp';
 const rewards = [
   { 
     id: 2, 
@@ -67,6 +70,34 @@ const rewards = [
     image: Silla, 
     points: 10000, 
     description: "Consigue la silla Playseat Puma y lleva tu experiencia de gaming al siguiente nivel." 
+  },
+  { 
+    id: 10, 
+    title: "10€ de Amazon", 
+    image: Amazon, 
+    points: 10000, 
+    description: "Consigue los 10€ de Amazon y lleva tu experiencia de gaming al siguiente nivel." 
+  },
+  { 
+    id: 11, 
+    title: "Alfombrilla de Oxygen",
+    image: Alfombrilla, 
+    points: 10000, 
+    description: "Consigue la Alfombrilla de Oxygen Gaming y lleva tu experiencia de gaming al siguiente nivel." 
+  },
+  { 
+    id: 12, 
+    title: "Mochila de Oxygen", 
+    image: Mochila, 
+    points: 10000, 
+    description: "Consigue la Mochila de Oxygen Gaming y lleva tu experiencia de gaming al siguiente nivel." 
+  },
+  { 
+    id: 13, 
+    title: "Taza de Oxygen", 
+    image: Taza, 
+    points: 10000, 
+    description: "Consigue la Taza de Oxygen Gaming y lleva tu experiencia de gaming al siguiente nivel." 
   },
 ];
 

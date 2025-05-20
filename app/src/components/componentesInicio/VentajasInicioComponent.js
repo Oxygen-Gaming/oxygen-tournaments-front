@@ -13,9 +13,9 @@ const VentajasInicio = () => {
 
     return (
         <div className="w-full flex flex-col items-center bg-[black] text-[#1AA9FF] pb-[10vh]"> {/* Increased bottom padding */}
-          <h1 className="text-[45px] md:text-[60px] font-bold text-center mt-[20px] mb-[30px] text-[white]">¡Vive Más, Gana Más con Oxyclub!</h1>
+          <h1 className="text-[45px] md:text-[55px] font-bold text-center mt-[20px] mb-[30px] text-[white]">¡ DESCUBRE LOS BENEFICIOS QUE MULTIPLICAN TU DIVERSIÓN !</h1>
           
-          <p className="text-[white] text-[25px] md:text-[30px] font-bold text-center">Descubre las ventajas que multiplican tu diversión</p>
+          <p className="text-[white] text-[25px] md:text-[30px] font-bold text-center">Solo por ser parte del OxyClub, tendrás ventajas gratis para disfrutar al máximo</p>
 
           <div className="hidden lg:flex flex-row items-center justify-center gap-[2rem] mt-[20px]">
             <VentajaPequeño link={posternormal1} text={"Ventajas Free"} background={"#1796E6"} color="white" />

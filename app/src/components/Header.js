@@ -20,6 +20,14 @@ const Header = () => {
           Inicio
         </NavLink>
         <NavLink
+          to="/ventajas"
+          className={`text-white no-underline px-2 py-2 rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10 font-['Roboto_Condensed',sans-serif] ${
+            location.pathname.startsWith("/ventajas") ? "bg-gradient-to-r from-[#005f99] to-[#1AA9FF]" : ""
+          }`}
+        >
+          Ventajas
+        </NavLink>
+        <NavLink
           to="/competition"
           className={`text-white no-underline px-2 py-2 rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10 font-['Roboto_Condensed',sans-serif] ${
             location.pathname.startsWith("/competition") || location.pathname.startsWith("/tournament-details") ? "bg-gradient-to-r from-[#005f99] to-[#1AA9FF]" : ""
@@ -51,14 +59,7 @@ const Header = () => {
         >
           Recompensas
         </NavLink>
-        <NavLink
-          to="/ventajas"
-          className={`text-white no-underline px-2 py-2 rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10 font-['Roboto_Condensed',sans-serif] ${
-            location.pathname.startsWith("/ventajas") ? "bg-gradient-to-r from-[#005f99] to-[#1AA9FF]" : ""
-          }`}
-        >
-          Ventajas
-        </NavLink>
+        
       </nav>
       <div className="flex items-center gap-2 ml-auto">
         <a href="/register" className="text-white no-underline px-2 py-2 rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md bg-gradient-to-r from-[#005f99] to-[#1AA9FF]">Registrarse</a>

@@ -8,6 +8,7 @@ import Twitter from '@imgs/Mision_X.jpg';
 import Camiseta from '@imgs/Mision_Camiseta.jpg';
 import Meme from '@imgs/Mision_Meme.jpg';
 import Caca from '@imgs/Mision_Caca.jpg';
+import Login from '@imgs/Mision_Login.webp'
 
 const missions = [
   { 
@@ -100,6 +101,15 @@ const missions = [
     link: 'https://example.com/camiseta',
     buttonText: 'Conseguir Camiseta'
   },
+  { 
+    id: 11, 
+    title: 'Login diario', 
+    image: Login, 
+    points: '400 puntos', 
+    description: 'Demuestra tu lealtad y estilo. No es solo una prenda, es un símbolo de tu compromiso. ¿Estás listo para lucirla?', 
+    link: 'https://example.com/camiseta',
+    buttonText: 'Conseguir Login Diario'
+  }
 ];
 
 export default missions;

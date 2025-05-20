@@ -5,20 +5,20 @@ import Footer from "@components/Footer";
 import CardVentajas from "@components/componentesInicio/CardVentajasComponent";
 import TablaVentajas from "@components/ComponentesVentajas/VentajasTablaComponent";
 import VentajasNormales from "@components/componentesInicio/VentajasNormalesComponents";
+import Banner from '@imgs/Headers_Ventajas.webp'
 
 
 const Ventajas = () => {
-  const bannerImage = "https://via.placeholder.com/1920x1080";
 
   return (
-    <div className="bg-[#0f0f0f] text-[white] font-roboto-condensed">
+    <div className="bg-black text-[white] font-roboto-condensed">
       <Header />
       <MenuHamburguesaNormal />
 
       {/* Banner */}
       <div className="w-full h-96 bg-cover bg-center relative mt-0">
         <img
-          src={bannerImage}
+          src={Banner}
           alt="Ventajas Banner"
           className="w-full h-full object-cover"
         />

@@ -5,7 +5,7 @@ import posternormal3 from "@imgs/Banner exclusivo.webp";
 import posternormal4 from "@imgs/Follow club.webp";
 import posternormal5 from "@imgs/acceso.webp";
 import posternormal6 from "@imgs/Información privilegiada.webp";
-import posternormal7 from "@imgs/contenido.webp";
+import posternormal7 from "@imgs/Poster_6_H.webp";
 import posternormal8 from "@imgs/eventos comunidad.webp";
 import posternormal9 from "@imgs/guias competitivas.webp";
 import posternormal10 from "@imgs/Sesion coaching.webp";
@@ -53,15 +53,14 @@ const sections = {
   ],
 };
 
-const ImageCard = ({ item }) => (
+const ImageCard = ({ item, className = "" }) => (
   <div
-    className={`relative w-full aspect-[1/1] rounded-xl overflow-hidden transform transition-transform duration-500 hover:scale-105 hover:shadow-lg ${
-      item.isPremium ? "premium-glow" : ""
-    }`}
+    className={`relative w-full rounded-xl overflow-hidden transform transition-transform duration-500 hover:scale-105 hover:shadow-lg ${item.isPremium ? "premium-glow" : ""} ${className}`}
   >
     <img src={item.img} alt="" className="w-full h-full object-cover rounded-xl" />
   </div>
 );
+
 
 const renderSixImagesLayout = (items) => (
   <div className="flex flex-col items-center gap-10 w-full">
@@ -84,17 +83,26 @@ const renderSixImagesLayout = (items) => (
 );
 
 const renderFourImagesLayout = (items) => (
-  <div className="flex flex-col items-center gap-10 w-full sm:w-[80%] md:w-[70%]">
-    <div className="w-full max-w-[500px]">
-      <ImageCard item={items[0]} />
+  <div className="flex flex-col items-center gap-10 w-full h-full sm:w-[90%] md:w-[80%]">
+
+    <div className="w-full max-w-[800px]">
+      <ImageCard item={items[0]} className="aspect-[16/9]" />
     </div>
+
+
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-full">
       {items.slice(1).map((item, index) => (
         <ImageCard key={index} item={item} />
       ))}
     </div>
+
   </div>
 );
+
+
+
+
+
 
 
 
