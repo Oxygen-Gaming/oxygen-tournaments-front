@@ -66,6 +66,14 @@ const MenuHamburguesaNormal = () => {
                 >
                     Recompensas
                 </a>
+
+                <a
+                    href="/tienda"
+                    className="text-white text-lg font-bold no-underline rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10 px-4 py-2"
+                    onClick={() => setIsOpen(false)}
+                >
+                    Tienda
+                </a>
                 
             </div>
         </div>

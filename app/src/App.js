@@ -16,6 +16,8 @@ import ReportPlayerPage from "./pages/ReportPlayerPage";
 import MissionDetailsPage from "./pages/MissionDetailsPage";
 import RewardDetailsPage from "./pages/RewardDetailsPage";
 import MaintenancePage from "./pages/MaintenancePage";
+import Tienda from './pages/TiendaPage';
+import Interior_Productos from '@components/Componentes Tienda/InteriorProductos_Component';
 
 function App() {
   const [maintenance, setMaintenance] = useState(false);
@@ -48,6 +50,7 @@ function App() {
         ) : (
           <>
             <Route path="/" element={<Welcome />} />
+            <Route path="/tienda" element={<Tienda />} />
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />   
             <Route path="/competition" element={<Competition />} />
@@ -62,6 +65,7 @@ function App() {
             <Route path="/mission-details" element={<MissionDetailsPage />} />
             <Route path="/reward-details" element={<RewardDetailsPage />} />
             <Route path="/maintenance" element={<Navigate to="/" replace />} />
+            <Route path="/producto" element={<Interior_Productos />} />
           </>
         )}
       </Routes>
