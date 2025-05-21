@@ -8,11 +8,12 @@ import RecompensasInicio from "@components/componentesInicio/RecompensasInicioCo
 import VentajasInicio from "@components/componentesInicio/VentajasInicioComponent";
 import FuncionaInicio from "@components/componentesInicio/FuncionaInicio";
 import PrincipalInicio from "@components/componentesInicio/PrincipalInicio";
+import BannerShop from "@components/Componentes Tienda/BannerShopComponent";
 
 const OxygenGaming = () => {
   
   return (
-    <div className="bg-[#1AA9FF] text-white overflow-x-hidden font-['Roboto_Condensed',sans-serif] lg:p-0 pt-[30px] flex flex-col gap-0">
+    <div className="bg-[#1AA9FF] text-white overflow-x-hidden font-['Roboto_Condensed',sans-serif] lg:p-0 pt-[30px] flex flex-col gap-0">      
       <Header />
       <MenuHamburguesaNormal />
       <PrincipalInicio></PrincipalInicio>

@@ -83,21 +83,21 @@ const rewards = [
     title: "Alfombrilla de Oxygen",
     image: Alfombrilla, 
     points: 10000, 
-    description: "Consigue la Alfombrilla de Oxygen Gaming y lleva tu experiencia de gaming al siguiente nivel." 
+    description: "Lleva tu setup al siguiente nivel ! La alfombrilla del club te ofrece comodidad y precisión para tus partidas. Por solo X puntos puedes presumir de estilo gamer." 
   },
   { 
     id: 12, 
     title: "Mochila de Oxygen", 
     image: Mochila, 
     points: 10000, 
-    description: "Consigue la Mochila de Oxygen Gaming y lleva tu experiencia de gaming al siguiente nivel." 
+    description: "Lleva el espíritu del club a cualquier lado ! Esta mochila es perfecta para acompañarte donde vayas. Por solo X puntos, llévate tu accesorio práctico y único." 
   },
   { 
     id: 13, 
     title: "Taza de Oxygen", 
     image: Taza, 
     points: 10000, 
-    description: "Consigue la Taza de Oxygen Gaming y lleva tu experiencia de gaming al siguiente nivel." 
+    description: "Ya puedes disfrutar de tu bebida favorita en condiciones ! La taza del club te hará sentir el orgullo de ser parte de Oxygen Gaming. Llévate tu taza única por solo X puntos." 
   },
 ];
 

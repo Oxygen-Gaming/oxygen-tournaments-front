@@ -52,11 +52,13 @@ const MenuHamburguesaPerfil = () => {
 
                 {/* Opciones del menú */}
                 <a href="/" className="text-white text-center no-underline rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10" onClick={() => setIsOpen(false)}>Inicio</a>
+                <a href="/ventajas" className="text-white text-center no-underline rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10" onClick={() => setIsOpen(false)}>Ventajas</a>
                 <a href="/competition" className="text-white text-center no-underline rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10" onClick={() => setIsOpen(false)}>Competiciones</a>
                 <a href="/content" className="text-white text-center no-underline rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10" onClick={() => setIsOpen(false)}>Contenido</a>
                 <a href="/missions" className="text-white text-center no-underline rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10" onClick={() => setIsOpen(false)}>Misiones</a>
                 <a href="/rewards" className="text-white text-center no-underline rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10" onClick={() => setIsOpen(false)}>Recompensas</a>
-                <a href="/ventajas" className="text-white text-center no-underline rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10" onClick={() => setIsOpen(false)}>Ventajas</a>
+                <a href="/tienda" className="text-white text-center no-underline rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10" onClick={() => setIsOpen(false)}>Tienda</a>
+                
                 <hr className="text-[white] bg-[white] w-[80%]"></hr>
                 <a href="#perfil" className="text-white text-center no-underline rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10" onClick={() => { setOpcionSeleccionada('perfil'); setIsOpen(false); }}>Perfil</a>
                 <a href="#cuenta" className="text-white text-center no-underline rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10" onClick={() => { setOpcionSeleccionada('cuenta'); setIsOpen(false); }}>Editar Perfil</a>
