@@ -2,10 +2,9 @@ import React from 'react';
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import MenuHamburguesaNormal from "@components/ComponentesMenuHamburguesa/MenuHamburguesaNormalComponent";
-import Interior_Productos from '@components/Componentes Tienda/InteriorProductos_Component';
-import PrincipalInicio from "@components/componentesInicio/PrincipalInicio";
 import BannerShop from "@components/Componentes Tienda/BannerShopComponent";
 import CamisetasComponent from "@components/Componentes Tienda/CamisetasComponent";
+import Sidebar from '@components/Componentes Tienda/Carrito_Component';
 const Tienda = () => {
   
   return (
@@ -13,9 +12,8 @@ const Tienda = () => {
       <Header />
       <MenuHamburguesaNormal />
       <BannerShop></BannerShop>
-      
+      <Sidebar></Sidebar>
       <CamisetasComponent></CamisetasComponent> 
-      
       <Footer />
       
     </div>

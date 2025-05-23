@@ -68,6 +68,15 @@ const Header = () => {
         >
           Tienda
         </NavLink>
+
+        <NavLink
+          to="/tienda"
+          className={`text-white no-underline px-2 py-2 rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10 font-['Roboto_Condensed',sans-serif] ${
+            location.pathname.startsWith("/tienda") ? "bg-gradient-to-r from-[#005f99] to-[#1AA9FF]" : ""
+          }`}
+        >
+          <i className="fa-solid fa-cart-shopping"></i>
+        </NavLink>
         
       </nav>
       <div className="flex items-center gap-2 ml-auto">

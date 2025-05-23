@@ -54,7 +54,7 @@ const RecompensasInicio = () => {
           {/* Botón para ir a misiones*/}
           <div className="mt-[50px] flex justify-center items-center">
             <a
-                href="missions"
+                href="rewards"
                 className="inline-block px-8 py-4 text-lg rounded-lg font-bold transition transform hover:-translate-y-2 hover:shadow-lg bg-[white] hover:bg-[#00487a] text-[#1AA9FF]"
             >
                 HAZTE CON ELLAS

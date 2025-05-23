@@ -14,14 +14,14 @@ const FuncionaInicio = () => {
                   title: "Competiciones",
                   text: "Participa en emocionantes torneos y desafíos llenos de acción. ¡Compite, progresa y conviértete en una verdadera leyenda del juego!",
                   link: "/competition",
-                  background: Competiciones, // Use the imported image
+                  background: Contenido, // Use the imported image
                 },
                 {
                   icon: "fas fa-photo-video",
                   title: "Contenido Exclusivo",
                   text: "Sumérgete en el mundo de tu equipo favorito con contenido exclusivo: disfruta de entrevistas a tus ídolos, entrenamientos y momentos únicos que solo los verdaderos fanáticos pueden apreciar. ",
                   link: "/content",
-                  background: Contenido, // Use the imported image
+                  background: Competiciones, // Use the imported image
                 },
                 {
                   icon: "fa-solid fa-gift",

@@ -19,6 +19,7 @@ import MaintenancePage from "./pages/MaintenancePage";
 import Tienda from './pages/TiendaPage';
 import Interior_Productos from '@components/Componentes Tienda/InteriorProductos_Component';
 
+
 function App() {
   const [maintenance, setMaintenance] = useState(false);
   const [loading, setLoading] = useState(true);
