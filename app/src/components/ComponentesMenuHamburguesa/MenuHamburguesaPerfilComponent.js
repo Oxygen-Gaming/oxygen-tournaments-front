@@ -58,6 +58,7 @@ const MenuHamburguesaPerfil = () => {
                 <a href="/missions" className="text-white text-center no-underline rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10" onClick={() => setIsOpen(false)}>Misiones</a>
                 <a href="/rewards" className="text-white text-center no-underline rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10" onClick={() => setIsOpen(false)}>Recompensas</a>
                 <a href="/tienda" className="text-white text-center no-underline rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10" onClick={() => setIsOpen(false)}>Tienda</a>
+                <a href="/tienda" className="text-white text-center no-underline rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10" onClick={() => setIsOpen(false)}><i className="fa-solid fa-cart-shopping"></i> </a>
                 
                 <hr className="text-[white] bg-[white] w-[80%]"></hr>
                 <a href="#perfil" className="text-white text-center no-underline rounded transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-white/10" onClick={() => { setOpcionSeleccionada('perfil'); setIsOpen(false); }}>Perfil</a>

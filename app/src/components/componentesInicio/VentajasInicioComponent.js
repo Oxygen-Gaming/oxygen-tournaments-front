@@ -40,7 +40,7 @@ const VentajasInicio = () => {
 
 
           <a
-              href="missions"
+              href="ventajas"
               className="inline-block px-8 py-4 text-lg mt-[50px] rounded-lg font-bold bg-gradient-to-r from-[#005f99] to-[#1AA9FF] text-white hover:from-[#00487a] hover:to-[#007acc]"
           >
               VER TODAS LAS VENTAJAS
