@@ -18,6 +18,8 @@ import RewardDetailsPage from "./pages/RewardDetailsPage";
 import MaintenancePage from "./pages/MaintenancePage";
 import Tienda from './pages/TiendaPage';
 import Interior_Productos from '@components/Componentes Tienda/InteriorProductos_Component';
+import SuperCheckout from './pages/CheckoutPage';
+
 
 
 function App() {
@@ -67,6 +69,7 @@ function App() {
             <Route path="/reward-details" element={<RewardDetailsPage />} />
             <Route path="/maintenance" element={<Navigate to="/" replace />} />
             <Route path="/producto" element={<Interior_Productos />} />
+            <Route path="/checkout" element={<SuperCheckout />} />
           </>
         )}
       </Routes>

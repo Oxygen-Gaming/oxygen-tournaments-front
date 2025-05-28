@@ -19,7 +19,7 @@ const OxygenGaming = () => {
       <PrincipalInicio></PrincipalInicio>
 
       <div className="w-screen">
-
+        
         <FuncionaInicio></FuncionaInicio>
         <VentajasInicio></VentajasInicio>
         <RecompensasInicio></RecompensasInicio>
