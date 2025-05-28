@@ -17,8 +17,8 @@ const Interior_Productos = () => {
   const [personalizacion, setPersonalizacion] = useState("Personalizada");
   const [nickname, setNickname] = useState("");
   const [showSizeChart, setShowSizeChart] = useState(false);
-  const [cartItems, setCartItems] = useState([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
+  const [cartItems, setCartItems] = useState([]);
 
   const images = [producto.imagen, producto.imagen_posterior];
   const [selectedImage, setSelectedImage] = useState(images[0]);
@@ -27,23 +27,43 @@ const Interior_Productos = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    const storedCart = JSON.parse(localStorage.getItem("carrito")) || [];
+    setCartItems(storedCart);
   }, []);
+
+  const saveCart = (updatedCart) => {
+    setCartItems(updatedCart);
+    localStorage.setItem("carrito", JSON.stringify(updatedCart));
+  };
 
   const addToCart = () => {
     if (!selectedSize) {
       alert("Por favor, selecciona una talla.");
       return;
     }
+
     const newItem = {
+      id: `${producto.titulo}-${selectedSize}-${personalizacion === "Personalizada" ? nickname : "NoNick"}`,
       titulo: producto.titulo,
-      precio: producto.precio,
+      precio: parseFloat(producto.precio.replace("€", "").replace(",", ".")),
       talla: selectedSize,
       personalizacion: personalizacion,
       nickname: personalizacion === "Personalizada" ? nickname : "",
       cantidad: 1,
       imagen: producto.imagen,
     };
-    setCartItems([...cartItems, newItem]);
+
+    const existingItem = cartItems.find((item) => item.id === newItem.id);
+    let updatedCart;
+    if (existingItem) {
+      updatedCart = cartItems.map((item) =>
+        item.id === newItem.id ? { ...item, cantidad: item.cantidad + 1 } : item
+      );
+    } else {
+      updatedCart = [...cartItems, newItem];
+    }
+
+    saveCart(updatedCart);
     setIsCartOpen(true);
   };
 
@@ -53,7 +73,6 @@ const Interior_Productos = () => {
       <MenuHamburguesaNormal />
 
       <section className="relative bg-black w-full flex flex-col xl:flex-row items-center justify-center gap-10 p-6 xl:p-[50px]">
-        {/* Botones juntos */}
         <div className="absolute top-4 left-4 z-10 flex gap-2">
           <a href="/tienda">
             <button className="px-4 py-2 bg-gradient-to-r from-[#005f99] to-[#1AA9FF] text-white rounded-lg hover:bg-[#0077b6] transition">
@@ -62,7 +81,7 @@ const Interior_Productos = () => {
           </a>
           <button
             onClick={() => setIsCartOpen(true)}
-            className="px-4 py-2 bg-gradient-to-r from-[#005f99] to-[#1AA9FF] text-white rounded-lg hover:bg-[#0077b6] transition"
+            className=" px-4 py-2 bg-gradient-to-r from-[#005f99] to-[#1AA9FF] text-white rounded-lg hover:bg-[#0077b6] transition"
           >
             Mostrar Carrito
           </button>
@@ -72,10 +91,10 @@ const Interior_Productos = () => {
           isOpen={isCartOpen}
           setIsOpen={setIsCartOpen}
           cartItems={cartItems}
-          setCartItems={setCartItems}
+          setCartItems={saveCart}
         />
 
-        <div className="w-full h-full xl:w-1/2 flex justify-center items-stretch gap-[30px]">
+        <div className="w-full h-full xl:w-1/2 flex justify-center items-stretch gap-[30px] mt-12">
           <div className="flex flex-col justify-start gap-4 h-[600px]">
             {images.map((img, index) => (
               <img
@@ -159,11 +178,11 @@ const Interior_Productos = () => {
       </section>
 
       {showSizeChart && (
-        <div 
+        <div
           className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50"
           onClick={() => setShowSizeChart(false)}
         >
-          <div 
+          <div
             className="bg-white p-4 rounded max-w-lg w-full relative"
             onClick={(e) => e.stopPropagation()}
           >
